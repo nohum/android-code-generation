@@ -1,9 +1,9 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage;
-import at.fhj.androidappmeta.androidappmeta.MBroadcastReceiver;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage;
+import at.fhj.androidapp.AndroidAppModel.MBroadcastReceiver;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -33,7 +33,7 @@ public class MBroadcastReceiverImpl extends MIntentStartableImpl implements MBro
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AndroidappmetaPackage.Literals.MBROADCAST_RECEIVER;
+		return AppMetaModelPackage.Literals.MBROADCAST_RECEIVER;
 	}
 
 } //MBroadcastReceiverImpl

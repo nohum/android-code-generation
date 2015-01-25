@@ -1,16 +1,16 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaFactory;
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage;
-import at.fhj.androidappmeta.androidappmeta.MActivity;
-import at.fhj.androidappmeta.androidappmeta.MApplication;
-import at.fhj.androidappmeta.androidappmeta.MBroadcastReceiver;
-import at.fhj.androidappmeta.androidappmeta.MIntent;
-import at.fhj.androidappmeta.androidappmeta.MIntentStartable;
-import at.fhj.androidappmeta.androidappmeta.MPermission;
-import at.fhj.androidappmeta.androidappmeta.MService;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelFactory;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage;
+import at.fhj.androidapp.AndroidAppModel.MActivity;
+import at.fhj.androidapp.AndroidAppModel.MApplication;
+import at.fhj.androidapp.AndroidAppModel.MBroadcastReceiver;
+import at.fhj.androidapp.AndroidAppModel.MIntent;
+import at.fhj.androidapp.AndroidAppModel.MIntentStartable;
+import at.fhj.androidapp.AndroidAppModel.MPermission;
+import at.fhj.androidapp.AndroidAppModel.MService;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AndroidappmetaPackageImpl extends EPackageImpl implements AndroidappmetaPackage {
+public class AppMetaModelPackageImpl extends EPackageImpl implements AppMetaModelPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -86,12 +86,12 @@ public class AndroidappmetaPackageImpl extends EPackageImpl implements Androidap
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#eNS_URI
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private AndroidappmetaPackageImpl() {
-		super(eNS_URI, AndroidappmetaFactory.eINSTANCE);
+	private AppMetaModelPackageImpl() {
+		super(eNS_URI, AppMetaModelFactory.eINSTANCE);
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class AndroidappmetaPackageImpl extends EPackageImpl implements Androidap
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link AndroidappmetaPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link AppMetaModelPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,27 +113,27 @@ public class AndroidappmetaPackageImpl extends EPackageImpl implements Androidap
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static AndroidappmetaPackage init() {
-		if (isInited) return (AndroidappmetaPackage)EPackage.Registry.INSTANCE.getEPackage(AndroidappmetaPackage.eNS_URI);
+	public static AppMetaModelPackage init() {
+		if (isInited) return (AppMetaModelPackage)EPackage.Registry.INSTANCE.getEPackage(AppMetaModelPackage.eNS_URI);
 
 		// Obtain or create and register package
-		AndroidappmetaPackageImpl theAndroidappmetaPackage = (AndroidappmetaPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AndroidappmetaPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AndroidappmetaPackageImpl());
+		AppMetaModelPackageImpl theAppMetaModelPackage = (AppMetaModelPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AppMetaModelPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AppMetaModelPackageImpl());
 
 		isInited = true;
 
 		// Create package meta-data objects
-		theAndroidappmetaPackage.createPackageContents();
+		theAppMetaModelPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theAndroidappmetaPackage.initializePackageContents();
+		theAppMetaModelPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theAndroidappmetaPackage.freeze();
+		theAppMetaModelPackage.freeze();
 
   
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(AndroidappmetaPackage.eNS_URI, theAndroidappmetaPackage);
-		return theAndroidappmetaPackage;
+		EPackage.Registry.INSTANCE.put(AppMetaModelPackage.eNS_URI, theAppMetaModelPackage);
+		return theAppMetaModelPackage;
 	}
 
 	/**
@@ -312,8 +312,8 @@ public class AndroidappmetaPackageImpl extends EPackageImpl implements Androidap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AndroidappmetaFactory getAndroidappmetaFactory() {
-		return (AndroidappmetaFactory)getEFactoryInstance();
+	public AppMetaModelFactory getAppMetaModelFactory() {
+		return (AppMetaModelFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -425,4 +425,4 @@ public class AndroidappmetaPackageImpl extends EPackageImpl implements Androidap
 		createResource(eNS_URI);
 	}
 
-} //AndroidappmetaPackageImpl
+} //AppMetaModelPackageImpl

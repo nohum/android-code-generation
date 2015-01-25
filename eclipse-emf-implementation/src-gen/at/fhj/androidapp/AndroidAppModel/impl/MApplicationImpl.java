@@ -1,12 +1,12 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage;
-import at.fhj.androidappmeta.androidappmeta.MActivity;
-import at.fhj.androidappmeta.androidappmeta.MApplication;
-import at.fhj.androidappmeta.androidappmeta.MIntentStartable;
-import at.fhj.androidappmeta.androidappmeta.MPermission;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage;
+import at.fhj.androidapp.AndroidAppModel.MActivity;
+import at.fhj.androidapp.AndroidAppModel.MApplication;
+import at.fhj.androidapp.AndroidAppModel.MIntentStartable;
+import at.fhj.androidapp.AndroidAppModel.MPermission;
 
 import java.util.Collection;
 
@@ -29,13 +29,13 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl#getPackageName <em>Package Name</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl#getPermissions <em>Permissions</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl#getMinSdk <em>Min Sdk</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl#getTargetSdk <em>Target Sdk</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl#getName <em>Name</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl#getElements <em>Elements</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl#getLauncherActivity <em>Launcher Activity</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl#getPackageName <em>Package Name</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl#getMinSdk <em>Min Sdk</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl#getTargetSdk <em>Target Sdk</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl#getLauncherActivity <em>Launcher Activity</em>}</li>
  * </ul>
  * </p>
  *
@@ -168,7 +168,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AndroidappmetaPackage.Literals.MAPPLICATION;
+		return AppMetaModelPackage.Literals.MAPPLICATION;
 	}
 
 	/**
@@ -189,7 +189,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 		String oldPackageName = packageName;
 		packageName = newPackageName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MAPPLICATION__PACKAGE_NAME, oldPackageName, packageName));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MAPPLICATION__PACKAGE_NAME, oldPackageName, packageName));
 	}
 
 	/**
@@ -199,7 +199,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 	 */
 	public EList<MPermission> getPermissions() {
 		if (permissions == null) {
-			permissions = new EObjectResolvingEList<MPermission>(MPermission.class, this, AndroidappmetaPackage.MAPPLICATION__PERMISSIONS);
+			permissions = new EObjectResolvingEList<MPermission>(MPermission.class, this, AppMetaModelPackage.MAPPLICATION__PERMISSIONS);
 		}
 		return permissions;
 	}
@@ -222,7 +222,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 		int oldMinSdk = minSdk;
 		minSdk = newMinSdk;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MAPPLICATION__MIN_SDK, oldMinSdk, minSdk));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MAPPLICATION__MIN_SDK, oldMinSdk, minSdk));
 	}
 
 	/**
@@ -243,7 +243,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 		int oldTargetSdk = targetSdk;
 		targetSdk = newTargetSdk;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MAPPLICATION__TARGET_SDK, oldTargetSdk, targetSdk));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MAPPLICATION__TARGET_SDK, oldTargetSdk, targetSdk));
 	}
 
 	/**
@@ -264,7 +264,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MAPPLICATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MAPPLICATION__NAME, oldName, name));
 	}
 
 	/**
@@ -274,7 +274,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 	 */
 	public EList<MIntentStartable> getElements() {
 		if (elements == null) {
-			elements = new EObjectResolvingEList<MIntentStartable>(MIntentStartable.class, this, AndroidappmetaPackage.MAPPLICATION__ELEMENTS);
+			elements = new EObjectResolvingEList<MIntentStartable>(MIntentStartable.class, this, AppMetaModelPackage.MAPPLICATION__ELEMENTS);
 		}
 		return elements;
 	}
@@ -290,7 +290,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 			launcherActivity = (MActivity)eResolveProxy(oldLauncherActivity);
 			if (launcherActivity != oldLauncherActivity) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroidappmetaPackage.MAPPLICATION__LAUNCHER_ACTIVITY, oldLauncherActivity, launcherActivity));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AppMetaModelPackage.MAPPLICATION__LAUNCHER_ACTIVITY, oldLauncherActivity, launcherActivity));
 			}
 		}
 		return launcherActivity;
@@ -314,7 +314,7 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 		MActivity oldLauncherActivity = launcherActivity;
 		launcherActivity = newLauncherActivity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MAPPLICATION__LAUNCHER_ACTIVITY, oldLauncherActivity, launcherActivity));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MAPPLICATION__LAUNCHER_ACTIVITY, oldLauncherActivity, launcherActivity));
 	}
 
 	/**
@@ -325,19 +325,19 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MAPPLICATION__PACKAGE_NAME:
+			case AppMetaModelPackage.MAPPLICATION__PACKAGE_NAME:
 				return getPackageName();
-			case AndroidappmetaPackage.MAPPLICATION__PERMISSIONS:
+			case AppMetaModelPackage.MAPPLICATION__PERMISSIONS:
 				return getPermissions();
-			case AndroidappmetaPackage.MAPPLICATION__MIN_SDK:
+			case AppMetaModelPackage.MAPPLICATION__MIN_SDK:
 				return getMinSdk();
-			case AndroidappmetaPackage.MAPPLICATION__TARGET_SDK:
+			case AppMetaModelPackage.MAPPLICATION__TARGET_SDK:
 				return getTargetSdk();
-			case AndroidappmetaPackage.MAPPLICATION__NAME:
+			case AppMetaModelPackage.MAPPLICATION__NAME:
 				return getName();
-			case AndroidappmetaPackage.MAPPLICATION__ELEMENTS:
+			case AppMetaModelPackage.MAPPLICATION__ELEMENTS:
 				return getElements();
-			case AndroidappmetaPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
+			case AppMetaModelPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
 				if (resolve) return getLauncherActivity();
 				return basicGetLauncherActivity();
 		}
@@ -353,27 +353,27 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MAPPLICATION__PACKAGE_NAME:
+			case AppMetaModelPackage.MAPPLICATION__PACKAGE_NAME:
 				setPackageName((String)newValue);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__PERMISSIONS:
+			case AppMetaModelPackage.MAPPLICATION__PERMISSIONS:
 				getPermissions().clear();
 				getPermissions().addAll((Collection<? extends MPermission>)newValue);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__MIN_SDK:
+			case AppMetaModelPackage.MAPPLICATION__MIN_SDK:
 				setMinSdk((Integer)newValue);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__TARGET_SDK:
+			case AppMetaModelPackage.MAPPLICATION__TARGET_SDK:
 				setTargetSdk((Integer)newValue);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__NAME:
+			case AppMetaModelPackage.MAPPLICATION__NAME:
 				setName((String)newValue);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__ELEMENTS:
+			case AppMetaModelPackage.MAPPLICATION__ELEMENTS:
 				getElements().clear();
 				getElements().addAll((Collection<? extends MIntentStartable>)newValue);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
+			case AppMetaModelPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
 				setLauncherActivity((MActivity)newValue);
 				return;
 		}
@@ -388,25 +388,25 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MAPPLICATION__PACKAGE_NAME:
+			case AppMetaModelPackage.MAPPLICATION__PACKAGE_NAME:
 				setPackageName(PACKAGE_NAME_EDEFAULT);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__PERMISSIONS:
+			case AppMetaModelPackage.MAPPLICATION__PERMISSIONS:
 				getPermissions().clear();
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__MIN_SDK:
+			case AppMetaModelPackage.MAPPLICATION__MIN_SDK:
 				setMinSdk(MIN_SDK_EDEFAULT);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__TARGET_SDK:
+			case AppMetaModelPackage.MAPPLICATION__TARGET_SDK:
 				setTargetSdk(TARGET_SDK_EDEFAULT);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__NAME:
+			case AppMetaModelPackage.MAPPLICATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__ELEMENTS:
+			case AppMetaModelPackage.MAPPLICATION__ELEMENTS:
 				getElements().clear();
 				return;
-			case AndroidappmetaPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
+			case AppMetaModelPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
 				setLauncherActivity((MActivity)null);
 				return;
 		}
@@ -421,19 +421,19 @@ public class MApplicationImpl extends MinimalEObjectImpl.Container implements MA
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MAPPLICATION__PACKAGE_NAME:
+			case AppMetaModelPackage.MAPPLICATION__PACKAGE_NAME:
 				return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
-			case AndroidappmetaPackage.MAPPLICATION__PERMISSIONS:
+			case AppMetaModelPackage.MAPPLICATION__PERMISSIONS:
 				return permissions != null && !permissions.isEmpty();
-			case AndroidappmetaPackage.MAPPLICATION__MIN_SDK:
+			case AppMetaModelPackage.MAPPLICATION__MIN_SDK:
 				return minSdk != MIN_SDK_EDEFAULT;
-			case AndroidappmetaPackage.MAPPLICATION__TARGET_SDK:
+			case AppMetaModelPackage.MAPPLICATION__TARGET_SDK:
 				return targetSdk != TARGET_SDK_EDEFAULT;
-			case AndroidappmetaPackage.MAPPLICATION__NAME:
+			case AppMetaModelPackage.MAPPLICATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AndroidappmetaPackage.MAPPLICATION__ELEMENTS:
+			case AppMetaModelPackage.MAPPLICATION__ELEMENTS:
 				return elements != null && !elements.isEmpty();
-			case AndroidappmetaPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
+			case AppMetaModelPackage.MAPPLICATION__LAUNCHER_ACTIVITY:
 				return launcherActivity != null;
 		}
 		return super.eIsSet(featureID);

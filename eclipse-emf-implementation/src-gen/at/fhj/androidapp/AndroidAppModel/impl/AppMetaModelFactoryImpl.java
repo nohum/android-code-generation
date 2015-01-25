@@ -1,8 +1,8 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.*;
+import at.fhj.androidapp.AndroidAppModel.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AndroidappmetaFactoryImpl extends EFactoryImpl implements AndroidappmetaFactory {
+public class AppMetaModelFactoryImpl extends EFactoryImpl implements AppMetaModelFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static AndroidappmetaFactory init() {
+	public static AppMetaModelFactory init() {
 		try {
-			AndroidappmetaFactory theAndroidappmetaFactory = (AndroidappmetaFactory)EPackage.Registry.INSTANCE.getEFactory(AndroidappmetaPackage.eNS_URI);
-			if (theAndroidappmetaFactory != null) {
-				return theAndroidappmetaFactory;
+			AppMetaModelFactory theAppMetaModelFactory = (AppMetaModelFactory)EPackage.Registry.INSTANCE.getEFactory(AppMetaModelPackage.eNS_URI);
+			if (theAppMetaModelFactory != null) {
+				return theAppMetaModelFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new AndroidappmetaFactoryImpl();
+		return new AppMetaModelFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class AndroidappmetaFactoryImpl extends EFactoryImpl implements Androidap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AndroidappmetaFactoryImpl() {
+	public AppMetaModelFactoryImpl() {
 		super();
 	}
 
@@ -56,13 +56,13 @@ public class AndroidappmetaFactoryImpl extends EFactoryImpl implements Androidap
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case AndroidappmetaPackage.MAPPLICATION: return createMApplication();
-			case AndroidappmetaPackage.MPERMISSION: return createMPermission();
-			case AndroidappmetaPackage.MINTENT: return createMIntent();
-			case AndroidappmetaPackage.MINTENT_STARTABLE: return createMIntentStartable();
-			case AndroidappmetaPackage.MACTIVITY: return createMActivity();
-			case AndroidappmetaPackage.MSERVICE: return createMService();
-			case AndroidappmetaPackage.MBROADCAST_RECEIVER: return createMBroadcastReceiver();
+			case AppMetaModelPackage.MAPPLICATION: return createMApplication();
+			case AppMetaModelPackage.MPERMISSION: return createMPermission();
+			case AppMetaModelPackage.MINTENT: return createMIntent();
+			case AppMetaModelPackage.MINTENT_STARTABLE: return createMIntentStartable();
+			case AppMetaModelPackage.MACTIVITY: return createMActivity();
+			case AppMetaModelPackage.MSERVICE: return createMService();
+			case AppMetaModelPackage.MBROADCAST_RECEIVER: return createMBroadcastReceiver();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -143,8 +143,8 @@ public class AndroidappmetaFactoryImpl extends EFactoryImpl implements Androidap
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AndroidappmetaPackage getAndroidappmetaPackage() {
-		return (AndroidappmetaPackage)getEPackage();
+	public AppMetaModelPackage getAppMetaModelPackage() {
+		return (AppMetaModelPackage)getEPackage();
 	}
 
 	/**
@@ -154,8 +154,8 @@ public class AndroidappmetaFactoryImpl extends EFactoryImpl implements Androidap
 	 * @generated
 	 */
 	@Deprecated
-	public static AndroidappmetaPackage getPackage() {
-		return AndroidappmetaPackage.eINSTANCE;
+	public static AppMetaModelPackage getPackage() {
+		return AppMetaModelPackage.eINSTANCE;
 	}
 
-} //AndroidappmetaFactoryImpl
+} //AppMetaModelFactoryImpl

@@ -7,9 +7,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: at.fhj.androidappmeta.androidappmeta,
- at.fhj.androidappmeta.androidappmeta.impl,
- at.fhj.androidappmeta.androidappmeta.util
+Export-Package: at.fhj.androidapp.AndroidAppModel,
+ at.fhj.androidapp.AndroidAppModel.impl,
+ at.fhj.androidapp.AndroidAppModel.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

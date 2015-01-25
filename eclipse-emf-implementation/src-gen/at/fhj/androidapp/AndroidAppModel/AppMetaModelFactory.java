@@ -1,6 +1,6 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta;
+package at.fhj.androidapp.AndroidAppModel;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,17 +9,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage
  * @generated
  */
-public interface AndroidappmetaFactory extends EFactory {
+public interface AppMetaModelFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AndroidappmetaFactory eINSTANCE = at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaFactoryImpl.init();
+	AppMetaModelFactory eINSTANCE = at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>MApplication</em>'.
@@ -91,6 +91,6 @@ public interface AndroidappmetaFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	AndroidappmetaPackage getAndroidappmetaPackage();
+	AppMetaModelPackage getAppMetaModelPackage();
 
-} //AndroidappmetaFactory
+} //AppMetaModelFactory

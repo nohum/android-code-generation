@@ -1,9 +1,9 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage;
-import at.fhj.androidappmeta.androidappmeta.MService;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage;
+import at.fhj.androidapp.AndroidAppModel.MService;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -33,7 +33,7 @@ public class MServiceImpl extends MIntentStartableImpl implements MService {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AndroidappmetaPackage.Literals.MSERVICE;
+		return AppMetaModelPackage.Literals.MSERVICE;
 	}
 
 } //MServiceImpl

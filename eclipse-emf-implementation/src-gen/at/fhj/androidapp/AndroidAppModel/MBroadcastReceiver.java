@@ -1,6 +1,6 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta;
+package at.fhj.androidapp.AndroidAppModel;
 
 
 /**
@@ -9,7 +9,7 @@ package at.fhj.androidappmeta.androidappmeta;
  * <!-- end-user-doc -->
  *
  *
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMBroadcastReceiver()
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMBroadcastReceiver()
  * @model
  * @generated
  */

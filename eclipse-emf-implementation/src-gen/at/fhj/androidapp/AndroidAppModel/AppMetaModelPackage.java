@@ -1,6 +1,6 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta;
+package at.fhj.androidapp.AndroidAppModel;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -19,18 +19,18 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaFactory
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelFactory
  * @model kind="package"
  * @generated
  */
-public interface AndroidappmetaPackage extends EPackage {
+public interface AppMetaModelPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "androidappmeta";
+	String eNAME = "AndroidAppModel";
 
 	/**
 	 * The package namespace URI.
@@ -54,14 +54,14 @@ public interface AndroidappmetaPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AndroidappmetaPackage eINSTANCE = at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl.init();
+	AppMetaModelPackage eINSTANCE = at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl <em>MApplication</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl <em>MApplication</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMApplication()
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMApplication()
 	 * @generated
 	 */
 	int MAPPLICATION = 0;
@@ -148,11 +148,11 @@ public interface AndroidappmetaPackage extends EPackage {
 	int MAPPLICATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MPermissionImpl <em>MPermission</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MPermissionImpl <em>MPermission</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.MPermissionImpl
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMPermission()
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.MPermissionImpl
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMPermission()
 	 * @generated
 	 */
 	int MPERMISSION = 1;
@@ -185,11 +185,11 @@ public interface AndroidappmetaPackage extends EPackage {
 	int MPERMISSION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MIntentImpl <em>MIntent</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MIntentImpl <em>MIntent</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.MIntentImpl
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMIntent()
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.MIntentImpl
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMIntent()
 	 * @generated
 	 */
 	int MINTENT = 2;
@@ -222,11 +222,11 @@ public interface AndroidappmetaPackage extends EPackage {
 	int MINTENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MIntentStartableImpl <em>MIntent Startable</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MIntentStartableImpl <em>MIntent Startable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.MIntentStartableImpl
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMIntentStartable()
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.MIntentStartableImpl
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMIntentStartable()
 	 * @generated
 	 */
 	int MINTENT_STARTABLE = 3;
@@ -259,11 +259,11 @@ public interface AndroidappmetaPackage extends EPackage {
 	int MINTENT_STARTABLE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MActivityImpl <em>MActivity</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MActivityImpl <em>MActivity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.MActivityImpl
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMActivity()
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.MActivityImpl
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMActivity()
 	 * @generated
 	 */
 	int MACTIVITY = 4;
@@ -314,11 +314,11 @@ public interface AndroidappmetaPackage extends EPackage {
 	int MACTIVITY_OPERATION_COUNT = MINTENT_STARTABLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MServiceImpl <em>MService</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MServiceImpl <em>MService</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.MServiceImpl
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMService()
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.MServiceImpl
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMService()
 	 * @generated
 	 */
 	int MSERVICE = 5;
@@ -351,11 +351,11 @@ public interface AndroidappmetaPackage extends EPackage {
 	int MSERVICE_OPERATION_COUNT = MINTENT_STARTABLE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MBroadcastReceiverImpl <em>MBroadcast Receiver</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MBroadcastReceiverImpl <em>MBroadcast Receiver</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.MBroadcastReceiverImpl
-	 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMBroadcastReceiver()
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.MBroadcastReceiverImpl
+	 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMBroadcastReceiver()
 	 * @generated
 	 */
 	int MBROADCAST_RECEIVER = 6;
@@ -389,203 +389,203 @@ public interface AndroidappmetaPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link at.fhj.androidappmeta.androidappmeta.MApplication <em>MApplication</em>}'.
+	 * Returns the meta object for class '{@link at.fhj.androidapp.AndroidAppModel.MApplication <em>MApplication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>MApplication</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication
 	 * @generated
 	 */
 	EClass getMApplication();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getPackageName <em>Package Name</em>}'.
+	 * Returns the meta object for the attribute '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getPackageName <em>Package Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Package Name</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication#getPackageName()
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication#getPackageName()
 	 * @see #getMApplication()
 	 * @generated
 	 */
 	EAttribute getMApplication_PackageName();
 
 	/**
-	 * Returns the meta object for the reference list '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getPermissions <em>Permissions</em>}'.
+	 * Returns the meta object for the reference list '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getPermissions <em>Permissions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Permissions</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication#getPermissions()
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication#getPermissions()
 	 * @see #getMApplication()
 	 * @generated
 	 */
 	EReference getMApplication_Permissions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getMinSdk <em>Min Sdk</em>}'.
+	 * Returns the meta object for the attribute '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getMinSdk <em>Min Sdk</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Min Sdk</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication#getMinSdk()
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication#getMinSdk()
 	 * @see #getMApplication()
 	 * @generated
 	 */
 	EAttribute getMApplication_MinSdk();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getTargetSdk <em>Target Sdk</em>}'.
+	 * Returns the meta object for the attribute '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getTargetSdk <em>Target Sdk</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Target Sdk</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication#getTargetSdk()
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication#getTargetSdk()
 	 * @see #getMApplication()
 	 * @generated
 	 */
 	EAttribute getMApplication_TargetSdk();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication#getName()
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication#getName()
 	 * @see #getMApplication()
 	 * @generated
 	 */
 	EAttribute getMApplication_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getElements <em>Elements</em>}'.
+	 * Returns the meta object for the reference list '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getElements <em>Elements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Elements</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication#getElements()
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication#getElements()
 	 * @see #getMApplication()
 	 * @generated
 	 */
 	EReference getMApplication_Elements();
 
 	/**
-	 * Returns the meta object for the reference '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getLauncherActivity <em>Launcher Activity</em>}'.
+	 * Returns the meta object for the reference '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getLauncherActivity <em>Launcher Activity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Launcher Activity</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication#getLauncherActivity()
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication#getLauncherActivity()
 	 * @see #getMApplication()
 	 * @generated
 	 */
 	EReference getMApplication_LauncherActivity();
 
 	/**
-	 * Returns the meta object for class '{@link at.fhj.androidappmeta.androidappmeta.MPermission <em>MPermission</em>}'.
+	 * Returns the meta object for class '{@link at.fhj.androidapp.AndroidAppModel.MPermission <em>MPermission</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>MPermission</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MPermission
+	 * @see at.fhj.androidapp.AndroidAppModel.MPermission
 	 * @generated
 	 */
 	EClass getMPermission();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.fhj.androidappmeta.androidappmeta.MPermission#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link at.fhj.androidapp.AndroidAppModel.MPermission#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MPermission#getName()
+	 * @see at.fhj.androidapp.AndroidAppModel.MPermission#getName()
 	 * @see #getMPermission()
 	 * @generated
 	 */
 	EAttribute getMPermission_Name();
 
 	/**
-	 * Returns the meta object for class '{@link at.fhj.androidappmeta.androidappmeta.MIntent <em>MIntent</em>}'.
+	 * Returns the meta object for class '{@link at.fhj.androidapp.AndroidAppModel.MIntent <em>MIntent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>MIntent</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MIntent
+	 * @see at.fhj.androidapp.AndroidAppModel.MIntent
 	 * @generated
 	 */
 	EClass getMIntent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.fhj.androidappmeta.androidappmeta.MIntent#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link at.fhj.androidapp.AndroidAppModel.MIntent#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MIntent#getName()
+	 * @see at.fhj.androidapp.AndroidAppModel.MIntent#getName()
 	 * @see #getMIntent()
 	 * @generated
 	 */
 	EAttribute getMIntent_Name();
 
 	/**
-	 * Returns the meta object for class '{@link at.fhj.androidappmeta.androidappmeta.MIntentStartable <em>MIntent Startable</em>}'.
+	 * Returns the meta object for class '{@link at.fhj.androidapp.AndroidAppModel.MIntentStartable <em>MIntent Startable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>MIntent Startable</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MIntentStartable
+	 * @see at.fhj.androidapp.AndroidAppModel.MIntentStartable
 	 * @generated
 	 */
 	EClass getMIntentStartable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link at.fhj.androidappmeta.androidappmeta.MIntentStartable#getIntentFilter <em>Intent Filter</em>}'.
+	 * Returns the meta object for the reference list '{@link at.fhj.androidapp.AndroidAppModel.MIntentStartable#getIntentFilter <em>Intent Filter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Intent Filter</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MIntentStartable#getIntentFilter()
+	 * @see at.fhj.androidapp.AndroidAppModel.MIntentStartable#getIntentFilter()
 	 * @see #getMIntentStartable()
 	 * @generated
 	 */
 	EReference getMIntentStartable_IntentFilter();
 
 	/**
-	 * Returns the meta object for class '{@link at.fhj.androidappmeta.androidappmeta.MActivity <em>MActivity</em>}'.
+	 * Returns the meta object for class '{@link at.fhj.androidapp.AndroidAppModel.MActivity <em>MActivity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>MActivity</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MActivity
+	 * @see at.fhj.androidapp.AndroidAppModel.MActivity
 	 * @generated
 	 */
 	EClass getMActivity();
 
 	/**
-	 * Returns the meta object for the attribute '{@link at.fhj.androidappmeta.androidappmeta.MActivity#getTitle <em>Title</em>}'.
+	 * Returns the meta object for the attribute '{@link at.fhj.androidapp.AndroidAppModel.MActivity#getTitle <em>Title</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Title</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MActivity#getTitle()
+	 * @see at.fhj.androidapp.AndroidAppModel.MActivity#getTitle()
 	 * @see #getMActivity()
 	 * @generated
 	 */
 	EAttribute getMActivity_Title();
 
 	/**
-	 * Returns the meta object for the reference '{@link at.fhj.androidappmeta.androidappmeta.MActivity#getParent <em>Parent</em>}'.
+	 * Returns the meta object for the reference '{@link at.fhj.androidapp.AndroidAppModel.MActivity#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Parent</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MActivity#getParent()
+	 * @see at.fhj.androidapp.AndroidAppModel.MActivity#getParent()
 	 * @see #getMActivity()
 	 * @generated
 	 */
 	EReference getMActivity_Parent();
 
 	/**
-	 * Returns the meta object for class '{@link at.fhj.androidappmeta.androidappmeta.MService <em>MService</em>}'.
+	 * Returns the meta object for class '{@link at.fhj.androidapp.AndroidAppModel.MService <em>MService</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>MService</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MService
+	 * @see at.fhj.androidapp.AndroidAppModel.MService
 	 * @generated
 	 */
 	EClass getMService();
 
 	/**
-	 * Returns the meta object for class '{@link at.fhj.androidappmeta.androidappmeta.MBroadcastReceiver <em>MBroadcast Receiver</em>}'.
+	 * Returns the meta object for class '{@link at.fhj.androidapp.AndroidAppModel.MBroadcastReceiver <em>MBroadcast Receiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>MBroadcast Receiver</em>'.
-	 * @see at.fhj.androidappmeta.androidappmeta.MBroadcastReceiver
+	 * @see at.fhj.androidapp.AndroidAppModel.MBroadcastReceiver
 	 * @generated
 	 */
 	EClass getMBroadcastReceiver();
@@ -597,7 +597,7 @@ public interface AndroidappmetaPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	AndroidappmetaFactory getAndroidappmetaFactory();
+	AppMetaModelFactory getAppMetaModelFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -614,11 +614,11 @@ public interface AndroidappmetaPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl <em>MApplication</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl <em>MApplication</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.MApplicationImpl
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMApplication()
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.MApplicationImpl
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMApplication()
 		 * @generated
 		 */
 		EClass MAPPLICATION = eINSTANCE.getMApplication();
@@ -680,11 +680,11 @@ public interface AndroidappmetaPackage extends EPackage {
 		EReference MAPPLICATION__LAUNCHER_ACTIVITY = eINSTANCE.getMApplication_LauncherActivity();
 
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MPermissionImpl <em>MPermission</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MPermissionImpl <em>MPermission</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.MPermissionImpl
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMPermission()
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.MPermissionImpl
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMPermission()
 		 * @generated
 		 */
 		EClass MPERMISSION = eINSTANCE.getMPermission();
@@ -698,11 +698,11 @@ public interface AndroidappmetaPackage extends EPackage {
 		EAttribute MPERMISSION__NAME = eINSTANCE.getMPermission_Name();
 
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MIntentImpl <em>MIntent</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MIntentImpl <em>MIntent</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.MIntentImpl
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMIntent()
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.MIntentImpl
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMIntent()
 		 * @generated
 		 */
 		EClass MINTENT = eINSTANCE.getMIntent();
@@ -716,11 +716,11 @@ public interface AndroidappmetaPackage extends EPackage {
 		EAttribute MINTENT__NAME = eINSTANCE.getMIntent_Name();
 
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MIntentStartableImpl <em>MIntent Startable</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MIntentStartableImpl <em>MIntent Startable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.MIntentStartableImpl
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMIntentStartable()
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.MIntentStartableImpl
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMIntentStartable()
 		 * @generated
 		 */
 		EClass MINTENT_STARTABLE = eINSTANCE.getMIntentStartable();
@@ -734,11 +734,11 @@ public interface AndroidappmetaPackage extends EPackage {
 		EReference MINTENT_STARTABLE__INTENT_FILTER = eINSTANCE.getMIntentStartable_IntentFilter();
 
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MActivityImpl <em>MActivity</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MActivityImpl <em>MActivity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.MActivityImpl
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMActivity()
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.MActivityImpl
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMActivity()
 		 * @generated
 		 */
 		EClass MACTIVITY = eINSTANCE.getMActivity();
@@ -760,25 +760,25 @@ public interface AndroidappmetaPackage extends EPackage {
 		EReference MACTIVITY__PARENT = eINSTANCE.getMActivity_Parent();
 
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MServiceImpl <em>MService</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MServiceImpl <em>MService</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.MServiceImpl
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMService()
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.MServiceImpl
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMService()
 		 * @generated
 		 */
 		EClass MSERVICE = eINSTANCE.getMService();
 
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidappmeta.androidappmeta.impl.MBroadcastReceiverImpl <em>MBroadcast Receiver</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.AndroidAppModel.impl.MBroadcastReceiverImpl <em>MBroadcast Receiver</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.MBroadcastReceiverImpl
-		 * @see at.fhj.androidappmeta.androidappmeta.impl.AndroidappmetaPackageImpl#getMBroadcastReceiver()
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.MBroadcastReceiverImpl
+		 * @see at.fhj.androidapp.AndroidAppModel.impl.AppMetaModelPackageImpl#getMBroadcastReceiver()
 		 * @generated
 		 */
 		EClass MBROADCAST_RECEIVER = eINSTANCE.getMBroadcastReceiver();
 
 	}
 
-} //AndroidappmetaPackage
+} //AppMetaModelPackage

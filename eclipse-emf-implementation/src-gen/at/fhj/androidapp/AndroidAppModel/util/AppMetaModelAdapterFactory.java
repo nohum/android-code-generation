@@ -1,8 +1,8 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.util;
+package at.fhj.androidapp.AndroidAppModel.util;
 
-import at.fhj.androidappmeta.androidappmeta.*;
+import at.fhj.androidapp.AndroidAppModel.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,17 +16,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage
  * @generated
  */
-public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
+public class AppMetaModelAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static AndroidappmetaPackage modelPackage;
+	protected static AppMetaModelPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AndroidappmetaAdapterFactory() {
+	public AppMetaModelAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = AndroidappmetaPackage.eINSTANCE;
+			modelPackage = AppMetaModelPackage.eINSTANCE;
 		}
 	}
 
@@ -65,8 +65,8 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AndroidappmetaSwitch<Adapter> modelSwitch =
-		new AndroidappmetaSwitch<Adapter>() {
+	protected AppMetaModelSwitch<Adapter> modelSwitch =
+		new AppMetaModelSwitch<Adapter>() {
 			@Override
 			public Adapter caseMApplication(MApplication object) {
 				return createMApplicationAdapter();
@@ -116,13 +116,13 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.fhj.androidappmeta.androidappmeta.MApplication <em>MApplication</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.fhj.androidapp.AndroidAppModel.MApplication <em>MApplication</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.fhj.androidappmeta.androidappmeta.MApplication
+	 * @see at.fhj.androidapp.AndroidAppModel.MApplication
 	 * @generated
 	 */
 	public Adapter createMApplicationAdapter() {
@@ -130,13 +130,13 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.fhj.androidappmeta.androidappmeta.MPermission <em>MPermission</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.fhj.androidapp.AndroidAppModel.MPermission <em>MPermission</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.fhj.androidappmeta.androidappmeta.MPermission
+	 * @see at.fhj.androidapp.AndroidAppModel.MPermission
 	 * @generated
 	 */
 	public Adapter createMPermissionAdapter() {
@@ -144,13 +144,13 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.fhj.androidappmeta.androidappmeta.MIntent <em>MIntent</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.fhj.androidapp.AndroidAppModel.MIntent <em>MIntent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.fhj.androidappmeta.androidappmeta.MIntent
+	 * @see at.fhj.androidapp.AndroidAppModel.MIntent
 	 * @generated
 	 */
 	public Adapter createMIntentAdapter() {
@@ -158,13 +158,13 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.fhj.androidappmeta.androidappmeta.MIntentStartable <em>MIntent Startable</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.fhj.androidapp.AndroidAppModel.MIntentStartable <em>MIntent Startable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.fhj.androidappmeta.androidappmeta.MIntentStartable
+	 * @see at.fhj.androidapp.AndroidAppModel.MIntentStartable
 	 * @generated
 	 */
 	public Adapter createMIntentStartableAdapter() {
@@ -172,13 +172,13 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.fhj.androidappmeta.androidappmeta.MActivity <em>MActivity</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.fhj.androidapp.AndroidAppModel.MActivity <em>MActivity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.fhj.androidappmeta.androidappmeta.MActivity
+	 * @see at.fhj.androidapp.AndroidAppModel.MActivity
 	 * @generated
 	 */
 	public Adapter createMActivityAdapter() {
@@ -186,13 +186,13 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.fhj.androidappmeta.androidappmeta.MService <em>MService</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.fhj.androidapp.AndroidAppModel.MService <em>MService</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.fhj.androidappmeta.androidappmeta.MService
+	 * @see at.fhj.androidapp.AndroidAppModel.MService
 	 * @generated
 	 */
 	public Adapter createMServiceAdapter() {
@@ -200,13 +200,13 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link at.fhj.androidappmeta.androidappmeta.MBroadcastReceiver <em>MBroadcast Receiver</em>}'.
+	 * Creates a new adapter for an object of class '{@link at.fhj.androidapp.AndroidAppModel.MBroadcastReceiver <em>MBroadcast Receiver</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see at.fhj.androidappmeta.androidappmeta.MBroadcastReceiver
+	 * @see at.fhj.androidapp.AndroidAppModel.MBroadcastReceiver
 	 * @generated
 	 */
 	public Adapter createMBroadcastReceiverAdapter() {
@@ -225,4 +225,4 @@ public class AndroidappmetaAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //AndroidappmetaAdapterFactory
+} //AppMetaModelAdapterFactory

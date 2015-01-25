@@ -1,8 +1,8 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.util;
+package at.fhj.androidapp.AndroidAppModel.util;
 
-import at.fhj.androidappmeta.androidappmeta.*;
+import at.fhj.androidapp.AndroidAppModel.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,17 +19,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage
  * @generated
  */
-public class AndroidappmetaSwitch<T> extends Switch<T> {
+public class AppMetaModelSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static AndroidappmetaPackage modelPackage;
+	protected static AppMetaModelPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class AndroidappmetaSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AndroidappmetaSwitch() {
+	public AppMetaModelSwitch() {
 		if (modelPackage == null) {
-			modelPackage = AndroidappmetaPackage.eINSTANCE;
+			modelPackage = AppMetaModelPackage.eINSTANCE;
 		}
 	}
 
@@ -66,45 +66,45 @@ public class AndroidappmetaSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AndroidappmetaPackage.MAPPLICATION: {
+			case AppMetaModelPackage.MAPPLICATION: {
 				MApplication mApplication = (MApplication)theEObject;
 				T result = caseMApplication(mApplication);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AndroidappmetaPackage.MPERMISSION: {
+			case AppMetaModelPackage.MPERMISSION: {
 				MPermission mPermission = (MPermission)theEObject;
 				T result = caseMPermission(mPermission);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AndroidappmetaPackage.MINTENT: {
+			case AppMetaModelPackage.MINTENT: {
 				MIntent mIntent = (MIntent)theEObject;
 				T result = caseMIntent(mIntent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AndroidappmetaPackage.MINTENT_STARTABLE: {
+			case AppMetaModelPackage.MINTENT_STARTABLE: {
 				MIntentStartable mIntentStartable = (MIntentStartable)theEObject;
 				T result = caseMIntentStartable(mIntentStartable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AndroidappmetaPackage.MACTIVITY: {
+			case AppMetaModelPackage.MACTIVITY: {
 				MActivity mActivity = (MActivity)theEObject;
 				T result = caseMActivity(mActivity);
 				if (result == null) result = caseMIntentStartable(mActivity);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AndroidappmetaPackage.MSERVICE: {
+			case AppMetaModelPackage.MSERVICE: {
 				MService mService = (MService)theEObject;
 				T result = caseMService(mService);
 				if (result == null) result = caseMIntentStartable(mService);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AndroidappmetaPackage.MBROADCAST_RECEIVER: {
+			case AppMetaModelPackage.MBROADCAST_RECEIVER: {
 				MBroadcastReceiver mBroadcastReceiver = (MBroadcastReceiver)theEObject;
 				T result = caseMBroadcastReceiver(mBroadcastReceiver);
 				if (result == null) result = caseMIntentStartable(mBroadcastReceiver);
@@ -236,4 +236,4 @@ public class AndroidappmetaSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //AndroidappmetaSwitch
+} //AppMetaModelSwitch

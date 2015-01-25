@@ -1,9 +1,9 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage;
-import at.fhj.androidappmeta.androidappmeta.MActivity;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage;
+import at.fhj.androidapp.AndroidAppModel.MActivity;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MActivityImpl#getTitle <em>Title</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MActivityImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MActivityImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MActivityImpl#getParent <em>Parent</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,7 +73,7 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AndroidappmetaPackage.Literals.MACTIVITY;
+		return AppMetaModelPackage.Literals.MACTIVITY;
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 		String oldTitle = title;
 		title = newTitle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MACTIVITY__TITLE, oldTitle, title));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MACTIVITY__TITLE, oldTitle, title));
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 			parent = (MActivity)eResolveProxy(oldParent);
 			if (parent != oldParent) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroidappmetaPackage.MACTIVITY__PARENT, oldParent, parent));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AppMetaModelPackage.MACTIVITY__PARENT, oldParent, parent));
 			}
 		}
 		return parent;
@@ -132,7 +132,7 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 		MActivity oldParent = parent;
 		parent = newParent;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MACTIVITY__PARENT, oldParent, parent));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MACTIVITY__PARENT, oldParent, parent));
 	}
 
 	/**
@@ -143,9 +143,9 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MACTIVITY__TITLE:
+			case AppMetaModelPackage.MACTIVITY__TITLE:
 				return getTitle();
-			case AndroidappmetaPackage.MACTIVITY__PARENT:
+			case AppMetaModelPackage.MACTIVITY__PARENT:
 				if (resolve) return getParent();
 				return basicGetParent();
 		}
@@ -160,10 +160,10 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MACTIVITY__TITLE:
+			case AppMetaModelPackage.MACTIVITY__TITLE:
 				setTitle((String)newValue);
 				return;
-			case AndroidappmetaPackage.MACTIVITY__PARENT:
+			case AppMetaModelPackage.MACTIVITY__PARENT:
 				setParent((MActivity)newValue);
 				return;
 		}
@@ -178,10 +178,10 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MACTIVITY__TITLE:
+			case AppMetaModelPackage.MACTIVITY__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
-			case AndroidappmetaPackage.MACTIVITY__PARENT:
+			case AppMetaModelPackage.MACTIVITY__PARENT:
 				setParent((MActivity)null);
 				return;
 		}
@@ -196,9 +196,9 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MACTIVITY__TITLE:
+			case AppMetaModelPackage.MACTIVITY__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
-			case AndroidappmetaPackage.MACTIVITY__PARENT:
+			case AppMetaModelPackage.MACTIVITY__PARENT:
 				return parent != null;
 		}
 		return super.eIsSet(featureID);

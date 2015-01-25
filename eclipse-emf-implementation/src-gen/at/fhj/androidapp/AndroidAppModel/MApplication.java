@@ -1,6 +1,6 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta;
+package at.fhj.androidapp.AndroidAppModel;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -14,17 +14,17 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MApplication#getPackageName <em>Package Name</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MApplication#getPermissions <em>Permissions</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MApplication#getMinSdk <em>Min Sdk</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MApplication#getTargetSdk <em>Target Sdk</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MApplication#getName <em>Name</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MApplication#getElements <em>Elements</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MApplication#getLauncherActivity <em>Launcher Activity</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MApplication#getPackageName <em>Package Name</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MApplication#getPermissions <em>Permissions</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MApplication#getMinSdk <em>Min Sdk</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MApplication#getTargetSdk <em>Target Sdk</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MApplication#getName <em>Name</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MApplication#getElements <em>Elements</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MApplication#getLauncherActivity <em>Launcher Activity</em>}</li>
  * </ul>
  * </p>
  *
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication()
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication()
  * @model
  * @generated
  */
@@ -40,14 +40,14 @@ public interface MApplication extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Package Name</em>' attribute.
 	 * @see #setPackageName(String)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication_PackageName()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication_PackageName()
 	 * @model default="" required="true"
 	 * @generated
 	 */
 	String getPackageName();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getPackageName <em>Package Name</em>}' attribute.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getPackageName <em>Package Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Package Name</em>' attribute.
@@ -58,7 +58,7 @@ public interface MApplication extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Permissions</b></em>' reference list.
-	 * The list contents are of type {@link at.fhj.androidappmeta.androidappmeta.MPermission}.
+	 * The list contents are of type {@link at.fhj.androidapp.AndroidAppModel.MPermission}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Permissions</em>' reference list isn't clear,
@@ -66,7 +66,7 @@ public interface MApplication extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Permissions</em>' reference list.
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication_Permissions()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication_Permissions()
 	 * @model
 	 * @generated
 	 */
@@ -82,14 +82,14 @@ public interface MApplication extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Min Sdk</em>' attribute.
 	 * @see #setMinSdk(int)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication_MinSdk()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication_MinSdk()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getMinSdk();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getMinSdk <em>Min Sdk</em>}' attribute.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getMinSdk <em>Min Sdk</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Min Sdk</em>' attribute.
@@ -108,14 +108,14 @@ public interface MApplication extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Sdk</em>' attribute.
 	 * @see #setTargetSdk(int)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication_TargetSdk()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication_TargetSdk()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getTargetSdk();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getTargetSdk <em>Target Sdk</em>}' attribute.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getTargetSdk <em>Target Sdk</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Target Sdk</em>' attribute.
@@ -134,14 +134,14 @@ public interface MApplication extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication_Name()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -152,7 +152,7 @@ public interface MApplication extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' reference list.
-	 * The list contents are of type {@link at.fhj.androidappmeta.androidappmeta.MIntentStartable}.
+	 * The list contents are of type {@link at.fhj.androidapp.AndroidAppModel.MIntentStartable}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Elements</em>' reference list isn't clear,
@@ -160,7 +160,7 @@ public interface MApplication extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Elements</em>' reference list.
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication_Elements()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication_Elements()
 	 * @model
 	 * @generated
 	 */
@@ -176,14 +176,14 @@ public interface MApplication extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Launcher Activity</em>' reference.
 	 * @see #setLauncherActivity(MActivity)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMApplication_LauncherActivity()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMApplication_LauncherActivity()
 	 * @model required="true"
 	 * @generated
 	 */
 	MActivity getLauncherActivity();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MApplication#getLauncherActivity <em>Launcher Activity</em>}' reference.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MApplication#getLauncherActivity <em>Launcher Activity</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Launcher Activity</em>' reference.

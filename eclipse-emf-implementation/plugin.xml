@@ -10,7 +10,7 @@
       <!-- @generated androidapp-meta -->
       <package
             uri="android.meta"
-            class="at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage"
+            class="at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage"
             genModel="model/androidapp-meta.genmodel"/>
    </extension>
 

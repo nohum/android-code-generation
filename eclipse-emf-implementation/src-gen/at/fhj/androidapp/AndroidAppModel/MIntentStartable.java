@@ -1,6 +1,6 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta;
+package at.fhj.androidapp.AndroidAppModel;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MIntentStartable#getIntentFilter <em>Intent Filter</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MIntentStartable#getIntentFilter <em>Intent Filter</em>}</li>
  * </ul>
  * </p>
  *
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMIntentStartable()
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMIntentStartable()
  * @model
  * @generated
  */
 public interface MIntentStartable extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Intent Filter</b></em>' reference list.
-	 * The list contents are of type {@link at.fhj.androidappmeta.androidappmeta.MIntent}.
+	 * The list contents are of type {@link at.fhj.androidapp.AndroidAppModel.MIntent}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Intent Filter</em>' reference list isn't clear,
@@ -33,7 +33,7 @@ public interface MIntentStartable extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Intent Filter</em>' reference list.
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMIntentStartable_IntentFilter()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMIntentStartable_IntentFilter()
 	 * @model
 	 * @generated
 	 */

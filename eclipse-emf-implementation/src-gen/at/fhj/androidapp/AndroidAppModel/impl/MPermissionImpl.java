@@ -1,9 +1,9 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage;
-import at.fhj.androidappmeta.androidappmeta.MIntent;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage;
+import at.fhj.androidapp.AndroidAppModel.MPermission;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,18 +14,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>MIntent</b></em>'.
+ * An implementation of the model object '<em><b>MPermission</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MIntentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MPermissionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent {
+public class MPermissionImpl extends MinimalEObjectImpl.Container implements MPermission {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MIntentImpl() {
+	protected MPermissionImpl() {
 		super();
 	}
 
@@ -62,7 +62,7 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AndroidappmetaPackage.Literals.MINTENT;
+		return AppMetaModelPackage.Literals.MPERMISSION;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidappmetaPackage.MINTENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, AppMetaModelPackage.MPERMISSION__NAME, oldName, name));
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT__NAME:
+			case AppMetaModelPackage.MPERMISSION__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +108,7 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT__NAME:
+			case AppMetaModelPackage.MPERMISSION__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT__NAME:
+			case AppMetaModelPackage.MPERMISSION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -138,7 +138,7 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT__NAME:
+			case AppMetaModelPackage.MPERMISSION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -160,4 +160,4 @@ public class MIntentImpl extends MinimalEObjectImpl.Container implements MIntent
 		return result.toString();
 	}
 
-} //MIntentImpl
+} //MPermissionImpl

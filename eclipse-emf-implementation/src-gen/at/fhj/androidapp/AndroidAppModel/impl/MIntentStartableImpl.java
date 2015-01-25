@@ -1,10 +1,10 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta.impl;
+package at.fhj.androidapp.AndroidAppModel.impl;
 
-import at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage;
-import at.fhj.androidappmeta.androidappmeta.MIntent;
-import at.fhj.androidappmeta.androidappmeta.MIntentStartable;
+import at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage;
+import at.fhj.androidapp.AndroidAppModel.MIntent;
+import at.fhj.androidapp.AndroidAppModel.MIntentStartable;
 
 import java.util.Collection;
 
@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.impl.MIntentStartableImpl#getIntentFilter <em>Intent Filter</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.impl.MIntentStartableImpl#getIntentFilter <em>Intent Filter</em>}</li>
  * </ul>
  * </p>
  *
@@ -56,7 +56,7 @@ public class MIntentStartableImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AndroidappmetaPackage.Literals.MINTENT_STARTABLE;
+		return AppMetaModelPackage.Literals.MINTENT_STARTABLE;
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class MIntentStartableImpl extends MinimalEObjectImpl.Container implement
 	 */
 	public EList<MIntent> getIntentFilter() {
 		if (intentFilter == null) {
-			intentFilter = new EObjectResolvingEList<MIntent>(MIntent.class, this, AndroidappmetaPackage.MINTENT_STARTABLE__INTENT_FILTER);
+			intentFilter = new EObjectResolvingEList<MIntent>(MIntent.class, this, AppMetaModelPackage.MINTENT_STARTABLE__INTENT_FILTER);
 		}
 		return intentFilter;
 	}
@@ -79,7 +79,7 @@ public class MIntentStartableImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT_STARTABLE__INTENT_FILTER:
+			case AppMetaModelPackage.MINTENT_STARTABLE__INTENT_FILTER:
 				return getIntentFilter();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -94,7 +94,7 @@ public class MIntentStartableImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT_STARTABLE__INTENT_FILTER:
+			case AppMetaModelPackage.MINTENT_STARTABLE__INTENT_FILTER:
 				getIntentFilter().clear();
 				getIntentFilter().addAll((Collection<? extends MIntent>)newValue);
 				return;
@@ -110,7 +110,7 @@ public class MIntentStartableImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT_STARTABLE__INTENT_FILTER:
+			case AppMetaModelPackage.MINTENT_STARTABLE__INTENT_FILTER:
 				getIntentFilter().clear();
 				return;
 		}
@@ -125,7 +125,7 @@ public class MIntentStartableImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AndroidappmetaPackage.MINTENT_STARTABLE__INTENT_FILTER:
+			case AppMetaModelPackage.MINTENT_STARTABLE__INTENT_FILTER:
 				return intentFilter != null && !intentFilter.isEmpty();
 		}
 		return super.eIsSet(featureID);

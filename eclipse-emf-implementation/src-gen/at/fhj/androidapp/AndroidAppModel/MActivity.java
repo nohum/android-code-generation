@@ -1,6 +1,6 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta;
+package at.fhj.androidapp.AndroidAppModel;
 
 
 /**
@@ -11,12 +11,12 @@ package at.fhj.androidappmeta.androidappmeta;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MActivity#getTitle <em>Title</em>}</li>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MActivity#getParent <em>Parent</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MActivity#getTitle <em>Title</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MActivity#getParent <em>Parent</em>}</li>
  * </ul>
  * </p>
  *
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMActivity()
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMActivity()
  * @model
  * @generated
  */
@@ -31,14 +31,14 @@ public interface MActivity extends MIntentStartable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Title</em>' attribute.
 	 * @see #setTitle(String)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMActivity_Title()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMActivity_Title()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getTitle();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MActivity#getTitle <em>Title</em>}' attribute.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MActivity#getTitle <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Title</em>' attribute.
@@ -57,14 +57,14 @@ public interface MActivity extends MIntentStartable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent</em>' reference.
 	 * @see #setParent(MActivity)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMActivity_Parent()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMActivity_Parent()
 	 * @model
 	 * @generated
 	 */
 	MActivity getParent();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MActivity#getParent <em>Parent</em>}' reference.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MActivity#getParent <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Parent</em>' reference.

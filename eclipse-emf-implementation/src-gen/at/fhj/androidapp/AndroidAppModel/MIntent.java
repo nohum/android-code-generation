@@ -1,26 +1,26 @@
 /**
  */
-package at.fhj.androidappmeta.androidappmeta;
+package at.fhj.androidapp.AndroidAppModel;
 
 import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>MPermission</b></em>'.
+ * A representation of the model object '<em><b>MIntent</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.fhj.androidappmeta.androidappmeta.MPermission#getName <em>Name</em>}</li>
+ *   <li>{@link at.fhj.androidapp.AndroidAppModel.MIntent#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMPermission()
+ * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMIntent()
  * @model
  * @generated
  */
-public interface MPermission extends EObject {
+public interface MIntent extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -31,14 +31,14 @@ public interface MPermission extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage#getMPermission_Name()
+	 * @see at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage#getMIntent_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidappmeta.androidappmeta.MPermission#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link at.fhj.androidapp.AndroidAppModel.MIntent#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -47,4 +47,4 @@ public interface MPermission extends EObject {
 	 */
 	void setName(String value);
 
-} // MPermission
+} // MIntent
