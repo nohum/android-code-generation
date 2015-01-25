@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated androidapp-meta -->
       <package
-            uri="android.meta"
-            class="at.fhj.androidapp.AndroidAppModel.AppMetaModelPackage"
+            uri="http://at/fhj/android/metamodeling"
+            class="at.fhj.androidapp.androidapp.AndroidApplicationModelPackage"
             genModel="model/androidapp-meta.genmodel"/>
    </extension>
 
