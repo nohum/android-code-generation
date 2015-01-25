@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated androidapp-meta -->
+      <package
+            uri="android.meta"
+            class="at.fhj.androidappmeta.androidappmeta.AndroidappmetaPackage"
+            genModel="model/androidapp-meta.genmodel"/>
+   </extension>
+
+</plugin>
