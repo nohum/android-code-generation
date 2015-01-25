@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name=""/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="androidappmeta" nsURI="android.meta" nsPrefix="app">
+  <eClassifiers xsi:type="ecore:EClass" name="MApplication">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="permissions" upperBound="-1"
+        eType="#//MPermission"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minSdk" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetSdk" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//MIntentStartable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="launcherActivity" lowerBound="1"
+        eType="#//MActivity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MPermission">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MIntent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MIntentStartable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intentFilter" upperBound="-1"
+        eType="#//MIntent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MActivity" eSuperTypes="#//MIntentStartable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//MActivity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MService" eSuperTypes="#//MIntentStartable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MBroadcastReceiver" eSuperTypes="#//MIntentStartable"/>
+</ecore:EPackage>
