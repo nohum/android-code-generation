@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated androidapp-meta -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="at.fhj.androidapp.androidapp.presentation.AndroidApplicationModelModelWizardID"
+            name="%_UI_AndroidApplicationModelModelWizard_label"
+            class="at.fhj.androidapp.androidapp.presentation.AndroidApplicationModelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AndroidApplicationModelModelFile.gif">
+         <description>%_UI_AndroidApplicationModelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated androidapp-meta -->
+      <editor
+            id="at.fhj.androidapp.androidapp.presentation.AndroidApplicationModelEditorID"
+            name="%_UI_AndroidApplicationModelEditor_label"
+            icon="icons/full/obj16/AndroidApplicationModelModelFile.gif"
+            extensions="androidapplicationmodel"
+            class="at.fhj.androidapp.androidapp.presentation.AndroidApplicationModelEditor"
+            contributorClass="at.fhj.androidapp.androidapp.presentation.AndroidApplicationModelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

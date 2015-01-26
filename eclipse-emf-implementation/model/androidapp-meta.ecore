@@ -32,7 +32,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MActivity" eSuperTypes="#//MIntentStartable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//MActivity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//MActivity"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MService" eSuperTypes="#//MIntentStartable"/>
   <eClassifiers xsi:type="ecore:EClass" name="MBroadcastReceiver" eSuperTypes="#//MIntentStartable"/>
