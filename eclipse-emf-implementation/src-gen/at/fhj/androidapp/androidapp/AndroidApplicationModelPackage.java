@@ -259,10 +259,10 @@ public interface AndroidApplicationModelPackage extends EPackage {
 	int MINTENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link at.fhj.androidapp.androidapp.impl.MIntentStartableImpl <em>MIntent Startable</em>}' class.
+	 * The meta object id for the '{@link at.fhj.androidapp.androidapp.MIntentStartable <em>MIntent Startable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see at.fhj.androidapp.androidapp.impl.MIntentStartableImpl
+	 * @see at.fhj.androidapp.androidapp.MIntentStartable
 	 * @see at.fhj.androidapp.androidapp.impl.AndroidApplicationModelPackageImpl#getMIntentStartable()
 	 * @generated
 	 */
@@ -324,7 +324,7 @@ public interface AndroidApplicationModelPackage extends EPackage {
 	int MACTIVITY__TITLE = MINTENT_STARTABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' containment reference.
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -618,10 +618,10 @@ public interface AndroidApplicationModelPackage extends EPackage {
 	EAttribute getMActivity_Title();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link at.fhj.androidapp.androidapp.MActivity#getParent <em>Parent</em>}'.
+	 * Returns the meta object for the reference '{@link at.fhj.androidapp.androidapp.MActivity#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Parent</em>'.
+	 * @return the meta object for the reference '<em>Parent</em>'.
 	 * @see at.fhj.androidapp.androidapp.MActivity#getParent()
 	 * @see #getMActivity()
 	 * @generated
@@ -792,10 +792,10 @@ public interface AndroidApplicationModelPackage extends EPackage {
 		EAttribute MINTENT__NAME = eINSTANCE.getMIntent_Name();
 
 		/**
-		 * The meta object literal for the '{@link at.fhj.androidapp.androidapp.impl.MIntentStartableImpl <em>MIntent Startable</em>}' class.
+		 * The meta object literal for the '{@link at.fhj.androidapp.androidapp.MIntentStartable <em>MIntent Startable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see at.fhj.androidapp.androidapp.impl.MIntentStartableImpl
+		 * @see at.fhj.androidapp.androidapp.MIntentStartable
 		 * @see at.fhj.androidapp.androidapp.impl.AndroidApplicationModelPackageImpl#getMIntentStartable()
 		 * @generated
 		 */
@@ -828,7 +828,7 @@ public interface AndroidApplicationModelPackage extends EPackage {
 		EAttribute MACTIVITY__TITLE = eINSTANCE.getMActivity_Title();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -48,26 +48,26 @@ public interface MActivity extends MIntentStartable {
 	void setTitle(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Parent</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Parent</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent</em>' containment reference.
+	 * @return the value of the '<em>Parent</em>' reference.
 	 * @see #setParent(MActivity)
 	 * @see at.fhj.androidapp.androidapp.AndroidApplicationModelPackage#getMActivity_Parent()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	MActivity getParent();
 
 	/**
-	 * Sets the value of the '{@link at.fhj.androidapp.androidapp.MActivity#getParent <em>Parent</em>}' containment reference.
+	 * Sets the value of the '{@link at.fhj.androidapp.androidapp.MActivity#getParent <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' containment reference.
+	 * @param value the new value of the '<em>Parent</em>' reference.
 	 * @see #getParent()
 	 * @generated
 	 */

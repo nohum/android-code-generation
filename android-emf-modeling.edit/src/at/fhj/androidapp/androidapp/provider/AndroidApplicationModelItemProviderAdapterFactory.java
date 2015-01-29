@@ -164,29 +164,6 @@ public class AndroidApplicationModelItemProviderAdapterFactory extends AndroidAp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link at.fhj.androidapp.androidapp.MIntentStartable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MIntentStartableItemProvider mIntentStartableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link at.fhj.androidapp.androidapp.MIntentStartable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMIntentStartableAdapter() {
-		if (mIntentStartableItemProvider == null) {
-			mIntentStartableItemProvider = new MIntentStartableItemProvider(this);
-		}
-
-		return mIntentStartableItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link at.fhj.androidapp.androidapp.MActivity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,7 +335,6 @@ public class AndroidApplicationModelItemProviderAdapterFactory extends AndroidAp
 		if (mApplicationItemProvider != null) mApplicationItemProvider.dispose();
 		if (mPermissionItemProvider != null) mPermissionItemProvider.dispose();
 		if (mIntentItemProvider != null) mIntentItemProvider.dispose();
-		if (mIntentStartableItemProvider != null) mIntentStartableItemProvider.dispose();
 		if (mActivityItemProvider != null) mActivityItemProvider.dispose();
 		if (mServiceItemProvider != null) mServiceItemProvider.dispose();
 		if (mBroadcastReceiverItemProvider != null) mBroadcastReceiverItemProvider.dispose();

@@ -58,15 +58,6 @@ public interface AndroidApplicationModelFactory extends EFactory {
 	MIntent createMIntent();
 
 	/**
-	 * Returns a new object of class '<em>MIntent Startable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>MIntent Startable</em>'.
-	 * @generated
-	 */
-	MIntentStartable createMIntentStartable();
-
-	/**
 	 * Returns a new object of class '<em>MActivity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

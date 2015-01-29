@@ -12,12 +12,15 @@
     </genClasses>
     <genClasses ecoreClass="androidapp-meta.ecore#//MApplication">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute androidapp-meta.ecore#//MApplication/packageName"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference androidapp-meta.ecore#//MApplication/permissions"/>
+      <genFeatures notify="false" children="true" createChild="true" propertyCategory=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference androidapp-meta.ecore#//MApplication/permissions"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute androidapp-meta.ecore#//MApplication/minSdk"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute androidapp-meta.ecore#//MApplication/targetSdk"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute androidapp-meta.ecore#//MApplication/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference androidapp-meta.ecore#//MApplication/elements"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference androidapp-meta.ecore#//MApplication/launcherActivity"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference androidapp-meta.ecore#//MApplication/elements"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference androidapp-meta.ecore#//MApplication/launcherActivity"/>
     </genClasses>
     <genClasses ecoreClass="androidapp-meta.ecore#//MPermission">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute androidapp-meta.ecore#//MPermission/name"/>
@@ -26,11 +29,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute androidapp-meta.ecore#//MIntent/name"/>
     </genClasses>
     <genClasses ecoreClass="androidapp-meta.ecore#//MIntentStartable">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference androidapp-meta.ecore#//MIntentStartable/intentFilter"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference androidapp-meta.ecore#//MIntentStartable/intentFilter"/>
     </genClasses>
     <genClasses ecoreClass="androidapp-meta.ecore#//MActivity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute androidapp-meta.ecore#//MActivity/title"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference androidapp-meta.ecore#//MActivity/parent"/>
+      <genFeatures notify="false" children="true" createChild="true" propertyDescription=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference androidapp-meta.ecore#//MActivity/parent"/>
     </genClasses>
     <genClasses ecoreClass="androidapp-meta.ecore#//MService"/>
     <genClasses ecoreClass="androidapp-meta.ecore#//MBroadcastReceiver"/>

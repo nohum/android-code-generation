@@ -60,7 +60,6 @@ public class AndroidApplicationModelFactoryImpl extends EFactoryImpl implements 
 			case AndroidApplicationModelPackage.MAPPLICATION: return createMApplication();
 			case AndroidApplicationModelPackage.MPERMISSION: return createMPermission();
 			case AndroidApplicationModelPackage.MINTENT: return createMIntent();
-			case AndroidApplicationModelPackage.MINTENT_STARTABLE: return createMIntentStartable();
 			case AndroidApplicationModelPackage.MACTIVITY: return createMActivity();
 			case AndroidApplicationModelPackage.MSERVICE: return createMService();
 			case AndroidApplicationModelPackage.MBROADCAST_RECEIVER: return createMBroadcastReceiver();
@@ -107,16 +106,6 @@ public class AndroidApplicationModelFactoryImpl extends EFactoryImpl implements 
 	public MIntent createMIntent() {
 		MIntentImpl mIntent = new MIntentImpl();
 		return mIntent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public MIntentStartable createMIntentStartable() {
-		MIntentStartableImpl mIntentStartable = new MIntentStartableImpl();
-		return mIntentStartable;
 	}
 
 	/**

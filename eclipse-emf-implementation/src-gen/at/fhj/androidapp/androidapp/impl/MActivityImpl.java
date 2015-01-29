@@ -5,13 +5,19 @@ package at.fhj.androidapp.androidapp.impl;
 import at.fhj.androidapp.androidapp.AndroidApplicationModelPackage;
 import at.fhj.androidapp.androidapp.MActivity;
 
+import at.fhj.androidapp.androidapp.MIntent;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.fhj.androidapp.androidapp.impl.MActivityImpl#getIntentFilter <em>Intent Filter</em>}</li>
  *   <li>{@link at.fhj.androidapp.androidapp.impl.MActivityImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link at.fhj.androidapp.androidapp.impl.MActivityImpl#getParent <em>Parent</em>}</li>
  * </ul>
@@ -27,7 +34,17 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class MActivityImpl extends MIntentStartableImpl implements MActivity {
+public class MActivityImpl extends MinimalEObjectImpl.Container implements MActivity {
+	/**
+	 * The cached value of the '{@link #getIntentFilter() <em>Intent Filter</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntentFilter()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MIntent> intentFilter;
+
 	/**
 	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -49,7 +66,7 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	protected String title = TITLE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getParent() <em>Parent</em>}' containment reference.
+	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getParent()
@@ -82,6 +99,18 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<MIntent> getIntentFilter() {
+		if (intentFilter == null) {
+			intentFilter = new EObjectContainmentEList<MIntent>(MIntent.class, this, AndroidApplicationModelPackage.MACTIVITY__INTENT_FILTER);
+		}
+		return intentFilter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -104,6 +133,14 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	 * @generated
 	 */
 	public MActivity getParent() {
+		if (parent != null && parent.eIsProxy()) {
+			InternalEObject oldParent = (InternalEObject)parent;
+			parent = (MActivity)eResolveProxy(oldParent);
+			if (parent != oldParent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AndroidApplicationModelPackage.MACTIVITY__PARENT, oldParent, parent));
+			}
+		}
 		return parent;
 	}
 
@@ -112,14 +149,8 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetParent(MActivity newParent, NotificationChain msgs) {
-		MActivity oldParent = parent;
-		parent = newParent;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AndroidApplicationModelPackage.MACTIVITY__PARENT, oldParent, newParent);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public MActivity basicGetParent() {
+		return parent;
 	}
 
 	/**
@@ -128,17 +159,10 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	 * @generated
 	 */
 	public void setParent(MActivity newParent) {
-		if (newParent != parent) {
-			NotificationChain msgs = null;
-			if (parent != null)
-				msgs = ((InternalEObject)parent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AndroidApplicationModelPackage.MACTIVITY__PARENT, null, msgs);
-			if (newParent != null)
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AndroidApplicationModelPackage.MACTIVITY__PARENT, null, msgs);
-			msgs = basicSetParent(newParent, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AndroidApplicationModelPackage.MACTIVITY__PARENT, newParent, newParent));
+		MActivity oldParent = parent;
+		parent = newParent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AndroidApplicationModelPackage.MACTIVITY__PARENT, oldParent, parent));
 	}
 
 	/**
@@ -149,8 +173,8 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AndroidApplicationModelPackage.MACTIVITY__PARENT:
-				return basicSetParent(null, msgs);
+			case AndroidApplicationModelPackage.MACTIVITY__INTENT_FILTER:
+				return ((InternalEList<?>)getIntentFilter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -163,10 +187,13 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case AndroidApplicationModelPackage.MACTIVITY__INTENT_FILTER:
+				return getIntentFilter();
 			case AndroidApplicationModelPackage.MACTIVITY__TITLE:
 				return getTitle();
 			case AndroidApplicationModelPackage.MACTIVITY__PARENT:
-				return getParent();
+				if (resolve) return getParent();
+				return basicGetParent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,9 +203,14 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case AndroidApplicationModelPackage.MACTIVITY__INTENT_FILTER:
+				getIntentFilter().clear();
+				getIntentFilter().addAll((Collection<? extends MIntent>)newValue);
+				return;
 			case AndroidApplicationModelPackage.MACTIVITY__TITLE:
 				setTitle((String)newValue);
 				return;
@@ -197,6 +229,9 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case AndroidApplicationModelPackage.MACTIVITY__INTENT_FILTER:
+				getIntentFilter().clear();
+				return;
 			case AndroidApplicationModelPackage.MACTIVITY__TITLE:
 				setTitle(TITLE_EDEFAULT);
 				return;
@@ -215,6 +250,8 @@ public class MActivityImpl extends MIntentStartableImpl implements MActivity {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case AndroidApplicationModelPackage.MACTIVITY__INTENT_FILTER:
+				return intentFilter != null && !intentFilter.isEmpty();
 			case AndroidApplicationModelPackage.MACTIVITY__TITLE:
 				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case AndroidApplicationModelPackage.MACTIVITY__PARENT:

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see at.fhj.androidapp.androidapp.AndroidApplicationModelPackage#getMIntentStartable()
- * @model
+ * @model interface="true" abstract="true"
  * @generated
  */
 public interface MIntentStartable extends EObject {
