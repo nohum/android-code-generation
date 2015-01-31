@@ -1,4 +1,4 @@
-grammar at.fhj.gaar.androidapp.AppDsl with at.fhj.gaar.androidapp.Terminals
+grammar at.fhj.gaar.androidapp.AppDsl with org.eclipse.xtext.common.Terminals
 
 generate appDsl "http://www.fhj.at/gaar/androidapp/AppDsl"
 
@@ -7,7 +7,7 @@ AndroidAppProject :
 ;
 
 Application:
-	'application' packageName = PACKAGENAME
+	'application' packageName = PackageName
 	'{'
 		'title' title = STRING
 		'min-sdk' minSdk = INT
@@ -15,8 +15,12 @@ Application:
 		('compile-sdk' compileSdk = INT)?
 		'permissions' permissions = [PermissionList]
 		'elements' elements = [ElementList]
-		'mainactivity' launcherActivity = Activity
+		'main-activity' launcherActivity = STRING
 	'}'
+;
+
+PackageName:
+	ID ('.' ID)*
 ;
 
 PermissionList: (
@@ -24,7 +28,7 @@ PermissionList: (
 );
 
 Permission:
-	PACKAGENAME // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+	PackageName // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 ;
 
 ElementList: (

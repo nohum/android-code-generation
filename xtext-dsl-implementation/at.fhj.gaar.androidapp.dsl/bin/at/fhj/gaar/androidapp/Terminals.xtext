@@ -1,4 +1,0 @@
-grammar at.fhj.gaar.androidapp.Terminals with org.eclipse.xtext.common.Terminals
-
-terminal JAVAIDENTIFIER: ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-terminal PACKAGENAME: JAVAIDENTIFIER ('.' JAVAIDENTIFIER)*;
