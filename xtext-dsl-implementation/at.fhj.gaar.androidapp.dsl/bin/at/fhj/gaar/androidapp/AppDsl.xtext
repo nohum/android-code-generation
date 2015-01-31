@@ -1,0 +1,9 @@
+grammar at.fhj.gaar.androidapp.AppDsl with org.eclipse.xtext.common.Terminals
+
+generate appDsl "http://www.fhj.at/gaar/androidapp/AppDsl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

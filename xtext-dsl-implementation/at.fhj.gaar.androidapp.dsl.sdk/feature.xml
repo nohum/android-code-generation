@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="at.fhj.gaar.androidapp.dsl.sdk"
+	label="AppDsl SDK Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="at.fhj.gaar.androidapp.dsl"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="at.fhj.gaar.androidapp.dsl.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>
