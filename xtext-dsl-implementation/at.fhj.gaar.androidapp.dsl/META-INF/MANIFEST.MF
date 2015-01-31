@@ -11,6 +11,25 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.apache.commons.logging;bundle-version="1.0.4";resolution:=optional,
  org.eclipse.emf.codegen.ecore;resolution:=optional,
  org.eclipse.emf.mwe.utils;resolution:=optional,
- org.eclipse.emf.mwe2.launch;resolution:=optional
+ org.eclipse.emf.mwe2.launch;resolution:=optional,
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: at.fhj.gaar.androidapp,
+ at.fhj.gaar.androidapp.services,
+ at.fhj.gaar.androidapp.appDsl,
+ at.fhj.gaar.androidapp.appDsl.impl,
+ at.fhj.gaar.androidapp.appDsl.util,
+ at.fhj.gaar.androidapp.serializer,
+ at.fhj.gaar.androidapp.parser.antlr,
+ at.fhj.gaar.androidapp.parser.antlr.internal,
+ at.fhj.gaar.androidapp.validation,
+ at.fhj.gaar.androidapp.scoping,
+ at.fhj.gaar.androidapp.generator,
+ at.fhj.gaar.androidapp.formatting

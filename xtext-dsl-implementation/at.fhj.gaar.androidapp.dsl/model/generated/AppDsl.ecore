@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="appDsl" nsURI="http://www.fhj.at/gaar/androidapp/AppDsl" nsPrefix="appDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="AndroidAppProject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applications" upperBound="-1"
+        eType="#//Application" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Application">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//ApplicationAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationTitle" eSuperTypes="#//ApplicationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationMinSdk" eSuperTypes="#//ApplicationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minSdk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationTargetSdk" eSuperTypes="#//ApplicationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetSdk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationCompileSdk" eSuperTypes="#//ApplicationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compileSdk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationPermissionList" eSuperTypes="#//ApplicationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permissions" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationElementList" eSuperTypes="#//ApplicationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elements" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationMainActivity" eSuperTypes="#//ApplicationAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="launcherActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

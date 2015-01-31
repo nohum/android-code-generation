@@ -3,37 +3,62 @@ grammar at.fhj.gaar.androidapp.AppDsl with org.eclipse.xtext.common.Terminals
 generate appDsl "http://www.fhj.at/gaar/androidapp/AppDsl"
 
 AndroidAppProject :
-	(applications += Application)*
+	(applications += Application) (',' applications += Application)*
 ;
 
 Application:
 	'application' packageName = PackageName
 	'{'
-		'title' title = STRING
-		'min-sdk' minSdk = INT
-		('target-sdk' targetSdk = INT)?
-		('compile-sdk' compileSdk = INT)?
-		'permissions' permissions = [PermissionList]
-		'elements' elements = [ElementList]
-		'main-activity' launcherActivity = STRING
+		// allow only one attribute or more than one (separated by ",")
+		attributes += ApplicationAttribute (',' attributes += ApplicationAttribute)*
 	'}'
 ;
 
 PackageName:
-	ID ('.' ID)*
+	STRING // TODO only allow java package names
 ;
 
-PermissionList: (
-	'[' values += Permission (',' values += Permission)* ']' | values += Permission
-);
+ApplicationAttribute:
+	ApplicationTitle |
+	ApplicationMinSdk |
+	ApplicationTargetSdk |
+	ApplicationCompileSdk |
+	ApplicationPermissionList |
+	ApplicationElementList |
+	ApplicationMainActivity
+;
+
+ApplicationTitle: 
+	'title' title = STRING
+;
+
+ApplicationMinSdk:
+	'min-sdk' minSdk = INT
+;
+
+ApplicationTargetSdk:
+	'target-sdk' targetSdk = INT
+;
+
+ApplicationCompileSdk:
+	'compile-sdk' compileSdk = INT
+;
+
+ApplicationPermissionList:
+	'permissions' '[' permissions += Permission (',' permissions += Permission)* ']'
+;
+
+ApplicationElementList:
+	'elements' '[' elements += IntentStartable (',' elements += IntentStartable)* ']'
+;
+
+ApplicationMainActivity:
+	'main-activity' launcherActivity = STRING
+;
 
 Permission:
 	PackageName // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 ;
-
-ElementList: (
-	'[' values += IntentStartable (',' values += IntentStartable)* ']' | values += IntentStartable
-);
 
 IntentStartable: 
 	Activity | BroadcastReceiver | Service

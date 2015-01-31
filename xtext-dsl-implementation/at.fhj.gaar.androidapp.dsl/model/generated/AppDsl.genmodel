@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.fhj.gaar.androidapp.dsl/src-gen" editDirectory="/at.fhj.gaar.androidapp.dsl.edit/src"
+    editorDirectory="/at.fhj.gaar.androidapp.dsl.editor/src" modelPluginID="at.fhj.gaar.androidapp.dsl"
+    forceOverwrite="true" modelName="AppDsl" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="at.fhj.gaar.androidapp.dsl.edit"
+    editorPluginID="at.fhj.gaar.androidapp.dsl.editor" runtimeVersion="2.10">
+  <genPackages prefix="AppDsl" basePackage="at.fhj.gaar.androidapp" disposableProviderFactory="true"
+      fileExtensions="androidapp" ecorePackage="AppDsl.ecore#/">
+    <genClasses ecoreClass="AppDsl.ecore#//AndroidAppProject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//AndroidAppProject/applications"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//Application">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Application/packageName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Application/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationAttribute"/>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationTitle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationTitle/title"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationMinSdk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationMinSdk/minSdk"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationTargetSdk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationTargetSdk/targetSdk"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationCompileSdk">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationCompileSdk/compileSdk"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationPermissionList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationPermissionList/permissions"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationElementList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationElementList/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationMainActivity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationMainActivity/launcherActivity"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

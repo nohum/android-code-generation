@@ -1,35 +1,64 @@
-grammar at.fhj.gaar.androidapp.AppDsl with at.fhj.gaar.androidapp.Terminals
+grammar at.fhj.gaar.androidapp.AppDsl with org.eclipse.xtext.common.Terminals
 
 generate appDsl "http://www.fhj.at/gaar/androidapp/AppDsl"
 
 AndroidAppProject :
-	(applications += Application)*
+	(applications += Application) (',' applications += Application)*
 ;
 
 Application:
-	'application' packageName = PACKAGENAME
+	'application' packageName = PackageName
 	'{'
-		'title' title = STRING
-		'min-sdk' minSdk = INT
-		('target-sdk' targetSdk = INT)?
-		('compile-sdk' compileSdk = INT)?
-		'permissions' permissions = [PermissionList]
-		'elements' elements = [ElementList]
-		'mainactivity' launcherActivity = Activity
+		// allow only one attribute or more than one (separated by ",")
+		attributes += ApplicationAttribute (',' attributes += ApplicationAttribute)*
 	'}'
 ;
 
-PermissionList: (
-	'[' values += Permission (',' values += Permission)* ']' | values += Permission
-);
-
-Permission:
-	PACKAGENAME // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+PackageName:
+	STRING // TODO only allow java package names
 ;
 
-ElementList: (
-	'[' values += IntentStartable (',' values += IntentStartable)* ']' | values += IntentStartable
-);
+ApplicationAttribute:
+	ApplicationTitle |
+	ApplicationMinSdk |
+	ApplicationTargetSdk |
+	ApplicationCompileSdk |
+	ApplicationPermissionList |
+	ApplicationElementList |
+	ApplicationMainActivity
+;
+
+ApplicationTitle: 
+	'title' title = STRING
+;
+
+ApplicationMinSdk:
+	'min-sdk' minSdk = INT
+;
+
+ApplicationTargetSdk:
+	'target-sdk' targetSdk = INT
+;
+
+ApplicationCompileSdk:
+	'compile-sdk' compileSdk = INT
+;
+
+ApplicationPermissionList:
+	'permissions' '[' permissions += Permission (',' permissions += Permission)* ']'
+;
+
+ApplicationElementList:
+	'elements' '[' elements += IntentStartable (',' elements += IntentStartable)* ']'
+;
+
+ApplicationMainActivity:
+	'main-activity' launcherActivity = STRING
+;
+
+Permission:
+	PackageName // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+;
 
 IntentStartable: 
 	Activity | BroadcastReceiver | Service
