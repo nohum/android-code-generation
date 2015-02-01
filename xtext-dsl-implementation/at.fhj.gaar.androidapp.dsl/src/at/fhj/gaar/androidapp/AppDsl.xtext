@@ -57,6 +57,7 @@ ApplicationCompileSdk:
 ApplicationPermissionList:
 	'permissions'
 	'['
+		// TODO make empty list possible
 		permissions += Permission (',' permissions += Permission)*
 	']'
 ;
@@ -64,6 +65,7 @@ ApplicationPermissionList:
 ApplicationElementList:
 	'elements'
 	'['
+		// TODO make empty list possible
 		elements += ApplicationElement (',' elements += ApplicationElement)*
 	']'
 ;
