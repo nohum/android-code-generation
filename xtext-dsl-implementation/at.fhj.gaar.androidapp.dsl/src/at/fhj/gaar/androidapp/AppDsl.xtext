@@ -29,17 +29,13 @@ PackageName:
 ;
 
 ApplicationAttribute:
-	ApplicationTitle |
+	ElementLabelAttribute |
 	ApplicationMinSdk |
 	ApplicationTargetSdk |
 	ApplicationCompileSdk |
 	ApplicationPermissionList |
 	ApplicationElementList |
 	ApplicationMainActivity
-;
-
-ApplicationTitle: 
-	'title' title = STRING
 ;
 
 ApplicationMinSdk:
@@ -71,7 +67,7 @@ ApplicationElementList:
 ;
 
 ApplicationMainActivity:
-	'main-activity' launcherActivity = STRING
+	'main-activity' launcherActivity = ClassName
 ;
 
 Permission:
@@ -85,6 +81,7 @@ ApplicationElement:
 Activity:
 	'activity' className = ClassName
 	'{'
+		// TODO make empty list possible
 		attributes += ActivityAttribute (',' attributes += ActivityAttribute)*
 	'}'
 ;
@@ -92,6 +89,7 @@ Activity:
 BroadcastReceiver:
 	'receiver' className = ClassName
 	'{'
+		// TODO make empty list possible
 		attributes += BroadcastReceiverAttribute (',' attributes += BroadcastReceiverAttribute)*
 	'}'
 ;
@@ -99,23 +97,32 @@ BroadcastReceiver:
 Service:
 	'service' className = ClassName
 	'{'
+		// TODO make empty list possible
 		attributes += ServiceAttribute (',' attributes += ServiceAttribute)*
 	'}'
 ;
 
 ActivityAttribute:
 	ElementEnabledAttribute |
-	ElementExportedAttribute
+	ElementExportedAttribute |
+	ElementLabelAttribute |
+	ElementIntentList |
+	ActivityParentAttribute
 ;
 
 BroadcastReceiverAttribute:
 	ElementEnabledAttribute |
-	ElementExportedAttribute
+	ElementExportedAttribute |
+	ElementLabelAttribute |
+	ElementIntentList |
+	BroadcastReceiverActionAttribute
 ;
 
 ServiceAttribute:
 	ElementEnabledAttribute |
-	ElementExportedAttribute
+	ElementExportedAttribute |
+	ElementLabelAttribute |
+	ElementIntentList
 ;
 
 ElementEnabledAttribute:
@@ -124,4 +131,46 @@ ElementEnabledAttribute:
 
 ElementExportedAttribute:
 	'exported' exported = BOOLEAN
+;
+
+ElementLabelAttribute:
+	'title' title = STRING
+;
+
+ElementIntentList:
+	'intents'
+	'['
+		// TODO make empty list possible
+		intents += Intent (',' intents += Intent)*
+	']'
+;
+
+Intent:
+	PackageName
+;
+
+ActivityParentAttribute:
+	'parent' parent = ClassName
+;
+
+BroadcastReceiverActionAttribute:
+	'action' action = BroadcastReceiverAction
+;
+
+BroadcastReceiverAction:
+	ActionShowToast |
+	ActionStartActivity |
+	ActionStartService
+;
+
+ActionShowToast:
+	'show-toast' toastText = STRING
+;
+
+ActionStartActivity:
+	'start-activity' activity = ClassName
+;
+
+ActionStartService:
+	'start-service' service = ClassName
 ;
