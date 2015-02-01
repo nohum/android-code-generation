@@ -215,6 +215,34 @@ ruleApplication returns [EObject current=null]
 
 
 
+// Entry rule entryRuleJavaIdentifier
+entryRuleJavaIdentifier returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getJavaIdentifierRule()); } 
+	 iv_ruleJavaIdentifier=ruleJavaIdentifier 
+	 { $current=$iv_ruleJavaIdentifier.current.getText(); }  
+	 EOF 
+;
+
+// Rule JavaIdentifier
+ruleJavaIdentifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+    this_ID_0=RULE_ID    {
+		$current.merge(this_ID_0);
+    }
+
+    { 
+    newLeafNode(this_ID_0, grammarAccess.getJavaIdentifierAccess().getIDTerminalRuleCall()); 
+    }
+
+    ;
+
+
+
+
+
 // Entry rule entryRuleClassName
 entryRuleClassName returns [String current=null] 
 	:
@@ -1621,9 +1649,9 @@ ruleLayoutElement returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
+(
     { 
-        newCompositeNode(grammarAccess.getLayoutElementAccess().getButtonParserRuleCall()); 
+        newCompositeNode(grammarAccess.getLayoutElementAccess().getButtonParserRuleCall_0()); 
     }
     this_Button_0=ruleButton
     { 
@@ -1631,6 +1659,25 @@ ruleLayoutElement returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
+    |
+    { 
+        newCompositeNode(grammarAccess.getLayoutElementAccess().getSpacerParserRuleCall_1()); 
+    }
+ruleSpacer
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getLayoutElementAccess().getTextParserRuleCall_2()); 
+    }
+    this_Text_2=ruleText
+    { 
+        $current = $this_Text_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 
 
@@ -1657,19 +1704,19 @@ ruleButton returns [EObject current=null]
     }
 (
 (
-		lv_buttonName_1_0=RULE_ID
-		{
-			newLeafNode(lv_buttonName_1_0, grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getButtonAccess().getButtonNameJavaIdentifierParserRuleCall_1_0()); 
+	    }
+		lv_buttonName_1_0=ruleJavaIdentifier		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getButtonRule());
+	            $current = createModelElementForParent(grammarAccess.getButtonRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"buttonName",
         		lv_buttonName_1_0, 
-        		"ID");
+        		"JavaIdentifier");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -1844,6 +1891,76 @@ ruleButtonActionAttribute returns [EObject current=null]
         		lv_action_1_0, 
         		"LayoutElementClickAction");
 	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleSpacer
+entryRuleSpacer returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSpacerRule()); } 
+	 iv_ruleSpacer=ruleSpacer 
+	 { $current=$iv_ruleSpacer.current.getText(); }  
+	 EOF 
+;
+
+// Rule Spacer
+ruleSpacer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='spacer' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSpacerAccess().getSpacerKeyword()); 
+    }
+
+    ;
+
+
+
+
+
+// Entry rule entryRuleText
+entryRuleText returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTextRule()); }
+	 iv_ruleText=ruleText 
+	 { $current=$iv_ruleText.current; } 
+	 EOF 
+;
+
+// Rule Text
+ruleText returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='text' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getTextAccess().getTextKeyword_0());
+    }
+(
+(
+		lv_text_1_0=RULE_STRING
+		{
+			newLeafNode(lv_text_1_0, grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTextRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"text",
+        		lv_text_1_0, 
+        		"STRING");
 	    }
 
 )

@@ -113,6 +113,18 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 
+	public class JavaIdentifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JavaIdentifier");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//JavaIdentifier:
+		//	ID;
+		public ParserRule getRule() { return rule; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
+
 	public class ClassNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ClassName");
 		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
@@ -919,14 +931,26 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class LayoutElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LayoutElement");
-		private final RuleCall cButtonParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cButtonParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSpacerParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cTextParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//LayoutElement:
-		//	Button;
+		//	Button | Spacer | Text;
 		public ParserRule getRule() { return rule; }
 
+		//Button | Spacer | Text
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//Button
-		public RuleCall getButtonParserRuleCall() { return cButtonParserRuleCall; }
+		public RuleCall getButtonParserRuleCall_0() { return cButtonParserRuleCall_0; }
+
+		//Spacer
+		public RuleCall getSpacerParserRuleCall_1() { return cSpacerParserRuleCall_1; }
+
+		//Text
+		public RuleCall getTextParserRuleCall_2() { return cTextParserRuleCall_2; }
 	}
 
 	public class ButtonElements extends AbstractParserRuleElementFinder {
@@ -934,7 +958,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cButtonKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cButtonNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cButtonNameIDTerminalRuleCall_1_0 = (RuleCall)cButtonNameAssignment_1.eContents().get(0);
+		private final RuleCall cButtonNameJavaIdentifierParserRuleCall_1_0 = (RuleCall)cButtonNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAttributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAttributesButtonAttributeParserRuleCall_3_0 = (RuleCall)cAttributesAssignment_3.eContents().get(0);
@@ -945,22 +969,22 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Button:
-		//	"button" buttonName=ID "{" // TODO make empty list possible
+		//	"button" buttonName=JavaIdentifier "{" // TODO make empty list possible
 		//	attributes+=ButtonAttribute ("," attributes+=ButtonAttribute)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"button" buttonName=ID "{" // TODO make empty list possible
+		//"button" buttonName=JavaIdentifier "{" // TODO make empty list possible
 		//attributes+=ButtonAttribute ("," attributes+=ButtonAttribute)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"button"
 		public Keyword getButtonKeyword_0() { return cButtonKeyword_0; }
 
-		//buttonName=ID
+		//buttonName=JavaIdentifier
 		public Assignment getButtonNameAssignment_1() { return cButtonNameAssignment_1; }
 
-		//ID
-		public RuleCall getButtonNameIDTerminalRuleCall_1_0() { return cButtonNameIDTerminalRuleCall_1_0; }
+		//JavaIdentifier
+		public RuleCall getButtonNameJavaIdentifierParserRuleCall_1_0() { return cButtonNameJavaIdentifierParserRuleCall_1_0; }
 
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
@@ -1054,6 +1078,42 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//LayoutElementClickAction
 		public RuleCall getActionLayoutElementClickActionParserRuleCall_1_0() { return cActionLayoutElementClickActionParserRuleCall_1_0; }
+	}
+
+	public class SpacerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Spacer");
+		private final Keyword cSpacerKeyword = (Keyword)rule.eContents().get(1);
+		
+		//Spacer:
+		//	"spacer";
+		public ParserRule getRule() { return rule; }
+
+		//"spacer"
+		public Keyword getSpacerKeyword() { return cSpacerKeyword; }
+	}
+
+	public class TextElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Text");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTextKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_1_0 = (RuleCall)cTextAssignment_1.eContents().get(0);
+		
+		//Text:
+		//	"text" text=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//"text" text=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"text"
+		public Keyword getTextKeyword_0() { return cTextKeyword_0; }
+
+		//text=STRING
+		public Assignment getTextAssignment_1() { return cTextAssignment_1; }
+
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_1_0() { return cTextSTRINGTerminalRuleCall_1_0; }
 	}
 
 	public class LayoutElementClickActionElements extends AbstractParserRuleElementFinder {
@@ -1204,6 +1264,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final AndroidAppProjectElements pAndroidAppProject;
 	private final TerminalRule tBOOLEAN;
 	private final ApplicationElements pApplication;
+	private final JavaIdentifierElements pJavaIdentifier;
 	private final ClassNameElements pClassName;
 	private final PackageNameElements pPackageName;
 	private final ApplicationAttributeElements pApplicationAttribute;
@@ -1233,6 +1294,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ButtonAttributeElements pButtonAttribute;
 	private final ButtonLabelAttributeElements pButtonLabelAttribute;
 	private final ButtonActionAttributeElements pButtonActionAttribute;
+	private final SpacerElements pSpacer;
+	private final TextElements pText;
 	private final LayoutElementClickActionElements pLayoutElementClickAction;
 	private final BroadcastReceiverActionAttributeElements pBroadcastReceiverActionAttribute;
 	private final BroadcastReceiverActionElements pBroadcastReceiverAction;
@@ -1252,6 +1315,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAndroidAppProject = new AndroidAppProjectElements();
 		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
 		this.pApplication = new ApplicationElements();
+		this.pJavaIdentifier = new JavaIdentifierElements();
 		this.pClassName = new ClassNameElements();
 		this.pPackageName = new PackageNameElements();
 		this.pApplicationAttribute = new ApplicationAttributeElements();
@@ -1281,6 +1345,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pButtonAttribute = new ButtonAttributeElements();
 		this.pButtonLabelAttribute = new ButtonLabelAttributeElements();
 		this.pButtonActionAttribute = new ButtonActionAttributeElements();
+		this.pSpacer = new SpacerElements();
+		this.pText = new TextElements();
 		this.pLayoutElementClickAction = new LayoutElementClickActionElements();
 		this.pBroadcastReceiverActionAttribute = new BroadcastReceiverActionAttributeElements();
 		this.pBroadcastReceiverAction = new BroadcastReceiverActionElements();
@@ -1341,6 +1407,16 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getApplicationRule() {
 		return getApplicationAccess().getRule();
+	}
+
+	//JavaIdentifier:
+	//	ID;
+	public JavaIdentifierElements getJavaIdentifierAccess() {
+		return pJavaIdentifier;
+	}
+	
+	public ParserRule getJavaIdentifierRule() {
+		return getJavaIdentifierAccess().getRule();
 	}
 
 	//ClassName:
@@ -1594,7 +1670,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LayoutElement:
-	//	Button;
+	//	Button | Spacer | Text;
 	public LayoutElementElements getLayoutElementAccess() {
 		return pLayoutElement;
 	}
@@ -1604,7 +1680,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Button:
-	//	"button" buttonName=ID "{" // TODO make empty list possible
+	//	"button" buttonName=JavaIdentifier "{" // TODO make empty list possible
 	//	attributes+=ButtonAttribute ("," attributes+=ButtonAttribute)* "}";
 	public ButtonElements getButtonAccess() {
 		return pButton;
@@ -1642,6 +1718,26 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getButtonActionAttributeRule() {
 		return getButtonActionAttributeAccess().getRule();
+	}
+
+	//Spacer:
+	//	"spacer";
+	public SpacerElements getSpacerAccess() {
+		return pSpacer;
+	}
+	
+	public ParserRule getSpacerRule() {
+		return getSpacerAccess().getRule();
+	}
+
+	//Text:
+	//	"text" text=STRING;
+	public TextElements getTextAccess() {
+		return pText;
+	}
+	
+	public ParserRule getTextRule() {
+		return getTextAccess().getRule();
 	}
 
 	//LayoutElementClickAction:

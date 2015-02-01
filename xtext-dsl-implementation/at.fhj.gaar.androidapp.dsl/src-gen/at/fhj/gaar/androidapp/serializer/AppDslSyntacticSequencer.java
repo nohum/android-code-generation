@@ -23,9 +23,21 @@ public class AppDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if(ruleCall.getRule() == grammarAccess.getSpacerRule())
+			return getSpacerToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * Spacer:
+	 * 	'spacer'
+	 * ;
+	 */
+	protected String getSpacerToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "spacer";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

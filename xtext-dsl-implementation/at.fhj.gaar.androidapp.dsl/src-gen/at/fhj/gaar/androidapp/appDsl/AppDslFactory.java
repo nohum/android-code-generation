@@ -266,6 +266,15 @@ public interface AppDslFactory extends EFactory
   ButtonActionAttribute createButtonActionAttribute();
 
   /**
+   * Returns a new object of class '<em>Text</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text</em>'.
+   * @generated
+   */
+  Text createText();
+
+  /**
    * Returns a new object of class '<em>Layout Element Click Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

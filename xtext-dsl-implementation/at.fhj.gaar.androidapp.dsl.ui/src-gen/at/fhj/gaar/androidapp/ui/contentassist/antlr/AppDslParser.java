@@ -42,6 +42,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActivityAttributeAccess().getAlternatives(), "rule__ActivityAttribute__Alternatives");
 					put(grammarAccess.getBroadcastReceiverAttributeAccess().getAlternatives(), "rule__BroadcastReceiverAttribute__Alternatives");
 					put(grammarAccess.getServiceAttributeAccess().getAlternatives(), "rule__ServiceAttribute__Alternatives");
+					put(grammarAccess.getLayoutElementAccess().getAlternatives(), "rule__LayoutElement__Alternatives");
 					put(grammarAccess.getButtonAttributeAccess().getAlternatives(), "rule__ButtonAttribute__Alternatives");
 					put(grammarAccess.getLayoutElementClickActionAccess().getAlternatives(), "rule__LayoutElementClickAction__Alternatives");
 					put(grammarAccess.getBroadcastReceiverActionAccess().getAlternatives(), "rule__BroadcastReceiverAction__Alternatives");
@@ -77,6 +78,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getButtonAccess().getGroup_4(), "rule__Button__Group_4__0");
 					put(grammarAccess.getButtonLabelAttributeAccess().getGroup(), "rule__ButtonLabelAttribute__Group__0");
 					put(grammarAccess.getButtonActionAttributeAccess().getGroup(), "rule__ButtonActionAttribute__Group__0");
+					put(grammarAccess.getTextAccess().getGroup(), "rule__Text__Group__0");
 					put(grammarAccess.getBroadcastReceiverActionAttributeAccess().getGroup(), "rule__BroadcastReceiverActionAttribute__Group__0");
 					put(grammarAccess.getActionShowToastAccess().getGroup(), "rule__ActionShowToast__Group__0");
 					put(grammarAccess.getActionStartActivityAccess().getGroup(), "rule__ActionStartActivity__Group__0");
@@ -116,6 +118,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getButtonAccess().getAttributesAssignment_4_1(), "rule__Button__AttributesAssignment_4_1");
 					put(grammarAccess.getButtonLabelAttributeAccess().getTitleAssignment_1(), "rule__ButtonLabelAttribute__TitleAssignment_1");
 					put(grammarAccess.getButtonActionAttributeAccess().getActionAssignment_1(), "rule__ButtonActionAttribute__ActionAssignment_1");
+					put(grammarAccess.getTextAccess().getTextAssignment_1(), "rule__Text__TextAssignment_1");
 					put(grammarAccess.getBroadcastReceiverActionAttributeAccess().getActionAssignment_1(), "rule__BroadcastReceiverActionAttribute__ActionAssignment_1");
 					put(grammarAccess.getActionShowToastAccess().getToastTextAssignment_1(), "rule__ActionShowToast__ToastTextAssignment_1");
 					put(grammarAccess.getActionStartActivityAccess().getActivityAssignment_1(), "rule__ActionStartActivity__ActivityAssignment_1");

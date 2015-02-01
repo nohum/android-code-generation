@@ -9,15 +9,14 @@ AndroidAppProject:
 ;
 
 terminal BOOLEAN returns ecore::EBoolean:
-    'true' | 'false' | 'TRUE' | 'FALSE'
+    'true' |
+    'false' |
+    'TRUE' |
+    'FALSE'
 ;
 
-Application:
-	'application' packageName = PackageName
-	'{'
-		// allow only one attribute or more than one (separated by ",")
-		attributes += ApplicationAttribute (',' attributes += ApplicationAttribute)*
-	'}'
+JavaIdentifier:
+	ID
 ;
 
 ClassName:
@@ -26,6 +25,14 @@ ClassName:
 
 PackageName:
 	ID ('.' ID)*
+;
+
+Application:
+	'application' packageName = PackageName
+	'{'
+		// allow only one attribute or more than one (separated by ",")
+		attributes += ApplicationAttribute (',' attributes += ApplicationAttribute)*
+	'}'
 ;
 
 ApplicationAttribute:
@@ -163,11 +170,11 @@ ActivityLayoutAttribute:
 ;
 
 LayoutElement:
-	Button
+	Button | Spacer | Text
 ;
 
 Button:
-	'button' buttonName = ID
+	'button' buttonName = JavaIdentifier
 	'{'
 		// TODO make empty list possible
 		attributes += ButtonAttribute (',' attributes += ButtonAttribute)*
@@ -185,6 +192,14 @@ ButtonLabelAttribute:
 
 ButtonActionAttribute:
 	'action' action = LayoutElementClickAction
+;
+
+Spacer:
+	'spacer'
+;
+
+Text:
+	'text' text = STRING
 ;
 
 LayoutElementClickAction:

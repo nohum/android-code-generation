@@ -91,6 +91,7 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
       case AppDslPackage.BUTTON_ATTRIBUTE: return createButtonAttribute();
       case AppDslPackage.BUTTON_LABEL_ATTRIBUTE: return createButtonLabelAttribute();
       case AppDslPackage.BUTTON_ACTION_ATTRIBUTE: return createButtonActionAttribute();
+      case AppDslPackage.TEXT: return createText();
       case AppDslPackage.LAYOUT_ELEMENT_CLICK_ACTION: return createLayoutElementClickAction();
       case AppDslPackage.BROADCAST_RECEIVER_ACTION_ATTRIBUTE: return createBroadcastReceiverActionAttribute();
       case AppDslPackage.BROADCAST_RECEIVER_ACTION: return createBroadcastReceiverAction();
@@ -397,6 +398,17 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
   {
     ButtonActionAttributeImpl buttonActionAttribute = new ButtonActionAttributeImpl();
     return buttonActionAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Text createText()
+  {
+    TextImpl text = new TextImpl();
+    return text;
   }
 
   /**

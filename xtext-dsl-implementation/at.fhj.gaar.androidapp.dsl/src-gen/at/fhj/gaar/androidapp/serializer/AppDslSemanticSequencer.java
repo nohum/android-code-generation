@@ -25,6 +25,7 @@ import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
 import at.fhj.gaar.androidapp.appDsl.Service;
+import at.fhj.gaar.androidapp.appDsl.Text;
 import at.fhj.gaar.androidapp.services.AppDslGrammarAccess;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -223,6 +224,13 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				if(context == grammarAccess.getApplicationElementRule() ||
 				   context == grammarAccess.getServiceRule()) {
 					sequence_Service(context, (Service) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.TEXT:
+				if(context == grammarAccess.getLayoutElementRule() ||
+				   context == grammarAccess.getTextRule()) {
+					sequence_Text(context, (Text) semanticObject); 
 					return; 
 				}
 				else break;
@@ -471,7 +479,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (buttonName=ID attributes+=ButtonAttribute attributes+=ButtonAttribute*)
+	 *     (buttonName=JavaIdentifier attributes+=ButtonAttribute attributes+=ButtonAttribute*)
 	 */
 	protected void sequence_Button(EObject context, Button semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -541,5 +549,21 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_Service(EObject context, Service semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     text=STRING
+	 */
+	protected void sequence_Text(EObject context, Text semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.TEXT__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.TEXT__TEXT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_0(), semanticObject.getText());
+		feeder.finish();
 	}
 }

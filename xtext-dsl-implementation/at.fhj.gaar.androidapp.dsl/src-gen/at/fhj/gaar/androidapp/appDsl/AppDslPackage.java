@@ -804,6 +804,34 @@ public interface AppDslPackage extends EPackage
   int BUTTON_ACTION_ATTRIBUTE_FEATURE_COUNT = BUTTON_ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.TextImpl <em>Text</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.TextImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getText()
+   * @generated
+   */
+  int TEXT = 27;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__TEXT = LAYOUT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Text</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT_FEATURE_COUNT = LAYOUT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.LayoutElementClickActionImpl <em>Layout Element Click Action</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -811,7 +839,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getLayoutElementClickAction()
    * @generated
    */
-  int LAYOUT_ELEMENT_CLICK_ACTION = 27;
+  int LAYOUT_ELEMENT_CLICK_ACTION = 28;
 
   /**
    * The number of structural features of the '<em>Layout Element Click Action</em>' class.
@@ -830,7 +858,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverActionAttribute()
    * @generated
    */
-  int BROADCAST_RECEIVER_ACTION_ATTRIBUTE = 28;
+  int BROADCAST_RECEIVER_ACTION_ATTRIBUTE = 29;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -858,7 +886,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverAction()
    * @generated
    */
-  int BROADCAST_RECEIVER_ACTION = 29;
+  int BROADCAST_RECEIVER_ACTION = 30;
 
   /**
    * The number of structural features of the '<em>Broadcast Receiver Action</em>' class.
@@ -877,7 +905,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionShowToast()
    * @generated
    */
-  int ACTION_SHOW_TOAST = 30;
+  int ACTION_SHOW_TOAST = 31;
 
   /**
    * The feature id for the '<em><b>Toast Text</b></em>' attribute.
@@ -905,7 +933,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionStartActivity()
    * @generated
    */
-  int ACTION_START_ACTIVITY = 31;
+  int ACTION_START_ACTIVITY = 32;
 
   /**
    * The feature id for the '<em><b>Activity</b></em>' attribute.
@@ -933,7 +961,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionStartService()
    * @generated
    */
-  int ACTION_START_SERVICE = 32;
+  int ACTION_START_SERVICE = 33;
 
   /**
    * The feature id for the '<em><b>Service</b></em>' attribute.
@@ -1476,6 +1504,27 @@ public interface AppDslPackage extends EPackage
    * @generated
    */
   EReference getButtonActionAttribute_Action();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Text <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Text</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Text
+   * @generated
+   */
+  EClass getText();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.Text#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Text</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Text#getText()
+   * @see #getText()
+   * @generated
+   */
+  EAttribute getText_Text();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction <em>Layout Element Click Action</em>}'.
@@ -2057,6 +2106,24 @@ public interface AppDslPackage extends EPackage
      * @generated
      */
     EReference BUTTON_ACTION_ATTRIBUTE__ACTION = eINSTANCE.getButtonActionAttribute_Action();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.TextImpl <em>Text</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.TextImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getText()
+     * @generated
+     */
+    EClass TEXT = eINSTANCE.getText();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEXT__TEXT = eINSTANCE.getText_Text();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.LayoutElementClickActionImpl <em>Layout Element Click Action</em>}' class.

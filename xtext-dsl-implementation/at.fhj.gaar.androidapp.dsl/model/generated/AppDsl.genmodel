@@ -78,6 +78,9 @@
     <genClasses ecoreClass="AppDsl.ecore#//ButtonActionAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ButtonActionAttribute/action"/>
     </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Text/text"/>
+    </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//LayoutElementClickAction"/>
     <genClasses ecoreClass="AppDsl.ecore#//BroadcastReceiverActionAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//BroadcastReceiverActionAttribute/action"/>
