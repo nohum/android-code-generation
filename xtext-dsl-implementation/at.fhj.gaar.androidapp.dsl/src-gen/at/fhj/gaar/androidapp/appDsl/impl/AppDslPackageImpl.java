@@ -37,7 +37,6 @@ import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
-import at.fhj.gaar.androidapp.appDsl.Spacer;
 import at.fhj.gaar.androidapp.appDsl.Text;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -292,13 +291,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * @generated
    */
   private EClass actionStartServiceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass spacerEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -988,16 +980,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSpacer()
-  {
-    return spacerEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public AppDslFactory getAppDslFactory()
   {
     return (AppDslFactory)getEFactoryInstance();
@@ -1118,8 +1100,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
 
     actionStartServiceEClass = createEClass(ACTION_START_SERVICE);
     createEAttribute(actionStartServiceEClass, ACTION_START_SERVICE__SERVICE);
-
-    spacerEClass = createEClass(SPACER);
   }
 
   /**
@@ -1186,7 +1166,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     actionStartActivityEClass.getESuperTypes().add(this.getBroadcastReceiverAction());
     actionStartServiceEClass.getESuperTypes().add(this.getLayoutElementClickAction());
     actionStartServiceEClass.getESuperTypes().add(this.getBroadcastReceiverAction());
-    spacerEClass.getESuperTypes().add(this.getLayoutElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(androidAppProjectEClass, AndroidAppProject.class, "AndroidAppProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1284,8 +1263,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
 
     initEClass(actionStartServiceEClass, ActionStartService.class, "ActionStartService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActionStartService_Service(), ecorePackage.getEString(), "service", null, 0, 1, ActionStartService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(spacerEClass, Spacer.class, "Spacer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

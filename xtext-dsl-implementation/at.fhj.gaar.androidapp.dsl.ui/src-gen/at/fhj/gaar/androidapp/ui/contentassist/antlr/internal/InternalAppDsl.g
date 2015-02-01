@@ -84,90 +84,6 @@ finally {
 
 
 
-// Entry rule entryRuleJavaIdentifier
-entryRuleJavaIdentifier 
-:
-{ before(grammarAccess.getJavaIdentifierRule()); }
-	 ruleJavaIdentifier
-{ after(grammarAccess.getJavaIdentifierRule()); } 
-	 EOF 
-;
-
-// Rule JavaIdentifier
-ruleJavaIdentifier
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getJavaIdentifierAccess().getIDTerminalRuleCall()); }
-	RULE_ID
-{ after(grammarAccess.getJavaIdentifierAccess().getIDTerminalRuleCall()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Entry rule entryRuleClassName
-entryRuleClassName 
-:
-{ before(grammarAccess.getClassNameRule()); }
-	 ruleClassName
-{ after(grammarAccess.getClassNameRule()); } 
-	 EOF 
-;
-
-// Rule ClassName
-ruleClassName
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getClassNameAccess().getIDTerminalRuleCall()); }
-	RULE_ID
-{ after(grammarAccess.getClassNameAccess().getIDTerminalRuleCall()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-// Entry rule entryRulePackageName
-entryRulePackageName 
-:
-{ before(grammarAccess.getPackageNameRule()); }
-	 rulePackageName
-{ after(grammarAccess.getPackageNameRule()); } 
-	 EOF 
-;
-
-// Rule PackageName
-rulePackageName
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getPackageNameAccess().getGroup()); }
-(rule__PackageName__Group__0)
-{ after(grammarAccess.getPackageNameAccess().getGroup()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
 // Entry rule entryRuleApplication
 entryRuleApplication 
 :
@@ -408,9 +324,9 @@ rulePermission
     }
 	:
 (
-{ before(grammarAccess.getPermissionAccess().getPackageNameParserRuleCall()); }
-	rulePackageName
-{ after(grammarAccess.getPermissionAccess().getPackageNameParserRuleCall()); }
+{ before(grammarAccess.getPermissionAccess().getPACKAGE_NAMETerminalRuleCall()); }
+	RULE_PACKAGE_NAME
+{ after(grammarAccess.getPermissionAccess().getPACKAGE_NAMETerminalRuleCall()); }
 )
 
 ;
@@ -744,9 +660,9 @@ ruleIntent
     }
 	:
 (
-{ before(grammarAccess.getIntentAccess().getPackageNameParserRuleCall()); }
-	rulePackageName
-{ after(grammarAccess.getIntentAccess().getPackageNameParserRuleCall()); }
+{ before(grammarAccess.getIntentAccess().getPACKAGE_NAMETerminalRuleCall()); }
+	RULE_PACKAGE_NAME
+{ after(grammarAccess.getIntentAccess().getPACKAGE_NAMETerminalRuleCall()); }
 )
 
 ;
@@ -951,6 +867,34 @@ finally {
 }
 
 
+
+// Entry rule entryRuleSpacer
+entryRuleSpacer 
+:
+{ before(grammarAccess.getSpacerRule()); }
+	 ruleSpacer
+{ after(grammarAccess.getSpacerRule()); } 
+	 EOF 
+;
+
+// Rule Spacer
+ruleSpacer
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getSpacerAccess().getSpacerKeyword()); }
+
+	'spacer' 
+
+{ after(grammarAccess.getSpacerAccess().getSpacerKeyword()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -1363,11 +1307,9 @@ rule__LayoutElement__Alternatives
 )
 
     |(
-{ before(grammarAccess.getLayoutElementAccess().getSpacerAction_1()); }
-(
-
-)
-{ after(grammarAccess.getLayoutElementAccess().getSpacerAction_1()); }
+{ before(grammarAccess.getLayoutElementAccess().getSpacerParserRuleCall_1()); }
+	ruleSpacer
+{ after(grammarAccess.getLayoutElementAccess().getSpacerParserRuleCall_1()); }
 )
 
     |(
@@ -1573,130 +1515,6 @@ rule__AndroidAppProject__Group_1__1__Impl
 { before(grammarAccess.getAndroidAppProjectAccess().getApplicationsAssignment_1_1()); }
 (rule__AndroidAppProject__ApplicationsAssignment_1_1)
 { after(grammarAccess.getAndroidAppProjectAccess().getApplicationsAssignment_1_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-rule__PackageName__Group__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__PackageName__Group__0__Impl
-	rule__PackageName__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__PackageName__Group__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_0()); }
-	RULE_ID
-{ after(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__PackageName__Group__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__PackageName__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__PackageName__Group__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPackageNameAccess().getGroup_1()); }
-(rule__PackageName__Group_1__0)*
-{ after(grammarAccess.getPackageNameAccess().getGroup_1()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-
-
-
-
-rule__PackageName__Group_1__0
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__PackageName__Group_1__0__Impl
-	rule__PackageName__Group_1__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__PackageName__Group_1__0__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPackageNameAccess().getFullStopKeyword_1_0()); }
-
-	'.' 
-
-{ after(grammarAccess.getPackageNameAccess().getFullStopKeyword_1_0()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__PackageName__Group_1__1
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__PackageName__Group_1__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__PackageName__Group_1__1__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_1_1()); }
-	RULE_ID
-{ after(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_1_1()); }
 )
 
 ;
@@ -4853,8 +4671,8 @@ rule__Application__PackageNameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getApplicationAccess().getPackageNamePackageNameParserRuleCall_1_0()); }
-	rulePackageName{ after(grammarAccess.getApplicationAccess().getPackageNamePackageNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getApplicationAccess().getPackageNamePACKAGE_NAMETerminalRuleCall_1_0()); }
+	RULE_PACKAGE_NAME{ after(grammarAccess.getApplicationAccess().getPackageNamePACKAGE_NAMETerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5003,8 +4821,8 @@ rule__ApplicationMainActivity__LauncherActivityAssignment_1
     }
 :
 (
-{ before(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityClassNameParserRuleCall_1_0()); }
-	ruleClassName{ after(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityClassNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5018,8 +4836,8 @@ rule__Activity__ClassNameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getActivityAccess().getClassNameClassNameParserRuleCall_1_0()); }
-	ruleClassName{ after(grammarAccess.getActivityAccess().getClassNameClassNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getActivityAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getActivityAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5063,8 +4881,8 @@ rule__BroadcastReceiver__ClassNameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getBroadcastReceiverAccess().getClassNameClassNameParserRuleCall_1_0()); }
-	ruleClassName{ after(grammarAccess.getBroadcastReceiverAccess().getClassNameClassNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getBroadcastReceiverAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getBroadcastReceiverAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5108,8 +4926,8 @@ rule__Service__ClassNameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getServiceAccess().getClassNameClassNameParserRuleCall_1_0()); }
-	ruleClassName{ after(grammarAccess.getServiceAccess().getClassNameClassNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getServiceAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getServiceAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5228,8 +5046,8 @@ rule__ActivityParentAttribute__ParentAssignment_1
     }
 :
 (
-{ before(grammarAccess.getActivityParentAttributeAccess().getParentClassNameParserRuleCall_1_0()); }
-	ruleClassName{ after(grammarAccess.getActivityParentAttributeAccess().getParentClassNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getActivityParentAttributeAccess().getParentJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getActivityParentAttributeAccess().getParentJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5273,8 +5091,8 @@ rule__Button__ButtonNameAssignment_1
     }
 :
 (
-{ before(grammarAccess.getButtonAccess().getButtonNameJavaIdentifierParserRuleCall_1_0()); }
-	ruleJavaIdentifier{ after(grammarAccess.getButtonAccess().getButtonNameJavaIdentifierParserRuleCall_1_0()); }
+{ before(grammarAccess.getButtonAccess().getButtonNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getButtonAccess().getButtonNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5393,8 +5211,8 @@ rule__ActionStartActivity__ActivityAssignment_1
     }
 :
 (
-{ before(grammarAccess.getActionStartActivityAccess().getActivityClassNameParserRuleCall_1_0()); }
-	ruleClassName{ after(grammarAccess.getActionStartActivityAccess().getActivityClassNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getActionStartActivityAccess().getActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getActionStartActivityAccess().getActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5408,8 +5226,8 @@ rule__ActionStartService__ServiceAssignment_1
     }
 :
 (
-{ before(grammarAccess.getActionStartServiceAccess().getServiceClassNameParserRuleCall_1_0()); }
-	ruleClassName{ after(grammarAccess.getActionStartServiceAccess().getServiceClassNameParserRuleCall_1_0()); }
+{ before(grammarAccess.getActionStartServiceAccess().getServiceJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
+	RULE_JAVA_IDENTIFIER{ after(grammarAccess.getActionStartServiceAccess().getServiceJAVA_IDENTIFIERTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5419,6 +5237,10 @@ finally {
 
 
 RULE_BOOLEAN : ('true'|'false'|'TRUE'|'FALSE');
+
+RULE_JAVA_IDENTIFIER : '"' RULE_ID '"';
+
+RULE_PACKAGE_NAME : '"' RULE_ID ('.' RULE_ID)* '"';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

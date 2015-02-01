@@ -95,6 +95,5 @@
     <genClasses ecoreClass="AppDsl.ecore#//ActionStartService">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActionStartService/service"/>
     </genClasses>
-    <genClasses ecoreClass="AppDsl.ecore#//Spacer"/>
   </genPackages>
 </genmodel:GenModel>

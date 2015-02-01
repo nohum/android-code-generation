@@ -15,20 +15,16 @@ terminal BOOLEAN returns ecore::EBoolean:
     'FALSE'
 ;
 
-JavaIdentifier:
-	ID
+terminal JAVA_IDENTIFIER:
+	'"' ( ID ) '"'
 ;
 
-ClassName:
-	ID
-;
-
-PackageName:
-	ID ('.' ID)*
+terminal PACKAGE_NAME:
+	'"' ( ID ('.' ID)* ) '"'
 ;
 
 Application:
-	'application' packageName = PackageName
+	'application' packageName = PACKAGE_NAME
 	'{'
 		// allow only one attribute or more than one (separated by ",")
 		attributes += ApplicationAttribute (',' attributes += ApplicationAttribute)*
@@ -74,11 +70,11 @@ ApplicationElementList:
 ;
 
 ApplicationMainActivity:
-	'main-activity' launcherActivity = ClassName
+	'main-activity' launcherActivity = JAVA_IDENTIFIER
 ;
 
 Permission:
-	PackageName // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+	PACKAGE_NAME // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 ;
 
 ApplicationElement: 
@@ -86,7 +82,7 @@ ApplicationElement:
 ;
 
 Activity:
-	'activity' className = ClassName
+	'activity' className = JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += ActivityAttribute (',' attributes += ActivityAttribute)*
@@ -94,7 +90,7 @@ Activity:
 ;
 
 BroadcastReceiver:
-	'receiver' className = ClassName
+	'receiver' className = JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += BroadcastReceiverAttribute (',' attributes += BroadcastReceiverAttribute)*
@@ -102,7 +98,7 @@ BroadcastReceiver:
 ;
 
 Service:
-	'service' className = ClassName
+	'service' className = JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += ServiceAttribute (',' attributes += ServiceAttribute)*
@@ -154,11 +150,11 @@ ElementIntentList:
 ;
 
 Intent:
-	PackageName
+	PACKAGE_NAME
 ;
 
 ActivityParentAttribute:
-	'parent' parent = ClassName
+	'parent' parent = JAVA_IDENTIFIER
 ;
 
 ActivityLayoutAttribute:
@@ -170,11 +166,11 @@ ActivityLayoutAttribute:
 ;
 
 LayoutElement:
-	Button | {Spacer} | Text
+	Button | Spacer | Text
 ;
 
 Button:
-	'button' buttonName = JavaIdentifier
+	'button' buttonName = JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += ButtonAttribute (',' attributes += ButtonAttribute)*
@@ -223,9 +219,9 @@ ActionShowToast:
 ;
 
 ActionStartActivity:
-	'start-activity' activity = ClassName
+	'start-activity' activity = JAVA_IDENTIFIER
 ;
 
 ActionStartService:
-	'start-service' service = ClassName
+	'start-service' service = JAVA_IDENTIFIER
 ;

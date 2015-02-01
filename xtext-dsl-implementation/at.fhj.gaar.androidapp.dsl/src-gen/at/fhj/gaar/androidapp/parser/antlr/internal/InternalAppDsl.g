@@ -124,103 +124,6 @@ ruleAndroidAppProject returns [EObject current=null]
 
 
 
-// Entry rule entryRuleJavaIdentifier
-entryRuleJavaIdentifier returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getJavaIdentifierRule()); } 
-	 iv_ruleJavaIdentifier=ruleJavaIdentifier 
-	 { $current=$iv_ruleJavaIdentifier.current.getText(); }  
-	 EOF 
-;
-
-// Rule JavaIdentifier
-ruleJavaIdentifier returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-    this_ID_0=RULE_ID    {
-		$current.merge(this_ID_0);
-    }
-
-    { 
-    newLeafNode(this_ID_0, grammarAccess.getJavaIdentifierAccess().getIDTerminalRuleCall()); 
-    }
-
-    ;
-
-
-
-
-
-// Entry rule entryRuleClassName
-entryRuleClassName returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getClassNameRule()); } 
-	 iv_ruleClassName=ruleClassName 
-	 { $current=$iv_ruleClassName.current.getText(); }  
-	 EOF 
-;
-
-// Rule ClassName
-ruleClassName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-    this_ID_0=RULE_ID    {
-		$current.merge(this_ID_0);
-    }
-
-    { 
-    newLeafNode(this_ID_0, grammarAccess.getClassNameAccess().getIDTerminalRuleCall()); 
-    }
-
-    ;
-
-
-
-
-
-// Entry rule entryRulePackageName
-entryRulePackageName returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPackageNameRule()); } 
-	 iv_rulePackageName=rulePackageName 
-	 { $current=$iv_rulePackageName.current.getText(); }  
-	 EOF 
-;
-
-// Rule PackageName
-rulePackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(    this_ID_0=RULE_ID    {
-		$current.merge(this_ID_0);
-    }
-
-    { 
-    newLeafNode(this_ID_0, grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_0()); 
-    }
-(
-	kw='.' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getPackageNameAccess().getFullStopKeyword_1_0()); 
-    }
-    this_ID_2=RULE_ID    {
-		$current.merge(this_ID_2);
-    }
-
-    { 
-    newLeafNode(this_ID_2, grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_1_1()); 
-    }
-)*)
-    ;
-
-
-
-
-
 // Entry rule entryRuleApplication
 entryRuleApplication returns [EObject current=null] 
 	:
@@ -241,19 +144,19 @@ ruleApplication returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getApplicationAccess().getPackageNamePackageNameParserRuleCall_1_0()); 
-	    }
-		lv_packageName_1_0=rulePackageName		{
+		lv_packageName_1_0=RULE_PACKAGE_NAME
+		{
+			newLeafNode(lv_packageName_1_0, grammarAccess.getApplicationAccess().getPackageNamePACKAGE_NAMETerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
+	            $current = createModelElement(grammarAccess.getApplicationRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"packageName",
         		lv_packageName_1_0, 
-        		"PackageName");
-	        afterParserOrEnumRuleCall();
+        		"PACKAGE_NAME");
 	    }
 
 )
@@ -697,19 +600,19 @@ ruleApplicationMainActivity returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityClassNameParserRuleCall_1_0()); 
-	    }
-		lv_launcherActivity_1_0=ruleClassName		{
+		lv_launcherActivity_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_launcherActivity_1_0, grammarAccess.getApplicationMainActivityAccess().getLauncherActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getApplicationMainActivityRule());
+	            $current = createModelElement(grammarAccess.getApplicationMainActivityRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"launcherActivity",
         		lv_launcherActivity_1_0, 
-        		"ClassName");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -734,16 +637,12 @@ rulePermission returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
-    { 
-        newCompositeNode(grammarAccess.getPermissionAccess().getPackageNameParserRuleCall()); 
-    }
-    this_PackageName_0=rulePackageName    {
-		$current.merge(this_PackageName_0);
+    this_PACKAGE_NAME_0=RULE_PACKAGE_NAME    {
+		$current.merge(this_PACKAGE_NAME_0);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_PACKAGE_NAME_0, grammarAccess.getPermissionAccess().getPACKAGE_NAMETerminalRuleCall()); 
     }
 
     ;
@@ -822,19 +721,19 @@ ruleActivity returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getActivityAccess().getClassNameClassNameParserRuleCall_1_0()); 
-	    }
-		lv_className_1_0=ruleClassName		{
+		lv_className_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_className_1_0, grammarAccess.getActivityAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getActivityRule());
+	            $current = createModelElement(grammarAccess.getActivityRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"className",
         		lv_className_1_0, 
-        		"ClassName");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -913,19 +812,19 @@ ruleBroadcastReceiver returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getBroadcastReceiverAccess().getClassNameClassNameParserRuleCall_1_0()); 
-	    }
-		lv_className_1_0=ruleClassName		{
+		lv_className_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_className_1_0, grammarAccess.getBroadcastReceiverAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBroadcastReceiverRule());
+	            $current = createModelElement(grammarAccess.getBroadcastReceiverRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"className",
         		lv_className_1_0, 
-        		"ClassName");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -1004,19 +903,19 @@ ruleService returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getServiceAccess().getClassNameClassNameParserRuleCall_1_0()); 
-	    }
-		lv_className_1_0=ruleClassName		{
+		lv_className_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_className_1_0, grammarAccess.getServiceAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getServiceRule());
+	            $current = createModelElement(grammarAccess.getServiceRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"className",
         		lv_className_1_0, 
-        		"ClassName");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -1501,16 +1400,12 @@ ruleIntent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
-    { 
-        newCompositeNode(grammarAccess.getIntentAccess().getPackageNameParserRuleCall()); 
-    }
-    this_PackageName_0=rulePackageName    {
-		$current.merge(this_PackageName_0);
+    this_PACKAGE_NAME_0=RULE_PACKAGE_NAME    {
+		$current.merge(this_PACKAGE_NAME_0);
     }
 
     { 
-        afterParserOrEnumRuleCall();
+    newLeafNode(this_PACKAGE_NAME_0, grammarAccess.getIntentAccess().getPACKAGE_NAMETerminalRuleCall()); 
     }
 
     ;
@@ -1539,19 +1434,19 @@ ruleActivityParentAttribute returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getActivityParentAttributeAccess().getParentClassNameParserRuleCall_1_0()); 
-	    }
-		lv_parent_1_0=ruleClassName		{
+		lv_parent_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_parent_1_0, grammarAccess.getActivityParentAttributeAccess().getParentJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getActivityParentAttributeRule());
+	            $current = createModelElement(grammarAccess.getActivityParentAttributeRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"parent",
         		lv_parent_1_0, 
-        		"ClassName");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -1659,13 +1554,15 @@ ruleLayoutElement returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
-    |(
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getLayoutElementAccess().getSpacerAction_1(),
-            $current);
+    |
+    { 
+        newCompositeNode(grammarAccess.getLayoutElementAccess().getSpacerParserRuleCall_1()); 
     }
-)
+ruleSpacer
+    { 
+        afterParserOrEnumRuleCall();
+    }
+
     |
     { 
         newCompositeNode(grammarAccess.getLayoutElementAccess().getTextParserRuleCall_2()); 
@@ -1702,19 +1599,19 @@ ruleButton returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getButtonAccess().getButtonNameJavaIdentifierParserRuleCall_1_0()); 
-	    }
-		lv_buttonName_1_0=ruleJavaIdentifier		{
+		lv_buttonName_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_buttonName_1_0, grammarAccess.getButtonAccess().getButtonNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getButtonRule());
+	            $current = createModelElement(grammarAccess.getButtonRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"buttonName",
         		lv_buttonName_1_0, 
-        		"JavaIdentifier");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -1896,6 +1793,31 @@ ruleButtonActionAttribute returns [EObject current=null]
 ;
 
 
+
+
+
+// Entry rule entryRuleSpacer
+entryRuleSpacer returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getSpacerRule()); } 
+	 iv_ruleSpacer=ruleSpacer 
+	 { $current=$iv_ruleSpacer.current.getText(); }  
+	 EOF 
+;
+
+// Rule Spacer
+ruleSpacer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+
+	kw='spacer' 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getSpacerAccess().getSpacerKeyword()); 
+    }
+
+    ;
 
 
 
@@ -2150,19 +2072,19 @@ ruleActionStartActivity returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getActionStartActivityAccess().getActivityClassNameParserRuleCall_1_0()); 
-	    }
-		lv_activity_1_0=ruleClassName		{
+		lv_activity_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_activity_1_0, grammarAccess.getActionStartActivityAccess().getActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getActionStartActivityRule());
+	            $current = createModelElement(grammarAccess.getActionStartActivityRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"activity",
         		lv_activity_1_0, 
-        		"ClassName");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -2193,19 +2115,19 @@ ruleActionStartService returns [EObject current=null]
     }
 (
 (
-		{ 
-	        newCompositeNode(grammarAccess.getActionStartServiceAccess().getServiceClassNameParserRuleCall_1_0()); 
-	    }
-		lv_service_1_0=ruleClassName		{
+		lv_service_1_0=RULE_JAVA_IDENTIFIER
+		{
+			newLeafNode(lv_service_1_0, grammarAccess.getActionStartServiceAccess().getServiceJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+		}
+		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getActionStartServiceRule());
+	            $current = createModelElement(grammarAccess.getActionStartServiceRule());
 	        }
-       		set(
+       		setWithLastConsumed(
        			$current, 
        			"service",
         		lv_service_1_0, 
-        		"ClassName");
-	        afterParserOrEnumRuleCall();
+        		"JAVA_IDENTIFIER");
 	    }
 
 )
@@ -2217,6 +2139,10 @@ ruleActionStartService returns [EObject current=null]
 
 
 RULE_BOOLEAN : ('true'|'false'|'TRUE'|'FALSE');
+
+RULE_JAVA_IDENTIFIER : '"' RULE_ID '"';
+
+RULE_PACKAGE_NAME : '"' RULE_ID ('.' RULE_ID)* '"';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

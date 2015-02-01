@@ -101,5 +101,4 @@
   <eClassifiers xsi:type="ecore:EClass" name="ActionStartService" eSuperTypes="#//LayoutElementClickAction #//BroadcastReceiverAction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Spacer" eSuperTypes="#//LayoutElement"/>
 </ecore:EPackage>
