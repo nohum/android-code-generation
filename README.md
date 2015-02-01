@@ -24,7 +24,7 @@ application "at.fhj.demoapp" {
 			]
 		},
 		receiver "DemoReceiver" {
-			title "Receiver",
+			title "Demo Receiver",
 			action start-activity "FirstDemoActivity",
 			intents [
 				"android.intent.action.BOOT_COMPLETED"
