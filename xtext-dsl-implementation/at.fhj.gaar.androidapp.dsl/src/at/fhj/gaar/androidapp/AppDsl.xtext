@@ -170,7 +170,7 @@ ActivityLayoutAttribute:
 ;
 
 LayoutElement:
-	Button | Spacer | Text
+	Button | {Spacer} | Text
 ;
 
 Button:

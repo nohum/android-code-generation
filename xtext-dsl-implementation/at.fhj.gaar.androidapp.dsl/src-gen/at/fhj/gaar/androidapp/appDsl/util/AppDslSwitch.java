@@ -345,6 +345,14 @@ public class AppDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AppDslPackage.SPACER:
+      {
+        Spacer spacer = (Spacer)theEObject;
+        T result = caseSpacer(spacer);
+        if (result == null) result = caseLayoutElement(spacer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -889,6 +897,22 @@ public class AppDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseActionStartService(ActionStartService object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Spacer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Spacer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSpacer(Spacer object)
   {
     return null;
   }

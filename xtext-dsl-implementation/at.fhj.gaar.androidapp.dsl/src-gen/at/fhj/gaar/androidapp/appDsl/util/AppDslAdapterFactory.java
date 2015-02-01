@@ -245,6 +245,11 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
         return createActionStartServiceAdapter();
       }
       @Override
+      public Adapter caseSpacer(Spacer object)
+      {
+        return createSpacerAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -772,6 +777,21 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionStartServiceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.Spacer <em>Spacer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.Spacer
+   * @generated
+   */
+  public Adapter createSpacerAdapter()
   {
     return null;
   }

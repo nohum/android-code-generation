@@ -13,7 +13,6 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAppDslLexer extends Lexer {
     public static final int RULE_BOOLEAN=6;
-    public static final int T__40=40;
     public static final int RULE_ID=4;
     public static final int T__29=29;
     public static final int T__28=28;
@@ -89,11 +88,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:12:7: ( 'application' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:12:9: 'application'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:12:7: ( '.' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:12:9: '.'
             {
-            match("application"); 
-
+            match('.'); 
 
             }
 
@@ -110,10 +108,11 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__14;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:13:7: ( '{' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:13:9: '{'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:13:7: ( 'application' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:13:9: 'application'
             {
-            match('{'); 
+            match("application"); 
+
 
             }
 
@@ -130,10 +129,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:14:7: ( '}' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:14:9: '}'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:14:7: ( '{' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:14:9: '{'
             {
-            match('}'); 
+            match('{'); 
 
             }
 
@@ -150,10 +149,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:15:7: ( '.' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:15:9: '.'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:15:7: ( '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:15:9: '}'
             {
-            match('.'); 
+            match('}'); 
 
             }
 
@@ -567,10 +566,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:35:7: ( 'spacer' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:35:9: 'spacer'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:35:7: ( 'text' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:35:9: 'text'
             {
-            match("spacer"); 
+            match("text"); 
 
 
             }
@@ -588,10 +587,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:36:7: ( 'text' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:36:9: 'text'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:36:7: ( 'show-toast' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:36:9: 'show-toast'
             {
-            match("text"); 
+            match("show-toast"); 
 
 
             }
@@ -609,10 +608,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:37:7: ( 'show-toast' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:37:9: 'show-toast'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:37:7: ( 'start-activity' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:37:9: 'start-activity'
             {
-            match("show-toast"); 
+            match("start-activity"); 
 
 
             }
@@ -630,29 +629,8 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:38:7: ( 'start-activity' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:38:9: 'start-activity'
-            {
-            match("start-activity"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__39"
-
-    // $ANTLR start "T__40"
-    public final void mT__40() throws RecognitionException {
-        try {
-            int _type = T__40;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:39:7: ( 'start-service' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:39:9: 'start-service'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:38:7: ( 'start-service' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:38:9: 'start-service'
             {
             match("start-service"); 
 
@@ -665,17 +643,17 @@ public class InternalAppDslLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__40"
+    // $ANTLR end "T__39"
 
     // $ANTLR start "RULE_BOOLEAN"
     public final void mRULE_BOOLEAN() throws RecognitionException {
         try {
             int _type = RULE_BOOLEAN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2246:14: ( ( 'true' | 'false' | 'TRUE' | 'FALSE' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2246:16: ( 'true' | 'false' | 'TRUE' | 'FALSE' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2219:14: ( ( 'true' | 'false' | 'TRUE' | 'FALSE' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2219:16: ( 'true' | 'false' | 'TRUE' | 'FALSE' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2246:16: ( 'true' | 'false' | 'TRUE' | 'FALSE' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2219:16: ( 'true' | 'false' | 'TRUE' | 'FALSE' )
             int alt1=4;
             switch ( input.LA(1) ) {
             case 't':
@@ -707,7 +685,7 @@ public class InternalAppDslLexer extends Lexer {
 
             switch (alt1) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2246:17: 'true'
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2219:17: 'true'
                     {
                     match("true"); 
 
@@ -715,7 +693,7 @@ public class InternalAppDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2246:24: 'false'
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2219:24: 'false'
                     {
                     match("false"); 
 
@@ -723,7 +701,7 @@ public class InternalAppDslLexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2246:32: 'TRUE'
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2219:32: 'TRUE'
                     {
                     match("TRUE"); 
 
@@ -731,7 +709,7 @@ public class InternalAppDslLexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2246:39: 'FALSE'
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2219:39: 'FALSE'
                     {
                     match("FALSE"); 
 
@@ -757,10 +735,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2248:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2248:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2221:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2221:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2248:11: ( '^' )?
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2221:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -769,7 +747,7 @@ public class InternalAppDslLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2248:11: '^'
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2221:11: '^'
                     {
                     match('^'); 
 
@@ -787,7 +765,7 @@ public class InternalAppDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2248:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2221:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -836,10 +814,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2250:10: ( ( '0' .. '9' )+ )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2250:12: ( '0' .. '9' )+
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2223:10: ( ( '0' .. '9' )+ )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2223:12: ( '0' .. '9' )+
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2250:12: ( '0' .. '9' )+
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2223:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -853,7 +831,7 @@ public class InternalAppDslLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2250:13: '0' .. '9'
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2223:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -885,10 +863,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -906,10 +884,10 @@ public class InternalAppDslLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -925,7 +903,7 @@ public class InternalAppDslLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:21: '\\\\' .
+                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -933,7 +911,7 @@ public class InternalAppDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -958,10 +936,10 @@ public class InternalAppDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -977,7 +955,7 @@ public class InternalAppDslLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:54: '\\\\' .
+                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -985,7 +963,7 @@ public class InternalAppDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2252:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2225:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1028,12 +1006,12 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2254:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2254:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2227:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2227:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2254:24: ( options {greedy=false; } : . )*
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2227:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -1058,7 +1036,7 @@ public class InternalAppDslLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2254:52: .
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2227:52: .
             	    {
             	    matchAny(); 
 
@@ -1088,12 +1066,12 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -1106,7 +1084,7 @@ public class InternalAppDslLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1126,7 +1104,7 @@ public class InternalAppDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:40: ( ( '\\r' )? '\\n' )?
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1135,9 +1113,9 @@ public class InternalAppDslLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:41: ( '\\r' )? '\\n'
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:41: ( '\\r' )? '\\n'
                     {
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:41: ( '\\r' )?
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -1146,7 +1124,7 @@ public class InternalAppDslLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2256:41: '\\r'
+                            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2229:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1178,10 +1156,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2258:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2258:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2231:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2231:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2258:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2231:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -1235,8 +1213,8 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2260:16: ( . )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2260:18: .
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2233:16: ( . )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2233:18: .
             {
             matchAny(); 
 
@@ -1251,8 +1229,8 @@ public class InternalAppDslLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt13=37;
+        // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:8: ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt13=36;
         alt13 = dfa13.predict(input);
         switch (alt13) {
             case 1 :
@@ -1452,63 +1430,56 @@ public class InternalAppDslLexer extends Lexer {
                 }
                 break;
             case 29 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:178: T__40
-                {
-                mT__40(); 
-
-                }
-                break;
-            case 30 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:184: RULE_BOOLEAN
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:178: RULE_BOOLEAN
                 {
                 mRULE_BOOLEAN(); 
 
                 }
                 break;
-            case 31 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:197: RULE_ID
+            case 30 :
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:191: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 32 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:205: RULE_INT
+            case 31 :
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:199: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 33 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:214: RULE_STRING
+            case 32 :
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:208: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 34 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:226: RULE_ML_COMMENT
+            case 33 :
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:220: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 35 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:242: RULE_SL_COMMENT
+            case 34 :
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:236: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 36 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:258: RULE_WS
+            case 35 :
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:252: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 37 :
-                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:266: RULE_ANY_OTHER
+            case 36 :
+                // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1:260: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1522,22 +1493,22 @@ public class InternalAppDslLexer extends Lexer {
 
     protected DFA13 dfa13 = new DFA13(this);
     static final String DFA13_eotS =
-        "\2\uffff\1\40\3\uffff\4\40\2\uffff\11\40\1\34\2\uffff\3\34\3\uffff\2\40\4\uffff\11\40\2\uffff\16\40\5\uffff\33\40\1\uffff\3\40\1\172\1\173\17\40\1\173\4\40\1\uffff\1\40\1\u0090\2\uffff\11\40\1\uffff\4\40\2\173\2\40\1\u00a0\1\40\1\uffff\2\40\1\u00a4\5\40\1\u00aa\1\uffff\2\40\1\u00af\2\40\2\uffff\2\40\1\uffff\1\40\1\u00b5\2\40\1\u00b8\3\uffff\1\u00b9\2\uffff\1\40\1\u00bb\1\uffff\1\40\1\u00bd\1\uffff\1\u00be\1\u00bf\2\uffff\1\40\1\uffff\1\40\3\uffff\2\40\1\u00c4\1\u00c5\2\uffff";
+        "\3\uffff\1\41\2\uffff\4\41\2\uffff\11\41\1\34\2\uffff\3\34\4\uffff\2\41\3\uffff\11\41\2\uffff\15\41\5\uffff\32\41\1\uffff\3\41\1\167\1\170\16\41\1\170\4\41\1\uffff\1\41\1\u008c\2\uffff\10\41\1\uffff\4\41\2\170\2\41\1\u009b\1\41\1\uffff\2\41\1\u009f\5\41\1\uffff\2\41\1\u00a9\2\41\2\uffff\2\41\1\uffff\1\41\1\u00af\2\41\1\u00b2\2\uffff\1\u00b3\2\uffff\1\41\1\u00b5\1\uffff\1\41\1\u00b7\1\uffff\1\u00b8\1\u00b9\2\uffff\1\41\1\uffff\1\41\3\uffff\2\41\1\u00be\1\u00bf\2\uffff";
     static final String DFA13_eofS =
-        "\u00c6\uffff";
+        "\u00c0\uffff";
     static final String DFA13_minS =
-        "\1\0\1\uffff\1\143\3\uffff\2\141\1\157\1\141\2\uffff\1\154\2\145\1\156\1\141\1\165\1\141\1\122\2\101\2\uffff\2\0\1\52\3\uffff\1\160\1\164\4\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\162\1\141\1\157\1\141\1\164\1\171\1\164\1\154\1\125\1\114\5\uffff\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\1\145\1\166\1\143\1\167\1\162\1\145\1\157\1\164\1\163\1\105\1\123\1\151\1\157\1\uffff\1\55\2\145\2\60\2\151\1\156\1\145\1\154\1\162\2\151\1\145\1\55\1\164\1\156\1\165\1\157\1\145\1\60\1\105\1\143\1\151\1\156\1\uffff\1\164\1\60\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\1\143\1\162\1\uffff\1\55\2\164\1\156\2\60\1\141\1\164\1\60\1\55\1\uffff\1\145\1\163\1\60\1\164\1\144\3\145\1\60\1\141\1\163\1\55\1\60\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\60\1\144\1\162\1\60\3\uffff\1\60\2\uffff\1\151\1\60\1\uffff\1\157\1\60\1\uffff\2\60\2\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\60\2\uffff";
+        "\1\0\2\uffff\1\143\2\uffff\2\141\1\157\1\141\2\uffff\1\154\2\145\1\156\1\141\1\165\1\141\1\122\2\101\2\uffff\2\0\1\52\4\uffff\1\160\1\164\3\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\162\1\157\1\141\1\164\1\171\1\164\1\154\1\125\1\114\5\uffff\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\1\145\1\166\1\167\1\162\1\145\1\157\1\164\1\163\1\105\1\123\1\151\1\157\1\uffff\1\55\2\145\2\60\2\151\1\156\1\145\1\154\1\162\2\151\1\55\1\164\1\156\1\165\1\157\1\145\1\60\1\105\1\143\1\151\1\156\1\uffff\1\164\1\60\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\1\143\1\uffff\1\55\2\164\1\156\2\60\1\141\1\164\1\60\1\55\1\uffff\1\145\1\163\1\60\1\164\1\144\3\145\1\141\1\163\1\55\1\60\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\60\1\144\1\162\1\60\2\uffff\1\60\2\uffff\1\151\1\60\1\uffff\1\157\1\60\1\uffff\2\60\2\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\60\2\uffff";
     static final String DFA13_maxS =
-        "\1\uffff\1\uffff\1\160\3\uffff\1\151\1\162\1\157\1\145\2\uffff\1\170\1\145\1\164\1\156\1\141\1\165\1\141\1\122\1\101\1\172\2\uffff\2\uffff\1\57\3\uffff\1\160\1\164\4\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\162\1\141\1\157\1\141\1\164\1\171\1\164\1\154\1\125\1\114\5\uffff\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\1\145\1\166\1\143\1\167\1\162\1\145\1\157\1\164\1\163\1\105\1\123\1\151\1\166\1\uffff\1\55\2\145\2\172\2\151\1\156\1\145\1\154\1\162\2\151\1\145\1\55\1\164\1\156\1\165\1\157\1\145\1\172\1\105\1\143\1\151\1\156\1\uffff\1\164\1\172\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\1\143\1\162\1\uffff\1\55\2\164\1\156\2\172\1\141\1\164\1\172\1\55\1\uffff\1\145\1\163\1\172\1\164\1\144\3\145\1\172\2\163\1\55\1\172\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\172\1\144\1\162\1\172\3\uffff\1\172\2\uffff\1\151\1\172\1\uffff\1\157\1\172\1\uffff\2\172\2\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\172\2\uffff";
+        "\1\uffff\2\uffff\1\160\2\uffff\1\151\1\162\1\157\1\145\2\uffff\1\170\1\145\1\164\1\156\1\141\1\165\1\141\1\122\1\101\1\172\2\uffff\2\uffff\1\57\4\uffff\1\160\1\164\3\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\162\1\157\1\141\1\164\1\171\1\164\1\154\1\125\1\114\5\uffff\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\1\145\1\166\1\167\1\162\1\145\1\157\1\164\1\163\1\105\1\123\1\151\1\166\1\uffff\1\55\2\145\2\172\2\151\1\156\1\145\1\154\1\162\2\151\1\55\1\164\1\156\1\165\1\157\1\145\1\172\1\105\1\143\1\151\1\156\1\uffff\1\164\1\172\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\1\143\1\uffff\1\55\2\164\1\156\2\172\1\141\1\164\1\172\1\55\1\uffff\1\145\1\163\1\172\1\164\1\144\3\145\2\163\1\55\1\172\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\172\1\144\1\162\1\172\2\uffff\1\172\2\uffff\1\151\1\172\1\uffff\1\157\1\172\1\uffff\2\172\2\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\172\2\uffff";
     static final String DFA13_acceptS =
-        "\1\uffff\1\1\1\uffff\1\3\1\4\1\5\4\uffff\1\12\1\13\12\uffff\1\37\1\40\3\uffff\1\44\1\45\1\1\2\uffff\1\37\1\3\1\4\1\5\11\uffff\1\12\1\13\16\uffff\1\40\1\41\1\42\1\43\1\44\33\uffff\1\6\31\uffff\1\15\2\uffff\1\32\1\36\11\uffff\1\33\12\uffff\1\23\17\uffff\1\30\1\7\2\uffff\1\25\5\uffff\1\31\1\34\1\35\1\uffff\1\26\1\27\2\uffff\1\10\2\uffff\1\21\2\uffff\1\20\1\24\1\uffff\1\16\1\uffff\1\14\1\22\1\17\4\uffff\1\2\1\11";
+        "\1\uffff\1\1\1\2\1\uffff\1\4\1\5\4\uffff\1\12\1\13\12\uffff\1\36\1\37\3\uffff\1\43\1\44\1\1\1\2\2\uffff\1\36\1\4\1\5\11\uffff\1\12\1\13\15\uffff\1\37\1\40\1\41\1\42\1\43\32\uffff\1\6\30\uffff\1\15\2\uffff\1\31\1\35\10\uffff\1\32\12\uffff\1\23\16\uffff\1\30\1\7\2\uffff\1\25\5\uffff\1\33\1\34\1\uffff\1\26\1\27\2\uffff\1\10\2\uffff\1\21\2\uffff\1\20\1\24\1\uffff\1\16\1\uffff\1\14\1\22\1\17\4\uffff\1\3\1\11";
     static final String DFA13_specialS =
-        "\1\2\27\uffff\1\0\1\1\u00ac\uffff}>";
+        "\1\0\27\uffff\1\2\1\1\u00a6\uffff}>";
     static final String[] DFA13_transitionS = {
-            "\11\34\2\33\2\34\1\33\22\34\1\33\1\34\1\30\4\34\1\31\4\34\1\1\1\34\1\5\1\32\12\27\7\34\5\26\1\24\15\26\1\23\6\26\1\12\1\34\1\13\1\25\1\26\1\34\1\2\1\21\1\10\1\26\1\14\1\22\2\26\1\17\2\26\1\20\1\6\2\26\1\11\1\26\1\15\1\16\1\7\6\26\1\3\1\34\1\4\uff82\34",
+            "\11\34\2\33\2\34\1\33\22\34\1\33\1\34\1\30\4\34\1\31\4\34\1\1\1\34\1\2\1\32\12\27\7\34\5\26\1\24\15\26\1\23\6\26\1\12\1\34\1\13\1\25\1\26\1\34\1\3\1\21\1\10\1\26\1\14\1\22\2\26\1\17\2\26\1\20\1\6\2\26\1\11\1\26\1\15\1\16\1\7\6\26\1\4\1\34\1\5\uff82\34",
             "",
-            "\1\37\14\uffff\1\36",
             "",
+            "\1\40\14\uffff\1\37",
             "",
             "",
             "\1\45\7\uffff\1\44",
@@ -1548,28 +1519,29 @@ public class InternalAppDslLexer extends Lexer {
             "",
             "\1\57\1\uffff\1\60\11\uffff\1\61",
             "\1\62",
-            "\1\63\2\uffff\1\65\7\uffff\1\64\3\uffff\1\66",
+            "\1\63\2\uffff\1\64\13\uffff\1\65",
+            "\1\66",
             "\1\67",
             "\1\70",
             "\1\71",
             "\1\72",
             "\1\73",
-            "\1\74",
-            "\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
             "",
-            "\0\76",
-            "\0\76",
-            "\1\77\4\uffff\1\100",
+            "\0\75",
+            "\0\75",
+            "\1\76\4\uffff\1\77",
             "",
             "",
             "",
+            "",
+            "\1\101",
             "\1\102",
+            "",
+            "",
+            "",
             "\1\103",
-            "",
-            "",
-            "",
-            "",
             "\1\104",
             "\1\105",
             "\1\106",
@@ -1578,9 +1550,9 @@ public class InternalAppDslLexer extends Lexer {
             "\1\111",
             "\1\112",
             "\1\113",
+            "",
+            "",
             "\1\114",
-            "",
-            "",
             "\1\115",
             "\1\116",
             "\1\117",
@@ -1593,13 +1565,13 @@ public class InternalAppDslLexer extends Lexer {
             "\1\126",
             "\1\127",
             "\1\130",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\131",
             "\1\132",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\133",
             "\1\134",
             "\1\135",
@@ -1623,16 +1595,16 @@ public class InternalAppDslLexer extends Lexer {
             "\1\157",
             "\1\160",
             "\1\161",
-            "\1\162",
-            "\1\163",
-            "\1\164",
-            "\1\166\6\uffff\1\165",
+            "\1\163\6\uffff\1\162",
             "",
-            "\1\167",
-            "\1\170",
+            "\1\164",
+            "\1\165",
+            "\1\166",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\171",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\172",
+            "\1\173",
             "\1\174",
             "\1\175",
             "\1\176",
@@ -1644,92 +1616,85 @@ public class InternalAppDslLexer extends Lexer {
             "\1\u0084",
             "\1\u0085",
             "\1\u0086",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\u0087",
             "\1\u0088",
             "\1\u0089",
             "\1\u008a",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "",
             "\1\u008b",
-            "\1\u008c",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "",
+            "",
             "\1\u008d",
             "\1\u008e",
-            "",
             "\1\u008f",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "",
+            "\1\u0090",
             "\1\u0091",
             "\1\u0092",
             "\1\u0093",
             "\1\u0094",
+            "",
             "\1\u0095",
             "\1\u0096",
             "\1\u0097",
             "\1\u0098",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\u0099",
-            "",
             "\1\u009a",
-            "\1\u009b",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\u009c",
-            "\1\u009d",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u009e",
-            "\1\u009f",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u00a1",
             "",
+            "\1\u009d",
+            "\1\u009e",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\u00a0",
+            "\1\u00a1",
             "\1\u00a2",
             "\1\u00a3",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u00a5",
-            "\1\u00a6",
+            "\1\u00a4",
+            "\1\u00a5\21\uffff\1\u00a6",
             "\1\u00a7",
             "\1\u00a8",
-            "\1\u00a9",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u00ab\21\uffff\1\u00ac",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\1\u00aa",
+            "\1\u00ab",
+            "",
+            "",
+            "\1\u00ac",
             "\1\u00ad",
+            "",
             "\1\u00ae",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "\1\u00b0",
             "\1\u00b1",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
             "",
-            "\1\u00b2",
-            "\1\u00b3",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "",
             "",
             "\1\u00b4",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "",
             "\1\u00b6",
-            "\1\u00b7",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
-            "",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
             "",
             "\1\u00ba",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "",
+            "\1\u00bb",
+            "",
+            "",
             "",
             "\1\u00bc",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "",
-            "\1\u00c0",
-            "",
-            "\1\u00c1",
-            "",
-            "",
-            "",
-            "\1\u00c2",
-            "\1\u00c3",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\u00bd",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
+            "\12\41\7\uffff\32\41\4\uffff\1\41\1\uffff\32\41",
             "",
             ""
     };
@@ -1764,45 +1729,25 @@ public class InternalAppDslLexer extends Lexer {
             this.transition = DFA13_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | RULE_BOOLEAN | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA13_24 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA13_24>='\u0000' && LA13_24<='\uFFFF')) ) {s = 62;}
-
-                        else s = 28;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA13_25 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA13_25>='\u0000' && LA13_25<='\uFFFF')) ) {s = 62;}
-
-                        else s = 28;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA13_0 = input.LA(1);
 
                         s = -1;
                         if ( (LA13_0==',') ) {s = 1;}
 
-                        else if ( (LA13_0=='a') ) {s = 2;}
+                        else if ( (LA13_0=='.') ) {s = 2;}
 
-                        else if ( (LA13_0=='{') ) {s = 3;}
+                        else if ( (LA13_0=='a') ) {s = 3;}
 
-                        else if ( (LA13_0=='}') ) {s = 4;}
+                        else if ( (LA13_0=='{') ) {s = 4;}
 
-                        else if ( (LA13_0=='.') ) {s = 5;}
+                        else if ( (LA13_0=='}') ) {s = 5;}
 
                         else if ( (LA13_0=='m') ) {s = 6;}
 
@@ -1849,6 +1794,26 @@ public class InternalAppDslLexer extends Lexer {
                         else if ( ((LA13_0>='\t' && LA13_0<='\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 27;}
 
                         else if ( ((LA13_0>='\u0000' && LA13_0<='\b')||(LA13_0>='\u000B' && LA13_0<='\f')||(LA13_0>='\u000E' && LA13_0<='\u001F')||LA13_0=='!'||(LA13_0>='#' && LA13_0<='&')||(LA13_0>='(' && LA13_0<='+')||LA13_0=='-'||(LA13_0>=':' && LA13_0<='@')||LA13_0=='\\'||LA13_0=='`'||LA13_0=='|'||(LA13_0>='~' && LA13_0<='\uFFFF')) ) {s = 28;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA13_25 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA13_25>='\u0000' && LA13_25<='\uFFFF')) ) {s = 61;}
+
+                        else s = 28;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA13_24 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA13_24>='\u0000' && LA13_24<='\uFFFF')) ) {s = 61;}
+
+                        else s = 28;
 
                         if ( s>=0 ) return s;
                         break;

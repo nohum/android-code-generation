@@ -48,10 +48,10 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getBroadcastReceiverActionAccess().getAlternatives(), "rule__BroadcastReceiverAction__Alternatives");
 					put(grammarAccess.getAndroidAppProjectAccess().getGroup(), "rule__AndroidAppProject__Group__0");
 					put(grammarAccess.getAndroidAppProjectAccess().getGroup_1(), "rule__AndroidAppProject__Group_1__0");
-					put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
-					put(grammarAccess.getApplicationAccess().getGroup_4(), "rule__Application__Group_4__0");
 					put(grammarAccess.getPackageNameAccess().getGroup(), "rule__PackageName__Group__0");
 					put(grammarAccess.getPackageNameAccess().getGroup_1(), "rule__PackageName__Group_1__0");
+					put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
+					put(grammarAccess.getApplicationAccess().getGroup_4(), "rule__Application__Group_4__0");
 					put(grammarAccess.getApplicationMinSdkAccess().getGroup(), "rule__ApplicationMinSdk__Group__0");
 					put(grammarAccess.getApplicationTargetSdkAccess().getGroup(), "rule__ApplicationTargetSdk__Group__0");
 					put(grammarAccess.getApplicationCompileSdkAccess().getGroup(), "rule__ApplicationCompileSdk__Group__0");

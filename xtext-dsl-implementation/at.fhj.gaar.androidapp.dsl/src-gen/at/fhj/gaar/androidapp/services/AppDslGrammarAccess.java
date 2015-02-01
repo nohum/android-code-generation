@@ -54,6 +54,58 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getApplicationsApplicationParserRuleCall_1_1_0() { return cApplicationsApplicationParserRuleCall_1_1_0; }
 	}
 
+	public class JavaIdentifierElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JavaIdentifier");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//JavaIdentifier:
+		//	ID;
+		public ParserRule getRule() { return rule; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
+
+	public class ClassNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ClassName");
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//ClassName:
+		//	ID;
+		public ParserRule getRule() { return rule; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
+	}
+
+	public class PackageNameElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageName");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//PackageName:
+		//	ID ("." ID)*;
+		public ParserRule getRule() { return rule; }
+
+		//ID ("." ID)*
+		public Group getGroup() { return cGroup; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//("." ID)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//"."
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
+
 	public class ApplicationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Application");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -111,58 +163,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class JavaIdentifierElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "JavaIdentifier");
-		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//JavaIdentifier:
-		//	ID;
-		public ParserRule getRule() { return rule; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
-	}
-
-	public class ClassNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ClassName");
-		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//ClassName:
-		//	ID;
-		public ParserRule getRule() { return rule; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
-	}
-
-	public class PackageNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageName");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		
-		//PackageName:
-		//	ID ("." ID)*;
-		public ParserRule getRule() { return rule; }
-
-		//ID ("." ID)*
-		public Group getGroup() { return cGroup; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
-
-		//("." ID)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 
 	public class ApplicationAttributeElements extends AbstractParserRuleElementFinder {
@@ -933,21 +933,21 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LayoutElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cButtonParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSpacerParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Action cSpacerAction_1 = (Action)cAlternatives.eContents().get(1);
 		private final RuleCall cTextParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//LayoutElement:
-		//	Button | Spacer | Text;
+		//	Button | {Spacer} | Text;
 		public ParserRule getRule() { return rule; }
 
-		//Button | Spacer | Text
+		//Button | {Spacer} | Text
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Button
 		public RuleCall getButtonParserRuleCall_0() { return cButtonParserRuleCall_0; }
 
-		//Spacer
-		public RuleCall getSpacerParserRuleCall_1() { return cSpacerParserRuleCall_1; }
+		//{Spacer}
+		public Action getSpacerAction_1() { return cSpacerAction_1; }
 
 		//Text
 		public RuleCall getTextParserRuleCall_2() { return cTextParserRuleCall_2; }
@@ -1263,10 +1263,10 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final AndroidAppProjectElements pAndroidAppProject;
 	private final TerminalRule tBOOLEAN;
-	private final ApplicationElements pApplication;
 	private final JavaIdentifierElements pJavaIdentifier;
 	private final ClassNameElements pClassName;
 	private final PackageNameElements pPackageName;
+	private final ApplicationElements pApplication;
 	private final ApplicationAttributeElements pApplicationAttribute;
 	private final ApplicationMinSdkElements pApplicationMinSdk;
 	private final ApplicationTargetSdkElements pApplicationTargetSdk;
@@ -1314,10 +1314,10 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pAndroidAppProject = new AndroidAppProjectElements();
 		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
-		this.pApplication = new ApplicationElements();
 		this.pJavaIdentifier = new JavaIdentifierElements();
 		this.pClassName = new ClassNameElements();
 		this.pPackageName = new PackageNameElements();
+		this.pApplication = new ApplicationElements();
 		this.pApplicationAttribute = new ApplicationAttributeElements();
 		this.pApplicationMinSdk = new ApplicationMinSdkElements();
 		this.pApplicationTargetSdk = new ApplicationTargetSdkElements();
@@ -1398,17 +1398,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		return tBOOLEAN;
 	} 
 
-	//Application:
-	//	"application" packageName=PackageName "{" // allow only one attribute or more than one (separated by ",")
-	//	attributes+=ApplicationAttribute ("," attributes+=ApplicationAttribute)* "}";
-	public ApplicationElements getApplicationAccess() {
-		return pApplication;
-	}
-	
-	public ParserRule getApplicationRule() {
-		return getApplicationAccess().getRule();
-	}
-
 	//JavaIdentifier:
 	//	ID;
 	public JavaIdentifierElements getJavaIdentifierAccess() {
@@ -1437,6 +1426,17 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getPackageNameRule() {
 		return getPackageNameAccess().getRule();
+	}
+
+	//Application:
+	//	"application" packageName=PackageName "{" // allow only one attribute or more than one (separated by ",")
+	//	attributes+=ApplicationAttribute ("," attributes+=ApplicationAttribute)* "}";
+	public ApplicationElements getApplicationAccess() {
+		return pApplication;
+	}
+	
+	public ParserRule getApplicationRule() {
+		return getApplicationAccess().getRule();
 	}
 
 	//ApplicationAttribute:
@@ -1670,7 +1670,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//LayoutElement:
-	//	Button | Spacer | Text;
+	//	Button | {Spacer} | Text;
 	public LayoutElementElements getLayoutElementAccess() {
 		return pLayoutElement;
 	}

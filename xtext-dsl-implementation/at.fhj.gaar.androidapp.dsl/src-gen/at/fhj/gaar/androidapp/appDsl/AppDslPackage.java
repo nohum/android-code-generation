@@ -981,6 +981,25 @@ public interface AppDslPackage extends EPackage
    */
   int ACTION_START_SERVICE_FEATURE_COUNT = LAYOUT_ELEMENT_CLICK_ACTION_FEATURE_COUNT + 1;
 
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl <em>Spacer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getSpacer()
+   * @generated
+   */
+  int SPACER = 34;
+
+  /**
+   * The number of structural features of the '<em>Spacer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPACER_FEATURE_COUNT = LAYOUT_ELEMENT_FEATURE_COUNT + 0;
+
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.AndroidAppProject <em>Android App Project</em>}'.
@@ -1631,6 +1650,16 @@ public interface AppDslPackage extends EPackage
   EAttribute getActionStartService_Service();
 
   /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Spacer <em>Spacer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Spacer</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Spacer
+   * @generated
+   */
+  EClass getSpacer();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2216,6 +2245,16 @@ public interface AppDslPackage extends EPackage
      * @generated
      */
     EAttribute ACTION_START_SERVICE__SERVICE = eINSTANCE.getActionStartService_Service();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl <em>Spacer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getSpacer()
+     * @generated
+     */
+    EClass SPACER = eINSTANCE.getSpacer();
 
   }
 

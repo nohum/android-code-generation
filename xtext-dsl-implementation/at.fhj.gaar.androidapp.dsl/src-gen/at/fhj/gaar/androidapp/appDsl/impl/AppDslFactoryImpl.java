@@ -98,6 +98,7 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
       case AppDslPackage.ACTION_SHOW_TOAST: return createActionShowToast();
       case AppDslPackage.ACTION_START_ACTIVITY: return createActionStartActivity();
       case AppDslPackage.ACTION_START_SERVICE: return createActionStartService();
+      case AppDslPackage.SPACER: return createSpacer();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -475,6 +476,17 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
   {
     ActionStartServiceImpl actionStartService = new ActionStartServiceImpl();
     return actionStartService;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Spacer createSpacer()
+  {
+    SpacerImpl spacer = new SpacerImpl();
+    return spacer;
   }
 
   /**

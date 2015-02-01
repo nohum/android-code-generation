@@ -124,97 +124,6 @@ ruleAndroidAppProject returns [EObject current=null]
 
 
 
-// Entry rule entryRuleApplication
-entryRuleApplication returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getApplicationRule()); }
-	 iv_ruleApplication=ruleApplication 
-	 { $current=$iv_ruleApplication.current; } 
-	 EOF 
-;
-
-// Rule Application
-ruleApplication returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(	otherlv_0='application' 
-    {
-    	newLeafNode(otherlv_0, grammarAccess.getApplicationAccess().getApplicationKeyword_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getApplicationAccess().getPackageNamePackageNameParserRuleCall_1_0()); 
-	    }
-		lv_packageName_1_0=rulePackageName		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
-	        }
-       		set(
-       			$current, 
-       			"packageName",
-        		lv_packageName_1_0, 
-        		"PackageName");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)	otherlv_2='{' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getApplicationAccess().getLeftCurlyBracketKeyword_2());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getApplicationAccess().getAttributesApplicationAttributeParserRuleCall_3_0()); 
-	    }
-		lv_attributes_3_0=ruleApplicationAttribute		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
-	        }
-       		add(
-       			$current, 
-       			"attributes",
-        		lv_attributes_3_0, 
-        		"ApplicationAttribute");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)(	otherlv_4=',' 
-    {
-    	newLeafNode(otherlv_4, grammarAccess.getApplicationAccess().getCommaKeyword_4_0());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getApplicationAccess().getAttributesApplicationAttributeParserRuleCall_4_1_0()); 
-	    }
-		lv_attributes_5_0=ruleApplicationAttribute		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
-	        }
-       		add(
-       			$current, 
-       			"attributes",
-        		lv_attributes_5_0, 
-        		"ApplicationAttribute");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*	otherlv_6='}' 
-    {
-    	newLeafNode(otherlv_6, grammarAccess.getApplicationAccess().getRightCurlyBracketKeyword_5());
-    }
-)
-;
-
-
-
-
-
 // Entry rule entryRuleJavaIdentifier
 entryRuleJavaIdentifier returns [String current=null] 
 	:
@@ -307,6 +216,97 @@ rulePackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
     }
 )*)
     ;
+
+
+
+
+
+// Entry rule entryRuleApplication
+entryRuleApplication returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getApplicationRule()); }
+	 iv_ruleApplication=ruleApplication 
+	 { $current=$iv_ruleApplication.current; } 
+	 EOF 
+;
+
+// Rule Application
+ruleApplication returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='application' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getApplicationAccess().getApplicationKeyword_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getApplicationAccess().getPackageNamePackageNameParserRuleCall_1_0()); 
+	    }
+		lv_packageName_1_0=rulePackageName		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
+	        }
+       		set(
+       			$current, 
+       			"packageName",
+        		lv_packageName_1_0, 
+        		"PackageName");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2='{' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getApplicationAccess().getLeftCurlyBracketKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getApplicationAccess().getAttributesApplicationAttributeParserRuleCall_3_0()); 
+	    }
+		lv_attributes_3_0=ruleApplicationAttribute		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
+	        }
+       		add(
+       			$current, 
+       			"attributes",
+        		lv_attributes_3_0, 
+        		"ApplicationAttribute");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_4=',' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getApplicationAccess().getCommaKeyword_4_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getApplicationAccess().getAttributesApplicationAttributeParserRuleCall_4_1_0()); 
+	    }
+		lv_attributes_5_0=ruleApplicationAttribute		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
+	        }
+       		add(
+       			$current, 
+       			"attributes",
+        		lv_attributes_5_0, 
+        		"ApplicationAttribute");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_6='}' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getApplicationAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
 
 
 
@@ -1659,15 +1659,13 @@ ruleLayoutElement returns [EObject current=null]
         afterParserOrEnumRuleCall();
     }
 
-    |
-    { 
-        newCompositeNode(grammarAccess.getLayoutElementAccess().getSpacerParserRuleCall_1()); 
+    |(
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getLayoutElementAccess().getSpacerAction_1(),
+            $current);
     }
-ruleSpacer
-    { 
-        afterParserOrEnumRuleCall();
-    }
-
+)
     |
     { 
         newCompositeNode(grammarAccess.getLayoutElementAccess().getTextParserRuleCall_2()); 
@@ -1898,31 +1896,6 @@ ruleButtonActionAttribute returns [EObject current=null]
 ;
 
 
-
-
-
-// Entry rule entryRuleSpacer
-entryRuleSpacer returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getSpacerRule()); } 
-	 iv_ruleSpacer=ruleSpacer 
-	 { $current=$iv_ruleSpacer.current.getText(); }  
-	 EOF 
-;
-
-// Rule Spacer
-ruleSpacer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-
-	kw='spacer' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSpacerAccess().getSpacerKeyword()); 
-    }
-
-    ;
 
 
 
