@@ -3,7 +3,7 @@
 package at.fhj.gaar.androidapp.appDsl.impl;
 
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
-import at.fhj.gaar.androidapp.appDsl.ApplicationTitle;
+import at.fhj.gaar.androidapp.appDsl.ButtonLabelAttribute;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -13,18 +13,18 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Application Title</b></em>'.
+ * An implementation of the model object '<em><b>Button Label Attribute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationTitleImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ButtonLabelAttributeImpl#getTitle <em>Title</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ApplicationTitleImpl extends ApplicationAttributeImpl implements ApplicationTitle
+public class ButtonLabelAttributeImpl extends ButtonAttributeImpl implements ButtonLabelAttribute
 {
   /**
    * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
@@ -51,7 +51,7 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ApplicationTitleImpl()
+  protected ButtonLabelAttributeImpl()
   {
     super();
   }
@@ -64,7 +64,7 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
   @Override
   protected EClass eStaticClass()
   {
-    return AppDslPackage.Literals.APPLICATION_TITLE;
+    return AppDslPackage.Literals.BUTTON_LABEL_ATTRIBUTE;
   }
 
   /**
@@ -87,7 +87,7 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
     String oldTitle = title;
     title = newTitle;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.APPLICATION_TITLE__TITLE, oldTitle, title));
+      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.BUTTON_LABEL_ATTRIBUTE__TITLE, oldTitle, title));
   }
 
   /**
@@ -100,7 +100,7 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_TITLE__TITLE:
+      case AppDslPackage.BUTTON_LABEL_ATTRIBUTE__TITLE:
         return getTitle();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -116,7 +116,7 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_TITLE__TITLE:
+      case AppDslPackage.BUTTON_LABEL_ATTRIBUTE__TITLE:
         setTitle((String)newValue);
         return;
     }
@@ -133,7 +133,7 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_TITLE__TITLE:
+      case AppDslPackage.BUTTON_LABEL_ATTRIBUTE__TITLE:
         setTitle(TITLE_EDEFAULT);
         return;
     }
@@ -150,7 +150,7 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_TITLE__TITLE:
+      case AppDslPackage.BUTTON_LABEL_ATTRIBUTE__TITLE:
         return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
     }
     return super.eIsSet(featureID);
@@ -173,4 +173,4 @@ public class ApplicationTitleImpl extends ApplicationAttributeImpl implements Ap
     return result.toString();
   }
 
-} //ApplicationTitleImpl
+} //ButtonLabelAttributeImpl

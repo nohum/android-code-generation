@@ -1,6 +1,11 @@
 package at.fhj.gaar.androidapp.serializer;
 
+import at.fhj.gaar.androidapp.appDsl.ActionShowToast;
+import at.fhj.gaar.androidapp.appDsl.ActionStartActivity;
+import at.fhj.gaar.androidapp.appDsl.ActionStartService;
 import at.fhj.gaar.androidapp.appDsl.Activity;
+import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute;
+import at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute;
 import at.fhj.gaar.androidapp.appDsl.AndroidAppProject;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
@@ -10,10 +15,15 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
-import at.fhj.gaar.androidapp.appDsl.ApplicationTitle;
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute;
+import at.fhj.gaar.androidapp.appDsl.Button;
+import at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute;
+import at.fhj.gaar.androidapp.appDsl.ButtonLabelAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
+import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
+import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.services.AppDslGrammarAccess;
 import com.google.inject.Inject;
@@ -38,10 +48,48 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == AppDslPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
+			case AppDslPackage.ACTION_SHOW_TOAST:
+				if(context == grammarAccess.getActionShowToastRule() ||
+				   context == grammarAccess.getBroadcastReceiverActionRule() ||
+				   context == grammarAccess.getLayoutElementClickActionRule()) {
+					sequence_ActionShowToast(context, (ActionShowToast) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.ACTION_START_ACTIVITY:
+				if(context == grammarAccess.getActionStartActivityRule() ||
+				   context == grammarAccess.getBroadcastReceiverActionRule() ||
+				   context == grammarAccess.getLayoutElementClickActionRule()) {
+					sequence_ActionStartActivity(context, (ActionStartActivity) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.ACTION_START_SERVICE:
+				if(context == grammarAccess.getActionStartServiceRule() ||
+				   context == grammarAccess.getBroadcastReceiverActionRule() ||
+				   context == grammarAccess.getLayoutElementClickActionRule()) {
+					sequence_ActionStartService(context, (ActionStartService) semanticObject); 
+					return; 
+				}
+				else break;
 			case AppDslPackage.ACTIVITY:
 				if(context == grammarAccess.getActivityRule() ||
 				   context == grammarAccess.getApplicationElementRule()) {
 					sequence_Activity(context, (Activity) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.ACTIVITY_LAYOUT_ATTRIBUTE:
+				if(context == grammarAccess.getActivityAttributeRule() ||
+				   context == grammarAccess.getActivityLayoutAttributeRule()) {
+					sequence_ActivityLayoutAttribute(context, (ActivityLayoutAttribute) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE:
+				if(context == grammarAccess.getActivityAttributeRule() ||
+				   context == grammarAccess.getActivityParentAttributeRule()) {
+					sequence_ActivityParentAttribute(context, (ActivityParentAttribute) semanticObject); 
 					return; 
 				}
 				else break;
@@ -99,17 +147,38 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
-			case AppDslPackage.APPLICATION_TITLE:
-				if(context == grammarAccess.getApplicationAttributeRule() ||
-				   context == grammarAccess.getApplicationTitleRule()) {
-					sequence_ApplicationTitle(context, (ApplicationTitle) semanticObject); 
-					return; 
-				}
-				else break;
 			case AppDslPackage.BROADCAST_RECEIVER:
 				if(context == grammarAccess.getApplicationElementRule() ||
 				   context == grammarAccess.getBroadcastReceiverRule()) {
 					sequence_BroadcastReceiver(context, (BroadcastReceiver) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.BROADCAST_RECEIVER_ACTION_ATTRIBUTE:
+				if(context == grammarAccess.getBroadcastReceiverActionAttributeRule() ||
+				   context == grammarAccess.getBroadcastReceiverAttributeRule()) {
+					sequence_BroadcastReceiverActionAttribute(context, (BroadcastReceiverActionAttribute) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.BUTTON:
+				if(context == grammarAccess.getButtonRule() ||
+				   context == grammarAccess.getLayoutElementRule()) {
+					sequence_Button(context, (Button) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.BUTTON_ACTION_ATTRIBUTE:
+				if(context == grammarAccess.getButtonActionAttributeRule() ||
+				   context == grammarAccess.getButtonAttributeRule()) {
+					sequence_ButtonActionAttribute(context, (ButtonActionAttribute) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.BUTTON_LABEL_ATTRIBUTE:
+				if(context == grammarAccess.getButtonAttributeRule() ||
+				   context == grammarAccess.getButtonLabelAttributeRule()) {
+					sequence_ButtonLabelAttribute(context, (ButtonLabelAttribute) semanticObject); 
 					return; 
 				}
 				else break;
@@ -131,6 +200,25 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case AppDslPackage.ELEMENT_INTENT_LIST:
+				if(context == grammarAccess.getActivityAttributeRule() ||
+				   context == grammarAccess.getBroadcastReceiverAttributeRule() ||
+				   context == grammarAccess.getElementIntentListRule() ||
+				   context == grammarAccess.getServiceAttributeRule()) {
+					sequence_ElementIntentList(context, (ElementIntentList) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.ELEMENT_LABEL_ATTRIBUTE:
+				if(context == grammarAccess.getActivityAttributeRule() ||
+				   context == grammarAccess.getApplicationAttributeRule() ||
+				   context == grammarAccess.getBroadcastReceiverAttributeRule() ||
+				   context == grammarAccess.getElementLabelAttributeRule() ||
+				   context == grammarAccess.getServiceAttributeRule()) {
+					sequence_ElementLabelAttribute(context, (ElementLabelAttribute) semanticObject); 
+					return; 
+				}
+				else break;
 			case AppDslPackage.SERVICE:
 				if(context == grammarAccess.getApplicationElementRule() ||
 				   context == grammarAccess.getServiceRule()) {
@@ -141,6 +229,79 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Constraint:
+	 *     toastText=STRING
+	 */
+	protected void sequence_ActionShowToast(EObject context, ActionShowToast semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.ACTION_SHOW_TOAST__TOAST_TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.ACTION_SHOW_TOAST__TOAST_TEXT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionShowToastAccess().getToastTextSTRINGTerminalRuleCall_1_0(), semanticObject.getToastText());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     activity=ClassName
+	 */
+	protected void sequence_ActionStartActivity(EObject context, ActionStartActivity semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.ACTION_START_ACTIVITY__ACTIVITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.ACTION_START_ACTIVITY__ACTIVITY));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionStartActivityAccess().getActivityClassNameParserRuleCall_1_0(), semanticObject.getActivity());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     service=ClassName
+	 */
+	protected void sequence_ActionStartService(EObject context, ActionStartService semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.ACTION_START_SERVICE__SERVICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.ACTION_START_SERVICE__SERVICE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActionStartServiceAccess().getServiceClassNameParserRuleCall_1_0(), semanticObject.getService());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (layoutElements+=LayoutElement layoutElements+=LayoutElement*)
+	 */
+	protected void sequence_ActivityLayoutAttribute(EObject context, ActivityLayoutAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     parent=ClassName
+	 */
+	protected void sequence_ActivityParentAttribute(EObject context, ActivityParentAttribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.ACTIVITY_PARENT_ATTRIBUTE__PARENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.ACTIVITY_PARENT_ATTRIBUTE__PARENT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getActivityParentAttributeAccess().getParentClassNameParserRuleCall_1_0(), semanticObject.getParent());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Constraint:
@@ -187,7 +348,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     launcherActivity=STRING
+	 *     launcherActivity=ClassName
 	 */
 	protected void sequence_ApplicationMainActivity(EObject context, ApplicationMainActivity semanticObject) {
 		if(errorAcceptor != null) {
@@ -196,7 +357,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getApplicationMainActivityAccess().getLauncherActivitySTRINGTerminalRuleCall_1_0(), semanticObject.getLauncherActivity());
+		feeder.accept(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityClassNameParserRuleCall_1_0(), semanticObject.getLauncherActivity());
 		feeder.finish();
 	}
 	
@@ -244,22 +405,6 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     title=STRING
-	 */
-	protected void sequence_ApplicationTitle(EObject context, ApplicationTitle semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.APPLICATION_TITLE__TITLE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.APPLICATION_TITLE__TITLE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getApplicationTitleAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (packageName=PackageName attributes+=ApplicationAttribute attributes+=ApplicationAttribute*)
 	 */
 	protected void sequence_Application(EObject context, Application semanticObject) {
@@ -269,9 +414,66 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     action=BroadcastReceiverAction
+	 */
+	protected void sequence_BroadcastReceiverActionAttribute(EObject context, BroadcastReceiverActionAttribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.BROADCAST_RECEIVER_ACTION_ATTRIBUTE__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.BROADCAST_RECEIVER_ACTION_ATTRIBUTE__ACTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getBroadcastReceiverActionAttributeAccess().getActionBroadcastReceiverActionParserRuleCall_1_0(), semanticObject.getAction());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (className=ClassName attributes+=BroadcastReceiverAttribute attributes+=BroadcastReceiverAttribute*)
 	 */
 	protected void sequence_BroadcastReceiver(EObject context, BroadcastReceiver semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     action=LayoutElementClickAction
+	 */
+	protected void sequence_ButtonActionAttribute(EObject context, ButtonActionAttribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.BUTTON_ACTION_ATTRIBUTE__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.BUTTON_ACTION_ATTRIBUTE__ACTION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getButtonActionAttributeAccess().getActionLayoutElementClickActionParserRuleCall_1_0(), semanticObject.getAction());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     title=STRING
+	 */
+	protected void sequence_ButtonLabelAttribute(EObject context, ButtonLabelAttribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.BUTTON_LABEL_ATTRIBUTE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.BUTTON_LABEL_ATTRIBUTE__TITLE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getButtonLabelAttributeAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (buttonName=ID attributes+=ButtonAttribute attributes+=ButtonAttribute*)
+	 */
+	protected void sequence_Button(EObject context, Button semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -304,6 +506,31 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getElementExportedAttributeAccess().getExportedBOOLEANTerminalRuleCall_1_0(), semanticObject.isExported());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (intents+=Intent intents+=Intent*)
+	 */
+	protected void sequence_ElementIntentList(EObject context, ElementIntentList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     title=STRING
+	 */
+	protected void sequence_ElementLabelAttribute(EObject context, ElementLabelAttribute semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.ELEMENT_LABEL_ATTRIBUTE__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.ELEMENT_LABEL_ATTRIBUTE__TITLE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getElementLabelAttributeAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
 		feeder.finish();
 	}
 	

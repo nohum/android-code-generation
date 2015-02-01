@@ -2,8 +2,13 @@
  */
 package at.fhj.gaar.androidapp.appDsl.impl;
 
+import at.fhj.gaar.androidapp.appDsl.ActionShowToast;
+import at.fhj.gaar.androidapp.appDsl.ActionStartActivity;
+import at.fhj.gaar.androidapp.appDsl.ActionStartService;
 import at.fhj.gaar.androidapp.appDsl.Activity;
 import at.fhj.gaar.androidapp.appDsl.ActivityAttribute;
+import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute;
+import at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute;
 import at.fhj.gaar.androidapp.appDsl.AndroidAppProject;
 import at.fhj.gaar.androidapp.appDsl.AppDslFactory;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
@@ -16,11 +21,20 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
-import at.fhj.gaar.androidapp.appDsl.ApplicationTitle;
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAction;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute;
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
+import at.fhj.gaar.androidapp.appDsl.Button;
+import at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute;
+import at.fhj.gaar.androidapp.appDsl.ButtonAttribute;
+import at.fhj.gaar.androidapp.appDsl.ButtonLabelAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
+import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
+import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
+import at.fhj.gaar.androidapp.appDsl.LayoutElement;
+import at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 
@@ -59,13 +73,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * @generated
    */
   private EClass applicationAttributeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass applicationTitleEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -171,6 +178,111 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * @generated
    */
   private EClass elementExportedAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementLabelAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementIntentListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass activityParentAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass activityLayoutAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass layoutElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonLabelAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonActionAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass layoutElementClickActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass broadcastReceiverActionAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass broadcastReceiverActionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionShowToastEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionStartActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionStartServiceEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -293,26 +405,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
   public EClass getApplicationAttribute()
   {
     return applicationAttributeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getApplicationTitle()
-  {
-    return applicationTitleEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getApplicationTitle_Title()
-  {
-    return (EAttribute)applicationTitleEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -590,6 +682,276 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getElementLabelAttribute()
+  {
+    return elementLabelAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementLabelAttribute_Title()
+  {
+    return (EAttribute)elementLabelAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementIntentList()
+  {
+    return elementIntentListEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementIntentList_Intents()
+  {
+    return (EAttribute)elementIntentListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActivityParentAttribute()
+  {
+    return activityParentAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActivityParentAttribute_Parent()
+  {
+    return (EAttribute)activityParentAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActivityLayoutAttribute()
+  {
+    return activityLayoutAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActivityLayoutAttribute_LayoutElements()
+  {
+    return (EReference)activityLayoutAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLayoutElement()
+  {
+    return layoutElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButton()
+  {
+    return buttonEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButton_ButtonName()
+  {
+    return (EAttribute)buttonEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButton_Attributes()
+  {
+    return (EReference)buttonEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButtonAttribute()
+  {
+    return buttonAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButtonLabelAttribute()
+  {
+    return buttonLabelAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButtonLabelAttribute_Title()
+  {
+    return (EAttribute)buttonLabelAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButtonActionAttribute()
+  {
+    return buttonActionAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButtonActionAttribute_Action()
+  {
+    return (EReference)buttonActionAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLayoutElementClickAction()
+  {
+    return layoutElementClickActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBroadcastReceiverActionAttribute()
+  {
+    return broadcastReceiverActionAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBroadcastReceiverActionAttribute_Action()
+  {
+    return (EReference)broadcastReceiverActionAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBroadcastReceiverAction()
+  {
+    return broadcastReceiverActionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionShowToast()
+  {
+    return actionShowToastEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionShowToast_ToastText()
+  {
+    return (EAttribute)actionShowToastEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionStartActivity()
+  {
+    return actionStartActivityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionStartActivity_Activity()
+  {
+    return (EAttribute)actionStartActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionStartService()
+  {
+    return actionStartServiceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getActionStartService_Service()
+  {
+    return (EAttribute)actionStartServiceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AppDslFactory getAppDslFactory()
   {
     return (AppDslFactory)getEFactoryInstance();
@@ -623,9 +985,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEReference(applicationEClass, APPLICATION__ATTRIBUTES);
 
     applicationAttributeEClass = createEClass(APPLICATION_ATTRIBUTE);
-
-    applicationTitleEClass = createEClass(APPLICATION_TITLE);
-    createEAttribute(applicationTitleEClass, APPLICATION_TITLE__TITLE);
 
     applicationMinSdkEClass = createEClass(APPLICATION_MIN_SDK);
     createEAttribute(applicationMinSdkEClass, APPLICATION_MIN_SDK__MIN_SDK);
@@ -668,6 +1027,48 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
 
     elementExportedAttributeEClass = createEClass(ELEMENT_EXPORTED_ATTRIBUTE);
     createEAttribute(elementExportedAttributeEClass, ELEMENT_EXPORTED_ATTRIBUTE__EXPORTED);
+
+    elementLabelAttributeEClass = createEClass(ELEMENT_LABEL_ATTRIBUTE);
+    createEAttribute(elementLabelAttributeEClass, ELEMENT_LABEL_ATTRIBUTE__TITLE);
+
+    elementIntentListEClass = createEClass(ELEMENT_INTENT_LIST);
+    createEAttribute(elementIntentListEClass, ELEMENT_INTENT_LIST__INTENTS);
+
+    activityParentAttributeEClass = createEClass(ACTIVITY_PARENT_ATTRIBUTE);
+    createEAttribute(activityParentAttributeEClass, ACTIVITY_PARENT_ATTRIBUTE__PARENT);
+
+    activityLayoutAttributeEClass = createEClass(ACTIVITY_LAYOUT_ATTRIBUTE);
+    createEReference(activityLayoutAttributeEClass, ACTIVITY_LAYOUT_ATTRIBUTE__LAYOUT_ELEMENTS);
+
+    layoutElementEClass = createEClass(LAYOUT_ELEMENT);
+
+    buttonEClass = createEClass(BUTTON);
+    createEAttribute(buttonEClass, BUTTON__BUTTON_NAME);
+    createEReference(buttonEClass, BUTTON__ATTRIBUTES);
+
+    buttonAttributeEClass = createEClass(BUTTON_ATTRIBUTE);
+
+    buttonLabelAttributeEClass = createEClass(BUTTON_LABEL_ATTRIBUTE);
+    createEAttribute(buttonLabelAttributeEClass, BUTTON_LABEL_ATTRIBUTE__TITLE);
+
+    buttonActionAttributeEClass = createEClass(BUTTON_ACTION_ATTRIBUTE);
+    createEReference(buttonActionAttributeEClass, BUTTON_ACTION_ATTRIBUTE__ACTION);
+
+    layoutElementClickActionEClass = createEClass(LAYOUT_ELEMENT_CLICK_ACTION);
+
+    broadcastReceiverActionAttributeEClass = createEClass(BROADCAST_RECEIVER_ACTION_ATTRIBUTE);
+    createEReference(broadcastReceiverActionAttributeEClass, BROADCAST_RECEIVER_ACTION_ATTRIBUTE__ACTION);
+
+    broadcastReceiverActionEClass = createEClass(BROADCAST_RECEIVER_ACTION);
+
+    actionShowToastEClass = createEClass(ACTION_SHOW_TOAST);
+    createEAttribute(actionShowToastEClass, ACTION_SHOW_TOAST__TOAST_TEXT);
+
+    actionStartActivityEClass = createEClass(ACTION_START_ACTIVITY);
+    createEAttribute(actionStartActivityEClass, ACTION_START_ACTIVITY__ACTIVITY);
+
+    actionStartServiceEClass = createEClass(ACTION_START_SERVICE);
+    createEAttribute(actionStartServiceEClass, ACTION_START_SERVICE__SERVICE);
   }
 
   /**
@@ -699,7 +1100,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    applicationTitleEClass.getESuperTypes().add(this.getApplicationAttribute());
     applicationMinSdkEClass.getESuperTypes().add(this.getApplicationAttribute());
     applicationTargetSdkEClass.getESuperTypes().add(this.getApplicationAttribute());
     applicationCompileSdkEClass.getESuperTypes().add(this.getApplicationAttribute());
@@ -715,6 +1115,25 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     elementExportedAttributeEClass.getESuperTypes().add(this.getActivityAttribute());
     elementExportedAttributeEClass.getESuperTypes().add(this.getBroadcastReceiverAttribute());
     elementExportedAttributeEClass.getESuperTypes().add(this.getServiceAttribute());
+    elementLabelAttributeEClass.getESuperTypes().add(this.getApplicationAttribute());
+    elementLabelAttributeEClass.getESuperTypes().add(this.getActivityAttribute());
+    elementLabelAttributeEClass.getESuperTypes().add(this.getBroadcastReceiverAttribute());
+    elementLabelAttributeEClass.getESuperTypes().add(this.getServiceAttribute());
+    elementIntentListEClass.getESuperTypes().add(this.getActivityAttribute());
+    elementIntentListEClass.getESuperTypes().add(this.getBroadcastReceiverAttribute());
+    elementIntentListEClass.getESuperTypes().add(this.getServiceAttribute());
+    activityParentAttributeEClass.getESuperTypes().add(this.getActivityAttribute());
+    activityLayoutAttributeEClass.getESuperTypes().add(this.getActivityAttribute());
+    buttonEClass.getESuperTypes().add(this.getLayoutElement());
+    buttonLabelAttributeEClass.getESuperTypes().add(this.getButtonAttribute());
+    buttonActionAttributeEClass.getESuperTypes().add(this.getButtonAttribute());
+    broadcastReceiverActionAttributeEClass.getESuperTypes().add(this.getBroadcastReceiverAttribute());
+    actionShowToastEClass.getESuperTypes().add(this.getLayoutElementClickAction());
+    actionShowToastEClass.getESuperTypes().add(this.getBroadcastReceiverAction());
+    actionStartActivityEClass.getESuperTypes().add(this.getLayoutElementClickAction());
+    actionStartActivityEClass.getESuperTypes().add(this.getBroadcastReceiverAction());
+    actionStartServiceEClass.getESuperTypes().add(this.getLayoutElementClickAction());
+    actionStartServiceEClass.getESuperTypes().add(this.getBroadcastReceiverAction());
 
     // Initialize classes and features; add operations and parameters
     initEClass(androidAppProjectEClass, AndroidAppProject.class, "AndroidAppProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -725,9 +1144,6 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEReference(getApplication_Attributes(), this.getApplicationAttribute(), null, "attributes", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationAttributeEClass, ApplicationAttribute.class, "ApplicationAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(applicationTitleEClass, ApplicationTitle.class, "ApplicationTitle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicationTitle_Title(), ecorePackage.getEString(), "title", null, 0, 1, ApplicationTitle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationMinSdkEClass, ApplicationMinSdk.class, "ApplicationMinSdk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getApplicationMinSdk_MinSdk(), ecorePackage.getEInt(), "minSdk", null, 0, 1, ApplicationMinSdk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -770,6 +1186,48 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
 
     initEClass(elementExportedAttributeEClass, ElementExportedAttribute.class, "ElementExportedAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElementExportedAttribute_Exported(), ecorePackage.getEBoolean(), "exported", null, 0, 1, ElementExportedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementLabelAttributeEClass, ElementLabelAttribute.class, "ElementLabelAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementLabelAttribute_Title(), ecorePackage.getEString(), "title", null, 0, 1, ElementLabelAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementIntentListEClass, ElementIntentList.class, "ElementIntentList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementIntentList_Intents(), ecorePackage.getEString(), "intents", null, 0, -1, ElementIntentList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(activityParentAttributeEClass, ActivityParentAttribute.class, "ActivityParentAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActivityParentAttribute_Parent(), ecorePackage.getEString(), "parent", null, 0, 1, ActivityParentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(activityLayoutAttributeEClass, ActivityLayoutAttribute.class, "ActivityLayoutAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActivityLayoutAttribute_LayoutElements(), this.getLayoutElement(), null, "layoutElements", null, 0, -1, ActivityLayoutAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(layoutElementEClass, LayoutElement.class, "LayoutElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getButton_ButtonName(), ecorePackage.getEString(), "buttonName", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getButton_Attributes(), this.getButtonAttribute(), null, "attributes", null, 0, -1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(buttonAttributeEClass, ButtonAttribute.class, "ButtonAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(buttonLabelAttributeEClass, ButtonLabelAttribute.class, "ButtonLabelAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getButtonLabelAttribute_Title(), ecorePackage.getEString(), "title", null, 0, 1, ButtonLabelAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(buttonActionAttributeEClass, ButtonActionAttribute.class, "ButtonActionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getButtonActionAttribute_Action(), this.getLayoutElementClickAction(), null, "action", null, 0, 1, ButtonActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(layoutElementClickActionEClass, LayoutElementClickAction.class, "LayoutElementClickAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(broadcastReceiverActionAttributeEClass, BroadcastReceiverActionAttribute.class, "BroadcastReceiverActionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBroadcastReceiverActionAttribute_Action(), this.getBroadcastReceiverAction(), null, "action", null, 0, 1, BroadcastReceiverActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(broadcastReceiverActionEClass, BroadcastReceiverAction.class, "BroadcastReceiverAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(actionShowToastEClass, ActionShowToast.class, "ActionShowToast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionShowToast_ToastText(), ecorePackage.getEString(), "toastText", null, 0, 1, ActionShowToast.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionStartActivityEClass, ActionStartActivity.class, "ActionStartActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionStartActivity_Activity(), ecorePackage.getEString(), "activity", null, 0, 1, ActionStartActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionStartServiceEClass, ActionStartService.class, "ActionStartService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getActionStartService_Service(), ecorePackage.getEString(), "service", null, 0, 1, ActionStartService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

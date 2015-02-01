@@ -15,9 +15,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Application/attributes"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationAttribute"/>
-    <genClasses ecoreClass="AppDsl.ecore#//ApplicationTitle">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationTitle/title"/>
-    </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationMinSdk">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationMinSdk/minSdk"/>
     </genClasses>
@@ -56,6 +53,44 @@
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ElementExportedAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementExportedAttribute/exported"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ElementLabelAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementLabelAttribute/title"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ElementIntentList">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementIntentList/intents"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ActivityParentAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActivityParentAttribute/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ActivityLayoutAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ActivityLayoutAttribute/layoutElements"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//LayoutElement"/>
+    <genClasses ecoreClass="AppDsl.ecore#//Button">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Button/buttonName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Button/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ButtonAttribute"/>
+    <genClasses ecoreClass="AppDsl.ecore#//ButtonLabelAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ButtonLabelAttribute/title"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ButtonActionAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ButtonActionAttribute/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//LayoutElementClickAction"/>
+    <genClasses ecoreClass="AppDsl.ecore#//BroadcastReceiverActionAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//BroadcastReceiverActionAttribute/action"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//BroadcastReceiverAction"/>
+    <genClasses ecoreClass="AppDsl.ecore#//ActionShowToast">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActionShowToast/toastText"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ActionStartActivity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActionStartActivity/activity"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ActionStartService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActionStartService/service"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

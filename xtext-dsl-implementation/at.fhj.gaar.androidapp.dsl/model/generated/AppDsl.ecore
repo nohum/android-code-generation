@@ -11,9 +11,6 @@
         eType="#//ApplicationAttribute" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationAttribute"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ApplicationTitle" eSuperTypes="#//ApplicationAttribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationMinSdk" eSuperTypes="#//ApplicationAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minSdk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -57,5 +54,48 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementExportedAttribute" eSuperTypes="#//ActivityAttribute #//BroadcastReceiverAttribute #//ServiceAttribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="exported" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementLabelAttribute" eSuperTypes="#//ApplicationAttribute #//ActivityAttribute #//BroadcastReceiverAttribute #//ServiceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementIntentList" eSuperTypes="#//ActivityAttribute #//BroadcastReceiverAttribute #//ServiceAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityParentAttribute" eSuperTypes="#//ActivityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityLayoutAttribute" eSuperTypes="#//ActivityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layoutElements" upperBound="-1"
+        eType="#//LayoutElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LayoutElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//LayoutElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="buttonName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//ButtonAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonLabelAttribute" eSuperTypes="#//ButtonAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ButtonActionAttribute" eSuperTypes="#//ButtonAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//LayoutElementClickAction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LayoutElementClickAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BroadcastReceiverActionAttribute" eSuperTypes="#//BroadcastReceiverAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//BroadcastReceiverAction"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BroadcastReceiverAction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionShowToast" eSuperTypes="#//LayoutElementClickAction #//BroadcastReceiverAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="toastText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionStartActivity" eSuperTypes="#//LayoutElementClickAction #//BroadcastReceiverAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionStartService" eSuperTypes="#//LayoutElementClickAction #//BroadcastReceiverAction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

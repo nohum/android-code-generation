@@ -50,15 +50,6 @@ public interface AppDslFactory extends EFactory
   ApplicationAttribute createApplicationAttribute();
 
   /**
-   * Returns a new object of class '<em>Application Title</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Application Title</em>'.
-   * @generated
-   */
-  ApplicationTitle createApplicationTitle();
-
-  /**
    * Returns a new object of class '<em>Application Min Sdk</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -192,6 +183,141 @@ public interface AppDslFactory extends EFactory
    * @generated
    */
   ElementExportedAttribute createElementExportedAttribute();
+
+  /**
+   * Returns a new object of class '<em>Element Label Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Label Attribute</em>'.
+   * @generated
+   */
+  ElementLabelAttribute createElementLabelAttribute();
+
+  /**
+   * Returns a new object of class '<em>Element Intent List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Intent List</em>'.
+   * @generated
+   */
+  ElementIntentList createElementIntentList();
+
+  /**
+   * Returns a new object of class '<em>Activity Parent Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Activity Parent Attribute</em>'.
+   * @generated
+   */
+  ActivityParentAttribute createActivityParentAttribute();
+
+  /**
+   * Returns a new object of class '<em>Activity Layout Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Activity Layout Attribute</em>'.
+   * @generated
+   */
+  ActivityLayoutAttribute createActivityLayoutAttribute();
+
+  /**
+   * Returns a new object of class '<em>Layout Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Layout Element</em>'.
+   * @generated
+   */
+  LayoutElement createLayoutElement();
+
+  /**
+   * Returns a new object of class '<em>Button</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button</em>'.
+   * @generated
+   */
+  Button createButton();
+
+  /**
+   * Returns a new object of class '<em>Button Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button Attribute</em>'.
+   * @generated
+   */
+  ButtonAttribute createButtonAttribute();
+
+  /**
+   * Returns a new object of class '<em>Button Label Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button Label Attribute</em>'.
+   * @generated
+   */
+  ButtonLabelAttribute createButtonLabelAttribute();
+
+  /**
+   * Returns a new object of class '<em>Button Action Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button Action Attribute</em>'.
+   * @generated
+   */
+  ButtonActionAttribute createButtonActionAttribute();
+
+  /**
+   * Returns a new object of class '<em>Layout Element Click Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Layout Element Click Action</em>'.
+   * @generated
+   */
+  LayoutElementClickAction createLayoutElementClickAction();
+
+  /**
+   * Returns a new object of class '<em>Broadcast Receiver Action Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Broadcast Receiver Action Attribute</em>'.
+   * @generated
+   */
+  BroadcastReceiverActionAttribute createBroadcastReceiverActionAttribute();
+
+  /**
+   * Returns a new object of class '<em>Broadcast Receiver Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Broadcast Receiver Action</em>'.
+   * @generated
+   */
+  BroadcastReceiverAction createBroadcastReceiverAction();
+
+  /**
+   * Returns a new object of class '<em>Action Show Toast</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Show Toast</em>'.
+   * @generated
+   */
+  ActionShowToast createActionShowToast();
+
+  /**
+   * Returns a new object of class '<em>Action Start Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Start Activity</em>'.
+   * @generated
+   */
+  ActionStartActivity createActionStartActivity();
+
+  /**
+   * Returns a new object of class '<em>Action Start Service</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Start Service</em>'.
+   * @generated
+   */
+  ActionStartService createActionStartService();
 
   /**
    * Returns the package supported by this factory.

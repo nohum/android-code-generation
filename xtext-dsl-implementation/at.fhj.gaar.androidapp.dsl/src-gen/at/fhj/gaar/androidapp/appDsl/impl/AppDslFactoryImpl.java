@@ -67,7 +67,6 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
       case AppDslPackage.ANDROID_APP_PROJECT: return createAndroidAppProject();
       case AppDslPackage.APPLICATION: return createApplication();
       case AppDslPackage.APPLICATION_ATTRIBUTE: return createApplicationAttribute();
-      case AppDslPackage.APPLICATION_TITLE: return createApplicationTitle();
       case AppDslPackage.APPLICATION_MIN_SDK: return createApplicationMinSdk();
       case AppDslPackage.APPLICATION_TARGET_SDK: return createApplicationTargetSdk();
       case AppDslPackage.APPLICATION_COMPILE_SDK: return createApplicationCompileSdk();
@@ -83,6 +82,21 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
       case AppDslPackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
       case AppDslPackage.ELEMENT_ENABLED_ATTRIBUTE: return createElementEnabledAttribute();
       case AppDslPackage.ELEMENT_EXPORTED_ATTRIBUTE: return createElementExportedAttribute();
+      case AppDslPackage.ELEMENT_LABEL_ATTRIBUTE: return createElementLabelAttribute();
+      case AppDslPackage.ELEMENT_INTENT_LIST: return createElementIntentList();
+      case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE: return createActivityParentAttribute();
+      case AppDslPackage.ACTIVITY_LAYOUT_ATTRIBUTE: return createActivityLayoutAttribute();
+      case AppDslPackage.LAYOUT_ELEMENT: return createLayoutElement();
+      case AppDslPackage.BUTTON: return createButton();
+      case AppDslPackage.BUTTON_ATTRIBUTE: return createButtonAttribute();
+      case AppDslPackage.BUTTON_LABEL_ATTRIBUTE: return createButtonLabelAttribute();
+      case AppDslPackage.BUTTON_ACTION_ATTRIBUTE: return createButtonActionAttribute();
+      case AppDslPackage.LAYOUT_ELEMENT_CLICK_ACTION: return createLayoutElementClickAction();
+      case AppDslPackage.BROADCAST_RECEIVER_ACTION_ATTRIBUTE: return createBroadcastReceiverActionAttribute();
+      case AppDslPackage.BROADCAST_RECEIVER_ACTION: return createBroadcastReceiverAction();
+      case AppDslPackage.ACTION_SHOW_TOAST: return createActionShowToast();
+      case AppDslPackage.ACTION_START_ACTIVITY: return createActionStartActivity();
+      case AppDslPackage.ACTION_START_SERVICE: return createActionStartService();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -119,17 +133,6 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
   {
     ApplicationAttributeImpl applicationAttribute = new ApplicationAttributeImpl();
     return applicationAttribute;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ApplicationTitle createApplicationTitle()
-  {
-    ApplicationTitleImpl applicationTitle = new ApplicationTitleImpl();
-    return applicationTitle;
   }
 
   /**
@@ -295,6 +298,171 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
   {
     ElementExportedAttributeImpl elementExportedAttribute = new ElementExportedAttributeImpl();
     return elementExportedAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementLabelAttribute createElementLabelAttribute()
+  {
+    ElementLabelAttributeImpl elementLabelAttribute = new ElementLabelAttributeImpl();
+    return elementLabelAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementIntentList createElementIntentList()
+  {
+    ElementIntentListImpl elementIntentList = new ElementIntentListImpl();
+    return elementIntentList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActivityParentAttribute createActivityParentAttribute()
+  {
+    ActivityParentAttributeImpl activityParentAttribute = new ActivityParentAttributeImpl();
+    return activityParentAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActivityLayoutAttribute createActivityLayoutAttribute()
+  {
+    ActivityLayoutAttributeImpl activityLayoutAttribute = new ActivityLayoutAttributeImpl();
+    return activityLayoutAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LayoutElement createLayoutElement()
+  {
+    LayoutElementImpl layoutElement = new LayoutElementImpl();
+    return layoutElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Button createButton()
+  {
+    ButtonImpl button = new ButtonImpl();
+    return button;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ButtonAttribute createButtonAttribute()
+  {
+    ButtonAttributeImpl buttonAttribute = new ButtonAttributeImpl();
+    return buttonAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ButtonLabelAttribute createButtonLabelAttribute()
+  {
+    ButtonLabelAttributeImpl buttonLabelAttribute = new ButtonLabelAttributeImpl();
+    return buttonLabelAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ButtonActionAttribute createButtonActionAttribute()
+  {
+    ButtonActionAttributeImpl buttonActionAttribute = new ButtonActionAttributeImpl();
+    return buttonActionAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LayoutElementClickAction createLayoutElementClickAction()
+  {
+    LayoutElementClickActionImpl layoutElementClickAction = new LayoutElementClickActionImpl();
+    return layoutElementClickAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BroadcastReceiverActionAttribute createBroadcastReceiverActionAttribute()
+  {
+    BroadcastReceiverActionAttributeImpl broadcastReceiverActionAttribute = new BroadcastReceiverActionAttributeImpl();
+    return broadcastReceiverActionAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BroadcastReceiverAction createBroadcastReceiverAction()
+  {
+    BroadcastReceiverActionImpl broadcastReceiverAction = new BroadcastReceiverActionImpl();
+    return broadcastReceiverAction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionShowToast createActionShowToast()
+  {
+    ActionShowToastImpl actionShowToast = new ActionShowToastImpl();
+    return actionShowToast;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionStartActivity createActionStartActivity()
+  {
+    ActionStartActivityImpl actionStartActivity = new ActionStartActivityImpl();
+    return actionStartActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActionStartService createActionStartService()
+  {
+    ActionStartServiceImpl actionStartService = new ActionStartServiceImpl();
+    return actionStartService;
   }
 
   /**

@@ -90,11 +90,6 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
         return createApplicationAttributeAdapter();
       }
       @Override
-      public Adapter caseApplicationTitle(ApplicationTitle object)
-      {
-        return createApplicationTitleAdapter();
-      }
-      @Override
       public Adapter caseApplicationMinSdk(ApplicationMinSdk object)
       {
         return createApplicationMinSdkAdapter();
@@ -170,6 +165,81 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
         return createElementExportedAttributeAdapter();
       }
       @Override
+      public Adapter caseElementLabelAttribute(ElementLabelAttribute object)
+      {
+        return createElementLabelAttributeAdapter();
+      }
+      @Override
+      public Adapter caseElementIntentList(ElementIntentList object)
+      {
+        return createElementIntentListAdapter();
+      }
+      @Override
+      public Adapter caseActivityParentAttribute(ActivityParentAttribute object)
+      {
+        return createActivityParentAttributeAdapter();
+      }
+      @Override
+      public Adapter caseActivityLayoutAttribute(ActivityLayoutAttribute object)
+      {
+        return createActivityLayoutAttributeAdapter();
+      }
+      @Override
+      public Adapter caseLayoutElement(LayoutElement object)
+      {
+        return createLayoutElementAdapter();
+      }
+      @Override
+      public Adapter caseButton(Button object)
+      {
+        return createButtonAdapter();
+      }
+      @Override
+      public Adapter caseButtonAttribute(ButtonAttribute object)
+      {
+        return createButtonAttributeAdapter();
+      }
+      @Override
+      public Adapter caseButtonLabelAttribute(ButtonLabelAttribute object)
+      {
+        return createButtonLabelAttributeAdapter();
+      }
+      @Override
+      public Adapter caseButtonActionAttribute(ButtonActionAttribute object)
+      {
+        return createButtonActionAttributeAdapter();
+      }
+      @Override
+      public Adapter caseLayoutElementClickAction(LayoutElementClickAction object)
+      {
+        return createLayoutElementClickActionAdapter();
+      }
+      @Override
+      public Adapter caseBroadcastReceiverActionAttribute(BroadcastReceiverActionAttribute object)
+      {
+        return createBroadcastReceiverActionAttributeAdapter();
+      }
+      @Override
+      public Adapter caseBroadcastReceiverAction(BroadcastReceiverAction object)
+      {
+        return createBroadcastReceiverActionAdapter();
+      }
+      @Override
+      public Adapter caseActionShowToast(ActionShowToast object)
+      {
+        return createActionShowToastAdapter();
+      }
+      @Override
+      public Adapter caseActionStartActivity(ActionStartActivity object)
+      {
+        return createActionStartActivityAdapter();
+      }
+      @Override
+      public Adapter caseActionStartService(ActionStartService object)
+      {
+        return createActionStartServiceAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -232,21 +302,6 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createApplicationAttributeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationTitle <em>Application Title</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.fhj.gaar.androidapp.appDsl.ApplicationTitle
-   * @generated
-   */
-  public Adapter createApplicationTitleAdapter()
   {
     return null;
   }
@@ -472,6 +527,231 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createElementExportedAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute <em>Element Label Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute
+   * @generated
+   */
+  public Adapter createElementLabelAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ElementIntentList <em>Element Intent List</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementIntentList
+   * @generated
+   */
+  public Adapter createElementIntentListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute <em>Activity Parent Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute
+   * @generated
+   */
+  public Adapter createActivityParentAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute <em>Activity Layout Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute
+   * @generated
+   */
+  public Adapter createActivityLayoutAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.LayoutElement <em>Layout Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.LayoutElement
+   * @generated
+   */
+  public Adapter createLayoutElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.Button
+   * @generated
+   */
+  public Adapter createButtonAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ButtonAttribute <em>Button Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ButtonAttribute
+   * @generated
+   */
+  public Adapter createButtonAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ButtonLabelAttribute <em>Button Label Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ButtonLabelAttribute
+   * @generated
+   */
+  public Adapter createButtonLabelAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute <em>Button Action Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute
+   * @generated
+   */
+  public Adapter createButtonActionAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction <em>Layout Element Click Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction
+   * @generated
+   */
+  public Adapter createLayoutElementClickActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute <em>Broadcast Receiver Action Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute
+   * @generated
+   */
+  public Adapter createBroadcastReceiverActionAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAction <em>Broadcast Receiver Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAction
+   * @generated
+   */
+  public Adapter createBroadcastReceiverActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ActionShowToast <em>Action Show Toast</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ActionShowToast
+   * @generated
+   */
+  public Adapter createActionShowToastAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ActionStartActivity <em>Action Start Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ActionStartActivity
+   * @generated
+   */
+  public Adapter createActionStartActivityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ActionStartService <em>Action Start Service</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ActionStartService
+   * @generated
+   */
+  public Adapter createActionStartServiceAdapter()
   {
     return null;
   }

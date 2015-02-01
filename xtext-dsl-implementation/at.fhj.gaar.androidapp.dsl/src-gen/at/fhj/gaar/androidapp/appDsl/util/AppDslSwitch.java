@@ -93,14 +93,6 @@ public class AppDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AppDslPackage.APPLICATION_TITLE:
-      {
-        ApplicationTitle applicationTitle = (ApplicationTitle)theEObject;
-        T result = caseApplicationTitle(applicationTitle);
-        if (result == null) result = caseApplicationAttribute(applicationTitle);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AppDslPackage.APPLICATION_MIN_SDK:
       {
         ApplicationMinSdk applicationMinSdk = (ApplicationMinSdk)theEObject;
@@ -221,6 +213,130 @@ public class AppDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AppDslPackage.ELEMENT_LABEL_ATTRIBUTE:
+      {
+        ElementLabelAttribute elementLabelAttribute = (ElementLabelAttribute)theEObject;
+        T result = caseElementLabelAttribute(elementLabelAttribute);
+        if (result == null) result = caseApplicationAttribute(elementLabelAttribute);
+        if (result == null) result = caseActivityAttribute(elementLabelAttribute);
+        if (result == null) result = caseBroadcastReceiverAttribute(elementLabelAttribute);
+        if (result == null) result = caseServiceAttribute(elementLabelAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ELEMENT_INTENT_LIST:
+      {
+        ElementIntentList elementIntentList = (ElementIntentList)theEObject;
+        T result = caseElementIntentList(elementIntentList);
+        if (result == null) result = caseActivityAttribute(elementIntentList);
+        if (result == null) result = caseBroadcastReceiverAttribute(elementIntentList);
+        if (result == null) result = caseServiceAttribute(elementIntentList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE:
+      {
+        ActivityParentAttribute activityParentAttribute = (ActivityParentAttribute)theEObject;
+        T result = caseActivityParentAttribute(activityParentAttribute);
+        if (result == null) result = caseActivityAttribute(activityParentAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ACTIVITY_LAYOUT_ATTRIBUTE:
+      {
+        ActivityLayoutAttribute activityLayoutAttribute = (ActivityLayoutAttribute)theEObject;
+        T result = caseActivityLayoutAttribute(activityLayoutAttribute);
+        if (result == null) result = caseActivityAttribute(activityLayoutAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.LAYOUT_ELEMENT:
+      {
+        LayoutElement layoutElement = (LayoutElement)theEObject;
+        T result = caseLayoutElement(layoutElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BUTTON:
+      {
+        Button button = (Button)theEObject;
+        T result = caseButton(button);
+        if (result == null) result = caseLayoutElement(button);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BUTTON_ATTRIBUTE:
+      {
+        ButtonAttribute buttonAttribute = (ButtonAttribute)theEObject;
+        T result = caseButtonAttribute(buttonAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BUTTON_LABEL_ATTRIBUTE:
+      {
+        ButtonLabelAttribute buttonLabelAttribute = (ButtonLabelAttribute)theEObject;
+        T result = caseButtonLabelAttribute(buttonLabelAttribute);
+        if (result == null) result = caseButtonAttribute(buttonLabelAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BUTTON_ACTION_ATTRIBUTE:
+      {
+        ButtonActionAttribute buttonActionAttribute = (ButtonActionAttribute)theEObject;
+        T result = caseButtonActionAttribute(buttonActionAttribute);
+        if (result == null) result = caseButtonAttribute(buttonActionAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.LAYOUT_ELEMENT_CLICK_ACTION:
+      {
+        LayoutElementClickAction layoutElementClickAction = (LayoutElementClickAction)theEObject;
+        T result = caseLayoutElementClickAction(layoutElementClickAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BROADCAST_RECEIVER_ACTION_ATTRIBUTE:
+      {
+        BroadcastReceiverActionAttribute broadcastReceiverActionAttribute = (BroadcastReceiverActionAttribute)theEObject;
+        T result = caseBroadcastReceiverActionAttribute(broadcastReceiverActionAttribute);
+        if (result == null) result = caseBroadcastReceiverAttribute(broadcastReceiverActionAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BROADCAST_RECEIVER_ACTION:
+      {
+        BroadcastReceiverAction broadcastReceiverAction = (BroadcastReceiverAction)theEObject;
+        T result = caseBroadcastReceiverAction(broadcastReceiverAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ACTION_SHOW_TOAST:
+      {
+        ActionShowToast actionShowToast = (ActionShowToast)theEObject;
+        T result = caseActionShowToast(actionShowToast);
+        if (result == null) result = caseLayoutElementClickAction(actionShowToast);
+        if (result == null) result = caseBroadcastReceiverAction(actionShowToast);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ACTION_START_ACTIVITY:
+      {
+        ActionStartActivity actionStartActivity = (ActionStartActivity)theEObject;
+        T result = caseActionStartActivity(actionStartActivity);
+        if (result == null) result = caseLayoutElementClickAction(actionStartActivity);
+        if (result == null) result = caseBroadcastReceiverAction(actionStartActivity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ACTION_START_SERVICE:
+      {
+        ActionStartService actionStartService = (ActionStartService)theEObject;
+        T result = caseActionStartService(actionStartService);
+        if (result == null) result = caseLayoutElementClickAction(actionStartService);
+        if (result == null) result = caseBroadcastReceiverAction(actionStartService);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -269,22 +385,6 @@ public class AppDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseApplicationAttribute(ApplicationAttribute object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Application Title</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Application Title</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseApplicationTitle(ApplicationTitle object)
   {
     return null;
   }
@@ -525,6 +625,246 @@ public class AppDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseElementExportedAttribute(ElementExportedAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Label Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Label Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementLabelAttribute(ElementLabelAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Intent List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Intent List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementIntentList(ElementIntentList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Activity Parent Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Activity Parent Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActivityParentAttribute(ActivityParentAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Activity Layout Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Activity Layout Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActivityLayoutAttribute(ActivityLayoutAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Layout Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Layout Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLayoutElement(LayoutElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Button</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Button</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseButton(Button object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Button Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Button Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseButtonAttribute(ButtonAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Button Label Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Button Label Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseButtonLabelAttribute(ButtonLabelAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Button Action Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Button Action Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseButtonActionAttribute(ButtonActionAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Layout Element Click Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Layout Element Click Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLayoutElementClickAction(LayoutElementClickAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Broadcast Receiver Action Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Broadcast Receiver Action Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBroadcastReceiverActionAttribute(BroadcastReceiverActionAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Broadcast Receiver Action</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Broadcast Receiver Action</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBroadcastReceiverAction(BroadcastReceiverAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Show Toast</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Show Toast</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionShowToast(ActionShowToast object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Start Activity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Start Activity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionStartActivity(ActionStartActivity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Start Service</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Start Service</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionStartService(ActionStartService object)
   {
     return null;
   }

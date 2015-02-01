@@ -107,7 +107,8 @@ ActivityAttribute:
 	ElementExportedAttribute |
 	ElementLabelAttribute |
 	ElementIntentList |
-	ActivityParentAttribute
+	ActivityParentAttribute |
+	ActivityLayoutAttribute
 ;
 
 BroadcastReceiverAttribute:
@@ -151,6 +152,45 @@ Intent:
 
 ActivityParentAttribute:
 	'parent' parent = ClassName
+;
+
+ActivityLayoutAttribute:
+	'layout-elements'
+	'['
+		// TODO make empty list possible
+		layoutElements += LayoutElement (',' layoutElements += LayoutElement)*
+	']'
+;
+
+LayoutElement:
+	Button
+;
+
+Button:
+	'button' buttonName = ID
+	'{'
+		// TODO make empty list possible
+		attributes += ButtonAttribute (',' attributes += ButtonAttribute)*
+	'}'
+;
+
+ButtonAttribute:
+	ButtonLabelAttribute |
+	ButtonActionAttribute
+;
+
+ButtonLabelAttribute:
+	'title' title = STRING
+;
+
+ButtonActionAttribute:
+	'action' action = LayoutElementClickAction
+;
+
+LayoutElementClickAction:
+	ActionShowToast |
+	ActionStartActivity |
+	ActionStartService
 ;
 
 BroadcastReceiverActionAttribute:

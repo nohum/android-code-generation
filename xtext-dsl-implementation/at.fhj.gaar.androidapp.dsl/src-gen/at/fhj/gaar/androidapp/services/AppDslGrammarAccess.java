@@ -156,7 +156,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	public class ApplicationAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ApplicationAttribute");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cApplicationTitleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cElementLabelAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cApplicationMinSdkParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cApplicationTargetSdkParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cApplicationCompileSdkParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
@@ -165,16 +165,16 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cApplicationMainActivityParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//ApplicationAttribute:
-		//	ApplicationTitle | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
+		//	ElementLabelAttribute | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
 		//	ApplicationElementList | ApplicationMainActivity;
 		public ParserRule getRule() { return rule; }
 
-		//ApplicationTitle | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
+		//ElementLabelAttribute | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
 		//ApplicationElementList | ApplicationMainActivity
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//ApplicationTitle
-		public RuleCall getApplicationTitleParserRuleCall_0() { return cApplicationTitleParserRuleCall_0; }
+		//ElementLabelAttribute
+		public RuleCall getElementLabelAttributeParserRuleCall_0() { return cElementLabelAttributeParserRuleCall_0; }
 
 		//ApplicationMinSdk
 		public RuleCall getApplicationMinSdkParserRuleCall_1() { return cApplicationMinSdkParserRuleCall_1; }
@@ -193,30 +193,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ApplicationMainActivity
 		public RuleCall getApplicationMainActivityParserRuleCall_6() { return cApplicationMainActivityParserRuleCall_6; }
-	}
-
-	public class ApplicationTitleElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ApplicationTitle");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTitleKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTitleSTRINGTerminalRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
-		
-		//ApplicationTitle:
-		//	"title" title=STRING;
-		public ParserRule getRule() { return rule; }
-
-		//"title" title=STRING
-		public Group getGroup() { return cGroup; }
-
-		//"title"
-		public Keyword getTitleKeyword_0() { return cTitleKeyword_0; }
-
-		//title=STRING
-		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
-
-		//STRING
-		public RuleCall getTitleSTRINGTerminalRuleCall_1_0() { return cTitleSTRINGTerminalRuleCall_1_0; }
 	}
 
 	public class ApplicationMinSdkElements extends AbstractParserRuleElementFinder {
@@ -305,10 +281,12 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ApplicationPermissionList:
-		//	"permissions" "[" permissions+=Permission ("," permissions+=Permission)* "]";
+		//	"permissions" "[" // TODO make empty list possible
+		//	permissions+=Permission ("," permissions+=Permission)* "]";
 		public ParserRule getRule() { return rule; }
 
-		//"permissions" "[" permissions+=Permission ("," permissions+=Permission)* "]"
+		//"permissions" "[" // TODO make empty list possible
+		//permissions+=Permission ("," permissions+=Permission)* "]"
 		public Group getGroup() { return cGroup; }
 
 		//"permissions"
@@ -317,6 +295,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
+		//// TODO make empty list possible
 		//permissions+=Permission
 		public Assignment getPermissionsAssignment_2() { return cPermissionsAssignment_2; }
 
@@ -353,10 +332,12 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ApplicationElementList:
-		//	"elements" "[" elements+=ApplicationElement ("," elements+=ApplicationElement)* "]";
+		//	"elements" "[" // TODO make empty list possible
+		//	elements+=ApplicationElement ("," elements+=ApplicationElement)* "]";
 		public ParserRule getRule() { return rule; }
 
-		//"elements" "[" elements+=ApplicationElement ("," elements+=ApplicationElement)* "]"
+		//"elements" "[" // TODO make empty list possible
+		//elements+=ApplicationElement ("," elements+=ApplicationElement)* "]"
 		public Group getGroup() { return cGroup; }
 
 		//"elements"
@@ -365,6 +346,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
+		//// TODO make empty list possible
 		//elements+=ApplicationElement
 		public Assignment getElementsAssignment_2() { return cElementsAssignment_2; }
 
@@ -392,23 +374,23 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cMainActivityKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cLauncherActivityAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cLauncherActivitySTRINGTerminalRuleCall_1_0 = (RuleCall)cLauncherActivityAssignment_1.eContents().get(0);
+		private final RuleCall cLauncherActivityClassNameParserRuleCall_1_0 = (RuleCall)cLauncherActivityAssignment_1.eContents().get(0);
 		
 		//ApplicationMainActivity:
-		//	"main-activity" launcherActivity=STRING;
+		//	"main-activity" launcherActivity=ClassName;
 		public ParserRule getRule() { return rule; }
 
-		//"main-activity" launcherActivity=STRING
+		//"main-activity" launcherActivity=ClassName
 		public Group getGroup() { return cGroup; }
 
 		//"main-activity"
 		public Keyword getMainActivityKeyword_0() { return cMainActivityKeyword_0; }
 
-		//launcherActivity=STRING
+		//launcherActivity=ClassName
 		public Assignment getLauncherActivityAssignment_1() { return cLauncherActivityAssignment_1; }
 
-		//STRING
-		public RuleCall getLauncherActivitySTRINGTerminalRuleCall_1_0() { return cLauncherActivitySTRINGTerminalRuleCall_1_0; }
+		//ClassName
+		public RuleCall getLauncherActivityClassNameParserRuleCall_1_0() { return cLauncherActivityClassNameParserRuleCall_1_0; }
 	}
 
 	public class PermissionElements extends AbstractParserRuleElementFinder {
@@ -464,10 +446,12 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Activity:
-		//	"activity" className=ClassName "{" attributes+=ActivityAttribute ("," attributes+=ActivityAttribute)* "}";
+		//	"activity" className=ClassName "{" // TODO make empty list possible
+		//	attributes+=ActivityAttribute ("," attributes+=ActivityAttribute)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"activity" className=ClassName "{" attributes+=ActivityAttribute ("," attributes+=ActivityAttribute)* "}"
+		//"activity" className=ClassName "{" // TODO make empty list possible
+		//attributes+=ActivityAttribute ("," attributes+=ActivityAttribute)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"activity"
@@ -482,6 +466,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
+		//// TODO make empty list possible
 		//attributes+=ActivityAttribute
 		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
 
@@ -520,12 +505,12 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//BroadcastReceiver:
-		//	"receiver" className=ClassName "{" attributes+=BroadcastReceiverAttribute (","
-		//	attributes+=BroadcastReceiverAttribute)* "}";
+		//	"receiver" className=ClassName "{" // TODO make empty list possible
+		//	attributes+=BroadcastReceiverAttribute ("," attributes+=BroadcastReceiverAttribute)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"receiver" className=ClassName "{" attributes+=BroadcastReceiverAttribute ("," attributes+=BroadcastReceiverAttribute)*
-		//"}"
+		//"receiver" className=ClassName "{" // TODO make empty list possible
+		//attributes+=BroadcastReceiverAttribute ("," attributes+=BroadcastReceiverAttribute)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"receiver"
@@ -540,6 +525,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
+		//// TODO make empty list possible
 		//attributes+=BroadcastReceiverAttribute
 		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
 
@@ -578,10 +564,12 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Service:
-		//	"service" className=ClassName "{" attributes+=ServiceAttribute ("," attributes+=ServiceAttribute)* "}";
+		//	"service" className=ClassName "{" // TODO make empty list possible
+		//	attributes+=ServiceAttribute ("," attributes+=ServiceAttribute)* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"service" className=ClassName "{" attributes+=ServiceAttribute ("," attributes+=ServiceAttribute)* "}"
+		//"service" className=ClassName "{" // TODO make empty list possible
+		//attributes+=ServiceAttribute ("," attributes+=ServiceAttribute)* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"service"
@@ -596,6 +584,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
+		//// TODO make empty list possible
 		//attributes+=ServiceAttribute
 		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
 
@@ -623,12 +612,18 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cElementEnabledAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cElementExportedAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cElementLabelAttributeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cElementIntentListParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cActivityParentAttributeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cActivityLayoutAttributeParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//ActivityAttribute:
-		//	ElementEnabledAttribute | ElementExportedAttribute;
+		//	ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList |
+		//	ActivityParentAttribute | ActivityLayoutAttribute;
 		public ParserRule getRule() { return rule; }
 
-		//ElementEnabledAttribute | ElementExportedAttribute
+		//ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList | ActivityParentAttribute
+		//| ActivityLayoutAttribute
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ElementEnabledAttribute
@@ -636,6 +631,18 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ElementExportedAttribute
 		public RuleCall getElementExportedAttributeParserRuleCall_1() { return cElementExportedAttributeParserRuleCall_1; }
+
+		//ElementLabelAttribute
+		public RuleCall getElementLabelAttributeParserRuleCall_2() { return cElementLabelAttributeParserRuleCall_2; }
+
+		//ElementIntentList
+		public RuleCall getElementIntentListParserRuleCall_3() { return cElementIntentListParserRuleCall_3; }
+
+		//ActivityParentAttribute
+		public RuleCall getActivityParentAttributeParserRuleCall_4() { return cActivityParentAttributeParserRuleCall_4; }
+
+		//ActivityLayoutAttribute
+		public RuleCall getActivityLayoutAttributeParserRuleCall_5() { return cActivityLayoutAttributeParserRuleCall_5; }
 	}
 
 	public class BroadcastReceiverAttributeElements extends AbstractParserRuleElementFinder {
@@ -643,12 +650,17 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cElementEnabledAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cElementExportedAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cElementLabelAttributeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cElementIntentListParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cBroadcastReceiverActionAttributeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//BroadcastReceiverAttribute:
-		//	ElementEnabledAttribute | ElementExportedAttribute;
+		//	ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList |
+		//	BroadcastReceiverActionAttribute;
 		public ParserRule getRule() { return rule; }
 
-		//ElementEnabledAttribute | ElementExportedAttribute
+		//ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList |
+		//BroadcastReceiverActionAttribute
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ElementEnabledAttribute
@@ -656,6 +668,15 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ElementExportedAttribute
 		public RuleCall getElementExportedAttributeParserRuleCall_1() { return cElementExportedAttributeParserRuleCall_1; }
+
+		//ElementLabelAttribute
+		public RuleCall getElementLabelAttributeParserRuleCall_2() { return cElementLabelAttributeParserRuleCall_2; }
+
+		//ElementIntentList
+		public RuleCall getElementIntentListParserRuleCall_3() { return cElementIntentListParserRuleCall_3; }
+
+		//BroadcastReceiverActionAttribute
+		public RuleCall getBroadcastReceiverActionAttributeParserRuleCall_4() { return cBroadcastReceiverActionAttributeParserRuleCall_4; }
 	}
 
 	public class ServiceAttributeElements extends AbstractParserRuleElementFinder {
@@ -663,12 +684,14 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cElementEnabledAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cElementExportedAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cElementLabelAttributeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cElementIntentListParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//ServiceAttribute:
-		//	ElementEnabledAttribute | ElementExportedAttribute;
+		//	ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList;
 		public ParserRule getRule() { return rule; }
 
-		//ElementEnabledAttribute | ElementExportedAttribute
+		//ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ElementEnabledAttribute
@@ -676,6 +699,12 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ElementExportedAttribute
 		public RuleCall getElementExportedAttributeParserRuleCall_1() { return cElementExportedAttributeParserRuleCall_1; }
+
+		//ElementLabelAttribute
+		public RuleCall getElementLabelAttributeParserRuleCall_2() { return cElementLabelAttributeParserRuleCall_2; }
+
+		//ElementIntentList
+		public RuleCall getElementIntentListParserRuleCall_3() { return cElementIntentListParserRuleCall_3; }
 	}
 
 	public class ElementEnabledAttributeElements extends AbstractParserRuleElementFinder {
@@ -725,6 +754,451 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//BOOLEAN
 		public RuleCall getExportedBOOLEANTerminalRuleCall_1_0() { return cExportedBOOLEANTerminalRuleCall_1_0; }
 	}
+
+	public class ElementLabelAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementLabelAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTitleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
+		
+		//ElementLabelAttribute:
+		//	"title" title=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//"title" title=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"title"
+		public Keyword getTitleKeyword_0() { return cTitleKeyword_0; }
+
+		//title=STRING
+		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
+
+		//STRING
+		public RuleCall getTitleSTRINGTerminalRuleCall_1_0() { return cTitleSTRINGTerminalRuleCall_1_0; }
+	}
+
+	public class ElementIntentListElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ElementIntentList");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIntentsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cIntentsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cIntentsIntentParserRuleCall_2_0 = (RuleCall)cIntentsAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cIntentsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cIntentsIntentParserRuleCall_3_1_0 = (RuleCall)cIntentsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//ElementIntentList:
+		//	"intents" "[" // TODO make empty list possible
+		//	intents+=Intent ("," intents+=Intent)* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"intents" "[" // TODO make empty list possible
+		//intents+=Intent ("," intents+=Intent)* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"intents"
+		public Keyword getIntentsKeyword_0() { return cIntentsKeyword_0; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+
+		//// TODO make empty list possible
+		//intents+=Intent
+		public Assignment getIntentsAssignment_2() { return cIntentsAssignment_2; }
+
+		//Intent
+		public RuleCall getIntentsIntentParserRuleCall_2_0() { return cIntentsIntentParserRuleCall_2_0; }
+
+		//("," intents+=Intent)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+
+		//intents+=Intent
+		public Assignment getIntentsAssignment_3_1() { return cIntentsAssignment_3_1; }
+
+		//Intent
+		public RuleCall getIntentsIntentParserRuleCall_3_1_0() { return cIntentsIntentParserRuleCall_3_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
+	}
+
+	public class IntentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Intent");
+		private final RuleCall cPackageNameParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Intent:
+		//	PackageName;
+		public ParserRule getRule() { return rule; }
+
+		//PackageName
+		public RuleCall getPackageNameParserRuleCall() { return cPackageNameParserRuleCall; }
+	}
+
+	public class ActivityParentAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActivityParentAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cParentKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cParentAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cParentClassNameParserRuleCall_1_0 = (RuleCall)cParentAssignment_1.eContents().get(0);
+		
+		//ActivityParentAttribute:
+		//	"parent" parent=ClassName;
+		public ParserRule getRule() { return rule; }
+
+		//"parent" parent=ClassName
+		public Group getGroup() { return cGroup; }
+
+		//"parent"
+		public Keyword getParentKeyword_0() { return cParentKeyword_0; }
+
+		//parent=ClassName
+		public Assignment getParentAssignment_1() { return cParentAssignment_1; }
+
+		//ClassName
+		public RuleCall getParentClassNameParserRuleCall_1_0() { return cParentClassNameParserRuleCall_1_0; }
+	}
+
+	public class ActivityLayoutAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActivityLayoutAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLayoutElementsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLayoutElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLayoutElementsLayoutElementParserRuleCall_2_0 = (RuleCall)cLayoutElementsAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cLayoutElementsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cLayoutElementsLayoutElementParserRuleCall_3_1_0 = (RuleCall)cLayoutElementsAssignment_3_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//ActivityLayoutAttribute:
+		//	"layout-elements" "[" // TODO make empty list possible
+		//	layoutElements+=LayoutElement ("," layoutElements+=LayoutElement)* "]";
+		public ParserRule getRule() { return rule; }
+
+		//"layout-elements" "[" // TODO make empty list possible
+		//layoutElements+=LayoutElement ("," layoutElements+=LayoutElement)* "]"
+		public Group getGroup() { return cGroup; }
+
+		//"layout-elements"
+		public Keyword getLayoutElementsKeyword_0() { return cLayoutElementsKeyword_0; }
+
+		//"["
+		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+
+		//// TODO make empty list possible
+		//layoutElements+=LayoutElement
+		public Assignment getLayoutElementsAssignment_2() { return cLayoutElementsAssignment_2; }
+
+		//LayoutElement
+		public RuleCall getLayoutElementsLayoutElementParserRuleCall_2_0() { return cLayoutElementsLayoutElementParserRuleCall_2_0; }
+
+		//("," layoutElements+=LayoutElement)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+
+		//layoutElements+=LayoutElement
+		public Assignment getLayoutElementsAssignment_3_1() { return cLayoutElementsAssignment_3_1; }
+
+		//LayoutElement
+		public RuleCall getLayoutElementsLayoutElementParserRuleCall_3_1_0() { return cLayoutElementsLayoutElementParserRuleCall_3_1_0; }
+
+		//"]"
+		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
+	}
+
+	public class LayoutElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LayoutElement");
+		private final RuleCall cButtonParserRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//LayoutElement:
+		//	Button;
+		public ParserRule getRule() { return rule; }
+
+		//Button
+		public RuleCall getButtonParserRuleCall() { return cButtonParserRuleCall; }
+	}
+
+	public class ButtonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Button");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cButtonKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cButtonNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cButtonNameIDTerminalRuleCall_1_0 = (RuleCall)cButtonNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAttributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAttributesButtonAttributeParserRuleCall_3_0 = (RuleCall)cAttributesAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cAttributesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cAttributesButtonAttributeParserRuleCall_4_1_0 = (RuleCall)cAttributesAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//Button:
+		//	"button" buttonName=ID "{" // TODO make empty list possible
+		//	attributes+=ButtonAttribute ("," attributes+=ButtonAttribute)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"button" buttonName=ID "{" // TODO make empty list possible
+		//attributes+=ButtonAttribute ("," attributes+=ButtonAttribute)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"button"
+		public Keyword getButtonKeyword_0() { return cButtonKeyword_0; }
+
+		//buttonName=ID
+		public Assignment getButtonNameAssignment_1() { return cButtonNameAssignment_1; }
+
+		//ID
+		public RuleCall getButtonNameIDTerminalRuleCall_1_0() { return cButtonNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//// TODO make empty list possible
+		//attributes+=ButtonAttribute
+		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
+
+		//ButtonAttribute
+		public RuleCall getAttributesButtonAttributeParserRuleCall_3_0() { return cAttributesButtonAttributeParserRuleCall_3_0; }
+
+		//("," attributes+=ButtonAttribute)*
+		public Group getGroup_4() { return cGroup_4; }
+
+		//","
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+
+		//attributes+=ButtonAttribute
+		public Assignment getAttributesAssignment_4_1() { return cAttributesAssignment_4_1; }
+
+		//ButtonAttribute
+		public RuleCall getAttributesButtonAttributeParserRuleCall_4_1_0() { return cAttributesButtonAttributeParserRuleCall_4_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+	}
+
+	public class ButtonAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ButtonAttribute");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cButtonLabelAttributeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cButtonActionAttributeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ButtonAttribute:
+		//	ButtonLabelAttribute | ButtonActionAttribute;
+		public ParserRule getRule() { return rule; }
+
+		//ButtonLabelAttribute | ButtonActionAttribute
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ButtonLabelAttribute
+		public RuleCall getButtonLabelAttributeParserRuleCall_0() { return cButtonLabelAttributeParserRuleCall_0; }
+
+		//ButtonActionAttribute
+		public RuleCall getButtonActionAttributeParserRuleCall_1() { return cButtonActionAttributeParserRuleCall_1; }
+	}
+
+	public class ButtonLabelAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ButtonLabelAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTitleKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cTitleAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTitleSTRINGTerminalRuleCall_1_0 = (RuleCall)cTitleAssignment_1.eContents().get(0);
+		
+		//ButtonLabelAttribute:
+		//	"title" title=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//"title" title=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"title"
+		public Keyword getTitleKeyword_0() { return cTitleKeyword_0; }
+
+		//title=STRING
+		public Assignment getTitleAssignment_1() { return cTitleAssignment_1; }
+
+		//STRING
+		public RuleCall getTitleSTRINGTerminalRuleCall_1_0() { return cTitleSTRINGTerminalRuleCall_1_0; }
+	}
+
+	public class ButtonActionAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ButtonActionAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cActionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cActionLayoutElementClickActionParserRuleCall_1_0 = (RuleCall)cActionAssignment_1.eContents().get(0);
+		
+		//ButtonActionAttribute:
+		//	"action" action=LayoutElementClickAction;
+		public ParserRule getRule() { return rule; }
+
+		//"action" action=LayoutElementClickAction
+		public Group getGroup() { return cGroup; }
+
+		//"action"
+		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
+
+		//action=LayoutElementClickAction
+		public Assignment getActionAssignment_1() { return cActionAssignment_1; }
+
+		//LayoutElementClickAction
+		public RuleCall getActionLayoutElementClickActionParserRuleCall_1_0() { return cActionLayoutElementClickActionParserRuleCall_1_0; }
+	}
+
+	public class LayoutElementClickActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LayoutElementClickAction");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cActionShowToastParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cActionStartActivityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cActionStartServiceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//LayoutElementClickAction:
+		//	ActionShowToast | ActionStartActivity | ActionStartService;
+		public ParserRule getRule() { return rule; }
+
+		//ActionShowToast | ActionStartActivity | ActionStartService
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ActionShowToast
+		public RuleCall getActionShowToastParserRuleCall_0() { return cActionShowToastParserRuleCall_0; }
+
+		//ActionStartActivity
+		public RuleCall getActionStartActivityParserRuleCall_1() { return cActionStartActivityParserRuleCall_1; }
+
+		//ActionStartService
+		public RuleCall getActionStartServiceParserRuleCall_2() { return cActionStartServiceParserRuleCall_2; }
+	}
+
+	public class BroadcastReceiverActionAttributeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BroadcastReceiverActionAttribute");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cActionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cActionBroadcastReceiverActionParserRuleCall_1_0 = (RuleCall)cActionAssignment_1.eContents().get(0);
+		
+		//BroadcastReceiverActionAttribute:
+		//	"action" action=BroadcastReceiverAction;
+		public ParserRule getRule() { return rule; }
+
+		//"action" action=BroadcastReceiverAction
+		public Group getGroup() { return cGroup; }
+
+		//"action"
+		public Keyword getActionKeyword_0() { return cActionKeyword_0; }
+
+		//action=BroadcastReceiverAction
+		public Assignment getActionAssignment_1() { return cActionAssignment_1; }
+
+		//BroadcastReceiverAction
+		public RuleCall getActionBroadcastReceiverActionParserRuleCall_1_0() { return cActionBroadcastReceiverActionParserRuleCall_1_0; }
+	}
+
+	public class BroadcastReceiverActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BroadcastReceiverAction");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cActionShowToastParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cActionStartActivityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cActionStartServiceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//BroadcastReceiverAction:
+		//	ActionShowToast | ActionStartActivity | ActionStartService;
+		public ParserRule getRule() { return rule; }
+
+		//ActionShowToast | ActionStartActivity | ActionStartService
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ActionShowToast
+		public RuleCall getActionShowToastParserRuleCall_0() { return cActionShowToastParserRuleCall_0; }
+
+		//ActionStartActivity
+		public RuleCall getActionStartActivityParserRuleCall_1() { return cActionStartActivityParserRuleCall_1; }
+
+		//ActionStartService
+		public RuleCall getActionStartServiceParserRuleCall_2() { return cActionStartServiceParserRuleCall_2; }
+	}
+
+	public class ActionShowToastElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionShowToast");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cShowToastKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cToastTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cToastTextSTRINGTerminalRuleCall_1_0 = (RuleCall)cToastTextAssignment_1.eContents().get(0);
+		
+		//ActionShowToast:
+		//	"show-toast" toastText=STRING;
+		public ParserRule getRule() { return rule; }
+
+		//"show-toast" toastText=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"show-toast"
+		public Keyword getShowToastKeyword_0() { return cShowToastKeyword_0; }
+
+		//toastText=STRING
+		public Assignment getToastTextAssignment_1() { return cToastTextAssignment_1; }
+
+		//STRING
+		public RuleCall getToastTextSTRINGTerminalRuleCall_1_0() { return cToastTextSTRINGTerminalRuleCall_1_0; }
+	}
+
+	public class ActionStartActivityElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionStartActivity");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStartActivityKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cActivityAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cActivityClassNameParserRuleCall_1_0 = (RuleCall)cActivityAssignment_1.eContents().get(0);
+		
+		//ActionStartActivity:
+		//	"start-activity" activity=ClassName;
+		public ParserRule getRule() { return rule; }
+
+		//"start-activity" activity=ClassName
+		public Group getGroup() { return cGroup; }
+
+		//"start-activity"
+		public Keyword getStartActivityKeyword_0() { return cStartActivityKeyword_0; }
+
+		//activity=ClassName
+		public Assignment getActivityAssignment_1() { return cActivityAssignment_1; }
+
+		//ClassName
+		public RuleCall getActivityClassNameParserRuleCall_1_0() { return cActivityClassNameParserRuleCall_1_0; }
+	}
+
+	public class ActionStartServiceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ActionStartService");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cStartServiceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cServiceAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cServiceClassNameParserRuleCall_1_0 = (RuleCall)cServiceAssignment_1.eContents().get(0);
+		
+		//ActionStartService:
+		//	"start-service" service=ClassName;
+		public ParserRule getRule() { return rule; }
+
+		//"start-service" service=ClassName
+		public Group getGroup() { return cGroup; }
+
+		//"start-service"
+		public Keyword getStartServiceKeyword_0() { return cStartServiceKeyword_0; }
+
+		//service=ClassName
+		public Assignment getServiceAssignment_1() { return cServiceAssignment_1; }
+
+		//ClassName
+		public RuleCall getServiceClassNameParserRuleCall_1_0() { return cServiceClassNameParserRuleCall_1_0; }
+	}
 	
 	
 	private final AndroidAppProjectElements pAndroidAppProject;
@@ -733,7 +1207,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ClassNameElements pClassName;
 	private final PackageNameElements pPackageName;
 	private final ApplicationAttributeElements pApplicationAttribute;
-	private final ApplicationTitleElements pApplicationTitle;
 	private final ApplicationMinSdkElements pApplicationMinSdk;
 	private final ApplicationTargetSdkElements pApplicationTargetSdk;
 	private final ApplicationCompileSdkElements pApplicationCompileSdk;
@@ -750,6 +1223,22 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ServiceAttributeElements pServiceAttribute;
 	private final ElementEnabledAttributeElements pElementEnabledAttribute;
 	private final ElementExportedAttributeElements pElementExportedAttribute;
+	private final ElementLabelAttributeElements pElementLabelAttribute;
+	private final ElementIntentListElements pElementIntentList;
+	private final IntentElements pIntent;
+	private final ActivityParentAttributeElements pActivityParentAttribute;
+	private final ActivityLayoutAttributeElements pActivityLayoutAttribute;
+	private final LayoutElementElements pLayoutElement;
+	private final ButtonElements pButton;
+	private final ButtonAttributeElements pButtonAttribute;
+	private final ButtonLabelAttributeElements pButtonLabelAttribute;
+	private final ButtonActionAttributeElements pButtonActionAttribute;
+	private final LayoutElementClickActionElements pLayoutElementClickAction;
+	private final BroadcastReceiverActionAttributeElements pBroadcastReceiverActionAttribute;
+	private final BroadcastReceiverActionElements pBroadcastReceiverAction;
+	private final ActionShowToastElements pActionShowToast;
+	private final ActionStartActivityElements pActionStartActivity;
+	private final ActionStartServiceElements pActionStartService;
 	
 	private final Grammar grammar;
 
@@ -766,7 +1255,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pClassName = new ClassNameElements();
 		this.pPackageName = new PackageNameElements();
 		this.pApplicationAttribute = new ApplicationAttributeElements();
-		this.pApplicationTitle = new ApplicationTitleElements();
 		this.pApplicationMinSdk = new ApplicationMinSdkElements();
 		this.pApplicationTargetSdk = new ApplicationTargetSdkElements();
 		this.pApplicationCompileSdk = new ApplicationCompileSdkElements();
@@ -783,6 +1271,22 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pServiceAttribute = new ServiceAttributeElements();
 		this.pElementEnabledAttribute = new ElementEnabledAttributeElements();
 		this.pElementExportedAttribute = new ElementExportedAttributeElements();
+		this.pElementLabelAttribute = new ElementLabelAttributeElements();
+		this.pElementIntentList = new ElementIntentListElements();
+		this.pIntent = new IntentElements();
+		this.pActivityParentAttribute = new ActivityParentAttributeElements();
+		this.pActivityLayoutAttribute = new ActivityLayoutAttributeElements();
+		this.pLayoutElement = new LayoutElementElements();
+		this.pButton = new ButtonElements();
+		this.pButtonAttribute = new ButtonAttributeElements();
+		this.pButtonLabelAttribute = new ButtonLabelAttributeElements();
+		this.pButtonActionAttribute = new ButtonActionAttributeElements();
+		this.pLayoutElementClickAction = new LayoutElementClickActionElements();
+		this.pBroadcastReceiverActionAttribute = new BroadcastReceiverActionAttributeElements();
+		this.pBroadcastReceiverAction = new BroadcastReceiverActionElements();
+		this.pActionShowToast = new ActionShowToastElements();
+		this.pActionStartActivity = new ActionStartActivityElements();
+		this.pActionStartService = new ActionStartServiceElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -860,7 +1364,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ApplicationAttribute:
-	//	ApplicationTitle | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
+	//	ElementLabelAttribute | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
 	//	ApplicationElementList | ApplicationMainActivity;
 	public ApplicationAttributeElements getApplicationAttributeAccess() {
 		return pApplicationAttribute;
@@ -868,16 +1372,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getApplicationAttributeRule() {
 		return getApplicationAttributeAccess().getRule();
-	}
-
-	//ApplicationTitle:
-	//	"title" title=STRING;
-	public ApplicationTitleElements getApplicationTitleAccess() {
-		return pApplicationTitle;
-	}
-	
-	public ParserRule getApplicationTitleRule() {
-		return getApplicationTitleAccess().getRule();
 	}
 
 	//ApplicationMinSdk:
@@ -911,7 +1405,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ApplicationPermissionList:
-	//	"permissions" "[" permissions+=Permission ("," permissions+=Permission)* "]";
+	//	"permissions" "[" // TODO make empty list possible
+	//	permissions+=Permission ("," permissions+=Permission)* "]";
 	public ApplicationPermissionListElements getApplicationPermissionListAccess() {
 		return pApplicationPermissionList;
 	}
@@ -921,7 +1416,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ApplicationElementList:
-	//	"elements" "[" elements+=ApplicationElement ("," elements+=ApplicationElement)* "]";
+	//	"elements" "[" // TODO make empty list possible
+	//	elements+=ApplicationElement ("," elements+=ApplicationElement)* "]";
 	public ApplicationElementListElements getApplicationElementListAccess() {
 		return pApplicationElementList;
 	}
@@ -931,7 +1427,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ApplicationMainActivity:
-	//	"main-activity" launcherActivity=STRING;
+	//	"main-activity" launcherActivity=ClassName;
 	public ApplicationMainActivityElements getApplicationMainActivityAccess() {
 		return pApplicationMainActivity;
 	}
@@ -961,7 +1457,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Activity:
-	//	"activity" className=ClassName "{" attributes+=ActivityAttribute ("," attributes+=ActivityAttribute)* "}";
+	//	"activity" className=ClassName "{" // TODO make empty list possible
+	//	attributes+=ActivityAttribute ("," attributes+=ActivityAttribute)* "}";
 	public ActivityElements getActivityAccess() {
 		return pActivity;
 	}
@@ -971,8 +1468,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BroadcastReceiver:
-	//	"receiver" className=ClassName "{" attributes+=BroadcastReceiverAttribute (","
-	//	attributes+=BroadcastReceiverAttribute)* "}";
+	//	"receiver" className=ClassName "{" // TODO make empty list possible
+	//	attributes+=BroadcastReceiverAttribute ("," attributes+=BroadcastReceiverAttribute)* "}";
 	public BroadcastReceiverElements getBroadcastReceiverAccess() {
 		return pBroadcastReceiver;
 	}
@@ -982,7 +1479,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Service:
-	//	"service" className=ClassName "{" attributes+=ServiceAttribute ("," attributes+=ServiceAttribute)* "}";
+	//	"service" className=ClassName "{" // TODO make empty list possible
+	//	attributes+=ServiceAttribute ("," attributes+=ServiceAttribute)* "}";
 	public ServiceElements getServiceAccess() {
 		return pService;
 	}
@@ -992,7 +1490,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActivityAttribute:
-	//	ElementEnabledAttribute | ElementExportedAttribute;
+	//	ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList |
+	//	ActivityParentAttribute | ActivityLayoutAttribute;
 	public ActivityAttributeElements getActivityAttributeAccess() {
 		return pActivityAttribute;
 	}
@@ -1002,7 +1501,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BroadcastReceiverAttribute:
-	//	ElementEnabledAttribute | ElementExportedAttribute;
+	//	ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList |
+	//	BroadcastReceiverActionAttribute;
 	public BroadcastReceiverAttributeElements getBroadcastReceiverAttributeAccess() {
 		return pBroadcastReceiverAttribute;
 	}
@@ -1012,7 +1512,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ServiceAttribute:
-	//	ElementEnabledAttribute | ElementExportedAttribute;
+	//	ElementEnabledAttribute | ElementExportedAttribute | ElementLabelAttribute | ElementIntentList;
 	public ServiceAttributeElements getServiceAttributeAccess() {
 		return pServiceAttribute;
 	}
@@ -1039,6 +1539,169 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getElementExportedAttributeRule() {
 		return getElementExportedAttributeAccess().getRule();
+	}
+
+	//ElementLabelAttribute:
+	//	"title" title=STRING;
+	public ElementLabelAttributeElements getElementLabelAttributeAccess() {
+		return pElementLabelAttribute;
+	}
+	
+	public ParserRule getElementLabelAttributeRule() {
+		return getElementLabelAttributeAccess().getRule();
+	}
+
+	//ElementIntentList:
+	//	"intents" "[" // TODO make empty list possible
+	//	intents+=Intent ("," intents+=Intent)* "]";
+	public ElementIntentListElements getElementIntentListAccess() {
+		return pElementIntentList;
+	}
+	
+	public ParserRule getElementIntentListRule() {
+		return getElementIntentListAccess().getRule();
+	}
+
+	//Intent:
+	//	PackageName;
+	public IntentElements getIntentAccess() {
+		return pIntent;
+	}
+	
+	public ParserRule getIntentRule() {
+		return getIntentAccess().getRule();
+	}
+
+	//ActivityParentAttribute:
+	//	"parent" parent=ClassName;
+	public ActivityParentAttributeElements getActivityParentAttributeAccess() {
+		return pActivityParentAttribute;
+	}
+	
+	public ParserRule getActivityParentAttributeRule() {
+		return getActivityParentAttributeAccess().getRule();
+	}
+
+	//ActivityLayoutAttribute:
+	//	"layout-elements" "[" // TODO make empty list possible
+	//	layoutElements+=LayoutElement ("," layoutElements+=LayoutElement)* "]";
+	public ActivityLayoutAttributeElements getActivityLayoutAttributeAccess() {
+		return pActivityLayoutAttribute;
+	}
+	
+	public ParserRule getActivityLayoutAttributeRule() {
+		return getActivityLayoutAttributeAccess().getRule();
+	}
+
+	//LayoutElement:
+	//	Button;
+	public LayoutElementElements getLayoutElementAccess() {
+		return pLayoutElement;
+	}
+	
+	public ParserRule getLayoutElementRule() {
+		return getLayoutElementAccess().getRule();
+	}
+
+	//Button:
+	//	"button" buttonName=ID "{" // TODO make empty list possible
+	//	attributes+=ButtonAttribute ("," attributes+=ButtonAttribute)* "}";
+	public ButtonElements getButtonAccess() {
+		return pButton;
+	}
+	
+	public ParserRule getButtonRule() {
+		return getButtonAccess().getRule();
+	}
+
+	//ButtonAttribute:
+	//	ButtonLabelAttribute | ButtonActionAttribute;
+	public ButtonAttributeElements getButtonAttributeAccess() {
+		return pButtonAttribute;
+	}
+	
+	public ParserRule getButtonAttributeRule() {
+		return getButtonAttributeAccess().getRule();
+	}
+
+	//ButtonLabelAttribute:
+	//	"title" title=STRING;
+	public ButtonLabelAttributeElements getButtonLabelAttributeAccess() {
+		return pButtonLabelAttribute;
+	}
+	
+	public ParserRule getButtonLabelAttributeRule() {
+		return getButtonLabelAttributeAccess().getRule();
+	}
+
+	//ButtonActionAttribute:
+	//	"action" action=LayoutElementClickAction;
+	public ButtonActionAttributeElements getButtonActionAttributeAccess() {
+		return pButtonActionAttribute;
+	}
+	
+	public ParserRule getButtonActionAttributeRule() {
+		return getButtonActionAttributeAccess().getRule();
+	}
+
+	//LayoutElementClickAction:
+	//	ActionShowToast | ActionStartActivity | ActionStartService;
+	public LayoutElementClickActionElements getLayoutElementClickActionAccess() {
+		return pLayoutElementClickAction;
+	}
+	
+	public ParserRule getLayoutElementClickActionRule() {
+		return getLayoutElementClickActionAccess().getRule();
+	}
+
+	//BroadcastReceiverActionAttribute:
+	//	"action" action=BroadcastReceiverAction;
+	public BroadcastReceiverActionAttributeElements getBroadcastReceiverActionAttributeAccess() {
+		return pBroadcastReceiverActionAttribute;
+	}
+	
+	public ParserRule getBroadcastReceiverActionAttributeRule() {
+		return getBroadcastReceiverActionAttributeAccess().getRule();
+	}
+
+	//BroadcastReceiverAction:
+	//	ActionShowToast | ActionStartActivity | ActionStartService;
+	public BroadcastReceiverActionElements getBroadcastReceiverActionAccess() {
+		return pBroadcastReceiverAction;
+	}
+	
+	public ParserRule getBroadcastReceiverActionRule() {
+		return getBroadcastReceiverActionAccess().getRule();
+	}
+
+	//ActionShowToast:
+	//	"show-toast" toastText=STRING;
+	public ActionShowToastElements getActionShowToastAccess() {
+		return pActionShowToast;
+	}
+	
+	public ParserRule getActionShowToastRule() {
+		return getActionShowToastAccess().getRule();
+	}
+
+	//ActionStartActivity:
+	//	"start-activity" activity=ClassName;
+	public ActionStartActivityElements getActionStartActivityAccess() {
+		return pActionStartActivity;
+	}
+	
+	public ParserRule getActionStartActivityRule() {
+		return getActionStartActivityAccess().getRule();
+	}
+
+	//ActionStartService:
+	//	"start-service" service=ClassName;
+	public ActionStartServiceElements getActionStartServiceAccess() {
+		return pActionStartService;
+	}
+	
+	public ParserRule getActionStartServiceRule() {
+		return getActionStartServiceAccess().getRule();
 	}
 
 	//terminal ID:
