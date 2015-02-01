@@ -125,6 +125,51 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
         return createApplicationMainActivityAdapter();
       }
       @Override
+      public Adapter caseApplicationElement(ApplicationElement object)
+      {
+        return createApplicationElementAdapter();
+      }
+      @Override
+      public Adapter caseActivity(Activity object)
+      {
+        return createActivityAdapter();
+      }
+      @Override
+      public Adapter caseBroadcastReceiver(BroadcastReceiver object)
+      {
+        return createBroadcastReceiverAdapter();
+      }
+      @Override
+      public Adapter caseService(Service object)
+      {
+        return createServiceAdapter();
+      }
+      @Override
+      public Adapter caseActivityAttribute(ActivityAttribute object)
+      {
+        return createActivityAttributeAdapter();
+      }
+      @Override
+      public Adapter caseBroadcastReceiverAttribute(BroadcastReceiverAttribute object)
+      {
+        return createBroadcastReceiverAttributeAdapter();
+      }
+      @Override
+      public Adapter caseServiceAttribute(ServiceAttribute object)
+      {
+        return createServiceAttributeAdapter();
+      }
+      @Override
+      public Adapter caseElementEnabledAttribute(ElementEnabledAttribute object)
+      {
+        return createElementEnabledAttributeAdapter();
+      }
+      @Override
+      public Adapter caseElementExportedAttribute(ElementExportedAttribute object)
+      {
+        return createElementExportedAttributeAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -292,6 +337,141 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createApplicationMainActivityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement <em>Application Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ApplicationElement
+   * @generated
+   */
+  public Adapter createApplicationElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.Activity <em>Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.Activity
+   * @generated
+   */
+  public Adapter createActivityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.BroadcastReceiver <em>Broadcast Receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
+   * @generated
+   */
+  public Adapter createBroadcastReceiverAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.Service <em>Service</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.Service
+   * @generated
+   */
+  public Adapter createServiceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ActivityAttribute <em>Activity Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ActivityAttribute
+   * @generated
+   */
+  public Adapter createActivityAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute <em>Broadcast Receiver Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute
+   * @generated
+   */
+  public Adapter createBroadcastReceiverAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ServiceAttribute <em>Service Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ServiceAttribute
+   * @generated
+   */
+  public Adapter createServiceAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute <em>Element Enabled Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute
+   * @generated
+   */
+  public Adapter createElementEnabledAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute <em>Element Exported Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute
+   * @generated
+   */
+  public Adapter createElementExportedAttributeAdapter()
   {
     return null;
   }

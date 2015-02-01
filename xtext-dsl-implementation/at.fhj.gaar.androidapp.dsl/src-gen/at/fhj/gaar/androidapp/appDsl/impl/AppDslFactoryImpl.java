@@ -74,6 +74,15 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
       case AppDslPackage.APPLICATION_PERMISSION_LIST: return createApplicationPermissionList();
       case AppDslPackage.APPLICATION_ELEMENT_LIST: return createApplicationElementList();
       case AppDslPackage.APPLICATION_MAIN_ACTIVITY: return createApplicationMainActivity();
+      case AppDslPackage.APPLICATION_ELEMENT: return createApplicationElement();
+      case AppDslPackage.ACTIVITY: return createActivity();
+      case AppDslPackage.BROADCAST_RECEIVER: return createBroadcastReceiver();
+      case AppDslPackage.SERVICE: return createService();
+      case AppDslPackage.ACTIVITY_ATTRIBUTE: return createActivityAttribute();
+      case AppDslPackage.BROADCAST_RECEIVER_ATTRIBUTE: return createBroadcastReceiverAttribute();
+      case AppDslPackage.SERVICE_ATTRIBUTE: return createServiceAttribute();
+      case AppDslPackage.ELEMENT_ENABLED_ATTRIBUTE: return createElementEnabledAttribute();
+      case AppDslPackage.ELEMENT_EXPORTED_ATTRIBUTE: return createElementExportedAttribute();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -187,6 +196,105 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
   {
     ApplicationMainActivityImpl applicationMainActivity = new ApplicationMainActivityImpl();
     return applicationMainActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ApplicationElement createApplicationElement()
+  {
+    ApplicationElementImpl applicationElement = new ApplicationElementImpl();
+    return applicationElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Activity createActivity()
+  {
+    ActivityImpl activity = new ActivityImpl();
+    return activity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BroadcastReceiver createBroadcastReceiver()
+  {
+    BroadcastReceiverImpl broadcastReceiver = new BroadcastReceiverImpl();
+    return broadcastReceiver;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Service createService()
+  {
+    ServiceImpl service = new ServiceImpl();
+    return service;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ActivityAttribute createActivityAttribute()
+  {
+    ActivityAttributeImpl activityAttribute = new ActivityAttributeImpl();
+    return activityAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BroadcastReceiverAttribute createBroadcastReceiverAttribute()
+  {
+    BroadcastReceiverAttributeImpl broadcastReceiverAttribute = new BroadcastReceiverAttributeImpl();
+    return broadcastReceiverAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ServiceAttribute createServiceAttribute()
+  {
+    ServiceAttributeImpl serviceAttribute = new ServiceAttributeImpl();
+    return serviceAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementEnabledAttribute createElementEnabledAttribute()
+  {
+    ElementEnabledAttributeImpl elementEnabledAttribute = new ElementEnabledAttributeImpl();
+    return elementEnabledAttribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementExportedAttribute createElementExportedAttribute()
+  {
+    ElementExportedAttributeImpl elementExportedAttribute = new ElementExportedAttributeImpl();
+    return elementExportedAttribute;
   }
 
   /**

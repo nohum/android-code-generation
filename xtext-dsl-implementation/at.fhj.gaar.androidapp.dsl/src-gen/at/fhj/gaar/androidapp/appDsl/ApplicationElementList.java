@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface ApplicationElementList extends ApplicationAttribute
 {
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link at.fhj.gaar.androidapp.appDsl.ApplicationElement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elements</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' attribute list.
+   * @return the value of the '<em>Elements</em>' containment reference list.
    * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getApplicationElementList_Elements()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getElements();
+  EList<ApplicationElement> getElements();
 
 } // ApplicationElementList

@@ -2,18 +2,27 @@
  */
 package at.fhj.gaar.androidapp.appDsl.impl;
 
+import at.fhj.gaar.androidapp.appDsl.Activity;
+import at.fhj.gaar.androidapp.appDsl.ActivityAttribute;
 import at.fhj.gaar.androidapp.appDsl.AndroidAppProject;
 import at.fhj.gaar.androidapp.appDsl.AppDslFactory;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
 import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute;
 import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk;
+import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationTitle;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
+import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
+import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
+import at.fhj.gaar.androidapp.appDsl.Service;
+import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -99,6 +108,69 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * @generated
    */
   private EClass applicationMainActivityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass applicationElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass activityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass broadcastReceiverEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass serviceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass activityAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass broadcastReceiverAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass serviceAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementEnabledAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementExportedAttributeEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -338,9 +410,9 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getApplicationElementList_Elements()
+  public EReference getApplicationElementList_Elements()
   {
-    return (EAttribute)applicationElementListEClass.getEStructuralFeatures().get(0);
+    return (EReference)applicationElementListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -361,6 +433,156 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
   public EAttribute getApplicationMainActivity_LauncherActivity()
   {
     return (EAttribute)applicationMainActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getApplicationElement()
+  {
+    return applicationElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getApplicationElement_ClassName()
+  {
+    return (EAttribute)applicationElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActivity()
+  {
+    return activityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActivity_Attributes()
+  {
+    return (EReference)activityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBroadcastReceiver()
+  {
+    return broadcastReceiverEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBroadcastReceiver_Attributes()
+  {
+    return (EReference)broadcastReceiverEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getService()
+  {
+    return serviceEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getService_Attributes()
+  {
+    return (EReference)serviceEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActivityAttribute()
+  {
+    return activityAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBroadcastReceiverAttribute()
+  {
+    return broadcastReceiverAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getServiceAttribute()
+  {
+    return serviceAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementEnabledAttribute()
+  {
+    return elementEnabledAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementEnabledAttribute_Enabled()
+  {
+    return (EAttribute)elementEnabledAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementExportedAttribute()
+  {
+    return elementExportedAttributeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementExportedAttribute_Exported()
+  {
+    return (EAttribute)elementExportedAttributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -418,10 +640,34 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEAttribute(applicationPermissionListEClass, APPLICATION_PERMISSION_LIST__PERMISSIONS);
 
     applicationElementListEClass = createEClass(APPLICATION_ELEMENT_LIST);
-    createEAttribute(applicationElementListEClass, APPLICATION_ELEMENT_LIST__ELEMENTS);
+    createEReference(applicationElementListEClass, APPLICATION_ELEMENT_LIST__ELEMENTS);
 
     applicationMainActivityEClass = createEClass(APPLICATION_MAIN_ACTIVITY);
     createEAttribute(applicationMainActivityEClass, APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY);
+
+    applicationElementEClass = createEClass(APPLICATION_ELEMENT);
+    createEAttribute(applicationElementEClass, APPLICATION_ELEMENT__CLASS_NAME);
+
+    activityEClass = createEClass(ACTIVITY);
+    createEReference(activityEClass, ACTIVITY__ATTRIBUTES);
+
+    broadcastReceiverEClass = createEClass(BROADCAST_RECEIVER);
+    createEReference(broadcastReceiverEClass, BROADCAST_RECEIVER__ATTRIBUTES);
+
+    serviceEClass = createEClass(SERVICE);
+    createEReference(serviceEClass, SERVICE__ATTRIBUTES);
+
+    activityAttributeEClass = createEClass(ACTIVITY_ATTRIBUTE);
+
+    broadcastReceiverAttributeEClass = createEClass(BROADCAST_RECEIVER_ATTRIBUTE);
+
+    serviceAttributeEClass = createEClass(SERVICE_ATTRIBUTE);
+
+    elementEnabledAttributeEClass = createEClass(ELEMENT_ENABLED_ATTRIBUTE);
+    createEAttribute(elementEnabledAttributeEClass, ELEMENT_ENABLED_ATTRIBUTE__ENABLED);
+
+    elementExportedAttributeEClass = createEClass(ELEMENT_EXPORTED_ATTRIBUTE);
+    createEAttribute(elementExportedAttributeEClass, ELEMENT_EXPORTED_ATTRIBUTE__EXPORTED);
   }
 
   /**
@@ -460,6 +706,15 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     applicationPermissionListEClass.getESuperTypes().add(this.getApplicationAttribute());
     applicationElementListEClass.getESuperTypes().add(this.getApplicationAttribute());
     applicationMainActivityEClass.getESuperTypes().add(this.getApplicationAttribute());
+    activityEClass.getESuperTypes().add(this.getApplicationElement());
+    broadcastReceiverEClass.getESuperTypes().add(this.getApplicationElement());
+    serviceEClass.getESuperTypes().add(this.getApplicationElement());
+    elementEnabledAttributeEClass.getESuperTypes().add(this.getActivityAttribute());
+    elementEnabledAttributeEClass.getESuperTypes().add(this.getBroadcastReceiverAttribute());
+    elementEnabledAttributeEClass.getESuperTypes().add(this.getServiceAttribute());
+    elementExportedAttributeEClass.getESuperTypes().add(this.getActivityAttribute());
+    elementExportedAttributeEClass.getESuperTypes().add(this.getBroadcastReceiverAttribute());
+    elementExportedAttributeEClass.getESuperTypes().add(this.getServiceAttribute());
 
     // Initialize classes and features; add operations and parameters
     initEClass(androidAppProjectEClass, AndroidAppProject.class, "AndroidAppProject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -487,10 +742,34 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEAttribute(getApplicationPermissionList_Permissions(), ecorePackage.getEString(), "permissions", null, 0, -1, ApplicationPermissionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationElementListEClass, ApplicationElementList.class, "ApplicationElementList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicationElementList_Elements(), ecorePackage.getEString(), "elements", null, 0, -1, ApplicationElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApplicationElementList_Elements(), this.getApplicationElement(), null, "elements", null, 0, -1, ApplicationElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationMainActivityEClass, ApplicationMainActivity.class, "ApplicationMainActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getApplicationMainActivity_LauncherActivity(), ecorePackage.getEString(), "launcherActivity", null, 0, 1, ApplicationMainActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(applicationElementEClass, ApplicationElement.class, "ApplicationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getApplicationElement_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, ApplicationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActivity_Attributes(), this.getActivityAttribute(), null, "attributes", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(broadcastReceiverEClass, BroadcastReceiver.class, "BroadcastReceiver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBroadcastReceiver_Attributes(), this.getBroadcastReceiverAttribute(), null, "attributes", null, 0, -1, BroadcastReceiver.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getService_Attributes(), this.getServiceAttribute(), null, "attributes", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(activityAttributeEClass, ActivityAttribute.class, "ActivityAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(broadcastReceiverAttributeEClass, BroadcastReceiverAttribute.class, "BroadcastReceiverAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(serviceAttributeEClass, ServiceAttribute.class, "ServiceAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(elementEnabledAttributeEClass, ElementEnabledAttribute.class, "ElementEnabledAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementEnabledAttribute_Enabled(), ecorePackage.getEBoolean(), "enabled", null, 0, 1, ElementEnabledAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(elementExportedAttributeEClass, ElementExportedAttribute.class, "ElementExportedAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementExportedAttribute_Exported(), ecorePackage.getEBoolean(), "exported", null, 0, 1, ElementExportedAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

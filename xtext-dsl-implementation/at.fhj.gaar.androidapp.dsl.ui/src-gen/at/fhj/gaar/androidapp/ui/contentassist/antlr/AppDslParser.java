@@ -38,11 +38,16 @@ public class AppDslParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getApplicationAttributeAccess().getAlternatives(), "rule__ApplicationAttribute__Alternatives");
-					put(grammarAccess.getIntentStartableAccess().getAlternatives(), "rule__IntentStartable__Alternatives");
+					put(grammarAccess.getApplicationElementAccess().getAlternatives(), "rule__ApplicationElement__Alternatives");
+					put(grammarAccess.getActivityAttributeAccess().getAlternatives(), "rule__ActivityAttribute__Alternatives");
+					put(grammarAccess.getBroadcastReceiverAttributeAccess().getAlternatives(), "rule__BroadcastReceiverAttribute__Alternatives");
+					put(grammarAccess.getServiceAttributeAccess().getAlternatives(), "rule__ServiceAttribute__Alternatives");
 					put(grammarAccess.getAndroidAppProjectAccess().getGroup(), "rule__AndroidAppProject__Group__0");
 					put(grammarAccess.getAndroidAppProjectAccess().getGroup_1(), "rule__AndroidAppProject__Group_1__0");
 					put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
 					put(grammarAccess.getApplicationAccess().getGroup_4(), "rule__Application__Group_4__0");
+					put(grammarAccess.getPackageNameAccess().getGroup(), "rule__PackageName__Group__0");
+					put(grammarAccess.getPackageNameAccess().getGroup_1(), "rule__PackageName__Group_1__0");
 					put(grammarAccess.getApplicationTitleAccess().getGroup(), "rule__ApplicationTitle__Group__0");
 					put(grammarAccess.getApplicationMinSdkAccess().getGroup(), "rule__ApplicationMinSdk__Group__0");
 					put(grammarAccess.getApplicationTargetSdkAccess().getGroup(), "rule__ApplicationTargetSdk__Group__0");
@@ -53,8 +58,13 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationElementListAccess().getGroup_3(), "rule__ApplicationElementList__Group_3__0");
 					put(grammarAccess.getApplicationMainActivityAccess().getGroup(), "rule__ApplicationMainActivity__Group__0");
 					put(grammarAccess.getActivityAccess().getGroup(), "rule__Activity__Group__0");
+					put(grammarAccess.getActivityAccess().getGroup_4(), "rule__Activity__Group_4__0");
 					put(grammarAccess.getBroadcastReceiverAccess().getGroup(), "rule__BroadcastReceiver__Group__0");
+					put(grammarAccess.getBroadcastReceiverAccess().getGroup_4(), "rule__BroadcastReceiver__Group_4__0");
 					put(grammarAccess.getServiceAccess().getGroup(), "rule__Service__Group__0");
+					put(grammarAccess.getServiceAccess().getGroup_4(), "rule__Service__Group_4__0");
+					put(grammarAccess.getElementEnabledAttributeAccess().getGroup(), "rule__ElementEnabledAttribute__Group__0");
+					put(grammarAccess.getElementExportedAttributeAccess().getGroup(), "rule__ElementExportedAttribute__Group__0");
 					put(grammarAccess.getAndroidAppProjectAccess().getApplicationsAssignment_0(), "rule__AndroidAppProject__ApplicationsAssignment_0");
 					put(grammarAccess.getAndroidAppProjectAccess().getApplicationsAssignment_1_1(), "rule__AndroidAppProject__ApplicationsAssignment_1_1");
 					put(grammarAccess.getApplicationAccess().getPackageNameAssignment_1(), "rule__Application__PackageNameAssignment_1");
@@ -69,6 +79,17 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationElementListAccess().getElementsAssignment_2(), "rule__ApplicationElementList__ElementsAssignment_2");
 					put(grammarAccess.getApplicationElementListAccess().getElementsAssignment_3_1(), "rule__ApplicationElementList__ElementsAssignment_3_1");
 					put(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityAssignment_1(), "rule__ApplicationMainActivity__LauncherActivityAssignment_1");
+					put(grammarAccess.getActivityAccess().getClassNameAssignment_1(), "rule__Activity__ClassNameAssignment_1");
+					put(grammarAccess.getActivityAccess().getAttributesAssignment_3(), "rule__Activity__AttributesAssignment_3");
+					put(grammarAccess.getActivityAccess().getAttributesAssignment_4_1(), "rule__Activity__AttributesAssignment_4_1");
+					put(grammarAccess.getBroadcastReceiverAccess().getClassNameAssignment_1(), "rule__BroadcastReceiver__ClassNameAssignment_1");
+					put(grammarAccess.getBroadcastReceiverAccess().getAttributesAssignment_3(), "rule__BroadcastReceiver__AttributesAssignment_3");
+					put(grammarAccess.getBroadcastReceiverAccess().getAttributesAssignment_4_1(), "rule__BroadcastReceiver__AttributesAssignment_4_1");
+					put(grammarAccess.getServiceAccess().getClassNameAssignment_1(), "rule__Service__ClassNameAssignment_1");
+					put(grammarAccess.getServiceAccess().getAttributesAssignment_3(), "rule__Service__AttributesAssignment_3");
+					put(grammarAccess.getServiceAccess().getAttributesAssignment_4_1(), "rule__Service__AttributesAssignment_4_1");
+					put(grammarAccess.getElementEnabledAttributeAccess().getEnabledAssignment_1(), "rule__ElementEnabledAttribute__EnabledAssignment_1");
+					put(grammarAccess.getElementExportedAttributeAccess().getExportedAssignment_1(), "rule__ElementExportedAttribute__ExportedAssignment_1");
 				}
 			};
 		}

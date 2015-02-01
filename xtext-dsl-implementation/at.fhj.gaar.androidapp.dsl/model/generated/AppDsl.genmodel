@@ -31,10 +31,31 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationPermissionList/permissions"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationElementList">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationElementList/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ApplicationElementList/elements"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationMainActivity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationMainActivity/launcherActivity"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ApplicationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationElement/className"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//Activity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Activity/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//BroadcastReceiver">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//BroadcastReceiver/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//Service">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Service/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ActivityAttribute"/>
+    <genClasses ecoreClass="AppDsl.ecore#//BroadcastReceiverAttribute"/>
+    <genClasses ecoreClass="AppDsl.ecore#//ServiceAttribute"/>
+    <genClasses ecoreClass="AppDsl.ecore#//ElementEnabledAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementEnabledAttribute/enabled"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//ElementExportedAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementExportedAttribute/exported"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

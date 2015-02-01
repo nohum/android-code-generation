@@ -291,7 +291,7 @@ public interface AppDslPackage extends EPackage
   int APPLICATION_ELEMENT_LIST = 8;
 
   /**
-   * The feature id for the '<em><b>Elements</b></em>' attribute list.
+   * The feature id for the '<em><b>Elements</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -335,6 +335,258 @@ public interface AppDslPackage extends EPackage
    * @ordered
    */
   int APPLICATION_MAIN_ACTIVITY_FEATURE_COUNT = APPLICATION_ATTRIBUTE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl <em>Application Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getApplicationElement()
+   * @generated
+   */
+  int APPLICATION_ELEMENT = 10;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_ELEMENT__CLASS_NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Application Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int APPLICATION_ELEMENT_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityImpl <em>Activity</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.ActivityImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivity()
+   * @generated
+   */
+  int ACTIVITY = 11;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTIVITY__CLASS_NAME = APPLICATION_ELEMENT__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTIVITY__ATTRIBUTES = APPLICATION_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Activity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTIVITY_FEATURE_COUNT = APPLICATION_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverImpl <em>Broadcast Receiver</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiver()
+   * @generated
+   */
+  int BROADCAST_RECEIVER = 12;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST_RECEIVER__CLASS_NAME = APPLICATION_ELEMENT__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST_RECEIVER__ATTRIBUTES = APPLICATION_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Broadcast Receiver</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST_RECEIVER_FEATURE_COUNT = APPLICATION_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ServiceImpl <em>Service</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.ServiceImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getService()
+   * @generated
+   */
+  int SERVICE = 13;
+
+  /**
+   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE__CLASS_NAME = APPLICATION_ELEMENT__CLASS_NAME;
+
+  /**
+   * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE__ATTRIBUTES = APPLICATION_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Service</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_FEATURE_COUNT = APPLICATION_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityAttributeImpl <em>Activity Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.ActivityAttributeImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivityAttribute()
+   * @generated
+   */
+  int ACTIVITY_ATTRIBUTE = 14;
+
+  /**
+   * The number of structural features of the '<em>Activity Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTIVITY_ATTRIBUTE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverAttributeImpl <em>Broadcast Receiver Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverAttributeImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverAttribute()
+   * @generated
+   */
+  int BROADCAST_RECEIVER_ATTRIBUTE = 15;
+
+  /**
+   * The number of structural features of the '<em>Broadcast Receiver Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST_RECEIVER_ATTRIBUTE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ServiceAttributeImpl <em>Service Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.ServiceAttributeImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getServiceAttribute()
+   * @generated
+   */
+  int SERVICE_ATTRIBUTE = 16;
+
+  /**
+   * The number of structural features of the '<em>Service Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE_ATTRIBUTE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ElementEnabledAttributeImpl <em>Element Enabled Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.ElementEnabledAttributeImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementEnabledAttribute()
+   * @generated
+   */
+  int ELEMENT_ENABLED_ATTRIBUTE = 17;
+
+  /**
+   * The feature id for the '<em><b>Enabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_ENABLED_ATTRIBUTE__ENABLED = ACTIVITY_ATTRIBUTE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Element Enabled Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_ENABLED_ATTRIBUTE_FEATURE_COUNT = ACTIVITY_ATTRIBUTE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ElementExportedAttributeImpl <em>Element Exported Attribute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.ElementExportedAttributeImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementExportedAttribute()
+   * @generated
+   */
+  int ELEMENT_EXPORTED_ATTRIBUTE = 18;
+
+  /**
+   * The feature id for the '<em><b>Exported</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_EXPORTED_ATTRIBUTE__EXPORTED = ACTIVITY_ATTRIBUTE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Element Exported Attribute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENT_EXPORTED_ATTRIBUTE_FEATURE_COUNT = ACTIVITY_ATTRIBUTE_FEATURE_COUNT + 1;
 
 
   /**
@@ -516,15 +768,15 @@ public interface AppDslPackage extends EPackage
   EClass getApplicationElementList();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElementList#getElements <em>Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElementList#getElements <em>Elements</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Elements</em>'.
+   * @return the meta object for the containment reference list '<em>Elements</em>'.
    * @see at.fhj.gaar.androidapp.appDsl.ApplicationElementList#getElements()
    * @see #getApplicationElementList()
    * @generated
    */
-  EAttribute getApplicationElementList_Elements();
+  EReference getApplicationElementList_Elements();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity <em>Application Main Activity</em>}'.
@@ -546,6 +798,162 @@ public interface AppDslPackage extends EPackage
    * @generated
    */
   EAttribute getApplicationMainActivity_LauncherActivity();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement <em>Application Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Application Element</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ApplicationElement
+   * @generated
+   */
+  EClass getApplicationElement();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement#getClassName <em>Class Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Class Name</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ApplicationElement#getClassName()
+   * @see #getApplicationElement()
+   * @generated
+   */
+  EAttribute getApplicationElement_ClassName();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Activity <em>Activity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Activity</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Activity
+   * @generated
+   */
+  EClass getActivity();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.Activity#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Activity#getAttributes()
+   * @see #getActivity()
+   * @generated
+   */
+  EReference getActivity_Attributes();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.BroadcastReceiver <em>Broadcast Receiver</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Broadcast Receiver</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
+   * @generated
+   */
+  EClass getBroadcastReceiver();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.BroadcastReceiver#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.BroadcastReceiver#getAttributes()
+   * @see #getBroadcastReceiver()
+   * @generated
+   */
+  EReference getBroadcastReceiver_Attributes();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Service <em>Service</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Service</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Service
+   * @generated
+   */
+  EClass getService();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.Service#getAttributes <em>Attributes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Attributes</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Service#getAttributes()
+   * @see #getService()
+   * @generated
+   */
+  EReference getService_Attributes();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ActivityAttribute <em>Activity Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Activity Attribute</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ActivityAttribute
+   * @generated
+   */
+  EClass getActivityAttribute();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute <em>Broadcast Receiver Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Broadcast Receiver Attribute</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute
+   * @generated
+   */
+  EClass getBroadcastReceiverAttribute();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ServiceAttribute <em>Service Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Service Attribute</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ServiceAttribute
+   * @generated
+   */
+  EClass getServiceAttribute();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute <em>Element Enabled Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Enabled Attribute</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute
+   * @generated
+   */
+  EClass getElementEnabledAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute#isEnabled <em>Enabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Enabled</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute#isEnabled()
+   * @see #getElementEnabledAttribute()
+   * @generated
+   */
+  EAttribute getElementEnabledAttribute_Enabled();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute <em>Element Exported Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Element Exported Attribute</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute
+   * @generated
+   */
+  EClass getElementExportedAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute#isExported <em>Exported</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Exported</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute#isExported()
+   * @see #getElementExportedAttribute()
+   * @generated
+   */
+  EAttribute getElementExportedAttribute_Exported();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -725,12 +1133,12 @@ public interface AppDslPackage extends EPackage
     EClass APPLICATION_ELEMENT_LIST = eINSTANCE.getApplicationElementList();
 
     /**
-     * The meta object literal for the '<em><b>Elements</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute APPLICATION_ELEMENT_LIST__ELEMENTS = eINSTANCE.getApplicationElementList_Elements();
+    EReference APPLICATION_ELEMENT_LIST__ELEMENTS = eINSTANCE.getApplicationElementList_Elements();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationMainActivityImpl <em>Application Main Activity</em>}' class.
@@ -749,6 +1157,144 @@ public interface AppDslPackage extends EPackage
      * @generated
      */
     EAttribute APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY = eINSTANCE.getApplicationMainActivity_LauncherActivity();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl <em>Application Element</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getApplicationElement()
+     * @generated
+     */
+    EClass APPLICATION_ELEMENT = eINSTANCE.getApplicationElement();
+
+    /**
+     * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute APPLICATION_ELEMENT__CLASS_NAME = eINSTANCE.getApplicationElement_ClassName();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityImpl <em>Activity</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.ActivityImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivity()
+     * @generated
+     */
+    EClass ACTIVITY = eINSTANCE.getActivity();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTIVITY__ATTRIBUTES = eINSTANCE.getActivity_Attributes();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverImpl <em>Broadcast Receiver</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiver()
+     * @generated
+     */
+    EClass BROADCAST_RECEIVER = eINSTANCE.getBroadcastReceiver();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BROADCAST_RECEIVER__ATTRIBUTES = eINSTANCE.getBroadcastReceiver_Attributes();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ServiceImpl <em>Service</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.ServiceImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getService()
+     * @generated
+     */
+    EClass SERVICE = eINSTANCE.getService();
+
+    /**
+     * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SERVICE__ATTRIBUTES = eINSTANCE.getService_Attributes();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityAttributeImpl <em>Activity Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.ActivityAttributeImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivityAttribute()
+     * @generated
+     */
+    EClass ACTIVITY_ATTRIBUTE = eINSTANCE.getActivityAttribute();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverAttributeImpl <em>Broadcast Receiver Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverAttributeImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverAttribute()
+     * @generated
+     */
+    EClass BROADCAST_RECEIVER_ATTRIBUTE = eINSTANCE.getBroadcastReceiverAttribute();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ServiceAttributeImpl <em>Service Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.ServiceAttributeImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getServiceAttribute()
+     * @generated
+     */
+    EClass SERVICE_ATTRIBUTE = eINSTANCE.getServiceAttribute();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ElementEnabledAttributeImpl <em>Element Enabled Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.ElementEnabledAttributeImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementEnabledAttribute()
+     * @generated
+     */
+    EClass ELEMENT_ENABLED_ATTRIBUTE = eINSTANCE.getElementEnabledAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Enabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_ENABLED_ATTRIBUTE__ENABLED = eINSTANCE.getElementEnabledAttribute_Enabled();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ElementExportedAttributeImpl <em>Element Exported Attribute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.ElementExportedAttributeImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementExportedAttribute()
+     * @generated
+     */
+    EClass ELEMENT_EXPORTED_ATTRIBUTE = eINSTANCE.getElementExportedAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Exported</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENT_EXPORTED_ATTRIBUTE__EXPORTED = eINSTANCE.getElementExportedAttribute_Exported();
 
   }
 

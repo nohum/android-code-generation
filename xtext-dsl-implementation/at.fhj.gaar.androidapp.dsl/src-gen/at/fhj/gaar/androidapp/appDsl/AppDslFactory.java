@@ -113,6 +113,87 @@ public interface AppDslFactory extends EFactory
   ApplicationMainActivity createApplicationMainActivity();
 
   /**
+   * Returns a new object of class '<em>Application Element</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Application Element</em>'.
+   * @generated
+   */
+  ApplicationElement createApplicationElement();
+
+  /**
+   * Returns a new object of class '<em>Activity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Activity</em>'.
+   * @generated
+   */
+  Activity createActivity();
+
+  /**
+   * Returns a new object of class '<em>Broadcast Receiver</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Broadcast Receiver</em>'.
+   * @generated
+   */
+  BroadcastReceiver createBroadcastReceiver();
+
+  /**
+   * Returns a new object of class '<em>Service</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Service</em>'.
+   * @generated
+   */
+  Service createService();
+
+  /**
+   * Returns a new object of class '<em>Activity Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Activity Attribute</em>'.
+   * @generated
+   */
+  ActivityAttribute createActivityAttribute();
+
+  /**
+   * Returns a new object of class '<em>Broadcast Receiver Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Broadcast Receiver Attribute</em>'.
+   * @generated
+   */
+  BroadcastReceiverAttribute createBroadcastReceiverAttribute();
+
+  /**
+   * Returns a new object of class '<em>Service Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Service Attribute</em>'.
+   * @generated
+   */
+  ServiceAttribute createServiceAttribute();
+
+  /**
+   * Returns a new object of class '<em>Element Enabled Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Enabled Attribute</em>'.
+   * @generated
+   */
+  ElementEnabledAttribute createElementEnabledAttribute();
+
+  /**
+   * Returns a new object of class '<em>Element Exported Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Element Exported Attribute</em>'.
+   * @generated
+   */
+  ElementExportedAttribute createElementExportedAttribute();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

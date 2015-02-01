@@ -21,32 +21,37 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'application'", "'{'", "'}'", "'title'", "'min-sdk'", "'target-sdk'", "'compile-sdk'", "'permissions'", "'['", "']'", "'elements'", "'main-activity'", "'activity'", "'receiver'", "'service'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_JAVA_IDENTIFIER", "RULE_STRING", "RULE_INT", "RULE_BOOLEAN", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'application'", "'{'", "'}'", "'.'", "'title'", "'min-sdk'", "'target-sdk'", "'compile-sdk'", "'permissions'", "'['", "']'", "'elements'", "'main-activity'", "'activity'", "'receiver'", "'service'", "'enabled'", "'exported'"
     };
-    public static final int RULE_ID=6;
+    public static final int RULE_BOOLEAN=7;
+    public static final int RULE_ID=8;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
     public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_SL_COMMENT=10;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__30=30;
     public static final int T__19=19;
-    public static final int RULE_STRING=4;
+    public static final int RULE_JAVA_IDENTIFIER=4;
+    public static final int T__31=31;
+    public static final int RULE_STRING=5;
     public static final int T__16=16;
     public static final int T__15=15;
     public static final int T__18=18;
     public static final int T__17=17;
-    public static final int T__12=12;
-    public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_INT=5;
-    public static final int RULE_WS=9;
+    public static final int RULE_INT=6;
+    public static final int RULE_WS=11;
 
     // delegates
     // delegators
@@ -179,7 +184,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==11) ) {
+                if ( (LA1_0==13) ) {
                     alt1=1;
                 }
 
@@ -188,7 +193,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:98:4: otherlv_1= ',' ( (lv_applications_2_0= ruleApplication ) )
             	    {
-            	    otherlv_1=(Token)match(input,11,FOLLOW_11_in_ruleAndroidAppProject144); 
+            	    otherlv_1=(Token)match(input,13,FOLLOW_13_in_ruleAndroidAppProject144); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getAndroidAppProjectAccess().getCommaKeyword_1_0());
             	        
@@ -313,7 +318,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:141:1: (otherlv_0= 'application' ( (lv_packageName_1_0= rulePackageName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleApplicationAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleApplicationAttribute ) ) )* otherlv_6= '}' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:141:3: otherlv_0= 'application' ( (lv_packageName_1_0= rulePackageName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleApplicationAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleApplicationAttribute ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_12_in_ruleApplication250); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleApplication250); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationAccess().getApplicationKeyword_0());
                 
@@ -348,7 +353,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleApplication283); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleApplication283); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getApplicationAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -389,7 +394,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==11) ) {
+                if ( (LA2_0==13) ) {
                     alt2=1;
                 }
 
@@ -398,7 +403,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:185:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleApplicationAttribute ) )
             	    {
-            	    otherlv_4=(Token)match(input,11,FOLLOW_11_in_ruleApplication317); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleApplication317); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getApplicationAccess().getCommaKeyword_4_0());
             	        
@@ -442,7 +447,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,14,FOLLOW_14_in_ruleApplication352); 
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleApplication352); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getApplicationAccess().getRightCurlyBracketKeyword_5());
                 
@@ -466,8 +471,81 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleApplication"
 
 
+    // $ANTLR start "entryRuleClassName"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:219:1: entryRuleClassName returns [String current=null] : iv_ruleClassName= ruleClassName EOF ;
+    public final String entryRuleClassName() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleClassName = null;
+
+
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:220:2: (iv_ruleClassName= ruleClassName EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:221:2: iv_ruleClassName= ruleClassName EOF
+            {
+             newCompositeNode(grammarAccess.getClassNameRule()); 
+            pushFollow(FOLLOW_ruleClassName_in_entryRuleClassName389);
+            iv_ruleClassName=ruleClassName();
+
+            state._fsp--;
+
+             current =iv_ruleClassName.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleClassName400); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleClassName"
+
+
+    // $ANTLR start "ruleClassName"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:228:1: ruleClassName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER ;
+    public final AntlrDatatypeRuleToken ruleClassName() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token this_JAVA_IDENTIFIER_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:231:28: (this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:232:5: this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER
+            {
+            this_JAVA_IDENTIFIER_0=(Token)match(input,RULE_JAVA_IDENTIFIER,FOLLOW_RULE_JAVA_IDENTIFIER_in_ruleClassName439); 
+
+            		current.merge(this_JAVA_IDENTIFIER_0);
+                
+             
+                newLeafNode(this_JAVA_IDENTIFIER_0, grammarAccess.getClassNameAccess().getJAVA_IDENTIFIERTerminalRuleCall()); 
+                
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleClassName"
+
+
     // $ANTLR start "entryRulePackageName"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:219:1: entryRulePackageName returns [String current=null] : iv_rulePackageName= rulePackageName EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:247:1: entryRulePackageName returns [String current=null] : iv_rulePackageName= rulePackageName EOF ;
     public final String entryRulePackageName() throws RecognitionException {
         String current = null;
 
@@ -475,17 +553,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:220:2: (iv_rulePackageName= rulePackageName EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:221:2: iv_rulePackageName= rulePackageName EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:248:2: (iv_rulePackageName= rulePackageName EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:249:2: iv_rulePackageName= rulePackageName EOF
             {
              newCompositeNode(grammarAccess.getPackageNameRule()); 
-            pushFollow(FOLLOW_rulePackageName_in_entryRulePackageName389);
+            pushFollow(FOLLOW_rulePackageName_in_entryRulePackageName484);
             iv_rulePackageName=rulePackageName();
 
             state._fsp--;
 
              current =iv_rulePackageName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePackageName400); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePackageName495); 
 
             }
 
@@ -503,25 +581,69 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePackageName"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:228:1: rulePackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_STRING_0= RULE_STRING ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:256:1: rulePackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER (kw= '.' this_JAVA_IDENTIFIER_2= RULE_JAVA_IDENTIFIER )* ) ;
     public final AntlrDatatypeRuleToken rulePackageName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
-        Token this_STRING_0=null;
+        Token this_JAVA_IDENTIFIER_0=null;
+        Token kw=null;
+        Token this_JAVA_IDENTIFIER_2=null;
 
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:231:28: (this_STRING_0= RULE_STRING )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:232:5: this_STRING_0= RULE_STRING
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:259:28: ( (this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER (kw= '.' this_JAVA_IDENTIFIER_2= RULE_JAVA_IDENTIFIER )* ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:260:1: (this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER (kw= '.' this_JAVA_IDENTIFIER_2= RULE_JAVA_IDENTIFIER )* )
             {
-            this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePackageName439); 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:260:1: (this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER (kw= '.' this_JAVA_IDENTIFIER_2= RULE_JAVA_IDENTIFIER )* )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:260:6: this_JAVA_IDENTIFIER_0= RULE_JAVA_IDENTIFIER (kw= '.' this_JAVA_IDENTIFIER_2= RULE_JAVA_IDENTIFIER )*
+            {
+            this_JAVA_IDENTIFIER_0=(Token)match(input,RULE_JAVA_IDENTIFIER,FOLLOW_RULE_JAVA_IDENTIFIER_in_rulePackageName535); 
 
-            		current.merge(this_STRING_0);
+            		current.merge(this_JAVA_IDENTIFIER_0);
                 
              
-                newLeafNode(this_STRING_0, grammarAccess.getPackageNameAccess().getSTRINGTerminalRuleCall()); 
+                newLeafNode(this_JAVA_IDENTIFIER_0, grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_0()); 
                 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:267:1: (kw= '.' this_JAVA_IDENTIFIER_2= RULE_JAVA_IDENTIFIER )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( (LA3_0==17) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
+            	case 1 :
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:268:2: kw= '.' this_JAVA_IDENTIFIER_2= RULE_JAVA_IDENTIFIER
+            	    {
+            	    kw=(Token)match(input,17,FOLLOW_17_in_rulePackageName554); 
+
+            	            current.merge(kw);
+            	            newLeafNode(kw, grammarAccess.getPackageNameAccess().getFullStopKeyword_1_0()); 
+            	        
+            	    this_JAVA_IDENTIFIER_2=(Token)match(input,RULE_JAVA_IDENTIFIER,FOLLOW_RULE_JAVA_IDENTIFIER_in_rulePackageName569); 
+
+            	    		current.merge(this_JAVA_IDENTIFIER_2);
+            	        
+            	     
+            	        newLeafNode(this_JAVA_IDENTIFIER_2, grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_1_1()); 
+            	        
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop3;
+                }
+            } while (true);
+
+
+            }
+
 
             }
 
@@ -540,7 +662,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationAttribute"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:247:1: entryRuleApplicationAttribute returns [EObject current=null] : iv_ruleApplicationAttribute= ruleApplicationAttribute EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:288:1: entryRuleApplicationAttribute returns [EObject current=null] : iv_ruleApplicationAttribute= ruleApplicationAttribute EOF ;
     public final EObject entryRuleApplicationAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -548,17 +670,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:248:2: (iv_ruleApplicationAttribute= ruleApplicationAttribute EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:249:2: iv_ruleApplicationAttribute= ruleApplicationAttribute EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:289:2: (iv_ruleApplicationAttribute= ruleApplicationAttribute EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:290:2: iv_ruleApplicationAttribute= ruleApplicationAttribute EOF
             {
              newCompositeNode(grammarAccess.getApplicationAttributeRule()); 
-            pushFollow(FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute483);
+            pushFollow(FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute616);
             iv_ruleApplicationAttribute=ruleApplicationAttribute();
 
             state._fsp--;
 
              current =iv_ruleApplicationAttribute; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationAttribute493); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationAttribute626); 
 
             }
 
@@ -576,7 +698,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationAttribute"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:256:1: ruleApplicationAttribute returns [EObject current=null] : (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:297:1: ruleApplicationAttribute returns [EObject current=null] : (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity ) ;
     public final EObject ruleApplicationAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -598,62 +720,62 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:259:28: ( (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:260:1: (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:300:28: ( (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:301:1: (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:260:1: (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity )
-            int alt3=7;
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:301:1: (this_ApplicationTitle_0= ruleApplicationTitle | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity )
+            int alt4=7;
             switch ( input.LA(1) ) {
-            case 15:
-                {
-                alt3=1;
-                }
-                break;
-            case 16:
-                {
-                alt3=2;
-                }
-                break;
-            case 17:
-                {
-                alt3=3;
-                }
-                break;
             case 18:
                 {
-                alt3=4;
+                alt4=1;
                 }
                 break;
             case 19:
                 {
-                alt3=5;
+                alt4=2;
+                }
+                break;
+            case 20:
+                {
+                alt4=3;
+                }
+                break;
+            case 21:
+                {
+                alt4=4;
                 }
                 break;
             case 22:
                 {
-                alt3=6;
+                alt4=5;
                 }
                 break;
-            case 23:
+            case 25:
                 {
-                alt3=7;
+                alt4=6;
+                }
+                break;
+            case 26:
+                {
+                alt4=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt3) {
+            switch (alt4) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:261:5: this_ApplicationTitle_0= ruleApplicationTitle
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:302:5: this_ApplicationTitle_0= ruleApplicationTitle
                     {
                      
                             newCompositeNode(grammarAccess.getApplicationAttributeAccess().getApplicationTitleParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleApplicationTitle_in_ruleApplicationAttribute540);
+                    pushFollow(FOLLOW_ruleApplicationTitle_in_ruleApplicationAttribute673);
                     this_ApplicationTitle_0=ruleApplicationTitle();
 
                     state._fsp--;
@@ -666,12 +788,12 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:271:5: this_ApplicationMinSdk_1= ruleApplicationMinSdk
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:312:5: this_ApplicationMinSdk_1= ruleApplicationMinSdk
                     {
                      
                             newCompositeNode(grammarAccess.getApplicationAttributeAccess().getApplicationMinSdkParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleApplicationMinSdk_in_ruleApplicationAttribute567);
+                    pushFollow(FOLLOW_ruleApplicationMinSdk_in_ruleApplicationAttribute700);
                     this_ApplicationMinSdk_1=ruleApplicationMinSdk();
 
                     state._fsp--;
@@ -684,12 +806,12 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:281:5: this_ApplicationTargetSdk_2= ruleApplicationTargetSdk
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:322:5: this_ApplicationTargetSdk_2= ruleApplicationTargetSdk
                     {
                      
                             newCompositeNode(grammarAccess.getApplicationAttributeAccess().getApplicationTargetSdkParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleApplicationTargetSdk_in_ruleApplicationAttribute594);
+                    pushFollow(FOLLOW_ruleApplicationTargetSdk_in_ruleApplicationAttribute727);
                     this_ApplicationTargetSdk_2=ruleApplicationTargetSdk();
 
                     state._fsp--;
@@ -702,12 +824,12 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:291:5: this_ApplicationCompileSdk_3= ruleApplicationCompileSdk
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:332:5: this_ApplicationCompileSdk_3= ruleApplicationCompileSdk
                     {
                      
                             newCompositeNode(grammarAccess.getApplicationAttributeAccess().getApplicationCompileSdkParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleApplicationCompileSdk_in_ruleApplicationAttribute621);
+                    pushFollow(FOLLOW_ruleApplicationCompileSdk_in_ruleApplicationAttribute754);
                     this_ApplicationCompileSdk_3=ruleApplicationCompileSdk();
 
                     state._fsp--;
@@ -720,12 +842,12 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:301:5: this_ApplicationPermissionList_4= ruleApplicationPermissionList
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:342:5: this_ApplicationPermissionList_4= ruleApplicationPermissionList
                     {
                      
                             newCompositeNode(grammarAccess.getApplicationAttributeAccess().getApplicationPermissionListParserRuleCall_4()); 
                         
-                    pushFollow(FOLLOW_ruleApplicationPermissionList_in_ruleApplicationAttribute648);
+                    pushFollow(FOLLOW_ruleApplicationPermissionList_in_ruleApplicationAttribute781);
                     this_ApplicationPermissionList_4=ruleApplicationPermissionList();
 
                     state._fsp--;
@@ -738,12 +860,12 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:311:5: this_ApplicationElementList_5= ruleApplicationElementList
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:352:5: this_ApplicationElementList_5= ruleApplicationElementList
                     {
                      
                             newCompositeNode(grammarAccess.getApplicationAttributeAccess().getApplicationElementListParserRuleCall_5()); 
                         
-                    pushFollow(FOLLOW_ruleApplicationElementList_in_ruleApplicationAttribute675);
+                    pushFollow(FOLLOW_ruleApplicationElementList_in_ruleApplicationAttribute808);
                     this_ApplicationElementList_5=ruleApplicationElementList();
 
                     state._fsp--;
@@ -756,12 +878,12 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:321:5: this_ApplicationMainActivity_6= ruleApplicationMainActivity
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:362:5: this_ApplicationMainActivity_6= ruleApplicationMainActivity
                     {
                      
                             newCompositeNode(grammarAccess.getApplicationAttributeAccess().getApplicationMainActivityParserRuleCall_6()); 
                         
-                    pushFollow(FOLLOW_ruleApplicationMainActivity_in_ruleApplicationAttribute702);
+                    pushFollow(FOLLOW_ruleApplicationMainActivity_in_ruleApplicationAttribute835);
                     this_ApplicationMainActivity_6=ruleApplicationMainActivity();
 
                     state._fsp--;
@@ -794,7 +916,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationTitle"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:337:1: entryRuleApplicationTitle returns [EObject current=null] : iv_ruleApplicationTitle= ruleApplicationTitle EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:378:1: entryRuleApplicationTitle returns [EObject current=null] : iv_ruleApplicationTitle= ruleApplicationTitle EOF ;
     public final EObject entryRuleApplicationTitle() throws RecognitionException {
         EObject current = null;
 
@@ -802,17 +924,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:338:2: (iv_ruleApplicationTitle= ruleApplicationTitle EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:339:2: iv_ruleApplicationTitle= ruleApplicationTitle EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:379:2: (iv_ruleApplicationTitle= ruleApplicationTitle EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:380:2: iv_ruleApplicationTitle= ruleApplicationTitle EOF
             {
              newCompositeNode(grammarAccess.getApplicationTitleRule()); 
-            pushFollow(FOLLOW_ruleApplicationTitle_in_entryRuleApplicationTitle737);
+            pushFollow(FOLLOW_ruleApplicationTitle_in_entryRuleApplicationTitle870);
             iv_ruleApplicationTitle=ruleApplicationTitle();
 
             state._fsp--;
 
              current =iv_ruleApplicationTitle; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationTitle747); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationTitle880); 
 
             }
 
@@ -830,7 +952,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationTitle"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:346:1: ruleApplicationTitle returns [EObject current=null] : (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:387:1: ruleApplicationTitle returns [EObject current=null] : (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleApplicationTitle() throws RecognitionException {
         EObject current = null;
 
@@ -840,23 +962,23 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:349:28: ( (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:350:1: (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:390:28: ( (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:391:1: (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:350:1: (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:350:3: otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:391:1: (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:391:3: otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleApplicationTitle784); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleApplicationTitle917); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationTitleAccess().getTitleKeyword_0());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:354:1: ( (lv_title_1_0= RULE_STRING ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:355:1: (lv_title_1_0= RULE_STRING )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:395:1: ( (lv_title_1_0= RULE_STRING ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:396:1: (lv_title_1_0= RULE_STRING )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:355:1: (lv_title_1_0= RULE_STRING )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:356:3: lv_title_1_0= RULE_STRING
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:396:1: (lv_title_1_0= RULE_STRING )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:397:3: lv_title_1_0= RULE_STRING
             {
-            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleApplicationTitle801); 
+            lv_title_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleApplicationTitle934); 
 
             			newLeafNode(lv_title_1_0, grammarAccess.getApplicationTitleAccess().getTitleSTRINGTerminalRuleCall_1_0()); 
             		
@@ -897,7 +1019,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationMinSdk"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:380:1: entryRuleApplicationMinSdk returns [EObject current=null] : iv_ruleApplicationMinSdk= ruleApplicationMinSdk EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:421:1: entryRuleApplicationMinSdk returns [EObject current=null] : iv_ruleApplicationMinSdk= ruleApplicationMinSdk EOF ;
     public final EObject entryRuleApplicationMinSdk() throws RecognitionException {
         EObject current = null;
 
@@ -905,17 +1027,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:381:2: (iv_ruleApplicationMinSdk= ruleApplicationMinSdk EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:382:2: iv_ruleApplicationMinSdk= ruleApplicationMinSdk EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:422:2: (iv_ruleApplicationMinSdk= ruleApplicationMinSdk EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:423:2: iv_ruleApplicationMinSdk= ruleApplicationMinSdk EOF
             {
              newCompositeNode(grammarAccess.getApplicationMinSdkRule()); 
-            pushFollow(FOLLOW_ruleApplicationMinSdk_in_entryRuleApplicationMinSdk842);
+            pushFollow(FOLLOW_ruleApplicationMinSdk_in_entryRuleApplicationMinSdk975);
             iv_ruleApplicationMinSdk=ruleApplicationMinSdk();
 
             state._fsp--;
 
              current =iv_ruleApplicationMinSdk; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationMinSdk852); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationMinSdk985); 
 
             }
 
@@ -933,7 +1055,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationMinSdk"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:389:1: ruleApplicationMinSdk returns [EObject current=null] : (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:430:1: ruleApplicationMinSdk returns [EObject current=null] : (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) ) ;
     public final EObject ruleApplicationMinSdk() throws RecognitionException {
         EObject current = null;
 
@@ -943,23 +1065,23 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:392:28: ( (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:393:1: (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:433:28: ( (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:434:1: (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:393:1: (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:393:3: otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:434:1: (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:434:3: otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleApplicationMinSdk889); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleApplicationMinSdk1022); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationMinSdkAccess().getMinSdkKeyword_0());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:397:1: ( (lv_minSdk_1_0= RULE_INT ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:398:1: (lv_minSdk_1_0= RULE_INT )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:438:1: ( (lv_minSdk_1_0= RULE_INT ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:439:1: (lv_minSdk_1_0= RULE_INT )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:398:1: (lv_minSdk_1_0= RULE_INT )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:399:3: lv_minSdk_1_0= RULE_INT
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:439:1: (lv_minSdk_1_0= RULE_INT )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:440:3: lv_minSdk_1_0= RULE_INT
             {
-            lv_minSdk_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleApplicationMinSdk906); 
+            lv_minSdk_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleApplicationMinSdk1039); 
 
             			newLeafNode(lv_minSdk_1_0, grammarAccess.getApplicationMinSdkAccess().getMinSdkINTTerminalRuleCall_1_0()); 
             		
@@ -1000,7 +1122,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationTargetSdk"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:423:1: entryRuleApplicationTargetSdk returns [EObject current=null] : iv_ruleApplicationTargetSdk= ruleApplicationTargetSdk EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:464:1: entryRuleApplicationTargetSdk returns [EObject current=null] : iv_ruleApplicationTargetSdk= ruleApplicationTargetSdk EOF ;
     public final EObject entryRuleApplicationTargetSdk() throws RecognitionException {
         EObject current = null;
 
@@ -1008,17 +1130,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:424:2: (iv_ruleApplicationTargetSdk= ruleApplicationTargetSdk EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:425:2: iv_ruleApplicationTargetSdk= ruleApplicationTargetSdk EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:465:2: (iv_ruleApplicationTargetSdk= ruleApplicationTargetSdk EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:466:2: iv_ruleApplicationTargetSdk= ruleApplicationTargetSdk EOF
             {
              newCompositeNode(grammarAccess.getApplicationTargetSdkRule()); 
-            pushFollow(FOLLOW_ruleApplicationTargetSdk_in_entryRuleApplicationTargetSdk947);
+            pushFollow(FOLLOW_ruleApplicationTargetSdk_in_entryRuleApplicationTargetSdk1080);
             iv_ruleApplicationTargetSdk=ruleApplicationTargetSdk();
 
             state._fsp--;
 
              current =iv_ruleApplicationTargetSdk; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationTargetSdk957); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationTargetSdk1090); 
 
             }
 
@@ -1036,7 +1158,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationTargetSdk"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:432:1: ruleApplicationTargetSdk returns [EObject current=null] : (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:473:1: ruleApplicationTargetSdk returns [EObject current=null] : (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) ) ;
     public final EObject ruleApplicationTargetSdk() throws RecognitionException {
         EObject current = null;
 
@@ -1046,23 +1168,23 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:435:28: ( (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:436:1: (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:476:28: ( (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:477:1: (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:436:1: (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:436:3: otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:477:1: (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:477:3: otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleApplicationTargetSdk994); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleApplicationTargetSdk1127); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationTargetSdkAccess().getTargetSdkKeyword_0());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:440:1: ( (lv_targetSdk_1_0= RULE_INT ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:441:1: (lv_targetSdk_1_0= RULE_INT )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:481:1: ( (lv_targetSdk_1_0= RULE_INT ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:482:1: (lv_targetSdk_1_0= RULE_INT )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:441:1: (lv_targetSdk_1_0= RULE_INT )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:442:3: lv_targetSdk_1_0= RULE_INT
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:482:1: (lv_targetSdk_1_0= RULE_INT )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:483:3: lv_targetSdk_1_0= RULE_INT
             {
-            lv_targetSdk_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleApplicationTargetSdk1011); 
+            lv_targetSdk_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleApplicationTargetSdk1144); 
 
             			newLeafNode(lv_targetSdk_1_0, grammarAccess.getApplicationTargetSdkAccess().getTargetSdkINTTerminalRuleCall_1_0()); 
             		
@@ -1103,7 +1225,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationCompileSdk"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:466:1: entryRuleApplicationCompileSdk returns [EObject current=null] : iv_ruleApplicationCompileSdk= ruleApplicationCompileSdk EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:507:1: entryRuleApplicationCompileSdk returns [EObject current=null] : iv_ruleApplicationCompileSdk= ruleApplicationCompileSdk EOF ;
     public final EObject entryRuleApplicationCompileSdk() throws RecognitionException {
         EObject current = null;
 
@@ -1111,17 +1233,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:467:2: (iv_ruleApplicationCompileSdk= ruleApplicationCompileSdk EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:468:2: iv_ruleApplicationCompileSdk= ruleApplicationCompileSdk EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:508:2: (iv_ruleApplicationCompileSdk= ruleApplicationCompileSdk EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:509:2: iv_ruleApplicationCompileSdk= ruleApplicationCompileSdk EOF
             {
              newCompositeNode(grammarAccess.getApplicationCompileSdkRule()); 
-            pushFollow(FOLLOW_ruleApplicationCompileSdk_in_entryRuleApplicationCompileSdk1052);
+            pushFollow(FOLLOW_ruleApplicationCompileSdk_in_entryRuleApplicationCompileSdk1185);
             iv_ruleApplicationCompileSdk=ruleApplicationCompileSdk();
 
             state._fsp--;
 
              current =iv_ruleApplicationCompileSdk; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationCompileSdk1062); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationCompileSdk1195); 
 
             }
 
@@ -1139,7 +1261,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationCompileSdk"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:475:1: ruleApplicationCompileSdk returns [EObject current=null] : (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:516:1: ruleApplicationCompileSdk returns [EObject current=null] : (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) ) ;
     public final EObject ruleApplicationCompileSdk() throws RecognitionException {
         EObject current = null;
 
@@ -1149,23 +1271,23 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:478:28: ( (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:479:1: (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:519:28: ( (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:520:1: (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:479:1: (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:479:3: otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:520:1: (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:520:3: otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleApplicationCompileSdk1099); 
+            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleApplicationCompileSdk1232); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationCompileSdkAccess().getCompileSdkKeyword_0());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:483:1: ( (lv_compileSdk_1_0= RULE_INT ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:484:1: (lv_compileSdk_1_0= RULE_INT )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:524:1: ( (lv_compileSdk_1_0= RULE_INT ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:525:1: (lv_compileSdk_1_0= RULE_INT )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:484:1: (lv_compileSdk_1_0= RULE_INT )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:485:3: lv_compileSdk_1_0= RULE_INT
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:525:1: (lv_compileSdk_1_0= RULE_INT )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:526:3: lv_compileSdk_1_0= RULE_INT
             {
-            lv_compileSdk_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleApplicationCompileSdk1116); 
+            lv_compileSdk_1_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleApplicationCompileSdk1249); 
 
             			newLeafNode(lv_compileSdk_1_0, grammarAccess.getApplicationCompileSdkAccess().getCompileSdkINTTerminalRuleCall_1_0()); 
             		
@@ -1206,7 +1328,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationPermissionList"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:509:1: entryRuleApplicationPermissionList returns [EObject current=null] : iv_ruleApplicationPermissionList= ruleApplicationPermissionList EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:550:1: entryRuleApplicationPermissionList returns [EObject current=null] : iv_ruleApplicationPermissionList= ruleApplicationPermissionList EOF ;
     public final EObject entryRuleApplicationPermissionList() throws RecognitionException {
         EObject current = null;
 
@@ -1214,17 +1336,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:510:2: (iv_ruleApplicationPermissionList= ruleApplicationPermissionList EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:511:2: iv_ruleApplicationPermissionList= ruleApplicationPermissionList EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:551:2: (iv_ruleApplicationPermissionList= ruleApplicationPermissionList EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:552:2: iv_ruleApplicationPermissionList= ruleApplicationPermissionList EOF
             {
              newCompositeNode(grammarAccess.getApplicationPermissionListRule()); 
-            pushFollow(FOLLOW_ruleApplicationPermissionList_in_entryRuleApplicationPermissionList1157);
+            pushFollow(FOLLOW_ruleApplicationPermissionList_in_entryRuleApplicationPermissionList1290);
             iv_ruleApplicationPermissionList=ruleApplicationPermissionList();
 
             state._fsp--;
 
              current =iv_ruleApplicationPermissionList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationPermissionList1167); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationPermissionList1300); 
 
             }
 
@@ -1242,7 +1364,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationPermissionList"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:518:1: ruleApplicationPermissionList returns [EObject current=null] : (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:559:1: ruleApplicationPermissionList returns [EObject current=null] : (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' ) ;
     public final EObject ruleApplicationPermissionList() throws RecognitionException {
         EObject current = null;
 
@@ -1258,30 +1380,30 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:521:28: ( (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:522:1: (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:562:28: ( (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:563:1: (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:522:1: (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:522:3: otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:563:1: (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:563:3: otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleApplicationPermissionList1204); 
+            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleApplicationPermissionList1337); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationPermissionListAccess().getPermissionsKeyword_0());
                 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleApplicationPermissionList1216); 
+            otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleApplicationPermissionList1349); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getApplicationPermissionListAccess().getLeftSquareBracketKeyword_1());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:530:1: ( (lv_permissions_2_0= rulePermission ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:531:1: (lv_permissions_2_0= rulePermission )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:571:1: ( (lv_permissions_2_0= rulePermission ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:572:1: (lv_permissions_2_0= rulePermission )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:531:1: (lv_permissions_2_0= rulePermission )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:532:3: lv_permissions_2_0= rulePermission
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:572:1: (lv_permissions_2_0= rulePermission )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:573:3: lv_permissions_2_0= rulePermission
             {
              
             	        newCompositeNode(grammarAccess.getApplicationPermissionListAccess().getPermissionsPermissionParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_rulePermission_in_ruleApplicationPermissionList1237);
+            pushFollow(FOLLOW_rulePermission_in_ruleApplicationPermissionList1370);
             lv_permissions_2_0=rulePermission();
 
             state._fsp--;
@@ -1303,35 +1425,35 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:548:2: (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )*
-            loop4:
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:589:2: (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )*
+            loop5:
             do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-                if ( (LA4_0==11) ) {
-                    alt4=1;
+                if ( (LA5_0==13) ) {
+                    alt5=1;
                 }
 
 
-                switch (alt4) {
+                switch (alt5) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:548:4: otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:589:4: otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) )
             	    {
-            	    otherlv_3=(Token)match(input,11,FOLLOW_11_in_ruleApplicationPermissionList1250); 
+            	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleApplicationPermissionList1383); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getApplicationPermissionListAccess().getCommaKeyword_3_0());
             	        
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:552:1: ( (lv_permissions_4_0= rulePermission ) )
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:553:1: (lv_permissions_4_0= rulePermission )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:593:1: ( (lv_permissions_4_0= rulePermission ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:594:1: (lv_permissions_4_0= rulePermission )
             	    {
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:553:1: (lv_permissions_4_0= rulePermission )
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:554:3: lv_permissions_4_0= rulePermission
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:594:1: (lv_permissions_4_0= rulePermission )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:595:3: lv_permissions_4_0= rulePermission
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getApplicationPermissionListAccess().getPermissionsPermissionParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_rulePermission_in_ruleApplicationPermissionList1271);
+            	    pushFollow(FOLLOW_rulePermission_in_ruleApplicationPermissionList1404);
             	    lv_permissions_4_0=rulePermission();
 
             	    state._fsp--;
@@ -1358,11 +1480,11 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop4;
+            	    break loop5;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleApplicationPermissionList1285); 
+            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleApplicationPermissionList1418); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getApplicationPermissionListAccess().getRightSquareBracketKeyword_4());
                 
@@ -1387,7 +1509,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationElementList"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:582:1: entryRuleApplicationElementList returns [EObject current=null] : iv_ruleApplicationElementList= ruleApplicationElementList EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:623:1: entryRuleApplicationElementList returns [EObject current=null] : iv_ruleApplicationElementList= ruleApplicationElementList EOF ;
     public final EObject entryRuleApplicationElementList() throws RecognitionException {
         EObject current = null;
 
@@ -1395,17 +1517,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:583:2: (iv_ruleApplicationElementList= ruleApplicationElementList EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:584:2: iv_ruleApplicationElementList= ruleApplicationElementList EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:624:2: (iv_ruleApplicationElementList= ruleApplicationElementList EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:625:2: iv_ruleApplicationElementList= ruleApplicationElementList EOF
             {
              newCompositeNode(grammarAccess.getApplicationElementListRule()); 
-            pushFollow(FOLLOW_ruleApplicationElementList_in_entryRuleApplicationElementList1321);
+            pushFollow(FOLLOW_ruleApplicationElementList_in_entryRuleApplicationElementList1454);
             iv_ruleApplicationElementList=ruleApplicationElementList();
 
             state._fsp--;
 
              current =iv_ruleApplicationElementList; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationElementList1331); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationElementList1464); 
 
             }
 
@@ -1423,7 +1545,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationElementList"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:591:1: ruleApplicationElementList returns [EObject current=null] : (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleIntentStartable ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleIntentStartable ) ) )* otherlv_5= ']' ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:632:1: ruleApplicationElementList returns [EObject current=null] : (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleApplicationElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )* otherlv_5= ']' ) ;
     public final EObject ruleApplicationElementList() throws RecognitionException {
         EObject current = null;
 
@@ -1431,39 +1553,39 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
-        AntlrDatatypeRuleToken lv_elements_2_0 = null;
+        EObject lv_elements_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_elements_4_0 = null;
+        EObject lv_elements_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:594:28: ( (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleIntentStartable ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleIntentStartable ) ) )* otherlv_5= ']' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:595:1: (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleIntentStartable ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleIntentStartable ) ) )* otherlv_5= ']' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:635:28: ( (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleApplicationElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )* otherlv_5= ']' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:636:1: (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleApplicationElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )* otherlv_5= ']' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:595:1: (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleIntentStartable ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleIntentStartable ) ) )* otherlv_5= ']' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:595:3: otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleIntentStartable ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleIntentStartable ) ) )* otherlv_5= ']'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:636:1: (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleApplicationElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )* otherlv_5= ']' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:636:3: otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleApplicationElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )* otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleApplicationElementList1368); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleApplicationElementList1501); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationElementListAccess().getElementsKeyword_0());
                 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleApplicationElementList1380); 
+            otherlv_1=(Token)match(input,23,FOLLOW_23_in_ruleApplicationElementList1513); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getApplicationElementListAccess().getLeftSquareBracketKeyword_1());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:603:1: ( (lv_elements_2_0= ruleIntentStartable ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:604:1: (lv_elements_2_0= ruleIntentStartable )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:644:1: ( (lv_elements_2_0= ruleApplicationElement ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:645:1: (lv_elements_2_0= ruleApplicationElement )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:604:1: (lv_elements_2_0= ruleIntentStartable )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:605:3: lv_elements_2_0= ruleIntentStartable
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:645:1: (lv_elements_2_0= ruleApplicationElement )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:646:3: lv_elements_2_0= ruleApplicationElement
             {
              
-            	        newCompositeNode(grammarAccess.getApplicationElementListAccess().getElementsIntentStartableParserRuleCall_2_0()); 
+            	        newCompositeNode(grammarAccess.getApplicationElementListAccess().getElementsApplicationElementParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleIntentStartable_in_ruleApplicationElementList1401);
-            lv_elements_2_0=ruleIntentStartable();
+            pushFollow(FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1534);
+            lv_elements_2_0=ruleApplicationElement();
 
             state._fsp--;
 
@@ -1475,7 +1597,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                    			current, 
                    			"elements",
                     		lv_elements_2_0, 
-                    		"IntentStartable");
+                    		"ApplicationElement");
             	        afterParserOrEnumRuleCall();
             	    
 
@@ -1484,36 +1606,36 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:621:2: (otherlv_3= ',' ( (lv_elements_4_0= ruleIntentStartable ) ) )*
-            loop5:
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:662:2: (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )*
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA5_0==11) ) {
-                    alt5=1;
+                if ( (LA6_0==13) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt6) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:621:4: otherlv_3= ',' ( (lv_elements_4_0= ruleIntentStartable ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:662:4: otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) )
             	    {
-            	    otherlv_3=(Token)match(input,11,FOLLOW_11_in_ruleApplicationElementList1414); 
+            	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleApplicationElementList1547); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getApplicationElementListAccess().getCommaKeyword_3_0());
             	        
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:625:1: ( (lv_elements_4_0= ruleIntentStartable ) )
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:626:1: (lv_elements_4_0= ruleIntentStartable )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:666:1: ( (lv_elements_4_0= ruleApplicationElement ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:667:1: (lv_elements_4_0= ruleApplicationElement )
             	    {
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:626:1: (lv_elements_4_0= ruleIntentStartable )
-            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:627:3: lv_elements_4_0= ruleIntentStartable
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:667:1: (lv_elements_4_0= ruleApplicationElement )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:668:3: lv_elements_4_0= ruleApplicationElement
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getApplicationElementListAccess().getElementsIntentStartableParserRuleCall_3_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getApplicationElementListAccess().getElementsApplicationElementParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleIntentStartable_in_ruleApplicationElementList1435);
-            	    lv_elements_4_0=ruleIntentStartable();
+            	    pushFollow(FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1568);
+            	    lv_elements_4_0=ruleApplicationElement();
 
             	    state._fsp--;
 
@@ -1525,7 +1647,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	           			current, 
             	           			"elements",
             	            		lv_elements_4_0, 
-            	            		"IntentStartable");
+            	            		"ApplicationElement");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -1539,11 +1661,11 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop6;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleApplicationElementList1449); 
+            otherlv_5=(Token)match(input,24,FOLLOW_24_in_ruleApplicationElementList1582); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getApplicationElementListAccess().getRightSquareBracketKeyword_4());
                 
@@ -1568,7 +1690,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplicationMainActivity"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:655:1: entryRuleApplicationMainActivity returns [EObject current=null] : iv_ruleApplicationMainActivity= ruleApplicationMainActivity EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:696:1: entryRuleApplicationMainActivity returns [EObject current=null] : iv_ruleApplicationMainActivity= ruleApplicationMainActivity EOF ;
     public final EObject entryRuleApplicationMainActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1576,17 +1698,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:656:2: (iv_ruleApplicationMainActivity= ruleApplicationMainActivity EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:657:2: iv_ruleApplicationMainActivity= ruleApplicationMainActivity EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:697:2: (iv_ruleApplicationMainActivity= ruleApplicationMainActivity EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:698:2: iv_ruleApplicationMainActivity= ruleApplicationMainActivity EOF
             {
              newCompositeNode(grammarAccess.getApplicationMainActivityRule()); 
-            pushFollow(FOLLOW_ruleApplicationMainActivity_in_entryRuleApplicationMainActivity1485);
+            pushFollow(FOLLOW_ruleApplicationMainActivity_in_entryRuleApplicationMainActivity1618);
             iv_ruleApplicationMainActivity=ruleApplicationMainActivity();
 
             state._fsp--;
 
              current =iv_ruleApplicationMainActivity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationMainActivity1495); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationMainActivity1628); 
 
             }
 
@@ -1604,7 +1726,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplicationMainActivity"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:664:1: ruleApplicationMainActivity returns [EObject current=null] : (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:705:1: ruleApplicationMainActivity returns [EObject current=null] : (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleApplicationMainActivity() throws RecognitionException {
         EObject current = null;
 
@@ -1614,23 +1736,23 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:667:28: ( (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:668:1: (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:708:28: ( (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:709:1: (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:668:1: (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:668:3: otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:709:1: (otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:709:3: otherlv_0= 'main-activity' ( (lv_launcherActivity_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleApplicationMainActivity1532); 
+            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleApplicationMainActivity1665); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationMainActivityAccess().getMainActivityKeyword_0());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:672:1: ( (lv_launcherActivity_1_0= RULE_STRING ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:673:1: (lv_launcherActivity_1_0= RULE_STRING )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:713:1: ( (lv_launcherActivity_1_0= RULE_STRING ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:714:1: (lv_launcherActivity_1_0= RULE_STRING )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:673:1: (lv_launcherActivity_1_0= RULE_STRING )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:674:3: lv_launcherActivity_1_0= RULE_STRING
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:714:1: (lv_launcherActivity_1_0= RULE_STRING )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:715:3: lv_launcherActivity_1_0= RULE_STRING
             {
-            lv_launcherActivity_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleApplicationMainActivity1549); 
+            lv_launcherActivity_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleApplicationMainActivity1682); 
 
             			newLeafNode(lv_launcherActivity_1_0, grammarAccess.getApplicationMainActivityAccess().getLauncherActivitySTRINGTerminalRuleCall_1_0()); 
             		
@@ -1671,7 +1793,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePermission"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:698:1: entryRulePermission returns [String current=null] : iv_rulePermission= rulePermission EOF ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:739:1: entryRulePermission returns [String current=null] : iv_rulePermission= rulePermission EOF ;
     public final String entryRulePermission() throws RecognitionException {
         String current = null;
 
@@ -1679,17 +1801,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:699:2: (iv_rulePermission= rulePermission EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:700:2: iv_rulePermission= rulePermission EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:740:2: (iv_rulePermission= rulePermission EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:741:2: iv_rulePermission= rulePermission EOF
             {
              newCompositeNode(grammarAccess.getPermissionRule()); 
-            pushFollow(FOLLOW_rulePermission_in_entryRulePermission1591);
+            pushFollow(FOLLOW_rulePermission_in_entryRulePermission1724);
             iv_rulePermission=rulePermission();
 
             state._fsp--;
 
              current =iv_rulePermission.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePermission1602); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePermission1735); 
 
             }
 
@@ -1707,7 +1829,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePermission"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:707:1: rulePermission returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_PackageName_0= rulePackageName ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:748:1: rulePermission returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_PackageName_0= rulePackageName ;
     public final AntlrDatatypeRuleToken rulePermission() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1717,13 +1839,13 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:710:28: (this_PackageName_0= rulePackageName )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:712:5: this_PackageName_0= rulePackageName
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:751:28: (this_PackageName_0= rulePackageName )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:753:5: this_PackageName_0= rulePackageName
             {
              
                     newCompositeNode(grammarAccess.getPermissionAccess().getPackageNameParserRuleCall()); 
                 
-            pushFollow(FOLLOW_rulePackageName_in_rulePermission1648);
+            pushFollow(FOLLOW_rulePackageName_in_rulePermission1781);
             this_PackageName_0=rulePackageName();
 
             state._fsp--;
@@ -1751,26 +1873,26 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulePermission"
 
 
-    // $ANTLR start "entryRuleIntentStartable"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:730:1: entryRuleIntentStartable returns [String current=null] : iv_ruleIntentStartable= ruleIntentStartable EOF ;
-    public final String entryRuleIntentStartable() throws RecognitionException {
-        String current = null;
+    // $ANTLR start "entryRuleApplicationElement"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:771:1: entryRuleApplicationElement returns [EObject current=null] : iv_ruleApplicationElement= ruleApplicationElement EOF ;
+    public final EObject entryRuleApplicationElement() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleIntentStartable = null;
+        EObject iv_ruleApplicationElement = null;
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:731:2: (iv_ruleIntentStartable= ruleIntentStartable EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:732:2: iv_ruleIntentStartable= ruleIntentStartable EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:772:2: (iv_ruleApplicationElement= ruleApplicationElement EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:773:2: iv_ruleApplicationElement= ruleApplicationElement EOF
             {
-             newCompositeNode(grammarAccess.getIntentStartableRule()); 
-            pushFollow(FOLLOW_ruleIntentStartable_in_entryRuleIntentStartable1693);
-            iv_ruleIntentStartable=ruleIntentStartable();
+             newCompositeNode(grammarAccess.getApplicationElementRule()); 
+            pushFollow(FOLLOW_ruleApplicationElement_in_entryRuleApplicationElement1825);
+            iv_ruleApplicationElement=ruleApplicationElement();
 
             state._fsp--;
 
-             current =iv_ruleIntentStartable.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleIntentStartable1704); 
+             current =iv_ruleApplicationElement; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleApplicationElement1835); 
 
             }
 
@@ -1784,108 +1906,102 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleIntentStartable"
+    // $ANTLR end "entryRuleApplicationElement"
 
 
-    // $ANTLR start "ruleIntentStartable"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:739:1: ruleIntentStartable returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService ) ;
-    public final AntlrDatatypeRuleToken ruleIntentStartable() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // $ANTLR start "ruleApplicationElement"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:780:1: ruleApplicationElement returns [EObject current=null] : (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService ) ;
+    public final EObject ruleApplicationElement() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken this_Activity_0 = null;
+        EObject this_Activity_0 = null;
 
-        AntlrDatatypeRuleToken this_BroadcastReceiver_1 = null;
+        EObject this_BroadcastReceiver_1 = null;
 
-        AntlrDatatypeRuleToken this_Service_2 = null;
+        EObject this_Service_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:742:28: ( (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:743:1: (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:783:28: ( (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:784:1: (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:743:1: (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService )
-            int alt6=3;
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:784:1: (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService )
+            int alt7=3;
             switch ( input.LA(1) ) {
-            case 24:
+            case 27:
                 {
-                alt6=1;
+                alt7=1;
                 }
                 break;
-            case 25:
+            case 28:
                 {
-                alt6=2;
+                alt7=2;
                 }
                 break;
-            case 26:
+            case 29:
                 {
-                alt6=3;
+                alt7=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:744:5: this_Activity_0= ruleActivity
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:785:5: this_Activity_0= ruleActivity
                     {
                      
-                            newCompositeNode(grammarAccess.getIntentStartableAccess().getActivityParserRuleCall_0()); 
+                            newCompositeNode(grammarAccess.getApplicationElementAccess().getActivityParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleActivity_in_ruleIntentStartable1751);
+                    pushFollow(FOLLOW_ruleActivity_in_ruleApplicationElement1882);
                     this_Activity_0=ruleActivity();
 
                     state._fsp--;
 
-
-                    		current.merge(this_Activity_0);
-                        
                      
+                            current = this_Activity_0; 
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 2 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:756:5: this_BroadcastReceiver_1= ruleBroadcastReceiver
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:795:5: this_BroadcastReceiver_1= ruleBroadcastReceiver
                     {
                      
-                            newCompositeNode(grammarAccess.getIntentStartableAccess().getBroadcastReceiverParserRuleCall_1()); 
+                            newCompositeNode(grammarAccess.getApplicationElementAccess().getBroadcastReceiverParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleBroadcastReceiver_in_ruleIntentStartable1784);
+                    pushFollow(FOLLOW_ruleBroadcastReceiver_in_ruleApplicationElement1909);
                     this_BroadcastReceiver_1=ruleBroadcastReceiver();
 
                     state._fsp--;
 
-
-                    		current.merge(this_BroadcastReceiver_1);
-                        
                      
+                            current = this_BroadcastReceiver_1; 
                             afterParserOrEnumRuleCall();
                         
 
                     }
                     break;
                 case 3 :
-                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:768:5: this_Service_2= ruleService
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:805:5: this_Service_2= ruleService
                     {
                      
-                            newCompositeNode(grammarAccess.getIntentStartableAccess().getServiceParserRuleCall_2()); 
+                            newCompositeNode(grammarAccess.getApplicationElementAccess().getServiceParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleService_in_ruleIntentStartable1817);
+                    pushFollow(FOLLOW_ruleService_in_ruleApplicationElement1936);
                     this_Service_2=ruleService();
 
                     state._fsp--;
 
-
-                    		current.merge(this_Service_2);
-                        
                      
+                            current = this_Service_2; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -1908,29 +2024,29 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleIntentStartable"
+    // $ANTLR end "ruleApplicationElement"
 
 
     // $ANTLR start "entryRuleActivity"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:786:1: entryRuleActivity returns [String current=null] : iv_ruleActivity= ruleActivity EOF ;
-    public final String entryRuleActivity() throws RecognitionException {
-        String current = null;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:821:1: entryRuleActivity returns [EObject current=null] : iv_ruleActivity= ruleActivity EOF ;
+    public final EObject entryRuleActivity() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleActivity = null;
+        EObject iv_ruleActivity = null;
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:787:2: (iv_ruleActivity= ruleActivity EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:788:2: iv_ruleActivity= ruleActivity EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:822:2: (iv_ruleActivity= ruleActivity EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:823:2: iv_ruleActivity= ruleActivity EOF
             {
              newCompositeNode(grammarAccess.getActivityRule()); 
-            pushFollow(FOLLOW_ruleActivity_in_entryRuleActivity1863);
+            pushFollow(FOLLOW_ruleActivity_in_entryRuleActivity1971);
             iv_ruleActivity=ruleActivity();
 
             state._fsp--;
 
-             current =iv_ruleActivity.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleActivity1874); 
+             current =iv_ruleActivity; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActivity1981); 
 
             }
 
@@ -1948,35 +2064,162 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActivity"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:795:1: ruleActivity returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'activity' kw= '{' kw= '}' ) ;
-    public final AntlrDatatypeRuleToken ruleActivity() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:830:1: ruleActivity returns [EObject current=null] : (otherlv_0= 'activity' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleActivityAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )* otherlv_6= '}' ) ;
+    public final EObject ruleActivity() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_className_1_0 = null;
+
+        EObject lv_attributes_3_0 = null;
+
+        EObject lv_attributes_5_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:798:28: ( (kw= 'activity' kw= '{' kw= '}' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:799:1: (kw= 'activity' kw= '{' kw= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:833:28: ( (otherlv_0= 'activity' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleActivityAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )* otherlv_6= '}' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:834:1: (otherlv_0= 'activity' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleActivityAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )* otherlv_6= '}' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:799:1: (kw= 'activity' kw= '{' kw= '}' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:800:2: kw= 'activity' kw= '{' kw= '}'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:834:1: (otherlv_0= 'activity' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleActivityAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )* otherlv_6= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:834:3: otherlv_0= 'activity' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleActivityAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )* otherlv_6= '}'
             {
-            kw=(Token)match(input,24,FOLLOW_24_in_ruleActivity1912); 
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleActivity2018); 
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getActivityAccess().getActivityKeyword_0()); 
+                	newLeafNode(otherlv_0, grammarAccess.getActivityAccess().getActivityKeyword_0());
                 
-            kw=(Token)match(input,13,FOLLOW_13_in_ruleActivity1925); 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:838:1: ( (lv_className_1_0= ruleClassName ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:839:1: (lv_className_1_0= ruleClassName )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:839:1: (lv_className_1_0= ruleClassName )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:840:3: lv_className_1_0= ruleClassName
+            {
+             
+            	        newCompositeNode(grammarAccess.getActivityAccess().getClassNameClassNameParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleClassName_in_ruleActivity2039);
+            lv_className_1_0=ruleClassName();
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_1()); 
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getActivityRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"className",
+                    		lv_className_1_0, 
+                    		"ClassName");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleActivity2051); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_2());
                 
-            kw=(Token)match(input,14,FOLLOW_14_in_ruleActivity1938); 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:860:1: ( (lv_attributes_3_0= ruleActivityAttribute ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:861:1: (lv_attributes_3_0= ruleActivityAttribute )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:861:1: (lv_attributes_3_0= ruleActivityAttribute )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:862:3: lv_attributes_3_0= ruleActivityAttribute
+            {
+             
+            	        newCompositeNode(grammarAccess.getActivityAccess().getAttributesActivityAttributeParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleActivityAttribute_in_ruleActivity2072);
+            lv_attributes_3_0=ruleActivityAttribute();
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_2()); 
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getActivityRule());
+            	        }
+                   		add(
+                   			current, 
+                   			"attributes",
+                    		lv_attributes_3_0, 
+                    		"ActivityAttribute");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:878:2: (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( (LA8_0==13) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:878:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) )
+            	    {
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleActivity2085); 
+
+            	        	newLeafNode(otherlv_4, grammarAccess.getActivityAccess().getCommaKeyword_4_0());
+            	        
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:882:1: ( (lv_attributes_5_0= ruleActivityAttribute ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:883:1: (lv_attributes_5_0= ruleActivityAttribute )
+            	    {
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:883:1: (lv_attributes_5_0= ruleActivityAttribute )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:884:3: lv_attributes_5_0= ruleActivityAttribute
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getActivityAccess().getAttributesActivityAttributeParserRuleCall_4_1_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleActivityAttribute_in_ruleActivity2106);
+            	    lv_attributes_5_0=ruleActivityAttribute();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getActivityRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"attributes",
+            	            		lv_attributes_5_0, 
+            	            		"ActivityAttribute");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleActivity2120); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_5());
                 
 
             }
@@ -1999,25 +2242,25 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBroadcastReceiver"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:825:1: entryRuleBroadcastReceiver returns [String current=null] : iv_ruleBroadcastReceiver= ruleBroadcastReceiver EOF ;
-    public final String entryRuleBroadcastReceiver() throws RecognitionException {
-        String current = null;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:912:1: entryRuleBroadcastReceiver returns [EObject current=null] : iv_ruleBroadcastReceiver= ruleBroadcastReceiver EOF ;
+    public final EObject entryRuleBroadcastReceiver() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleBroadcastReceiver = null;
+        EObject iv_ruleBroadcastReceiver = null;
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:826:2: (iv_ruleBroadcastReceiver= ruleBroadcastReceiver EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:827:2: iv_ruleBroadcastReceiver= ruleBroadcastReceiver EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:913:2: (iv_ruleBroadcastReceiver= ruleBroadcastReceiver EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:914:2: iv_ruleBroadcastReceiver= ruleBroadcastReceiver EOF
             {
              newCompositeNode(grammarAccess.getBroadcastReceiverRule()); 
-            pushFollow(FOLLOW_ruleBroadcastReceiver_in_entryRuleBroadcastReceiver1979);
+            pushFollow(FOLLOW_ruleBroadcastReceiver_in_entryRuleBroadcastReceiver2156);
             iv_ruleBroadcastReceiver=ruleBroadcastReceiver();
 
             state._fsp--;
 
-             current =iv_ruleBroadcastReceiver.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBroadcastReceiver1990); 
+             current =iv_ruleBroadcastReceiver; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBroadcastReceiver2166); 
 
             }
 
@@ -2035,35 +2278,162 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBroadcastReceiver"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:834:1: ruleBroadcastReceiver returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'receiver' kw= '{' kw= '}' ) ;
-    public final AntlrDatatypeRuleToken ruleBroadcastReceiver() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:921:1: ruleBroadcastReceiver returns [EObject current=null] : (otherlv_0= 'receiver' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )* otherlv_6= '}' ) ;
+    public final EObject ruleBroadcastReceiver() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_className_1_0 = null;
+
+        EObject lv_attributes_3_0 = null;
+
+        EObject lv_attributes_5_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:837:28: ( (kw= 'receiver' kw= '{' kw= '}' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:838:1: (kw= 'receiver' kw= '{' kw= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:924:28: ( (otherlv_0= 'receiver' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )* otherlv_6= '}' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:925:1: (otherlv_0= 'receiver' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )* otherlv_6= '}' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:838:1: (kw= 'receiver' kw= '{' kw= '}' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:839:2: kw= 'receiver' kw= '{' kw= '}'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:925:1: (otherlv_0= 'receiver' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )* otherlv_6= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:925:3: otherlv_0= 'receiver' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )* otherlv_6= '}'
             {
-            kw=(Token)match(input,25,FOLLOW_25_in_ruleBroadcastReceiver2028); 
+            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleBroadcastReceiver2203); 
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getBroadcastReceiverAccess().getReceiverKeyword_0()); 
+                	newLeafNode(otherlv_0, grammarAccess.getBroadcastReceiverAccess().getReceiverKeyword_0());
                 
-            kw=(Token)match(input,13,FOLLOW_13_in_ruleBroadcastReceiver2041); 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:929:1: ( (lv_className_1_0= ruleClassName ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:930:1: (lv_className_1_0= ruleClassName )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:930:1: (lv_className_1_0= ruleClassName )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:931:3: lv_className_1_0= ruleClassName
+            {
+             
+            	        newCompositeNode(grammarAccess.getBroadcastReceiverAccess().getClassNameClassNameParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleClassName_in_ruleBroadcastReceiver2224);
+            lv_className_1_0=ruleClassName();
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getBroadcastReceiverAccess().getLeftCurlyBracketKeyword_1()); 
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getBroadcastReceiverRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"className",
+                    		lv_className_1_0, 
+                    		"ClassName");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleBroadcastReceiver2236); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getBroadcastReceiverAccess().getLeftCurlyBracketKeyword_2());
                 
-            kw=(Token)match(input,14,FOLLOW_14_in_ruleBroadcastReceiver2054); 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:951:1: ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:952:1: (lv_attributes_3_0= ruleBroadcastReceiverAttribute )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:952:1: (lv_attributes_3_0= ruleBroadcastReceiverAttribute )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:953:3: lv_attributes_3_0= ruleBroadcastReceiverAttribute
+            {
+             
+            	        newCompositeNode(grammarAccess.getBroadcastReceiverAccess().getAttributesBroadcastReceiverAttributeParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver2257);
+            lv_attributes_3_0=ruleBroadcastReceiverAttribute();
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getBroadcastReceiverAccess().getRightCurlyBracketKeyword_2()); 
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getBroadcastReceiverRule());
+            	        }
+                   		add(
+                   			current, 
+                   			"attributes",
+                    		lv_attributes_3_0, 
+                    		"BroadcastReceiverAttribute");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:969:2: (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )*
+            loop9:
+            do {
+                int alt9=2;
+                int LA9_0 = input.LA(1);
+
+                if ( (LA9_0==13) ) {
+                    alt9=1;
+                }
+
+
+                switch (alt9) {
+            	case 1 :
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:969:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) )
+            	    {
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleBroadcastReceiver2270); 
+
+            	        	newLeafNode(otherlv_4, grammarAccess.getBroadcastReceiverAccess().getCommaKeyword_4_0());
+            	        
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:973:1: ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:974:1: (lv_attributes_5_0= ruleBroadcastReceiverAttribute )
+            	    {
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:974:1: (lv_attributes_5_0= ruleBroadcastReceiverAttribute )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:975:3: lv_attributes_5_0= ruleBroadcastReceiverAttribute
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getBroadcastReceiverAccess().getAttributesBroadcastReceiverAttributeParserRuleCall_4_1_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver2291);
+            	    lv_attributes_5_0=ruleBroadcastReceiverAttribute();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getBroadcastReceiverRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"attributes",
+            	            		lv_attributes_5_0, 
+            	            		"BroadcastReceiverAttribute");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop9;
+                }
+            } while (true);
+
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleBroadcastReceiver2305); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getBroadcastReceiverAccess().getRightCurlyBracketKeyword_5());
                 
 
             }
@@ -2086,25 +2456,25 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleService"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:864:1: entryRuleService returns [String current=null] : iv_ruleService= ruleService EOF ;
-    public final String entryRuleService() throws RecognitionException {
-        String current = null;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1003:1: entryRuleService returns [EObject current=null] : iv_ruleService= ruleService EOF ;
+    public final EObject entryRuleService() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleService = null;
+        EObject iv_ruleService = null;
 
 
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:865:2: (iv_ruleService= ruleService EOF )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:866:2: iv_ruleService= ruleService EOF
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1004:2: (iv_ruleService= ruleService EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1005:2: iv_ruleService= ruleService EOF
             {
              newCompositeNode(grammarAccess.getServiceRule()); 
-            pushFollow(FOLLOW_ruleService_in_entryRuleService2095);
+            pushFollow(FOLLOW_ruleService_in_entryRuleService2341);
             iv_ruleService=ruleService();
 
             state._fsp--;
 
-             current =iv_ruleService.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleService2106); 
+             current =iv_ruleService; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleService2351); 
 
             }
 
@@ -2122,35 +2492,162 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleService"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:873:1: ruleService returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'service' kw= '{' kw= '}' ) ;
-    public final AntlrDatatypeRuleToken ruleService() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1012:1: ruleService returns [EObject current=null] : (otherlv_0= 'service' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleServiceAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )* otherlv_6= '}' ) ;
+    public final EObject ruleService() throws RecognitionException {
+        EObject current = null;
 
-        Token kw=null;
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        AntlrDatatypeRuleToken lv_className_1_0 = null;
+
+        EObject lv_attributes_3_0 = null;
+
+        EObject lv_attributes_5_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:876:28: ( (kw= 'service' kw= '{' kw= '}' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:877:1: (kw= 'service' kw= '{' kw= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1015:28: ( (otherlv_0= 'service' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleServiceAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )* otherlv_6= '}' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1016:1: (otherlv_0= 'service' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleServiceAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )* otherlv_6= '}' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:877:1: (kw= 'service' kw= '{' kw= '}' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:878:2: kw= 'service' kw= '{' kw= '}'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1016:1: (otherlv_0= 'service' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleServiceAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )* otherlv_6= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1016:3: otherlv_0= 'service' ( (lv_className_1_0= ruleClassName ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleServiceAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )* otherlv_6= '}'
             {
-            kw=(Token)match(input,26,FOLLOW_26_in_ruleService2144); 
+            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleService2388); 
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getServiceAccess().getServiceKeyword_0()); 
+                	newLeafNode(otherlv_0, grammarAccess.getServiceAccess().getServiceKeyword_0());
                 
-            kw=(Token)match(input,13,FOLLOW_13_in_ruleService2157); 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1020:1: ( (lv_className_1_0= ruleClassName ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1021:1: (lv_className_1_0= ruleClassName )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1021:1: (lv_className_1_0= ruleClassName )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1022:3: lv_className_1_0= ruleClassName
+            {
+             
+            	        newCompositeNode(grammarAccess.getServiceAccess().getClassNameClassNameParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleClassName_in_ruleService2409);
+            lv_className_1_0=ruleClassName();
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_1()); 
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getServiceRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"className",
+                    		lv_className_1_0, 
+                    		"ClassName");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleService2421); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_2());
                 
-            kw=(Token)match(input,14,FOLLOW_14_in_ruleService2170); 
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1042:1: ( (lv_attributes_3_0= ruleServiceAttribute ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1043:1: (lv_attributes_3_0= ruleServiceAttribute )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1043:1: (lv_attributes_3_0= ruleServiceAttribute )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1044:3: lv_attributes_3_0= ruleServiceAttribute
+            {
+             
+            	        newCompositeNode(grammarAccess.getServiceAccess().getAttributesServiceAttributeParserRuleCall_3_0()); 
+            	    
+            pushFollow(FOLLOW_ruleServiceAttribute_in_ruleService2442);
+            lv_attributes_3_0=ruleServiceAttribute();
 
-                    current.merge(kw);
-                    newLeafNode(kw, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_2()); 
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getServiceRule());
+            	        }
+                   		add(
+                   			current, 
+                   			"attributes",
+                    		lv_attributes_3_0, 
+                    		"ServiceAttribute");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1060:2: (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0==13) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1060:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) )
+            	    {
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleService2455); 
+
+            	        	newLeafNode(otherlv_4, grammarAccess.getServiceAccess().getCommaKeyword_4_0());
+            	        
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1064:1: ( (lv_attributes_5_0= ruleServiceAttribute ) )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1065:1: (lv_attributes_5_0= ruleServiceAttribute )
+            	    {
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1065:1: (lv_attributes_5_0= ruleServiceAttribute )
+            	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1066:3: lv_attributes_5_0= ruleServiceAttribute
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getServiceAccess().getAttributesServiceAttributeParserRuleCall_4_1_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleServiceAttribute_in_ruleService2476);
+            	    lv_attributes_5_0=ruleServiceAttribute();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getServiceRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"attributes",
+            	            		lv_attributes_5_0, 
+            	            		"ServiceAttribute");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
+
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleService2490); 
+
+                	newLeafNode(otherlv_6, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_5());
                 
 
             }
@@ -2171,6 +2668,587 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleService"
 
+
+    // $ANTLR start "entryRuleActivityAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1094:1: entryRuleActivityAttribute returns [EObject current=null] : iv_ruleActivityAttribute= ruleActivityAttribute EOF ;
+    public final EObject entryRuleActivityAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleActivityAttribute = null;
+
+
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1095:2: (iv_ruleActivityAttribute= ruleActivityAttribute EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1096:2: iv_ruleActivityAttribute= ruleActivityAttribute EOF
+            {
+             newCompositeNode(grammarAccess.getActivityAttributeRule()); 
+            pushFollow(FOLLOW_ruleActivityAttribute_in_entryRuleActivityAttribute2526);
+            iv_ruleActivityAttribute=ruleActivityAttribute();
+
+            state._fsp--;
+
+             current =iv_ruleActivityAttribute; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleActivityAttribute2536); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleActivityAttribute"
+
+
+    // $ANTLR start "ruleActivityAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1103:1: ruleActivityAttribute returns [EObject current=null] : (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute ) ;
+    public final EObject ruleActivityAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_ElementEnabledAttribute_0 = null;
+
+        EObject this_ElementExportedAttribute_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1106:28: ( (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1107:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1107:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
+
+            if ( (LA11_0==30) ) {
+                alt11=1;
+            }
+            else if ( (LA11_0==31) ) {
+                alt11=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 11, 0, input);
+
+                throw nvae;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1108:5: this_ElementEnabledAttribute_0= ruleElementEnabledAttribute
+                    {
+                     
+                            newCompositeNode(grammarAccess.getActivityAttributeAccess().getElementEnabledAttributeParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleElementEnabledAttribute_in_ruleActivityAttribute2583);
+                    this_ElementEnabledAttribute_0=ruleElementEnabledAttribute();
+
+                    state._fsp--;
+
+                     
+                            current = this_ElementEnabledAttribute_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1118:5: this_ElementExportedAttribute_1= ruleElementExportedAttribute
+                    {
+                     
+                            newCompositeNode(grammarAccess.getActivityAttributeAccess().getElementExportedAttributeParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleElementExportedAttribute_in_ruleActivityAttribute2610);
+                    this_ElementExportedAttribute_1=ruleElementExportedAttribute();
+
+                    state._fsp--;
+
+                     
+                            current = this_ElementExportedAttribute_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleActivityAttribute"
+
+
+    // $ANTLR start "entryRuleBroadcastReceiverAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1134:1: entryRuleBroadcastReceiverAttribute returns [EObject current=null] : iv_ruleBroadcastReceiverAttribute= ruleBroadcastReceiverAttribute EOF ;
+    public final EObject entryRuleBroadcastReceiverAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleBroadcastReceiverAttribute = null;
+
+
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1135:2: (iv_ruleBroadcastReceiverAttribute= ruleBroadcastReceiverAttribute EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1136:2: iv_ruleBroadcastReceiverAttribute= ruleBroadcastReceiverAttribute EOF
+            {
+             newCompositeNode(grammarAccess.getBroadcastReceiverAttributeRule()); 
+            pushFollow(FOLLOW_ruleBroadcastReceiverAttribute_in_entryRuleBroadcastReceiverAttribute2645);
+            iv_ruleBroadcastReceiverAttribute=ruleBroadcastReceiverAttribute();
+
+            state._fsp--;
+
+             current =iv_ruleBroadcastReceiverAttribute; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBroadcastReceiverAttribute2655); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleBroadcastReceiverAttribute"
+
+
+    // $ANTLR start "ruleBroadcastReceiverAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1143:1: ruleBroadcastReceiverAttribute returns [EObject current=null] : (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute ) ;
+    public final EObject ruleBroadcastReceiverAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_ElementEnabledAttribute_0 = null;
+
+        EObject this_ElementExportedAttribute_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1146:28: ( (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1147:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1147:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==30) ) {
+                alt12=1;
+            }
+            else if ( (LA12_0==31) ) {
+                alt12=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 12, 0, input);
+
+                throw nvae;
+            }
+            switch (alt12) {
+                case 1 :
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1148:5: this_ElementEnabledAttribute_0= ruleElementEnabledAttribute
+                    {
+                     
+                            newCompositeNode(grammarAccess.getBroadcastReceiverAttributeAccess().getElementEnabledAttributeParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleElementEnabledAttribute_in_ruleBroadcastReceiverAttribute2702);
+                    this_ElementEnabledAttribute_0=ruleElementEnabledAttribute();
+
+                    state._fsp--;
+
+                     
+                            current = this_ElementEnabledAttribute_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1158:5: this_ElementExportedAttribute_1= ruleElementExportedAttribute
+                    {
+                     
+                            newCompositeNode(grammarAccess.getBroadcastReceiverAttributeAccess().getElementExportedAttributeParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleElementExportedAttribute_in_ruleBroadcastReceiverAttribute2729);
+                    this_ElementExportedAttribute_1=ruleElementExportedAttribute();
+
+                    state._fsp--;
+
+                     
+                            current = this_ElementExportedAttribute_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleBroadcastReceiverAttribute"
+
+
+    // $ANTLR start "entryRuleServiceAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1174:1: entryRuleServiceAttribute returns [EObject current=null] : iv_ruleServiceAttribute= ruleServiceAttribute EOF ;
+    public final EObject entryRuleServiceAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleServiceAttribute = null;
+
+
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1175:2: (iv_ruleServiceAttribute= ruleServiceAttribute EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1176:2: iv_ruleServiceAttribute= ruleServiceAttribute EOF
+            {
+             newCompositeNode(grammarAccess.getServiceAttributeRule()); 
+            pushFollow(FOLLOW_ruleServiceAttribute_in_entryRuleServiceAttribute2764);
+            iv_ruleServiceAttribute=ruleServiceAttribute();
+
+            state._fsp--;
+
+             current =iv_ruleServiceAttribute; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleServiceAttribute2774); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleServiceAttribute"
+
+
+    // $ANTLR start "ruleServiceAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1183:1: ruleServiceAttribute returns [EObject current=null] : (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute ) ;
+    public final EObject ruleServiceAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_ElementEnabledAttribute_0 = null;
+
+        EObject this_ElementExportedAttribute_1 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1186:28: ( (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1187:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1187:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
+
+            if ( (LA13_0==30) ) {
+                alt13=1;
+            }
+            else if ( (LA13_0==31) ) {
+                alt13=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 13, 0, input);
+
+                throw nvae;
+            }
+            switch (alt13) {
+                case 1 :
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1188:5: this_ElementEnabledAttribute_0= ruleElementEnabledAttribute
+                    {
+                     
+                            newCompositeNode(grammarAccess.getServiceAttributeAccess().getElementEnabledAttributeParserRuleCall_0()); 
+                        
+                    pushFollow(FOLLOW_ruleElementEnabledAttribute_in_ruleServiceAttribute2821);
+                    this_ElementEnabledAttribute_0=ruleElementEnabledAttribute();
+
+                    state._fsp--;
+
+                     
+                            current = this_ElementEnabledAttribute_0; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1198:5: this_ElementExportedAttribute_1= ruleElementExportedAttribute
+                    {
+                     
+                            newCompositeNode(grammarAccess.getServiceAttributeAccess().getElementExportedAttributeParserRuleCall_1()); 
+                        
+                    pushFollow(FOLLOW_ruleElementExportedAttribute_in_ruleServiceAttribute2848);
+                    this_ElementExportedAttribute_1=ruleElementExportedAttribute();
+
+                    state._fsp--;
+
+                     
+                            current = this_ElementExportedAttribute_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleServiceAttribute"
+
+
+    // $ANTLR start "entryRuleElementEnabledAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1214:1: entryRuleElementEnabledAttribute returns [EObject current=null] : iv_ruleElementEnabledAttribute= ruleElementEnabledAttribute EOF ;
+    public final EObject entryRuleElementEnabledAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleElementEnabledAttribute = null;
+
+
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1215:2: (iv_ruleElementEnabledAttribute= ruleElementEnabledAttribute EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1216:2: iv_ruleElementEnabledAttribute= ruleElementEnabledAttribute EOF
+            {
+             newCompositeNode(grammarAccess.getElementEnabledAttributeRule()); 
+            pushFollow(FOLLOW_ruleElementEnabledAttribute_in_entryRuleElementEnabledAttribute2883);
+            iv_ruleElementEnabledAttribute=ruleElementEnabledAttribute();
+
+            state._fsp--;
+
+             current =iv_ruleElementEnabledAttribute; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementEnabledAttribute2893); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleElementEnabledAttribute"
+
+
+    // $ANTLR start "ruleElementEnabledAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1223:1: ruleElementEnabledAttribute returns [EObject current=null] : (otherlv_0= 'enabled' ( (lv_enabled_1_0= RULE_BOOLEAN ) ) ) ;
+    public final EObject ruleElementEnabledAttribute() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_enabled_1_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1226:28: ( (otherlv_0= 'enabled' ( (lv_enabled_1_0= RULE_BOOLEAN ) ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1227:1: (otherlv_0= 'enabled' ( (lv_enabled_1_0= RULE_BOOLEAN ) ) )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1227:1: (otherlv_0= 'enabled' ( (lv_enabled_1_0= RULE_BOOLEAN ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1227:3: otherlv_0= 'enabled' ( (lv_enabled_1_0= RULE_BOOLEAN ) )
+            {
+            otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleElementEnabledAttribute2930); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getElementEnabledAttributeAccess().getEnabledKeyword_0());
+                
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1231:1: ( (lv_enabled_1_0= RULE_BOOLEAN ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1232:1: (lv_enabled_1_0= RULE_BOOLEAN )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1232:1: (lv_enabled_1_0= RULE_BOOLEAN )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1233:3: lv_enabled_1_0= RULE_BOOLEAN
+            {
+            lv_enabled_1_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_RULE_BOOLEAN_in_ruleElementEnabledAttribute2947); 
+
+            			newLeafNode(lv_enabled_1_0, grammarAccess.getElementEnabledAttributeAccess().getEnabledBOOLEANTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getElementEnabledAttributeRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"enabled",
+                    		lv_enabled_1_0, 
+                    		"BOOLEAN");
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleElementEnabledAttribute"
+
+
+    // $ANTLR start "entryRuleElementExportedAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1257:1: entryRuleElementExportedAttribute returns [EObject current=null] : iv_ruleElementExportedAttribute= ruleElementExportedAttribute EOF ;
+    public final EObject entryRuleElementExportedAttribute() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleElementExportedAttribute = null;
+
+
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1258:2: (iv_ruleElementExportedAttribute= ruleElementExportedAttribute EOF )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1259:2: iv_ruleElementExportedAttribute= ruleElementExportedAttribute EOF
+            {
+             newCompositeNode(grammarAccess.getElementExportedAttributeRule()); 
+            pushFollow(FOLLOW_ruleElementExportedAttribute_in_entryRuleElementExportedAttribute2988);
+            iv_ruleElementExportedAttribute=ruleElementExportedAttribute();
+
+            state._fsp--;
+
+             current =iv_ruleElementExportedAttribute; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleElementExportedAttribute2998); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleElementExportedAttribute"
+
+
+    // $ANTLR start "ruleElementExportedAttribute"
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1266:1: ruleElementExportedAttribute returns [EObject current=null] : (otherlv_0= 'exported' ( (lv_exported_1_0= RULE_BOOLEAN ) ) ) ;
+    public final EObject ruleElementExportedAttribute() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_exported_1_0=null;
+
+         enterRule(); 
+            
+        try {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1269:28: ( (otherlv_0= 'exported' ( (lv_exported_1_0= RULE_BOOLEAN ) ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1270:1: (otherlv_0= 'exported' ( (lv_exported_1_0= RULE_BOOLEAN ) ) )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1270:1: (otherlv_0= 'exported' ( (lv_exported_1_0= RULE_BOOLEAN ) ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1270:3: otherlv_0= 'exported' ( (lv_exported_1_0= RULE_BOOLEAN ) )
+            {
+            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleElementExportedAttribute3035); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getElementExportedAttributeAccess().getExportedKeyword_0());
+                
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1274:1: ( (lv_exported_1_0= RULE_BOOLEAN ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1275:1: (lv_exported_1_0= RULE_BOOLEAN )
+            {
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1275:1: (lv_exported_1_0= RULE_BOOLEAN )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1276:3: lv_exported_1_0= RULE_BOOLEAN
+            {
+            lv_exported_1_0=(Token)match(input,RULE_BOOLEAN,FOLLOW_RULE_BOOLEAN_in_ruleElementExportedAttribute3052); 
+
+            			newLeafNode(lv_exported_1_0, grammarAccess.getElementExportedAttributeAccess().getExportedBOOLEANTerminalRuleCall_1_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getElementExportedAttributeRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"exported",
+                    		lv_exported_1_0, 
+                    		"BOOLEAN");
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleElementExportedAttribute"
+
     // Delegated rules
 
 
@@ -2178,88 +3256,125 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleAndroidAppProject_in_entryRuleAndroidAppProject75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAndroidAppProject85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject131 = new BitSet(new long[]{0x0000000000000802L});
-    public static final BitSet FOLLOW_11_in_ruleAndroidAppProject144 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject165 = new BitSet(new long[]{0x0000000000000802L});
+    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject131 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_ruleAndroidAppProject144 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject165 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_ruleApplication_in_entryRuleApplication203 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplication213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_ruleApplication250 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulePackageName_in_ruleApplication271 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleApplication283 = new BitSet(new long[]{0x0000000000CF8000L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication304 = new BitSet(new long[]{0x0000000000004800L});
-    public static final BitSet FOLLOW_11_in_ruleApplication317 = new BitSet(new long[]{0x0000000000CF8000L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication338 = new BitSet(new long[]{0x0000000000004800L});
-    public static final BitSet FOLLOW_14_in_ruleApplication352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePackageName_in_entryRulePackageName389 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePackageName400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rulePackageName439 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute483 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationAttribute493 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationTitle_in_ruleApplicationAttribute540 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationMinSdk_in_ruleApplicationAttribute567 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationTargetSdk_in_ruleApplicationAttribute594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationCompileSdk_in_ruleApplicationAttribute621 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationPermissionList_in_ruleApplicationAttribute648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationElementList_in_ruleApplicationAttribute675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationMainActivity_in_ruleApplicationAttribute702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationTitle_in_entryRuleApplicationTitle737 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationTitle747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleApplicationTitle784 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleApplicationTitle801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationMinSdk_in_entryRuleApplicationMinSdk842 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationMinSdk852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_ruleApplicationMinSdk889 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationMinSdk906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationTargetSdk_in_entryRuleApplicationTargetSdk947 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationTargetSdk957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleApplicationTargetSdk994 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationTargetSdk1011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationCompileSdk_in_entryRuleApplicationCompileSdk1052 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationCompileSdk1062 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleApplicationCompileSdk1099 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationCompileSdk1116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationPermissionList_in_entryRuleApplicationPermissionList1157 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationPermissionList1167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleApplicationPermissionList1204 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleApplicationPermissionList1216 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1237 = new BitSet(new long[]{0x0000000000200800L});
-    public static final BitSet FOLLOW_11_in_ruleApplicationPermissionList1250 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1271 = new BitSet(new long[]{0x0000000000200800L});
-    public static final BitSet FOLLOW_21_in_ruleApplicationPermissionList1285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationElementList_in_entryRuleApplicationElementList1321 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationElementList1331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleApplicationElementList1368 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleApplicationElementList1380 = new BitSet(new long[]{0x0000000007000000L});
-    public static final BitSet FOLLOW_ruleIntentStartable_in_ruleApplicationElementList1401 = new BitSet(new long[]{0x0000000000200800L});
-    public static final BitSet FOLLOW_11_in_ruleApplicationElementList1414 = new BitSet(new long[]{0x0000000007000000L});
-    public static final BitSet FOLLOW_ruleIntentStartable_in_ruleApplicationElementList1435 = new BitSet(new long[]{0x0000000000200800L});
-    public static final BitSet FOLLOW_21_in_ruleApplicationElementList1449 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplicationMainActivity_in_entryRuleApplicationMainActivity1485 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationMainActivity1495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleApplicationMainActivity1532 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleApplicationMainActivity1549 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePermission_in_entryRulePermission1591 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePermission1602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePackageName_in_rulePermission1648 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleIntentStartable_in_entryRuleIntentStartable1693 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleIntentStartable1704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActivity_in_ruleIntentStartable1751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBroadcastReceiver_in_ruleIntentStartable1784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleService_in_ruleIntentStartable1817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleActivity_in_entryRuleActivity1863 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleActivity1874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleActivity1912 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleActivity1925 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleActivity1938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBroadcastReceiver_in_entryRuleBroadcastReceiver1979 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBroadcastReceiver1990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleBroadcastReceiver2028 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleBroadcastReceiver2041 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleBroadcastReceiver2054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleService_in_entryRuleService2095 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleService2106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleService2144 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_13_in_ruleService2157 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleService2170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleApplication250 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePackageName_in_ruleApplication271 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleApplication283 = new BitSet(new long[]{0x00000000067C0000L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication304 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleApplication317 = new BitSet(new long[]{0x00000000067C0000L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication338 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleApplication352 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleClassName_in_entryRuleClassName389 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleClassName400 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JAVA_IDENTIFIER_in_ruleClassName439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePackageName_in_entryRulePackageName484 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePackageName495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_JAVA_IDENTIFIER_in_rulePackageName535 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_17_in_rulePackageName554 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_JAVA_IDENTIFIER_in_rulePackageName569 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute616 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationAttribute626 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationTitle_in_ruleApplicationAttribute673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationMinSdk_in_ruleApplicationAttribute700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationTargetSdk_in_ruleApplicationAttribute727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationCompileSdk_in_ruleApplicationAttribute754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationPermissionList_in_ruleApplicationAttribute781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationElementList_in_ruleApplicationAttribute808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationMainActivity_in_ruleApplicationAttribute835 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationTitle_in_entryRuleApplicationTitle870 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationTitle880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleApplicationTitle917 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleApplicationTitle934 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationMinSdk_in_entryRuleApplicationMinSdk975 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationMinSdk985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleApplicationMinSdk1022 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationMinSdk1039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationTargetSdk_in_entryRuleApplicationTargetSdk1080 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationTargetSdk1090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleApplicationTargetSdk1127 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationTargetSdk1144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationCompileSdk_in_entryRuleApplicationCompileSdk1185 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationCompileSdk1195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleApplicationCompileSdk1232 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationCompileSdk1249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationPermissionList_in_entryRuleApplicationPermissionList1290 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationPermissionList1300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleApplicationPermissionList1337 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleApplicationPermissionList1349 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1370 = new BitSet(new long[]{0x0000000001002000L});
+    public static final BitSet FOLLOW_13_in_ruleApplicationPermissionList1383 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1404 = new BitSet(new long[]{0x0000000001002000L});
+    public static final BitSet FOLLOW_24_in_ruleApplicationPermissionList1418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationElementList_in_entryRuleApplicationElementList1454 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationElementList1464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleApplicationElementList1501 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_23_in_ruleApplicationElementList1513 = new BitSet(new long[]{0x0000000038000000L});
+    public static final BitSet FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1534 = new BitSet(new long[]{0x0000000001002000L});
+    public static final BitSet FOLLOW_13_in_ruleApplicationElementList1547 = new BitSet(new long[]{0x0000000038000000L});
+    public static final BitSet FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1568 = new BitSet(new long[]{0x0000000001002000L});
+    public static final BitSet FOLLOW_24_in_ruleApplicationElementList1582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationMainActivity_in_entryRuleApplicationMainActivity1618 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationMainActivity1628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleApplicationMainActivity1665 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleApplicationMainActivity1682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePermission_in_entryRulePermission1724 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePermission1735 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePackageName_in_rulePermission1781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleApplicationElement_in_entryRuleApplicationElement1825 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleApplicationElement1835 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivity_in_ruleApplicationElement1882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBroadcastReceiver_in_ruleApplicationElement1909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleService_in_ruleApplicationElement1936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivity_in_entryRuleActivity1971 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActivity1981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleActivity2018 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleClassName_in_ruleActivity2039 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleActivity2051 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleActivityAttribute_in_ruleActivity2072 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleActivity2085 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleActivityAttribute_in_ruleActivity2106 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleActivity2120 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBroadcastReceiver_in_entryRuleBroadcastReceiver2156 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBroadcastReceiver2166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_ruleBroadcastReceiver2203 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleClassName_in_ruleBroadcastReceiver2224 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleBroadcastReceiver2236 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver2257 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleBroadcastReceiver2270 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver2291 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleBroadcastReceiver2305 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleService_in_entryRuleService2341 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleService2351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleService2388 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleClassName_in_ruleService2409 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleService2421 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleServiceAttribute_in_ruleService2442 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleService2455 = new BitSet(new long[]{0x00000000C0000000L});
+    public static final BitSet FOLLOW_ruleServiceAttribute_in_ruleService2476 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleService2490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleActivityAttribute_in_entryRuleActivityAttribute2526 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleActivityAttribute2536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementEnabledAttribute_in_ruleActivityAttribute2583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementExportedAttribute_in_ruleActivityAttribute2610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBroadcastReceiverAttribute_in_entryRuleBroadcastReceiverAttribute2645 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBroadcastReceiverAttribute2655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementEnabledAttribute_in_ruleBroadcastReceiverAttribute2702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementExportedAttribute_in_ruleBroadcastReceiverAttribute2729 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleServiceAttribute_in_entryRuleServiceAttribute2764 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleServiceAttribute2774 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementEnabledAttribute_in_ruleServiceAttribute2821 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementExportedAttribute_in_ruleServiceAttribute2848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementEnabledAttribute_in_entryRuleElementEnabledAttribute2883 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementEnabledAttribute2893 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleElementEnabledAttribute2930 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleElementEnabledAttribute2947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleElementExportedAttribute_in_entryRuleElementExportedAttribute2988 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleElementExportedAttribute2998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleElementExportedAttribute3035 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleElementExportedAttribute3052 = new BitSet(new long[]{0x0000000000000002L});
 
 }

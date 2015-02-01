@@ -3,8 +3,8 @@
 package at.fhj.gaar.androidapp.appDsl.impl;
 
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
-import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
-import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
 
 import java.util.Collection;
 
@@ -20,35 +20,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Application Element List</b></em>'.
+ * An implementation of the model object '<em><b>Broadcast Receiver</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementListImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.BroadcastReceiverImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ApplicationElementListImpl extends ApplicationAttributeImpl implements ApplicationElementList
+public class BroadcastReceiverImpl extends ApplicationElementImpl implements BroadcastReceiver
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getAttributes()
    * @generated
    * @ordered
    */
-  protected EList<ApplicationElement> elements;
+  protected EList<BroadcastReceiverAttribute> attributes;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ApplicationElementListImpl()
+  protected BroadcastReceiverImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   @Override
   protected EClass eStaticClass()
   {
-    return AppDslPackage.Literals.APPLICATION_ELEMENT_LIST;
+    return AppDslPackage.Literals.BROADCAST_RECEIVER;
   }
 
   /**
@@ -69,13 +69,13 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ApplicationElement> getElements()
+  public EList<BroadcastReceiverAttribute> getAttributes()
   {
-    if (elements == null)
+    if (attributes == null)
     {
-      elements = new EObjectContainmentEList<ApplicationElement>(ApplicationElement.class, this, AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS);
+      attributes = new EObjectContainmentEList<BroadcastReceiverAttribute>(BroadcastReceiverAttribute.class, this, AppDslPackage.BROADCAST_RECEIVER__ATTRIBUTES);
     }
-    return elements;
+    return attributes;
   }
 
   /**
@@ -88,8 +88,8 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case AppDslPackage.BROADCAST_RECEIVER__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        return getElements();
+      case AppDslPackage.BROADCAST_RECEIVER__ATTRIBUTES:
+        return getAttributes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends ApplicationElement>)newValue);
+      case AppDslPackage.BROADCAST_RECEIVER__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends BroadcastReceiverAttribute>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        getElements().clear();
+      case AppDslPackage.BROADCAST_RECEIVER__ATTRIBUTES:
+        getAttributes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,10 +156,10 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case AppDslPackage.BROADCAST_RECEIVER__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ApplicationElementListImpl
+} //BroadcastReceiverImpl

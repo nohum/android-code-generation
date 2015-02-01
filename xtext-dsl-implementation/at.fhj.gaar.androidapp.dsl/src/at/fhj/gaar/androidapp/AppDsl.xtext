@@ -1,10 +1,19 @@
 grammar at.fhj.gaar.androidapp.AppDsl with org.eclipse.xtext.common.Terminals
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
 generate appDsl "http://www.fhj.at/gaar/androidapp/AppDsl"
 
-AndroidAppProject :
+AndroidAppProject:
 	(applications += Application) (',' applications += Application)*
 ;
+
+terminal BOOLEAN returns ecore::EBoolean:
+    'true' | 'false' | 'TRUE' | 'FALSE'
+;
+
+// intentionally leave the "$" out
+terminal JAVA_IDENTIFIER: ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
 
 Application:
 	'application' packageName = PackageName
@@ -14,8 +23,12 @@ Application:
 	'}'
 ;
 
+ClassName:
+	JAVA_IDENTIFIER
+;
+
 PackageName:
-	STRING // TODO only allow java package names
+	JAVA_IDENTIFIER ('.' JAVA_IDENTIFIER)*
 ;
 
 ApplicationAttribute:
@@ -45,11 +58,17 @@ ApplicationCompileSdk:
 ;
 
 ApplicationPermissionList:
-	'permissions' '[' permissions += Permission (',' permissions += Permission)* ']'
+	'permissions'
+	'['
+		permissions += Permission (',' permissions += Permission)*
+	']'
 ;
 
 ApplicationElementList:
-	'elements' '[' elements += IntentStartable (',' elements += IntentStartable)* ']'
+	'elements'
+	'['
+		elements += ApplicationElement (',' elements += ApplicationElement)*
+	']'
 ;
 
 ApplicationMainActivity:
@@ -60,24 +79,50 @@ Permission:
 	PackageName // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 ;
 
-IntentStartable: 
+ApplicationElement: 
 	Activity | BroadcastReceiver | Service
 ;
 
 Activity:
-	'activity'
+	'activity' className = ClassName
 	'{'
+		attributes += ActivityAttribute (',' attributes += ActivityAttribute)*
 	'}'
 ;
 
 BroadcastReceiver:
-	'receiver'
+	'receiver' className = ClassName
 	'{'
+		attributes += BroadcastReceiverAttribute (',' attributes += BroadcastReceiverAttribute)*
 	'}'
 ;
 
 Service:
-	'service'
+	'service' className = ClassName
 	'{'
+		attributes += ServiceAttribute (',' attributes += ServiceAttribute)*
 	'}'
+;
+
+ActivityAttribute:
+	ElementEnabledAttribute |
+	ElementExportedAttribute
+;
+
+BroadcastReceiverAttribute:
+	ElementEnabledAttribute |
+	ElementExportedAttribute
+;
+
+ServiceAttribute:
+	ElementEnabledAttribute |
+	ElementExportedAttribute
+;
+
+ElementEnabledAttribute:
+	'enabled' enabled = BOOLEAN
+;
+
+ElementExportedAttribute:
+	'exported' exported = BOOLEAN
 ;

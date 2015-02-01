@@ -149,6 +149,78 @@ public class AppDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AppDslPackage.APPLICATION_ELEMENT:
+      {
+        ApplicationElement applicationElement = (ApplicationElement)theEObject;
+        T result = caseApplicationElement(applicationElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ACTIVITY:
+      {
+        Activity activity = (Activity)theEObject;
+        T result = caseActivity(activity);
+        if (result == null) result = caseApplicationElement(activity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BROADCAST_RECEIVER:
+      {
+        BroadcastReceiver broadcastReceiver = (BroadcastReceiver)theEObject;
+        T result = caseBroadcastReceiver(broadcastReceiver);
+        if (result == null) result = caseApplicationElement(broadcastReceiver);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.SERVICE:
+      {
+        Service service = (Service)theEObject;
+        T result = caseService(service);
+        if (result == null) result = caseApplicationElement(service);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ACTIVITY_ATTRIBUTE:
+      {
+        ActivityAttribute activityAttribute = (ActivityAttribute)theEObject;
+        T result = caseActivityAttribute(activityAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.BROADCAST_RECEIVER_ATTRIBUTE:
+      {
+        BroadcastReceiverAttribute broadcastReceiverAttribute = (BroadcastReceiverAttribute)theEObject;
+        T result = caseBroadcastReceiverAttribute(broadcastReceiverAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.SERVICE_ATTRIBUTE:
+      {
+        ServiceAttribute serviceAttribute = (ServiceAttribute)theEObject;
+        T result = caseServiceAttribute(serviceAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ELEMENT_ENABLED_ATTRIBUTE:
+      {
+        ElementEnabledAttribute elementEnabledAttribute = (ElementEnabledAttribute)theEObject;
+        T result = caseElementEnabledAttribute(elementEnabledAttribute);
+        if (result == null) result = caseActivityAttribute(elementEnabledAttribute);
+        if (result == null) result = caseBroadcastReceiverAttribute(elementEnabledAttribute);
+        if (result == null) result = caseServiceAttribute(elementEnabledAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.ELEMENT_EXPORTED_ATTRIBUTE:
+      {
+        ElementExportedAttribute elementExportedAttribute = (ElementExportedAttribute)theEObject;
+        T result = caseElementExportedAttribute(elementExportedAttribute);
+        if (result == null) result = caseActivityAttribute(elementExportedAttribute);
+        if (result == null) result = caseBroadcastReceiverAttribute(elementExportedAttribute);
+        if (result == null) result = caseServiceAttribute(elementExportedAttribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -309,6 +381,150 @@ public class AppDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseApplicationMainActivity(ApplicationMainActivity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Application Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Application Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseApplicationElement(ApplicationElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Activity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Activity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActivity(Activity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Broadcast Receiver</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Broadcast Receiver</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBroadcastReceiver(BroadcastReceiver object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Service</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Service</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseService(Service object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Activity Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Activity Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActivityAttribute(ActivityAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Broadcast Receiver Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Broadcast Receiver Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBroadcastReceiverAttribute(BroadcastReceiverAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Service Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Service Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseServiceAttribute(ServiceAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Enabled Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Enabled Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementEnabledAttribute(ElementEnabledAttribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Element Exported Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Element Exported Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementExportedAttribute(ElementExportedAttribute object)
   {
     return null;
   }

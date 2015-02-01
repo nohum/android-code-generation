@@ -2,9 +2,9 @@
  */
 package at.fhj.gaar.androidapp.appDsl.impl;
 
+import at.fhj.gaar.androidapp.appDsl.Activity;
+import at.fhj.gaar.androidapp.appDsl.ActivityAttribute;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
-import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
-import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
 
 import java.util.Collection;
 
@@ -20,35 +20,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Application Element List</b></em>'.
+ * An implementation of the model object '<em><b>Activity</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementListImpl#getElements <em>Elements</em>}</li>
+ *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ApplicationElementListImpl extends ApplicationAttributeImpl implements ApplicationElementList
+public class ActivityImpl extends ApplicationElementImpl implements Activity
 {
   /**
-   * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElements()
+   * @see #getAttributes()
    * @generated
    * @ordered
    */
-  protected EList<ApplicationElement> elements;
+  protected EList<ActivityAttribute> attributes;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ApplicationElementListImpl()
+  protected ActivityImpl()
   {
     super();
   }
@@ -61,7 +61,7 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   @Override
   protected EClass eStaticClass()
   {
-    return AppDslPackage.Literals.APPLICATION_ELEMENT_LIST;
+    return AppDslPackage.Literals.ACTIVITY;
   }
 
   /**
@@ -69,13 +69,13 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ApplicationElement> getElements()
+  public EList<ActivityAttribute> getAttributes()
   {
-    if (elements == null)
+    if (attributes == null)
     {
-      elements = new EObjectContainmentEList<ApplicationElement>(ApplicationElement.class, this, AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS);
+      attributes = new EObjectContainmentEList<ActivityAttribute>(ActivityAttribute.class, this, AppDslPackage.ACTIVITY__ATTRIBUTES);
     }
-    return elements;
+    return attributes;
   }
 
   /**
@@ -88,8 +88,8 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
+      case AppDslPackage.ACTIVITY__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -104,8 +104,8 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        return getElements();
+      case AppDslPackage.ACTIVITY__ATTRIBUTES:
+        return getAttributes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,9 +121,9 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        getElements().clear();
-        getElements().addAll((Collection<? extends ApplicationElement>)newValue);
+      case AppDslPackage.ACTIVITY__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends ActivityAttribute>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,8 +139,8 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        getElements().clear();
+      case AppDslPackage.ACTIVITY__ATTRIBUTES:
+        getAttributes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -156,10 +156,10 @@ public class ApplicationElementListImpl extends ApplicationAttributeImpl impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT_LIST__ELEMENTS:
-        return elements != null && !elements.isEmpty();
+      case AppDslPackage.ACTIVITY__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ApplicationElementListImpl
+} //ActivityImpl
