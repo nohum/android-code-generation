@@ -229,12 +229,12 @@ ruleClassName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-    this_JAVA_IDENTIFIER_0=RULE_JAVA_IDENTIFIER    {
-		$current.merge(this_JAVA_IDENTIFIER_0);
+    this_ID_0=RULE_ID    {
+		$current.merge(this_ID_0);
     }
 
     { 
-    newLeafNode(this_JAVA_IDENTIFIER_0, grammarAccess.getClassNameAccess().getJAVA_IDENTIFIERTerminalRuleCall()); 
+    newLeafNode(this_ID_0, grammarAccess.getClassNameAccess().getIDTerminalRuleCall()); 
     }
 
     ;
@@ -257,12 +257,12 @@ rulePackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(    this_JAVA_IDENTIFIER_0=RULE_JAVA_IDENTIFIER    {
-		$current.merge(this_JAVA_IDENTIFIER_0);
+(    this_ID_0=RULE_ID    {
+		$current.merge(this_ID_0);
     }
 
     { 
-    newLeafNode(this_JAVA_IDENTIFIER_0, grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_0()); 
+    newLeafNode(this_ID_0, grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_0()); 
     }
 (
 	kw='.' 
@@ -270,12 +270,12 @@ rulePackageName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleTok
         $current.merge(kw);
         newLeafNode(kw, grammarAccess.getPackageNameAccess().getFullStopKeyword_1_0()); 
     }
-    this_JAVA_IDENTIFIER_2=RULE_JAVA_IDENTIFIER    {
-		$current.merge(this_JAVA_IDENTIFIER_2);
+    this_ID_2=RULE_ID    {
+		$current.merge(this_ID_2);
     }
 
     { 
-    newLeafNode(this_JAVA_IDENTIFIER_2, grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_1_1()); 
+    newLeafNode(this_ID_2, grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_1_1()); 
     }
 )*)
     ;
@@ -1297,8 +1297,6 @@ ruleElementExportedAttribute returns [EObject current=null]
 
 
 RULE_BOOLEAN : ('true'|'false'|'TRUE'|'FALSE');
-
-RULE_JAVA_IDENTIFIER : ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

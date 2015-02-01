@@ -128,9 +128,9 @@ ruleClassName
     }
 	:
 (
-{ before(grammarAccess.getClassNameAccess().getJAVA_IDENTIFIERTerminalRuleCall()); }
-	RULE_JAVA_IDENTIFIER
-{ after(grammarAccess.getClassNameAccess().getJAVA_IDENTIFIERTerminalRuleCall()); }
+{ before(grammarAccess.getClassNameAccess().getIDTerminalRuleCall()); }
+	RULE_ID
+{ after(grammarAccess.getClassNameAccess().getIDTerminalRuleCall()); }
 )
 
 ;
@@ -1217,9 +1217,9 @@ rule__PackageName__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_0()); }
-	RULE_JAVA_IDENTIFIER
-{ after(grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_0()); }
+{ before(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_0()); }
+	RULE_ID
+{ after(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_0()); }
 )
 
 ;
@@ -1308,9 +1308,9 @@ rule__PackageName__Group_1__1__Impl
     }
 :
 (
-{ before(grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_1_1()); }
-	RULE_JAVA_IDENTIFIER
-{ after(grammarAccess.getPackageNameAccess().getJAVA_IDENTIFIERTerminalRuleCall_1_1()); }
+{ before(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_1_1()); }
+	RULE_ID
+{ after(grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_1_1()); }
 )
 
 ;
@@ -3350,8 +3350,6 @@ finally {
 
 
 RULE_BOOLEAN : ('true'|'false'|'TRUE'|'FALSE');
-
-RULE_JAVA_IDENTIFIER : ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

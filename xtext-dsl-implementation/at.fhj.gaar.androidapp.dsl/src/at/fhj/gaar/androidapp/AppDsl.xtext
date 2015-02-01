@@ -12,9 +12,6 @@ terminal BOOLEAN returns ecore::EBoolean:
     'true' | 'false' | 'TRUE' | 'FALSE'
 ;
 
-// intentionally leave the "$" out
-terminal JAVA_IDENTIFIER: ('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
-
 Application:
 	'application' packageName = PackageName
 	'{'
@@ -24,11 +21,11 @@ Application:
 ;
 
 ClassName:
-	JAVA_IDENTIFIER
+	ID
 ;
 
 PackageName:
-	JAVA_IDENTIFIER ('.' JAVA_IDENTIFIER)*
+	ID ('.' ID)*
 ;
 
 ApplicationAttribute:

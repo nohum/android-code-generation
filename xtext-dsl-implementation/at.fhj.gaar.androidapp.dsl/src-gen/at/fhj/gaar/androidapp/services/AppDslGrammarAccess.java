@@ -115,42 +115,42 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ClassNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ClassName");
-		private final RuleCall cJAVA_IDENTIFIERTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//ClassName:
-		//	JAVA_IDENTIFIER;
+		//	ID;
 		public ParserRule getRule() { return rule; }
 
-		//JAVA_IDENTIFIER
-		public RuleCall getJAVA_IDENTIFIERTerminalRuleCall() { return cJAVA_IDENTIFIERTerminalRuleCall; }
+		//ID
+		public RuleCall getIDTerminalRuleCall() { return cIDTerminalRuleCall; }
 	}
 
 	public class PackageNameElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageName");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cJAVA_IDENTIFIERTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cJAVA_IDENTIFIERTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		
 		//PackageName:
-		//	JAVA_IDENTIFIER ("." JAVA_IDENTIFIER)*;
+		//	ID ("." ID)*;
 		public ParserRule getRule() { return rule; }
 
-		//JAVA_IDENTIFIER ("." JAVA_IDENTIFIER)*
+		//ID ("." ID)*
 		public Group getGroup() { return cGroup; }
 
-		//JAVA_IDENTIFIER
-		public RuleCall getJAVA_IDENTIFIERTerminalRuleCall_0() { return cJAVA_IDENTIFIERTerminalRuleCall_0; }
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
 
-		//("." JAVA_IDENTIFIER)*
+		//("." ID)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"."
 		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
 
-		//JAVA_IDENTIFIER
-		public RuleCall getJAVA_IDENTIFIERTerminalRuleCall_1_1() { return cJAVA_IDENTIFIERTerminalRuleCall_1_1; }
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
 
 	public class ApplicationAttributeElements extends AbstractParserRuleElementFinder {
@@ -729,7 +729,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final AndroidAppProjectElements pAndroidAppProject;
 	private final TerminalRule tBOOLEAN;
-	private final TerminalRule tJAVA_IDENTIFIER;
 	private final ApplicationElements pApplication;
 	private final ClassNameElements pClassName;
 	private final PackageNameElements pPackageName;
@@ -763,7 +762,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pAndroidAppProject = new AndroidAppProjectElements();
 		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
-		this.tJAVA_IDENTIFIER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "JAVA_IDENTIFIER");
 		this.pApplication = new ApplicationElements();
 		this.pClassName = new ClassNameElements();
 		this.pPackageName = new PackageNameElements();
@@ -830,13 +828,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		return tBOOLEAN;
 	} 
 
-	//// intentionally leave the "$" out
-	//terminal JAVA_IDENTIFIER:
-	//	("a".."z" | "A".."Z") ("a".."z" | "A".."Z" | "0".."9" | "_")*;
-	public TerminalRule getJAVA_IDENTIFIERRule() {
-		return tJAVA_IDENTIFIER;
-	} 
-
 	//Application:
 	//	"application" packageName=PackageName "{" // allow only one attribute or more than one (separated by ",")
 	//	attributes+=ApplicationAttribute ("," attributes+=ApplicationAttribute)* "}";
@@ -849,7 +840,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ClassName:
-	//	JAVA_IDENTIFIER;
+	//	ID;
 	public ClassNameElements getClassNameAccess() {
 		return pClassName;
 	}
@@ -859,7 +850,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PackageName:
-	//	JAVA_IDENTIFIER ("." JAVA_IDENTIFIER)*;
+	//	ID ("." ID)*;
 	public PackageNameElements getPackageNameAccess() {
 		return pPackageName;
 	}
