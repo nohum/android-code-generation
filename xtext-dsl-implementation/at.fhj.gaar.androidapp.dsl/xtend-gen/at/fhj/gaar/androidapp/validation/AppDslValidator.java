@@ -3,12 +3,16 @@
  */
 package at.fhj.gaar.androidapp.validation;
 
+import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
+import java.util.ArrayList;
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 
 /**
@@ -22,24 +26,49 @@ public class AppDslValidator extends AbstractAppDslValidator {
   public void checkCompileSdkBounds(final Application application) {
   }
   
+  public void checkTargetSdkBounds(final Application application) {
+  }
+  
   @Check
   public void checkForValidMainActivity(final Application application) {
   }
   
   @Check
   public void checkForDuplicatePermission(final ApplicationPermissionList permissions) {
-  }
-  
-  @Check
-  public void checkForDuplicatePermission(final Application application) {
-  }
-  
-  @Check
-  public void checkForDuplicateElementIdentifier(final ApplicationElementList elements) {
+    List<String> foundPermissions = new ArrayList<String>();
+    int listIndex = 0;
+    EList<String> _permissions = permissions.getPermissions();
+    for (final String permission : _permissions) {
+      {
+        boolean _contains = foundPermissions.contains(permission);
+        if (_contains) {
+          this.error("Permissions have to be unique", AppDslPackage.Literals.APPLICATION_PERMISSION_LIST__PERMISSIONS, listIndex);
+        }
+        foundPermissions.add(permission);
+        listIndex++;
+      }
+    }
   }
   
   @Check
   public void checkForDuplicateIntent(final ElementIntentList intents) {
+    List<String> foundIntents = new ArrayList<String>();
+    int listIndex = 0;
+    EList<String> _intents = intents.getIntents();
+    for (final String intent : _intents) {
+      {
+        boolean _contains = foundIntents.contains(intent);
+        if (_contains) {
+          this.error("Intents have to be unique", AppDslPackage.Literals.ELEMENT_INTENT_LIST__INTENTS, listIndex);
+        }
+        foundIntents.add(intent);
+        listIndex++;
+      }
+    }
+  }
+  
+  @Check
+  public void checkForDuplicateElementIdentifier(final ApplicationElementList elements) {
   }
   
   @Check

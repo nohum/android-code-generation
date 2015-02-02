@@ -11,6 +11,10 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList
 import at.fhj.gaar.androidapp.appDsl.LayoutElement
+import java.util.List
+import java.util.ArrayList
+import at.fhj.gaar.androidapp.appDsl.ActionStartActivity
+import at.fhj.gaar.androidapp.appDsl.ActionStartService
 
 /**
  * Custom validation rules. 
@@ -24,6 +28,10 @@ class AppDslValidator extends AbstractAppDslValidator {
     	
     }
     
+    def void checkTargetSdkBounds(Application application) {
+
+    }
+    
     @Check
     def void checkForValidMainActivity(Application application) {
     	
@@ -31,21 +39,36 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicatePermission(ApplicationPermissionList permissions) {
+    	var List<String> foundPermissions = new ArrayList<String>();
+    	var int listIndex = 0;
     	
-    }
-    
-    @Check
-    def void checkForDuplicatePermission(Application application) {
-    	
-    }
-    
-    @Check
-    def void checkForDuplicateElementIdentifier(ApplicationElementList elements) {
-    	
+    	for (String permission : permissions.permissions) {
+    		if (foundPermissions.contains(permission)) {
+    			error("Permissions have to be unique", AppDslPackage$Literals::APPLICATION_PERMISSION_LIST__PERMISSIONS, listIndex);
+    		}
+    		
+    		foundPermissions.add(permission);
+    		listIndex++;
+    	}
     }
     
     @Check
     def void checkForDuplicateIntent(ElementIntentList intents) {
+    	var List<String> foundIntents = new ArrayList<String>();
+    	var int listIndex = 0;
+    	
+    	for (String intent : intents.intents) {
+    		if (foundIntents.contains(intent)) {
+    			error("Intents have to be unique", AppDslPackage$Literals::ELEMENT_INTENT_LIST__INTENTS, listIndex);
+    		}
+    		
+    		foundIntents.add(intent);
+    		listIndex++;
+    	}
+    }
+    
+    @Check
+    def void checkForDuplicateElementIdentifier(ApplicationElementList elements) {
     	
     }
     
