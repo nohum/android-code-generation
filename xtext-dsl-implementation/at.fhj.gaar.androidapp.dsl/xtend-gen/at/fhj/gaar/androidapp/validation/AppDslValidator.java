@@ -3,7 +3,13 @@
  */
 package at.fhj.gaar.androidapp.validation;
 
+import at.fhj.gaar.androidapp.appDsl.Application;
+import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
+import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
+import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
+import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * Custom validation rules.
@@ -12,4 +18,31 @@ import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
  */
 @SuppressWarnings("all")
 public class AppDslValidator extends AbstractAppDslValidator {
+  @Check
+  public void checkCompileSdkBounds(final Application application) {
+  }
+  
+  @Check
+  public void checkForValidMainActivity(final Application application) {
+  }
+  
+  @Check
+  public void checkForDuplicatePermission(final ApplicationPermissionList permissions) {
+  }
+  
+  @Check
+  public void checkForDuplicatePermission(final Application application) {
+  }
+  
+  @Check
+  public void checkForDuplicateElementIdentifier(final ApplicationElementList elements) {
+  }
+  
+  @Check
+  public void checkForDuplicateIntent(final ElementIntentList intents) {
+  }
+  
+  @Check
+  public void checkForDuplicateButtonIdentifier(final LayoutElement layoutElement) {
+  }
 }
