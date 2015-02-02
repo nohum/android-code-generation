@@ -77,6 +77,16 @@ class AppDslValidator extends AbstractAppDslValidator {
     	
     }
     
+    @Check
+    def void checkForValidActionStartActivity(ActionStartActivity startActivity) {
+    	
+    }
+    
+    @Check
+    def void checkForValidActionStartService(ActionStartService startService) {
+    	
+    }
+    
     /*
     @Check
     def void checkTargetSdkBounds(Application application) {

@@ -3,6 +3,8 @@
  */
 package at.fhj.gaar.androidapp.validation;
 
+import at.fhj.gaar.androidapp.appDsl.ActionStartActivity;
+import at.fhj.gaar.androidapp.appDsl.ActionStartService;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
@@ -73,5 +75,13 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicateButtonIdentifier(final LayoutElement layoutElement) {
+  }
+  
+  @Check
+  public void checkForValidActionStartActivity(final ActionStartActivity startActivity) {
+  }
+  
+  @Check
+  public void checkForValidActionStartService(final ActionStartService startService) {
   }
 }
