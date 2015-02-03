@@ -22,6 +22,9 @@ import java.util.logging.Logger
 import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute
 import at.fhj.gaar.androidapp.appDsl.Button
 import java.util.logging.Level
+import org.eclipse.xtext.validation.CheckType
+import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute
+import java.util.Iterator
 
 /**
  * Custom validation rules. 
@@ -32,32 +35,56 @@ class AppDslValidator extends AbstractAppDslValidator {
 
 	private static Logger logger = Logger.getLogger("DslValidation");
 
+	@Check
+    def void disallowDuplicateApplicationAttributes(Application application) {
+    	logger.info("disallowDuplicateApplicationAttributes");
+    }
+    
+
     @Check
     def void checkCompileSdkBounds(Application application) {
     	logger.info("checkCompileSdkBounds");
     }
     
+    @Check
     def void checkTargetSdkBounds(Application application) {
 		logger.info("checkTargetSdkBounds");
     }
     
     @Check
-    def void checkForValidMainActivity(Application application) {
+    def void checkForValidMainActivity(ApplicationMainActivity mainActivity) {
     	logger.info("checkForValidMainActivity");
+    	
     	// there is is this nice limitation that methods only can take one parameter.
     	// so we have to pull out everything by ourselves nicely.
+
+    	if (mainActivity.launcherActivity.length() == 0) {
+    		logger.info("checkForValidMainActivity: launcherActivity string is empty");
+    		return;
+    	}
     	
+    	var Application application = (mainActivity.eContainer() as Application);
+    	var ApplicationElementList elementList = null;
+    	var Iterator appIterator = application.attributes.iterator();
     	
+    	// okay, pull out the element list
+    	while (appIterator.hasNext() && elementList == null) {
+    		var ApplicationAttribute attr = (appIterator.next() as ApplicationAttribute);
+    		if (attr instanceof ApplicationElementList) {
+    			elementList = attr;
+    		}
+    	}
     	
-//    	if (elements.elements.length() == 0 || mainActivity.launcherActivity.length() == 0) {
-//    		return;
-//    	}
+    	if (elementList == null) {
+    		logger.warning("checkForValidMainActivity: no element list found, aborting");
+    		return;
+    	}   	
     	
-//    	for (ApplicationElement element : elements.elements) {
-//    		if (element instanceof Activity && element.className.equals(mainActivity.launcherActivity)) {
-//    			return; // no break possible in Xtend, so just exit here as everything is ok
-//    		}
-//    	}
+    	for (ApplicationElement element : elementList.elements) {
+    		if (element instanceof Activity && element.className.equals(mainActivity.launcherActivity)) {
+    			return; // no break possible in Xtend, so just exit here as everything is ok
+    		}
+    	}
     	
     	error(String.format("Activity with identifier \"%s\" is unknown", mainActivity.launcherActivity),
     		AppDslPackage$Literals::APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY

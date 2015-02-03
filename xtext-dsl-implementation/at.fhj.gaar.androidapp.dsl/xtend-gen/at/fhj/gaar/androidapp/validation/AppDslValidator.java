@@ -5,20 +5,26 @@ package at.fhj.gaar.androidapp.validation;
 
 import at.fhj.gaar.androidapp.appDsl.ActionStartActivity;
 import at.fhj.gaar.androidapp.appDsl.ActionStartService;
+import at.fhj.gaar.androidapp.appDsl.Activity;
 import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
+import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
+import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
+import com.google.common.base.Objects;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 
 /**
@@ -31,19 +37,68 @@ public class AppDslValidator extends AbstractAppDslValidator {
   private static Logger logger = Logger.getLogger("DslValidation");
   
   @Check
+  public void disallowDuplicateApplicationAttributes(final Application application) {
+    AppDslValidator.logger.info("disallowDuplicateApplicationAttributes");
+  }
+  
+  @Check
   public void checkCompileSdkBounds(final Application application) {
     AppDslValidator.logger.info("checkCompileSdkBounds");
   }
   
+  @Check
   public void checkTargetSdkBounds(final Application application) {
     AppDslValidator.logger.info("checkTargetSdkBounds");
   }
   
   @Check
-  public void checkForValidMainActivity(final Application application) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field mainActivity is undefined for the type AppDslValidator"
-      + "\nlauncherActivity cannot be resolved");
+  public void checkForValidMainActivity(final ApplicationMainActivity mainActivity) {
+    AppDslValidator.logger.info("checkForValidMainActivity");
+    String _launcherActivity = mainActivity.getLauncherActivity();
+    int _length = _launcherActivity.length();
+    boolean _equals = (_length == 0);
+    if (_equals) {
+      AppDslValidator.logger.info("checkForValidMainActivity: launcherActivity string is empty");
+      return;
+    }
+    EObject _eContainer = mainActivity.eContainer();
+    Application application = ((Application) _eContainer);
+    ApplicationElementList elementList = null;
+    EList<ApplicationAttribute> _attributes = application.getAttributes();
+    Iterator appIterator = _attributes.iterator();
+    while ((appIterator.hasNext() && Objects.equal(elementList, null))) {
+      {
+        Object _next = appIterator.next();
+        ApplicationAttribute attr = ((ApplicationAttribute) _next);
+        if ((attr instanceof ApplicationElementList)) {
+          elementList = ((ApplicationElementList)attr);
+        }
+      }
+    }
+    boolean _equals_1 = Objects.equal(elementList, null);
+    if (_equals_1) {
+      AppDslValidator.logger.warning("checkForValidMainActivity: no element list found, aborting");
+      return;
+    }
+    EList<ApplicationElement> _elements = elementList.getElements();
+    for (final ApplicationElement element : _elements) {
+      boolean _and = false;
+      if (!(element instanceof Activity)) {
+        _and = false;
+      } else {
+        String _className = element.getClassName();
+        String _launcherActivity_1 = mainActivity.getLauncherActivity();
+        boolean _equals_2 = _className.equals(_launcherActivity_1);
+        _and = _equals_2;
+      }
+      if (_and) {
+        return;
+      }
+    }
+    String _launcherActivity_2 = mainActivity.getLauncherActivity();
+    String _format = String.format("Activity with identifier \"%s\" is unknown", _launcherActivity_2);
+    this.error(_format, 
+      AppDslPackage.Literals.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY);
   }
   
   @Check
