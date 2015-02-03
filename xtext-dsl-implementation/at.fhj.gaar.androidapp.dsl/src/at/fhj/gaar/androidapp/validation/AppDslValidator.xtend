@@ -15,6 +15,13 @@ import java.util.List
 import java.util.ArrayList
 import at.fhj.gaar.androidapp.appDsl.ActionStartActivity
 import at.fhj.gaar.androidapp.appDsl.ActionStartService
+import at.fhj.gaar.androidapp.appDsl.ApplicationElement
+import at.fhj.gaar.androidapp.appDsl.Activity
+import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity
+import java.util.logging.Logger
+import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute
+import at.fhj.gaar.androidapp.appDsl.Button
+import java.util.logging.Level
 
 /**
  * Custom validation rules. 
@@ -22,7 +29,7 @@ import at.fhj.gaar.androidapp.appDsl.ActionStartService
  * see http://www.eclipse.org/Xtext/documentation.html#validation
  */
 class AppDslValidator extends AbstractAppDslValidator {
-    
+
     @Check
     def void checkCompileSdkBounds(Application application) {
     	
@@ -33,8 +40,22 @@ class AppDslValidator extends AbstractAppDslValidator {
     }
     
     @Check
-    def void checkForValidMainActivity(Application application) {
+    def void checkForValidMainActivity(ApplicationMainActivity mainActivity, ApplicationElementList elements) {
+    	Logger.getLogger("").log(Level.SEVERE, "checkForValidMainActivity");
     	
+    	if (elements.elements.length() == 0 || mainActivity.launcherActivity.length() == 0) {
+    		return;
+    	}
+    	
+    	for (ApplicationElement element : elements.elements) {
+    		if (element instanceof Activity && element.className.equals(mainActivity.launcherActivity)) {
+    			return; // no break possible in Xtend, so just exit here as everything is ok
+    		}
+    	}
+    	
+    	error(String.format("Activity with identifier \"%s\" is unknown", mainActivity.launcherActivity),
+    		AppDslPackage$Literals::APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY
+    	);
     }
     
     @Check
@@ -69,12 +90,37 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateElementIdentifier(ApplicationElementList elements) {
-    	
+    	var List<String> foundElementNames = new ArrayList<String>();
+
+    	for (ApplicationElement element : elements.elements) {
+    		if (foundElementNames.contains(element.className)) {
+    			error(String.format("Identifier \"%s\" has already been used", element.className), element,
+    				AppDslPackage$Literals::APPLICATION_ELEMENT__CLASS_NAME
+    			);
+    		}
+    		
+    		foundElementNames.add(element.className);
+    	}
     }
     
     @Check
-    def void checkForDuplicateButtonIdentifier(LayoutElement layoutElement) {
-    	
+    def void checkForDuplicateButtonIdentifier(ActivityLayoutAttribute layoutElements) {
+    	var List<String> foundNames = new ArrayList<String>();
+
+    	for (LayoutElement element : layoutElements.layoutElements) {
+    		if (element instanceof Button) {
+    			var String buttonName = (element as Button).buttonName;
+
+    			// button names must be unique within an activity
+    			if (foundNames.contains(buttonName)) {
+    				error(String.format("Button name \"%s\" is not unique", buttonName), element,
+    					AppDslPackage$Literals::BUTTON__BUTTON_NAME
+    				);
+    			}
+    			
+    			foundNames.add(buttonName);
+    		}
+    	}
     }
     
     @Check
@@ -86,29 +132,4 @@ class AppDslValidator extends AbstractAppDslValidator {
     def void checkForValidActionStartService(ActionStartService startService) {
     	
     }
-    
-    /*
-    @Check
-    def void checkTargetSdkBounds(Application application) {
-    	
-	    if (!Character::isUpperCase(entity.getName().charAt(0))) {
-		    warning("Name should start with a capital",
-		   AppDslPackage$Literals::APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY);
-	    }
-    }
-     
-    @Check
-    def void checkFeatureNameIsUnique(Feature f) {
-	    var superEntity = (f.eContainer() as Entity).getSuperType();
-	    while (superEntity != null) {
-		    for (other : superEntity.getFeatures()) {
-		    	if (f.getName().equals(other.getName())) {
-		    		error("Feature names have to be unique", DomainmodelPackage$Literals::FEATURE__NAME);
-		    	return;
-		    	}
-		    }
-		    
-		    superEntity = superEntity.getSuperType();
-	    }
-    }*/
 }

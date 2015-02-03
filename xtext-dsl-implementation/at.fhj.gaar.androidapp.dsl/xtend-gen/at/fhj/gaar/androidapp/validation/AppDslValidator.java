@@ -5,17 +5,25 @@ package at.fhj.gaar.androidapp.validation;
 
 import at.fhj.gaar.androidapp.appDsl.ActionStartActivity;
 import at.fhj.gaar.androidapp.appDsl.ActionStartService;
+import at.fhj.gaar.androidapp.appDsl.Activity;
+import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
+import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
+import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
+import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
 
 /**
  * Custom validation rules.
@@ -32,7 +40,43 @@ public class AppDslValidator extends AbstractAppDslValidator {
   }
   
   @Check
-  public void checkForValidMainActivity(final Application application) {
+  public void checkForValidMainActivity(final ApplicationMainActivity mainActivity, final ApplicationElementList elements) {
+    Logger _logger = Logger.getLogger("");
+    _logger.log(Level.SEVERE, "checkForValidMainActivity");
+    boolean _or = false;
+    EList<ApplicationElement> _elements = elements.getElements();
+    int _length = ((Object[])Conversions.unwrapArray(_elements, Object.class)).length;
+    boolean _equals = (_length == 0);
+    if (_equals) {
+      _or = true;
+    } else {
+      String _launcherActivity = mainActivity.getLauncherActivity();
+      int _length_1 = _launcherActivity.length();
+      boolean _equals_1 = (_length_1 == 0);
+      _or = _equals_1;
+    }
+    if (_or) {
+      return;
+    }
+    EList<ApplicationElement> _elements_1 = elements.getElements();
+    for (final ApplicationElement element : _elements_1) {
+      boolean _and = false;
+      if (!(element instanceof Activity)) {
+        _and = false;
+      } else {
+        String _className = element.getClassName();
+        String _launcherActivity_1 = mainActivity.getLauncherActivity();
+        boolean _equals_2 = _className.equals(_launcherActivity_1);
+        _and = _equals_2;
+      }
+      if (_and) {
+        return;
+      }
+    }
+    String _launcherActivity_2 = mainActivity.getLauncherActivity();
+    String _format = String.format("Activity with identifier \"%s\" is unknown", _launcherActivity_2);
+    this.error(_format, 
+      AppDslPackage.Literals.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY);
   }
   
   @Check
@@ -71,10 +115,40 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicateElementIdentifier(final ApplicationElementList elements) {
+    List<String> foundElementNames = new ArrayList<String>();
+    EList<ApplicationElement> _elements = elements.getElements();
+    for (final ApplicationElement element : _elements) {
+      {
+        String _className = element.getClassName();
+        boolean _contains = foundElementNames.contains(_className);
+        if (_contains) {
+          String _className_1 = element.getClassName();
+          String _format = String.format("Identifier \"%s\" has already been used", _className_1);
+          this.error(_format, element, 
+            AppDslPackage.Literals.APPLICATION_ELEMENT__CLASS_NAME);
+        }
+        String _className_2 = element.getClassName();
+        foundElementNames.add(_className_2);
+      }
+    }
   }
   
   @Check
-  public void checkForDuplicateButtonIdentifier(final LayoutElement layoutElement) {
+  public void checkForDuplicateButtonIdentifier(final ActivityLayoutAttribute layoutElements) {
+    List<String> foundNames = new ArrayList<String>();
+    EList<LayoutElement> _layoutElements = layoutElements.getLayoutElements();
+    for (final LayoutElement element : _layoutElements) {
+      if ((element instanceof Button)) {
+        String buttonName = ((Button) element).getButtonName();
+        boolean _contains = foundNames.contains(buttonName);
+        if (_contains) {
+          String _format = String.format("Button name \"%s\" is not unique", buttonName);
+          this.error(_format, element, 
+            AppDslPackage.Literals.BUTTON__BUTTON_NAME);
+        }
+        foundNames.add(buttonName);
+      }
+    }
   }
   
   @Check
