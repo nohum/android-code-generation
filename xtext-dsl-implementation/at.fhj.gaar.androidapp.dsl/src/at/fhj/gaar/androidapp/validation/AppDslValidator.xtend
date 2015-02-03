@@ -30,28 +30,34 @@ import java.util.logging.Level
  */
 class AppDslValidator extends AbstractAppDslValidator {
 
+	private static Logger logger = Logger.getLogger("DslValidation");
+
     @Check
     def void checkCompileSdkBounds(Application application) {
-    	
+    	logger.info("checkCompileSdkBounds");
     }
     
     def void checkTargetSdkBounds(Application application) {
-
+		logger.info("checkTargetSdkBounds");
     }
     
     @Check
-    def void checkForValidMainActivity(ApplicationMainActivity mainActivity, ApplicationElementList elements) {
-    	Logger.getLogger("").log(Level.SEVERE, "checkForValidMainActivity");
+    def void checkForValidMainActivity(Application application) {
+    	logger.info("checkForValidMainActivity");
+    	// there is is this nice limitation that methods only can take one parameter.
+    	// so we have to pull out everything by ourselves nicely.
     	
-    	if (elements.elements.length() == 0 || mainActivity.launcherActivity.length() == 0) {
-    		return;
-    	}
     	
-    	for (ApplicationElement element : elements.elements) {
-    		if (element instanceof Activity && element.className.equals(mainActivity.launcherActivity)) {
-    			return; // no break possible in Xtend, so just exit here as everything is ok
-    		}
-    	}
+    	
+//    	if (elements.elements.length() == 0 || mainActivity.launcherActivity.length() == 0) {
+//    		return;
+//    	}
+    	
+//    	for (ApplicationElement element : elements.elements) {
+//    		if (element instanceof Activity && element.className.equals(mainActivity.launcherActivity)) {
+//    			return; // no break possible in Xtend, so just exit here as everything is ok
+//    		}
+//    	}
     	
     	error(String.format("Activity with identifier \"%s\" is unknown", mainActivity.launcherActivity),
     		AppDslPackage$Literals::APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY
@@ -60,6 +66,8 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicatePermission(ApplicationPermissionList permissions) {
+    	logger.info("checkForDuplicatePermission");
+    	
     	var List<String> foundPermissions = new ArrayList<String>();
     	var int listIndex = 0;
     	
@@ -75,6 +83,8 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateIntent(ElementIntentList intents) {
+    	logger.info("checkForDuplicateIntent");
+    	
     	var List<String> foundIntents = new ArrayList<String>();
     	var int listIndex = 0;
     	
@@ -90,6 +100,8 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateElementIdentifier(ApplicationElementList elements) {
+    	logger.info("checkForDuplicateElementIdentifier");
+    	
     	var List<String> foundElementNames = new ArrayList<String>();
 
     	for (ApplicationElement element : elements.elements) {
@@ -105,6 +117,8 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateButtonIdentifier(ActivityLayoutAttribute layoutElements) {
+    	logger.info("checkForDuplicateButtonIdentifier");
+    	
     	var List<String> foundNames = new ArrayList<String>();
 
     	for (LayoutElement element : layoutElements.layoutElements) {
@@ -125,11 +139,11 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForValidActionStartActivity(ActionStartActivity startActivity) {
-    	
+    	logger.info("checkForValidActionStartActivity");
     }
     
     @Check
     def void checkForValidActionStartService(ActionStartService startService) {
-    	
+    	logger.info("checkForValidActionStartService");
     }
 }
