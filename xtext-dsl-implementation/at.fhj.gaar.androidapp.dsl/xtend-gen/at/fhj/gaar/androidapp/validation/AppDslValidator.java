@@ -63,18 +63,7 @@ public class AppDslValidator extends AbstractAppDslValidator {
     }
     EObject _eContainer = mainActivity.eContainer();
     Application application = ((Application) _eContainer);
-    ApplicationElementList elementList = null;
-    EList<ApplicationAttribute> _attributes = application.getAttributes();
-    Iterator appIterator = _attributes.iterator();
-    while ((appIterator.hasNext() && Objects.equal(elementList, null))) {
-      {
-        Object _next = appIterator.next();
-        ApplicationAttribute attr = ((ApplicationAttribute) _next);
-        if ((attr instanceof ApplicationElementList)) {
-          elementList = ((ApplicationElementList)attr);
-        }
-      }
-    }
+    ApplicationElementList elementList = this.<ApplicationElementList>getApplicationField(application, ApplicationElementList.class);
     boolean _equals_1 = Objects.equal(elementList, null);
     if (_equals_1) {
       AppDslValidator.logger.warning("checkForValidMainActivity: no element list found, aborting");
@@ -185,5 +174,25 @@ public class AppDslValidator extends AbstractAppDslValidator {
   @Check
   public void checkForValidActionStartService(final ActionStartService startService) {
     AppDslValidator.logger.info("checkForValidActionStartService");
+  }
+  
+  /**
+   * General method to get attribute of application.
+   */
+  private <T extends Object> T getApplicationField(final Application application, final Class<T> resultClass) {
+    EList<ApplicationAttribute> _attributes = application.getAttributes();
+    Iterator<ApplicationAttribute> appIterator = _attributes.iterator();
+    while (appIterator.hasNext()) {
+      {
+        ApplicationAttribute _next = appIterator.next();
+        ApplicationAttribute attr = ((ApplicationAttribute) _next);
+        Class<? extends ApplicationAttribute> _class = attr.getClass();
+        boolean _isAssignableFrom = resultClass.isAssignableFrom(_class);
+        if (_isAssignableFrom) {
+          return ((T) attr);
+        }
+      }
+    }
+    return null;
   }
 }

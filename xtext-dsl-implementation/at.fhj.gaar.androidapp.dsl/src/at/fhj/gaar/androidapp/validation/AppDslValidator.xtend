@@ -40,6 +40,9 @@ class AppDslValidator extends AbstractAppDslValidator {
     @Check
     def void checkCompileSdkBounds(Application application) {
     	logger.info("checkCompileSdkBounds");
+    	
+    	//var Application application = (mainActivity.eContainer() as Application);
+    	
     }
     
     @Check
@@ -50,9 +53,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     @Check
     def void checkForValidMainActivity(ApplicationMainActivity mainActivity) {
     	logger.info("checkForValidMainActivity");
-    	
-    	// there is is this nice limitation that methods only can take one parameter.
-    	// so we have to pull out everything by ourselves nicely.
 
     	if (mainActivity.launcherActivity.length() == 0) {
     		logger.info("checkForValidMainActivity: launcherActivity string is empty");
@@ -60,16 +60,7 @@ class AppDslValidator extends AbstractAppDslValidator {
     	}
     	
     	var Application application = (mainActivity.eContainer() as Application);
-    	var ApplicationElementList elementList = null;
-    	var Iterator appIterator = application.attributes.iterator();
-    	
-    	// okay, pull out the element list
-    	while (appIterator.hasNext() && elementList == null) {
-    		var ApplicationAttribute attr = (appIterator.next() as ApplicationAttribute);
-    		if (attr instanceof ApplicationElementList) {
-    			elementList = attr;
-    		}
-    	}
+    	var ApplicationElementList elementList = getApplicationField(application, typeof(ApplicationElementList));
     	
     	if (elementList == null) {
     		logger.warning("checkForValidMainActivity: no element list found, aborting");
@@ -168,5 +159,22 @@ class AppDslValidator extends AbstractAppDslValidator {
     @Check
     def void checkForValidActionStartService(ActionStartService startService) {
     	logger.info("checkForValidActionStartService");
+    }
+    
+    /**
+     * General method to get attribute of application.
+     */
+    private def <T> T getApplicationField(Application application, Class<T> resultClass) {
+    	var Iterator<ApplicationAttribute> appIterator = application.attributes.iterator();
+    	
+    	// okay, pull out the needed attribute
+    	while (appIterator.hasNext()) {
+    		var ApplicationAttribute attr = (appIterator.next() as ApplicationAttribute);
+    		if (resultClass.isAssignableFrom(attr.class)) {
+    			return (attr as T);
+    		}
+    	}
+    	
+    	return null;
     }
 }
