@@ -23,6 +23,9 @@ import java.util.List
 import java.util.logging.Logger
 import org.eclipse.xtext.validation.Check
 import org.eclipse.emf.common.util.EList
+import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk
+import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk
+import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk
 
 /**
  * Custom validation rules. 
@@ -42,13 +45,50 @@ class AppDslValidator extends AbstractAppDslValidator {
     def void checkCompileSdkBounds(Application application) {
     	logger.info("checkCompileSdkBounds");
     	
-    	//var Application application = (mainActivity.eContainer() as Application);
+    	var ApplicationMinSdk minSdk = getApplicationField(application, typeof(ApplicationMinSdk));
+    	if (minSdk == null) {
+    		logger.info("checkCompileSdkBounds: no minSdk found");
+    		return;
+    	}
     	
+    	var ApplicationCompileSdk compileSdk = getApplicationField(application, typeof(ApplicationCompileSdk));
+    	if (compileSdk == null) {
+    		logger.info("checkCompileSdkBounds: no compileSdk found");
+    		return;
+    	}
+    	
+    	if (compileSdk.compileSdk >= minSdk.minSdk) {
+    		return;
+    	}
+    	
+    	warning("compile-sdk should be higher or equal to min-sdk", compileSdk,
+    		AppDslPackage.Literals::APPLICATION_COMPILE_SDK__COMPILE_SDK
+    	);
     }
     
     @Check
     def void checkTargetSdkBounds(Application application) {
 		logger.info("checkTargetSdkBounds");
+		
+		var ApplicationMinSdk minSdk = getApplicationField(application, typeof(ApplicationMinSdk));
+    	if (minSdk == null) {
+    		logger.info("checkTargetSdkBounds: no minSdk found");
+    		return;
+    	}
+    	
+    	var ApplicationTargetSdk targetSdk = getApplicationField(application, typeof(ApplicationTargetSdk));
+    	if (targetSdk == null) {
+    		logger.info("checkTargetSdkBounds: no targetSdk found");
+    		return;
+    	}
+    	
+    	if (targetSdk.targetSdk >= minSdk.minSdk) {
+    		return;
+    	}
+    	
+    	warning("target-sdk should be higher or equal to min-sdk", targetSdk,
+    		AppDslPackage.Literals::APPLICATION_TARGET_SDK__TARGET_SDK
+    	);
     }
     
     @Check

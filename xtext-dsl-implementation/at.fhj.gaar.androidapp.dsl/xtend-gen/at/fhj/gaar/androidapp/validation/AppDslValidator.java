@@ -10,10 +10,13 @@ import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
 import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute;
+import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
+import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
+import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
@@ -48,11 +51,51 @@ public class AppDslValidator extends AbstractAppDslValidator {
   @Check
   public void checkCompileSdkBounds(final Application application) {
     AppDslValidator.logger.info("checkCompileSdkBounds");
+    ApplicationMinSdk minSdk = this.<ApplicationMinSdk>getApplicationField(application, ApplicationMinSdk.class);
+    boolean _equals = Objects.equal(minSdk, null);
+    if (_equals) {
+      AppDslValidator.logger.info("checkCompileSdkBounds: no minSdk found");
+      return;
+    }
+    ApplicationCompileSdk compileSdk = this.<ApplicationCompileSdk>getApplicationField(application, ApplicationCompileSdk.class);
+    boolean _equals_1 = Objects.equal(compileSdk, null);
+    if (_equals_1) {
+      AppDslValidator.logger.info("checkCompileSdkBounds: no compileSdk found");
+      return;
+    }
+    int _compileSdk = compileSdk.getCompileSdk();
+    int _minSdk = minSdk.getMinSdk();
+    boolean _greaterEqualsThan = (_compileSdk >= _minSdk);
+    if (_greaterEqualsThan) {
+      return;
+    }
+    this.warning("compile-sdk should be higher or equal to min-sdk", compileSdk, 
+      AppDslPackage.Literals.APPLICATION_COMPILE_SDK__COMPILE_SDK);
   }
   
   @Check
   public void checkTargetSdkBounds(final Application application) {
     AppDslValidator.logger.info("checkTargetSdkBounds");
+    ApplicationMinSdk minSdk = this.<ApplicationMinSdk>getApplicationField(application, ApplicationMinSdk.class);
+    boolean _equals = Objects.equal(minSdk, null);
+    if (_equals) {
+      AppDslValidator.logger.info("checkTargetSdkBounds: no minSdk found");
+      return;
+    }
+    ApplicationTargetSdk targetSdk = this.<ApplicationTargetSdk>getApplicationField(application, ApplicationTargetSdk.class);
+    boolean _equals_1 = Objects.equal(targetSdk, null);
+    if (_equals_1) {
+      AppDslValidator.logger.info("checkTargetSdkBounds: no targetSdk found");
+      return;
+    }
+    int _targetSdk = targetSdk.getTargetSdk();
+    int _minSdk = minSdk.getMinSdk();
+    boolean _greaterEqualsThan = (_targetSdk >= _minSdk);
+    if (_greaterEqualsThan) {
+      return;
+    }
+    this.warning("target-sdk should be higher or equal to min-sdk", targetSdk, 
+      AppDslPackage.Literals.APPLICATION_TARGET_SDK__TARGET_SDK);
   }
   
   @Check
