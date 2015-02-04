@@ -1,7 +1,6 @@
-Android app code Generation
----------------------------
+# Android app code generation
 
-Project work for generating an Android app using a special domain specific language. This is done using the [Eclipse Xtext](https://eclipse.org/Xtext/) toolkit. For instance, the following code creates a small demo project with an activity and a broadcast receiver:
+Project work for generating an Android app using a special domain specific language. This is achieved using the [Eclipse Xtext](https://eclipse.org/Xtext/) toolkit. For instance, the following code creates a small demo project with an activity and a broadcast receiver:
 
 ```
 application "at.fhj.demoapp" {
@@ -33,3 +32,12 @@ application "at.fhj.demoapp" {
 	]
 }
 ```
+
+## Project creation
+
+After importing the projects located in the "xtext-dsl-implementation" subfolder into an Eclipse IDE with Xtext support, you will find the "Launch Runtime Eclipse" option in the "Run" menu. Using this newly launched IDE, you can create your Android applications with the DSL shown above. For that, create a new project and add a new file which ends with the file extension ".androidapp". The opened editor then provides code completion and validation for the DSL. 
+
+## Validation
+
+When editing your application source code in the IDE some features are validated. Examples are duplicated application elements, duplicated intents, duplicated permissions or unknown identifiers.
+
