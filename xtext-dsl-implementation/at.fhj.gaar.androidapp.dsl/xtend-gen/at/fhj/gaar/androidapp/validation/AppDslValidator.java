@@ -51,7 +51,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkCompileSdkBounds(final Application application) {
-    AppDslValidator.logger.info("checkCompileSdkBounds");
     ApplicationMinSdk minSdk = this.<ApplicationMinSdk>getApplicationField(application, ApplicationMinSdk.class);
     boolean _equals = Objects.equal(minSdk, null);
     if (_equals) {
@@ -76,7 +75,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkTargetSdkBounds(final Application application) {
-    AppDslValidator.logger.info("checkTargetSdkBounds");
     ApplicationMinSdk minSdk = this.<ApplicationMinSdk>getApplicationField(application, ApplicationMinSdk.class);
     boolean _equals = Objects.equal(minSdk, null);
     if (_equals) {
@@ -124,7 +122,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicatePermission(final ApplicationPermissionList permissions) {
-    AppDslValidator.logger.info("checkForDuplicatePermission");
     EList<String> _permissions = permissions.getPermissions();
     final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
       public void onDuplicateFound(final String name, final int index) {
@@ -137,7 +134,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicateIntent(final ElementIntentList intents) {
-    AppDslValidator.logger.info("checkForDuplicateIntent");
     EList<String> _intents = intents.getIntents();
     final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
       public void onDuplicateFound(final String name, final int index) {
@@ -151,7 +147,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicateElementIdentifier(final ApplicationElementList elements) {
-    AppDslValidator.logger.info("checkForDuplicateElementIdentifier");
     List<String> foundElementNames = new ArrayList<String>();
     EList<ApplicationElement> _elements = elements.getElements();
     for (final ApplicationElement element : _elements) {
@@ -171,7 +166,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicateButtonIdentifier(final ActivityLayoutAttribute layoutElements) {
-    AppDslValidator.logger.info("checkForDuplicateButtonIdentifier");
     List<String> foundNames = new ArrayList<String>();
     EList<LayoutElement> _layoutElements = layoutElements.getLayoutElements();
     for (final LayoutElement element : _layoutElements) {

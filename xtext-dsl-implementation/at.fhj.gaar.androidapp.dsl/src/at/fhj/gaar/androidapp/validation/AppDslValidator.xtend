@@ -45,8 +45,6 @@ class AppDslValidator extends AbstractAppDslValidator {
 
     @Check
     def void checkCompileSdkBounds(Application application) {
-    	logger.info("checkCompileSdkBounds");
-    	
     	var ApplicationMinSdk minSdk = getApplicationField(application, typeof(ApplicationMinSdk));
     	if (minSdk == null) {
     		logger.info("checkCompileSdkBounds: no minSdk found");
@@ -69,9 +67,7 @@ class AppDslValidator extends AbstractAppDslValidator {
     }
     
     @Check
-    def void checkTargetSdkBounds(Application application) {
-		logger.info("checkTargetSdkBounds");
-		
+    def void checkTargetSdkBounds(Application application) {	
 		var ApplicationMinSdk minSdk = getApplicationField(application, typeof(ApplicationMinSdk));
     	if (minSdk == null) {
     		logger.info("checkTargetSdkBounds: no minSdk found");
@@ -114,8 +110,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicatePermission(ApplicationPermissionList permissions) {
-    	logger.info("checkForDuplicatePermission");
-    	
     	findStringDuplicates(permissions.permissions, [ name, index |
     		error("Permissions have to be unique",
     			AppDslPackage.Literals::APPLICATION_PERMISSION_LIST__PERMISSIONS, index
@@ -125,8 +119,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateIntent(ElementIntentList intents) {
-    	logger.info("checkForDuplicateIntent");
-    	
     	findStringDuplicates(intents.intents, [ name, index |
     		error(String.format("Intent \"%s\" is not unique", name),
     			AppDslPackage.Literals::ELEMENT_INTENT_LIST__INTENTS, index
@@ -136,8 +128,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateElementIdentifier(ApplicationElementList elements) {
-    	logger.info("checkForDuplicateElementIdentifier");
-    	
     	var List<String> foundElementNames = new ArrayList<String>();
 
     	for (ApplicationElement element : elements.elements) {
@@ -153,8 +143,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateButtonIdentifier(ActivityLayoutAttribute layoutElements) {
-    	logger.info("checkForDuplicateButtonIdentifier");
-    	
     	var List<String> foundNames = new ArrayList<String>();
 
     	for (LayoutElement element : layoutElements.layoutElements) {
