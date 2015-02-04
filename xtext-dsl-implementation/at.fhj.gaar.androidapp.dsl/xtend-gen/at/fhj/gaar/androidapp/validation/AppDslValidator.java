@@ -34,6 +34,10 @@ import org.eclipse.xtext.validation.Check;
  */
 @SuppressWarnings("all")
 public class AppDslValidator extends AbstractAppDslValidator {
+  private interface DuplicateCallback {
+    public abstract void onDuplicateFound(final String item, final int index);
+  }
+  
   private static Logger logger = Logger.getLogger("DslValidation");
   
   @Check
@@ -93,37 +97,28 @@ public class AppDslValidator extends AbstractAppDslValidator {
   @Check
   public void checkForDuplicatePermission(final ApplicationPermissionList permissions) {
     AppDslValidator.logger.info("checkForDuplicatePermission");
-    List<String> foundPermissions = new ArrayList<String>();
-    int listIndex = 0;
     EList<String> _permissions = permissions.getPermissions();
-    for (final String permission : _permissions) {
-      {
-        boolean _contains = foundPermissions.contains(permission);
-        if (_contains) {
-          this.error("Permissions have to be unique", AppDslPackage.Literals.APPLICATION_PERMISSION_LIST__PERMISSIONS, listIndex);
-        }
-        foundPermissions.add(permission);
-        listIndex++;
+    final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
+      public void onDuplicateFound(final String name, final int index) {
+        AppDslValidator.this.error("Permissions have to be unique", 
+          AppDslPackage.Literals.APPLICATION_PERMISSION_LIST__PERMISSIONS, index);
       }
-    }
+    };
+    this.findStringDuplicates(_permissions, _function);
   }
   
   @Check
   public void checkForDuplicateIntent(final ElementIntentList intents) {
     AppDslValidator.logger.info("checkForDuplicateIntent");
-    List<String> foundIntents = new ArrayList<String>();
-    int listIndex = 0;
     EList<String> _intents = intents.getIntents();
-    for (final String intent : _intents) {
-      {
-        boolean _contains = foundIntents.contains(intent);
-        if (_contains) {
-          this.error("Intents have to be unique", AppDslPackage.Literals.ELEMENT_INTENT_LIST__INTENTS, listIndex);
-        }
-        foundIntents.add(intent);
-        listIndex++;
+    final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
+      public void onDuplicateFound(final String name, final int index) {
+        String _format = String.format("Intent \"%s\" is not unique", name);
+        AppDslValidator.this.error(_format, 
+          AppDslPackage.Literals.ELEMENT_INTENT_LIST__INTENTS, index);
       }
-    }
+    };
+    this.findStringDuplicates(_intents, _function);
   }
   
   @Check
@@ -194,5 +189,20 @@ public class AppDslValidator extends AbstractAppDslValidator {
       }
     }
     return null;
+  }
+  
+  private void findStringDuplicates(final EList<String> list, final AppDslValidator.DuplicateCallback callback) {
+    List<String> foundIntents = new ArrayList<String>();
+    int listIndex = 0;
+    for (final String element : list) {
+      {
+        boolean _contains = foundIntents.contains(element);
+        if (_contains) {
+          callback.onDuplicateFound(element, listIndex);
+        }
+        foundIntents.add(element);
+        listIndex++;
+      }
+    }
   }
 }

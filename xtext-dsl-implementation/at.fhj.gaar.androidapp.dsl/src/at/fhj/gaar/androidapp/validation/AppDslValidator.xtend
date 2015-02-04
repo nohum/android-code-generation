@@ -22,6 +22,7 @@ import java.util.Iterator
 import java.util.List
 import java.util.logging.Logger
 import org.eclipse.xtext.validation.Check
+import org.eclipse.emf.common.util.EList
 
 /**
  * Custom validation rules. 
@@ -82,34 +83,22 @@ class AppDslValidator extends AbstractAppDslValidator {
     def void checkForDuplicatePermission(ApplicationPermissionList permissions) {
     	logger.info("checkForDuplicatePermission");
     	
-    	var List<String> foundPermissions = new ArrayList<String>();
-    	var int listIndex = 0;
-    	
-    	for (String permission : permissions.permissions) {
-    		if (foundPermissions.contains(permission)) {
-    			error("Permissions have to be unique", AppDslPackage.Literals::APPLICATION_PERMISSION_LIST__PERMISSIONS, listIndex);
-    		}
-    		
-    		foundPermissions.add(permission);
-    		listIndex++;
-    	}
+    	findStringDuplicates(permissions.permissions, [ name, index |
+    		error("Permissions have to be unique",
+    			AppDslPackage.Literals::APPLICATION_PERMISSION_LIST__PERMISSIONS, index
+    		);
+    	]);
     }
     
     @Check
     def void checkForDuplicateIntent(ElementIntentList intents) {
     	logger.info("checkForDuplicateIntent");
     	
-    	var List<String> foundIntents = new ArrayList<String>();
-    	var int listIndex = 0;
-    	
-    	for (String intent : intents.intents) {
-    		if (foundIntents.contains(intent)) {
-    			error("Intents have to be unique", AppDslPackage.Literals::ELEMENT_INTENT_LIST__INTENTS, listIndex);
-    		}
-    		
-    		foundIntents.add(intent);
-    		listIndex++;
-    	}
+    	findStringDuplicates(intents.intents, [ name, index |
+    		error(String.format("Intent \"%s\" is not unique", name),
+    			AppDslPackage.Literals::ELEMENT_INTENT_LIST__INTENTS, index
+    		);
+    	]);
     }
     
     @Check
@@ -176,5 +165,23 @@ class AppDslValidator extends AbstractAppDslValidator {
     	}
     	
     	return null;
+    }
+    
+    private def findStringDuplicates(EList<String> list, DuplicateCallback callback) {
+    	var List<String> foundIntents = new ArrayList<String>();
+    	var int listIndex = 0;
+    	
+    	for (String element : list) {
+    		if (foundIntents.contains(element)) {
+    			callback.onDuplicateFound(element, listIndex);
+    		}
+    		
+    		foundIntents.add(element);
+    		listIndex++;
+    	}
+    }
+    
+    private static interface DuplicateCallback {
+    	public def void onDuplicateFound(String item, int index);
     }
 }
