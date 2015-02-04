@@ -20,6 +20,7 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
+import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
 import com.google.common.base.Objects;
 import java.util.ArrayList;
@@ -110,26 +111,10 @@ public class AppDslValidator extends AbstractAppDslValidator {
     }
     EObject _eContainer = mainActivity.eContainer();
     Application application = ((Application) _eContainer);
-    ApplicationElementList elementList = this.<ApplicationElementList>getApplicationField(application, ApplicationElementList.class);
-    boolean _equals_1 = Objects.equal(elementList, null);
-    if (_equals_1) {
-      AppDslValidator.logger.warning("checkForValidMainActivity: no element list found, aborting");
+    String _launcherActivity_1 = mainActivity.getLauncherActivity();
+    boolean _isElementExisting = this.<Activity>isElementExisting(application, _launcherActivity_1, Activity.class);
+    if (_isElementExisting) {
       return;
-    }
-    EList<ApplicationElement> _elements = elementList.getElements();
-    for (final ApplicationElement element : _elements) {
-      boolean _and = false;
-      if (!(element instanceof Activity)) {
-        _and = false;
-      } else {
-        String _className = element.getClassName();
-        String _launcherActivity_1 = mainActivity.getLauncherActivity();
-        boolean _equals_2 = _className.equals(_launcherActivity_1);
-        _and = _equals_2;
-      }
-      if (_and) {
-        return;
-      }
     }
     String _launcherActivity_2 = mainActivity.getLauncherActivity();
     String _format = String.format("Activity with identifier \"%s\" is unknown", _launcherActivity_2);
@@ -176,8 +161,7 @@ public class AppDslValidator extends AbstractAppDslValidator {
         if (_contains) {
           String _className_1 = element.getClassName();
           String _format = String.format("Identifier \"%s\" has already been used", _className_1);
-          this.error(_format, element, 
-            AppDslPackage.Literals.APPLICATION_ELEMENT__CLASS_NAME);
+          this.error(_format, element, AppDslPackage.Literals.APPLICATION_ELEMENT__CLASS_NAME);
         }
         String _className_2 = element.getClassName();
         foundElementNames.add(_className_2);
@@ -206,12 +190,42 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForValidActionStartActivity(final ActionStartActivity startActivity) {
-    AppDslValidator.logger.info("checkForValidActionStartActivity");
+    String _activity = startActivity.getActivity();
+    int _length = _activity.length();
+    boolean _equals = (_length == 0);
+    if (_equals) {
+      AppDslValidator.logger.info("checkForValidActionStartActivity: activity string is empty");
+      return;
+    }
+    Application _rootApplication = this.getRootApplication(startActivity);
+    String _activity_1 = startActivity.getActivity();
+    boolean _isElementExisting = this.<Activity>isElementExisting(_rootApplication, _activity_1, Activity.class);
+    if (_isElementExisting) {
+      return;
+    }
+    String _activity_2 = startActivity.getActivity();
+    String _format = String.format("Activity with identifier \"%s\" is unknown", _activity_2);
+    this.error(_format, startActivity, AppDslPackage.Literals.ACTION_START_ACTIVITY__ACTIVITY);
   }
   
   @Check
   public void checkForValidActionStartService(final ActionStartService startService) {
-    AppDslValidator.logger.info("checkForValidActionStartService");
+    String _service = startService.getService();
+    int _length = _service.length();
+    boolean _equals = (_length == 0);
+    if (_equals) {
+      AppDslValidator.logger.info("checkForValidActionStartService: service string is empty");
+      return;
+    }
+    Application _rootApplication = this.getRootApplication(startService);
+    String _service_1 = startService.getService();
+    boolean _isElementExisting = this.<Service>isElementExisting(_rootApplication, _service_1, Service.class);
+    if (_isElementExisting) {
+      return;
+    }
+    String _service_2 = startService.getService();
+    String _format = String.format("Service with identifier \"%s\" is unknown", _service_2);
+    this.error(_format, startService, AppDslPackage.Literals.ACTION_START_SERVICE__SERVICE);
   }
   
   /**
@@ -234,6 +248,10 @@ public class AppDslValidator extends AbstractAppDslValidator {
     return null;
   }
   
+  /**
+   * General method to handle duplicate searches in string lists. Calls the supplied
+   * callback for each found duplicate.
+   */
   private void findStringDuplicates(final EList<String> list, final AppDslValidator.DuplicateCallback callback) {
     List<String> foundIntents = new ArrayList<String>();
     int listIndex = 0;
@@ -245,6 +263,49 @@ public class AppDslValidator extends AbstractAppDslValidator {
         }
         foundIntents.add(element);
         listIndex++;
+      }
+    }
+  }
+  
+  /**
+   * Checks if an element is existing in the applications element list.
+   */
+  private <T extends Object> boolean isElementExisting(final Application application, final String elementName, final Class<T> elementType) {
+    ApplicationElementList elementList = this.<ApplicationElementList>getApplicationField(application, 
+      ApplicationElementList.class);
+    boolean _equals = Objects.equal(elementList, null);
+    if (_equals) {
+      AppDslValidator.logger.warning("isElementExisting: no element list found, aborting");
+      return false;
+    }
+    EList<ApplicationElement> _elements = elementList.getElements();
+    for (final ApplicationElement element : _elements) {
+      boolean _and = false;
+      Class<? extends ApplicationElement> _class = element.getClass();
+      boolean _isAssignableFrom = elementType.isAssignableFrom(_class);
+      if (!_isAssignableFrom) {
+        _and = false;
+      } else {
+        String _className = element.getClassName();
+        boolean _equals_1 = _className.equals(elementName);
+        _and = _equals_1;
+      }
+      if (_and) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  private Application getRootApplication(final EObject object) {
+    EObject current = object;
+    while (true) {
+      {
+        EObject _eContainer = current.eContainer();
+        current = _eContainer;
+        if ((current instanceof Application)) {
+          return ((Application) current);
+        }
       }
     }
   }

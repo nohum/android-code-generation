@@ -26,6 +26,8 @@ import org.eclipse.emf.common.util.EList
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk
 import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk
+import at.fhj.gaar.androidapp.appDsl.Service
+import org.eclipse.emf.ecore.EObject
 
 /**
  * Custom validation rules. 
@@ -76,7 +78,7 @@ class AppDslValidator extends AbstractAppDslValidator {
     		return;
     	}
     	
-    	var ApplicationTargetSdk targetSdk = getApplicationField(application, typeof(ApplicationTargetSdk));
+    	var ApplicationTargetSdk targetSdk = getApplicationField(application,typeof(ApplicationTargetSdk));
     	if (targetSdk == null) {
     		logger.info("checkTargetSdkBounds: no targetSdk found");
     		return;
@@ -101,20 +103,11 @@ class AppDslValidator extends AbstractAppDslValidator {
     	}
     	
     	var Application application = (mainActivity.eContainer() as Application);
-    	var ApplicationElementList elementList = getApplicationField(application, typeof(ApplicationElementList));
-    	
-    	if (elementList == null) {
-    		logger.warning("checkForValidMainActivity: no element list found, aborting");
+    	if (isElementExisting(application, mainActivity.launcherActivity, typeof(Activity))) {
     		return;
-    	}   	
-    	
-    	for (ApplicationElement element : elementList.elements) {
-    		if (element instanceof Activity && element.className.equals(mainActivity.launcherActivity)) {
-    			return; // no break possible in Xtend, so just exit here as everything is ok
-    		}
     	}
     	
-    	error(String.format("Activity with identifier \"%s\" is unknown", mainActivity.launcherActivity),
+    	error(String.format("Activity with identifier \"%s\" is unknown",mainActivity.launcherActivity),
     		AppDslPackage.Literals::APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY
     	);
     }
@@ -149,8 +142,8 @@ class AppDslValidator extends AbstractAppDslValidator {
 
     	for (ApplicationElement element : elements.elements) {
     		if (foundElementNames.contains(element.className)) {
-    			error(String.format("Identifier \"%s\" has already been used", element.className), element,
-    				AppDslPackage.Literals::APPLICATION_ELEMENT__CLASS_NAME
+    			error(String.format("Identifier \"%s\" has already been used", element.className),
+    				element, AppDslPackage.Literals::APPLICATION_ELEMENT__CLASS_NAME
     			);
     		}
     		
@@ -182,12 +175,34 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForValidActionStartActivity(ActionStartActivity startActivity) {
-    	logger.info("checkForValidActionStartActivity");
+    	if (startActivity.activity.length == 0) {
+    		logger.info("checkForValidActionStartActivity: activity string is empty");
+    		return;
+    	}
+    	
+    	if (isElementExisting(getRootApplication(startActivity), startActivity.activity, typeof(Activity))) {
+    		return;
+    	}
+    	
+    	error(String.format("Activity with identifier \"%s\" is unknown", startActivity.activity),
+    		startActivity, AppDslPackage.Literals::ACTION_START_ACTIVITY__ACTIVITY
+    	);
     }
     
     @Check
     def void checkForValidActionStartService(ActionStartService startService) {
-    	logger.info("checkForValidActionStartService");
+    	if (startService.service.length == 0) {
+    		logger.info("checkForValidActionStartService: service string is empty");
+    		return;
+    	}
+    	
+    	if (isElementExisting(getRootApplication(startService), startService.service, typeof(Service))) {
+    		return;
+    	}
+    	
+    	error(String.format("Service with identifier \"%s\" is unknown", startService.service),
+    		startService, AppDslPackage.Literals::ACTION_START_SERVICE__SERVICE
+    	);
     }
     
     /**
@@ -200,13 +215,17 @@ class AppDslValidator extends AbstractAppDslValidator {
     	while (appIterator.hasNext()) {
     		var ApplicationAttribute attr = (appIterator.next() as ApplicationAttribute);
     		if (resultClass.isAssignableFrom(attr.class)) {
-    			return (attr as T);
+    			return attr as T;
     		}
     	}
     	
     	return null;
     }
     
+    /**
+     * General method to handle duplicate searches in string lists. Calls the supplied
+     * callback for each found duplicate.
+     */
     private def findStringDuplicates(EList<String> list, DuplicateCallback callback) {
     	var List<String> foundIntents = new ArrayList<String>();
     	var int listIndex = 0;
@@ -218,6 +237,41 @@ class AppDslValidator extends AbstractAppDslValidator {
     		
     		foundIntents.add(element);
     		listIndex++;
+    	}
+    }
+    
+    /**
+     * Checks if an element is existing in the applications element list.
+     */
+    private def <T> boolean isElementExisting(Application application, String elementName, Class<T> elementType) {
+    	var ApplicationElementList elementList = getApplicationField(application,
+    		typeof(ApplicationElementList)
+    	);
+    	
+    	if (elementList == null) {
+    		logger.warning("isElementExisting: no element list found, aborting");
+    		return false;
+    	}   	
+    	
+    	for (ApplicationElement element : elementList.elements) {
+    		if (elementType.isAssignableFrom(element.class) && element.className.equals(elementName)) {
+    			return true;
+    		}
+    	}
+    	
+    	return false;
+    }
+    
+    private def Application getRootApplication(EObject object) {
+    	var EObject current = object;
+    	
+    	// there must always be an Application root object as by our grammar model
+    	while (true) {
+    		current = current.eContainer();
+    		
+    		if (current instanceof Application) {
+    			return current as Application;
+    		}
     	}
     }
     
