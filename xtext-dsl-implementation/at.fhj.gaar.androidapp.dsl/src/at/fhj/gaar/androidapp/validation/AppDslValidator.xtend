@@ -40,7 +40,18 @@ class AppDslValidator extends AbstractAppDslValidator {
 
 	@Check
     def void disallowDuplicateApplicationAttributes(Application application) {
-    	logger.info("disallowDuplicateApplicationAttributes");
+    	var List<String> occuredAttrs = new ArrayList<String>();
+    	
+    	for (ApplicationAttribute attr : application.attributes) {
+    		var String attrName = attr.class.name;
+    		
+    		if (occuredAttrs.contains(attrName)) {
+    			logger.warning("disallowDuplicateApplicationAttributes: duplicate element: " + attr);
+    			error("This element occurred already in this application and must only occur once at most", attr, null);
+			} else {
+    			occuredAttrs.add(attrName);
+    		}
+    	}
     }
 
     @Check
@@ -91,8 +102,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForValidMainActivity(ApplicationMainActivity mainActivity) {
-    	logger.info("checkForValidMainActivity");
-
     	if (mainActivity.launcherActivity.length() == 0) {
     		logger.info("checkForValidMainActivity: launcherActivity string is empty");
     		return;

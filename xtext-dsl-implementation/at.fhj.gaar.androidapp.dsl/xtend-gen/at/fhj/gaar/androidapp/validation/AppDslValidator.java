@@ -46,7 +46,21 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void disallowDuplicateApplicationAttributes(final Application application) {
-    AppDslValidator.logger.info("disallowDuplicateApplicationAttributes");
+    List<String> occuredAttrs = new ArrayList<String>();
+    EList<ApplicationAttribute> _attributes = application.getAttributes();
+    for (final ApplicationAttribute attr : _attributes) {
+      {
+        Class<? extends ApplicationAttribute> _class = attr.getClass();
+        String attrName = _class.getName();
+        boolean _contains = occuredAttrs.contains(attrName);
+        if (_contains) {
+          AppDslValidator.logger.warning(("disallowDuplicateApplicationAttributes: duplicate element: " + attr));
+          this.error("This element occurred already in this application and must only occur once at most", attr, null);
+        } else {
+          occuredAttrs.add(attrName);
+        }
+      }
+    }
   }
   
   @Check
@@ -99,7 +113,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForValidMainActivity(final ApplicationMainActivity mainActivity) {
-    AppDslValidator.logger.info("checkForValidMainActivity");
     String _launcherActivity = mainActivity.getLauncherActivity();
     int _length = _launcherActivity.length();
     boolean _equals = (_length == 0);
