@@ -64,6 +64,10 @@ public class AppDslValidator extends AbstractAppDslValidator {
   }
   
   @Check
+  public void disallowDuplicateElementAttributes(final ApplicationElement element) {
+  }
+  
+  @Check
   public void checkCompileSdkBounds(final Application application) {
     ApplicationMinSdk minSdk = this.<ApplicationMinSdk>getApplicationField(application, ApplicationMinSdk.class);
     boolean _equals = Objects.equal(minSdk, null);

@@ -53,6 +53,11 @@ class AppDslValidator extends AbstractAppDslValidator {
     		}
     	}
     }
+    
+    @Check
+    def void disallowDuplicateElementAttributes(ApplicationElement element) {
+
+    }
 
     @Check
     def void checkCompileSdkBounds(Application application) {
