@@ -28,6 +28,10 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk
 import at.fhj.gaar.androidapp.appDsl.Service
 import org.eclipse.emf.ecore.EObject
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
+import at.fhj.gaar.androidapp.appDsl.ActivityAttribute
+import at.fhj.gaar.androidapp.appDsl.ServiceAttribute
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute
 
 /**
  * Custom validation rules. 
@@ -38,6 +42,9 @@ class AppDslValidator extends AbstractAppDslValidator {
 
 	private static Logger logger = Logger.getLogger("DslValidation");
 
+	/**
+	 * Every attribute in an application is only allowed once.
+	 */
 	@Check
     def void disallowDuplicateApplicationAttributes(Application application) {
     	var List<String> occuredAttrs = new ArrayList<String>();
@@ -54,9 +61,54 @@ class AppDslValidator extends AbstractAppDslValidator {
     	}
     }
     
+    /**
+     * Every attribute in an element is only allowed once.
+     * @todo refactoring
+     */
     @Check
     def void disallowDuplicateElementAttributes(ApplicationElement element) {
-
+		var List<String> occuredAttrs = new ArrayList<String>();
+		
+		if (element instanceof Activity) {
+			for (ActivityAttribute attr : (element as Activity).attributes) {
+	    		var String attrName = attr.class.name;
+	    		
+	    		if (occuredAttrs.contains(attrName)) {
+	    			logger.warning("disallowDuplicateElementAttributes: duplicate activity element: " + attr);
+	    			error("This element occurred already in this activity and must only occur once at most",
+	    				attr, null
+	    			);
+				} else {
+	    			occuredAttrs.add(attrName);
+	    		}
+    		}
+		} else if (element instanceof Service) {
+			for (ServiceAttribute attr : (element as Service).attributes) {
+	    		var String attrName = attr.class.name;
+	    		
+	    		if (occuredAttrs.contains(attrName)) {
+	    			logger.warning("disallowDuplicateElementAttributes: duplicate service element: " + attr);
+	    			error("This element occurred already in this service and must only occur once at most",
+	    				attr, null
+	    			);
+				} else {
+	    			occuredAttrs.add(attrName);
+	    		}
+    		}
+		} else if (element instanceof BroadcastReceiver) {
+			for (BroadcastReceiverAttribute attr : (element as BroadcastReceiver).attributes) {
+	    		var String attrName = attr.class.name;
+	    		
+	    		if (occuredAttrs.contains(attrName)) {
+	    			logger.warning("disallowDuplicateElementAttributes: duplicate receiver element: " + attr);
+	    			error("This element occurred already in this broadcast receiver and must only occur once at most",
+	    				attr, null
+	    			);
+				} else {
+	    			occuredAttrs.add(attrName);
+	    		}
+    		}
+		}
     }
 
     @Check

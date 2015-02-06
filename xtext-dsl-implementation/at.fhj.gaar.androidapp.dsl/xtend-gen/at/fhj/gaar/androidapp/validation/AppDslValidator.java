@@ -6,6 +6,7 @@ package at.fhj.gaar.androidapp.validation;
 import at.fhj.gaar.androidapp.appDsl.ActionStartActivity;
 import at.fhj.gaar.androidapp.appDsl.ActionStartService;
 import at.fhj.gaar.androidapp.appDsl.Activity;
+import at.fhj.gaar.androidapp.appDsl.ActivityAttribute;
 import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.Application;
@@ -17,10 +18,13 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.appDsl.Service;
+import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
 import com.google.common.base.Objects;
 import java.util.ArrayList;
@@ -44,6 +48,9 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   private static Logger logger = Logger.getLogger("DslValidation");
   
+  /**
+   * Every attribute in an application is only allowed once.
+   */
   @Check
   public void disallowDuplicateApplicationAttributes(final Application application) {
     List<String> occuredAttrs = new ArrayList<String>();
@@ -63,8 +70,63 @@ public class AppDslValidator extends AbstractAppDslValidator {
     }
   }
   
+  /**
+   * Every attribute in an element is only allowed once.
+   * @todo refactoring
+   */
   @Check
   public void disallowDuplicateElementAttributes(final ApplicationElement element) {
+    List<String> occuredAttrs = new ArrayList<String>();
+    if ((element instanceof Activity)) {
+      EList<ActivityAttribute> _attributes = ((Activity) element).getAttributes();
+      for (final ActivityAttribute attr : _attributes) {
+        {
+          Class<? extends ActivityAttribute> _class = attr.getClass();
+          String attrName = _class.getName();
+          boolean _contains = occuredAttrs.contains(attrName);
+          if (_contains) {
+            AppDslValidator.logger.warning(("disallowDuplicateElementAttributes: duplicate activity element: " + attr));
+            this.error("This element occurred already in this activity and must only occur once at most", attr, null);
+          } else {
+            occuredAttrs.add(attrName);
+          }
+        }
+      }
+    } else {
+      if ((element instanceof Service)) {
+        EList<ServiceAttribute> _attributes_1 = ((Service) element).getAttributes();
+        for (final ServiceAttribute attr_1 : _attributes_1) {
+          {
+            Class<? extends ServiceAttribute> _class = attr_1.getClass();
+            String attrName = _class.getName();
+            boolean _contains = occuredAttrs.contains(attrName);
+            if (_contains) {
+              AppDslValidator.logger.warning(("disallowDuplicateElementAttributes: duplicate service element: " + attr_1));
+              this.error("This element occurred already in this service and must only occur once at most", attr_1, null);
+            } else {
+              occuredAttrs.add(attrName);
+            }
+          }
+        }
+      } else {
+        if ((element instanceof BroadcastReceiver)) {
+          EList<BroadcastReceiverAttribute> _attributes_2 = ((BroadcastReceiver) element).getAttributes();
+          for (final BroadcastReceiverAttribute attr_2 : _attributes_2) {
+            {
+              Class<? extends BroadcastReceiverAttribute> _class = attr_2.getClass();
+              String attrName = _class.getName();
+              boolean _contains = occuredAttrs.contains(attrName);
+              if (_contains) {
+                AppDslValidator.logger.warning(("disallowDuplicateElementAttributes: duplicate receiver element: " + attr_2));
+                this.error("This element occurred already in this broadcast receiver and must only occur once at most", attr_2, null);
+              } else {
+                occuredAttrs.add(attrName);
+              }
+            }
+          }
+        }
+      }
+    }
   }
   
   @Check
