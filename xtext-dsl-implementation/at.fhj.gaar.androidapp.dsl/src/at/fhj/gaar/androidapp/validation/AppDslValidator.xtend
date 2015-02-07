@@ -53,7 +53,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     		var String attrName = attr.class.name;
     		
     		if (occuredAttrs.contains(attrName)) {
-    			logger.warning("disallowDuplicateApplicationAttributes: duplicate element: " + attr);
     			error("This element occurred already in this application and must only occur once at most", attr, null);
 			} else {
     			occuredAttrs.add(attrName);
@@ -74,7 +73,6 @@ class AppDslValidator extends AbstractAppDslValidator {
 	    		var String attrName = attr.class.name;
 	    		
 	    		if (occuredAttrs.contains(attrName)) {
-	    			logger.warning("disallowDuplicateElementAttributes: duplicate activity element: " + attr);
 	    			error("This element occurred already in this activity and must only occur once at most",
 	    				attr, null
 	    			);
@@ -87,7 +85,6 @@ class AppDslValidator extends AbstractAppDslValidator {
 	    		var String attrName = attr.class.name;
 	    		
 	    		if (occuredAttrs.contains(attrName)) {
-	    			logger.warning("disallowDuplicateElementAttributes: duplicate service element: " + attr);
 	    			error("This element occurred already in this service and must only occur once at most",
 	    				attr, null
 	    			);
@@ -100,7 +97,6 @@ class AppDslValidator extends AbstractAppDslValidator {
 	    		var String attrName = attr.class.name;
 	    		
 	    		if (occuredAttrs.contains(attrName)) {
-	    			logger.warning("disallowDuplicateElementAttributes: duplicate receiver element: " + attr);
 	    			error("This element occurred already in this broadcast receiver and must only occur once at most",
 	    				attr, null
 	    			);

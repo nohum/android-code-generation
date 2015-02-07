@@ -61,7 +61,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
         String attrName = _class.getName();
         boolean _contains = occuredAttrs.contains(attrName);
         if (_contains) {
-          AppDslValidator.logger.warning(("disallowDuplicateApplicationAttributes: duplicate element: " + attr));
           this.error("This element occurred already in this application and must only occur once at most", attr, null);
         } else {
           occuredAttrs.add(attrName);
@@ -85,7 +84,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
           String attrName = _class.getName();
           boolean _contains = occuredAttrs.contains(attrName);
           if (_contains) {
-            AppDslValidator.logger.warning(("disallowDuplicateElementAttributes: duplicate activity element: " + attr));
             this.error("This element occurred already in this activity and must only occur once at most", attr, null);
           } else {
             occuredAttrs.add(attrName);
@@ -101,7 +99,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
             String attrName = _class.getName();
             boolean _contains = occuredAttrs.contains(attrName);
             if (_contains) {
-              AppDslValidator.logger.warning(("disallowDuplicateElementAttributes: duplicate service element: " + attr_1));
               this.error("This element occurred already in this service and must only occur once at most", attr_1, null);
             } else {
               occuredAttrs.add(attrName);
@@ -117,7 +114,6 @@ public class AppDslValidator extends AbstractAppDslValidator {
               String attrName = _class.getName();
               boolean _contains = occuredAttrs.contains(attrName);
               if (_contains) {
-                AppDslValidator.logger.warning(("disallowDuplicateElementAttributes: duplicate receiver element: " + attr_2));
                 this.error("This element occurred already in this broadcast receiver and must only occur once at most", attr_2, null);
               } else {
                 occuredAttrs.add(attrName);
