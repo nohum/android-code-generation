@@ -5,6 +5,11 @@ package at.fhj.gaar.androidapp.formatting
 
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter
 import org.eclipse.xtext.formatting.impl.FormattingConfig
+import javax.inject.Inject
+import at.fhj.gaar.androidapp.services.AppDslGrammarAccess
+import org.eclipse.xtext.Keyword
+import java.util.logging.Logger
+
 // import com.google.inject.Inject;
 // import at.fhj.gaar.androidapp.services.AppDslGrammarAccess
 
@@ -18,13 +23,29 @@ import org.eclipse.xtext.formatting.impl.FormattingConfig
  */
 class AppDslFormatter extends AbstractDeclarativeFormatter {
 
-//	@Inject extension AppDslGrammarAccess
+	@Inject extension AppDslGrammarAccess
+	
+	private static Logger logger = Logger.getLogger("DslFormatting");
 	
 	override protected void configureFormatting(FormattingConfig c) {
-// It's usually a good idea to activate the following three statements.
-// They will add and preserve newlines around comments
-//		c.setLinewrap(0, 1, 2).before(SL_COMMENTRule)
-//		c.setLinewrap(0, 1, 2).before(ML_COMMENTRule)
-//		c.setLinewrap(0, 1, 1).after(ML_COMMENTRule)
+		logger.fine("entered formatting method");
+		
+		for (Keyword comma : findKeywords(",")) {
+			c.setNoSpace().before(comma);
+			c.setLinewrap().after(comma);
+		}
+		
+		for (Keyword leftBrace : findKeywords("{", "[")) {
+			c.setSpace(" ").before(leftBrace);
+			c.setLinewrap().after(leftBrace);
+		}
+		
+		for (Keyword rightBrace : findKeywords("}", "]")) {
+			c.setLinewrap().after(rightBrace);
+		}
+			
+		c.setLinewrap(0, 1, 2).before(SL_COMMENTRule)
+		c.setLinewrap(0, 1, 2).before(ML_COMMENTRule)
+		c.setLinewrap(0, 1, 1).after(ML_COMMENTRule)
 	}
 }

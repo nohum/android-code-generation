@@ -3,8 +3,15 @@
  */
 package at.fhj.gaar.androidapp.formatting;
 
+import at.fhj.gaar.androidapp.services.AppDslGrammarAccess;
+import java.util.List;
+import java.util.logging.Logger;
+import javax.inject.Inject;
+import org.eclipse.xtext.Keyword;
+import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.formatting.impl.AbstractDeclarativeFormatter;
 import org.eclipse.xtext.formatting.impl.FormattingConfig;
+import org.eclipse.xtext.xbase.lib.Extension;
 
 /**
  * This class contains custom formatting description.
@@ -16,6 +23,45 @@ import org.eclipse.xtext.formatting.impl.FormattingConfig;
  */
 @SuppressWarnings("all")
 public class AppDslFormatter extends AbstractDeclarativeFormatter {
+  @Inject
+  @Extension
+  private AppDslGrammarAccess _appDslGrammarAccess;
+  
+  private static Logger logger = Logger.getLogger("DslFormatting");
+  
   protected void configureFormatting(final FormattingConfig c) {
+    AppDslFormatter.logger.fine("entered formatting method");
+    List<Keyword> _findKeywords = this._appDslGrammarAccess.findKeywords(",");
+    for (final Keyword comma : _findKeywords) {
+      {
+        FormattingConfig.NoSpaceLocator _setNoSpace = c.setNoSpace();
+        _setNoSpace.before(comma);
+        FormattingConfig.LinewrapLocator _setLinewrap = c.setLinewrap();
+        _setLinewrap.after(comma);
+      }
+    }
+    List<Keyword> _findKeywords_1 = this._appDslGrammarAccess.findKeywords("{", "[");
+    for (final Keyword leftBrace : _findKeywords_1) {
+      {
+        FormattingConfig.SpaceLocator _setSpace = c.setSpace(" ");
+        _setSpace.before(leftBrace);
+        FormattingConfig.LinewrapLocator _setLinewrap = c.setLinewrap();
+        _setLinewrap.after(leftBrace);
+      }
+    }
+    List<Keyword> _findKeywords_2 = this._appDslGrammarAccess.findKeywords("}", "]");
+    for (final Keyword rightBrace : _findKeywords_2) {
+      FormattingConfig.LinewrapLocator _setLinewrap = c.setLinewrap();
+      _setLinewrap.after(rightBrace);
+    }
+    FormattingConfig.LinewrapLocator _setLinewrap_1 = c.setLinewrap(0, 1, 2);
+    TerminalRule _sL_COMMENTRule = this._appDslGrammarAccess.getSL_COMMENTRule();
+    _setLinewrap_1.before(_sL_COMMENTRule);
+    FormattingConfig.LinewrapLocator _setLinewrap_2 = c.setLinewrap(0, 1, 2);
+    TerminalRule _mL_COMMENTRule = this._appDslGrammarAccess.getML_COMMENTRule();
+    _setLinewrap_2.before(_mL_COMMENTRule);
+    FormattingConfig.LinewrapLocator _setLinewrap_3 = c.setLinewrap(0, 1, 1);
+    TerminalRule _mL_COMMENTRule_1 = this._appDslGrammarAccess.getML_COMMENTRule();
+    _setLinewrap_3.after(_mL_COMMENTRule_1);
   }
 }
