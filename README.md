@@ -39,5 +39,12 @@ After importing the projects located in the "xtext-dsl-implementation" subfolder
 
 ## Validation
 
-When editing your application source code in the IDE some features are validated. Examples are duplicated application elements, duplicated intents, duplicated permissions or unknown identifiers.
+When editing your application source code in the IDE some features are validated. Examples are duplicated application elements, duplicated intents, duplicated permissions, unknown identifiers or wrongly used identifiers (e.g. specifying a BroadcastReceiver as main activity).
+
+## See also
+
+Interesting resources to read about Xtext that helped me developing:
+
+* [The official tutorial](http://www.eclipse.org/Xtext/documentation.html#DomainModelWalkThrough)
+* http://www.slideshare.net/schwurbel/the-xtext-grammar-language
 
