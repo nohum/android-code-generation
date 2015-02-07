@@ -390,7 +390,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getApplication_PackageName()
+  public EAttribute getApplication_Name()
   {
     return (EAttribute)applicationEClass.getEStructuralFeatures().get(0);
   }
@@ -530,9 +530,9 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getApplicationMainActivity_LauncherActivity()
+  public EReference getApplicationMainActivity_LauncherActivity()
   {
-    return (EAttribute)applicationMainActivityEClass.getEStructuralFeatures().get(0);
+    return (EReference)applicationMainActivityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -550,7 +550,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getApplicationElement_ClassName()
+  public EAttribute getApplicationElement_Name()
   {
     return (EAttribute)applicationElementEClass.getEStructuralFeatures().get(0);
   }
@@ -740,9 +740,9 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActivityParentAttribute_Parent()
+  public EReference getActivityParentAttribute_Parent()
   {
-    return (EAttribute)activityParentAttributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)activityParentAttributeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -950,9 +950,9 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionStartActivity_Activity()
+  public EReference getActionStartActivity_Activity()
   {
-    return (EAttribute)actionStartActivityEClass.getEStructuralFeatures().get(0);
+    return (EReference)actionStartActivityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -970,9 +970,9 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getActionStartService_Service()
+  public EReference getActionStartService_Service()
   {
-    return (EAttribute)actionStartServiceEClass.getEStructuralFeatures().get(0);
+    return (EReference)actionStartServiceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1009,7 +1009,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEReference(androidAppProjectEClass, ANDROID_APP_PROJECT__APPLICATIONS);
 
     applicationEClass = createEClass(APPLICATION);
-    createEAttribute(applicationEClass, APPLICATION__PACKAGE_NAME);
+    createEAttribute(applicationEClass, APPLICATION__NAME);
     createEReference(applicationEClass, APPLICATION__ATTRIBUTES);
 
     applicationAttributeEClass = createEClass(APPLICATION_ATTRIBUTE);
@@ -1030,10 +1030,10 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEReference(applicationElementListEClass, APPLICATION_ELEMENT_LIST__ELEMENTS);
 
     applicationMainActivityEClass = createEClass(APPLICATION_MAIN_ACTIVITY);
-    createEAttribute(applicationMainActivityEClass, APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY);
+    createEReference(applicationMainActivityEClass, APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY);
 
     applicationElementEClass = createEClass(APPLICATION_ELEMENT);
-    createEAttribute(applicationElementEClass, APPLICATION_ELEMENT__CLASS_NAME);
+    createEAttribute(applicationElementEClass, APPLICATION_ELEMENT__NAME);
 
     activityEClass = createEClass(ACTIVITY);
     createEReference(activityEClass, ACTIVITY__ATTRIBUTES);
@@ -1063,7 +1063,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEAttribute(elementIntentListEClass, ELEMENT_INTENT_LIST__INTENTS);
 
     activityParentAttributeEClass = createEClass(ACTIVITY_PARENT_ATTRIBUTE);
-    createEAttribute(activityParentAttributeEClass, ACTIVITY_PARENT_ATTRIBUTE__PARENT);
+    createEReference(activityParentAttributeEClass, ACTIVITY_PARENT_ATTRIBUTE__PARENT);
 
     activityLayoutAttributeEClass = createEClass(ACTIVITY_LAYOUT_ATTRIBUTE);
     createEReference(activityLayoutAttributeEClass, ACTIVITY_LAYOUT_ATTRIBUTE__LAYOUT_ELEMENTS);
@@ -1096,10 +1096,10 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEAttribute(actionShowToastEClass, ACTION_SHOW_TOAST__TOAST_TEXT);
 
     actionStartActivityEClass = createEClass(ACTION_START_ACTIVITY);
-    createEAttribute(actionStartActivityEClass, ACTION_START_ACTIVITY__ACTIVITY);
+    createEReference(actionStartActivityEClass, ACTION_START_ACTIVITY__ACTIVITY);
 
     actionStartServiceEClass = createEClass(ACTION_START_SERVICE);
-    createEAttribute(actionStartServiceEClass, ACTION_START_SERVICE__SERVICE);
+    createEReference(actionStartServiceEClass, ACTION_START_SERVICE__SERVICE);
   }
 
   /**
@@ -1172,7 +1172,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEReference(getAndroidAppProject_Applications(), this.getApplication(), null, "applications", null, 0, -1, AndroidAppProject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplication_PackageName(), ecorePackage.getEString(), "packageName", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getApplication_Name(), ecorePackage.getEString(), "name", null, 0, 1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getApplication_Attributes(), this.getApplicationAttribute(), null, "attributes", null, 0, -1, Application.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationAttributeEClass, ApplicationAttribute.class, "ApplicationAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1193,10 +1193,10 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEReference(getApplicationElementList_Elements(), this.getApplicationElement(), null, "elements", null, 0, -1, ApplicationElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationMainActivityEClass, ApplicationMainActivity.class, "ApplicationMainActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicationMainActivity_LauncherActivity(), ecorePackage.getEString(), "launcherActivity", null, 0, 1, ApplicationMainActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApplicationMainActivity_LauncherActivity(), this.getActivity(), null, "launcherActivity", null, 0, 1, ApplicationMainActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationElementEClass, ApplicationElement.class, "ApplicationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicationElement_ClassName(), ecorePackage.getEString(), "className", null, 0, 1, ApplicationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getApplicationElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(activityEClass, Activity.class, "Activity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActivity_Attributes(), this.getActivityAttribute(), null, "attributes", null, 0, -1, Activity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1226,7 +1226,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEAttribute(getElementIntentList_Intents(), ecorePackage.getEString(), "intents", null, 0, -1, ElementIntentList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(activityParentAttributeEClass, ActivityParentAttribute.class, "ActivityParentAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActivityParentAttribute_Parent(), ecorePackage.getEString(), "parent", null, 0, 1, ActivityParentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActivityParentAttribute_Parent(), this.getActivity(), null, "parent", null, 0, 1, ActivityParentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(activityLayoutAttributeEClass, ActivityLayoutAttribute.class, "ActivityLayoutAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActivityLayoutAttribute_LayoutElements(), this.getLayoutElement(), null, "layoutElements", null, 0, -1, ActivityLayoutAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1259,10 +1259,10 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEAttribute(getActionShowToast_ToastText(), ecorePackage.getEString(), "toastText", null, 0, 1, ActionShowToast.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionStartActivityEClass, ActionStartActivity.class, "ActionStartActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionStartActivity_Activity(), ecorePackage.getEString(), "activity", null, 0, 1, ActionStartActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionStartActivity_Activity(), this.getActivity(), null, "activity", null, 0, 1, ActionStartActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionStartServiceEClass, ActionStartService.class, "ActionStartService", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActionStartService_Service(), ecorePackage.getEString(), "service", null, 0, 1, ActionStartService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionStartService_Service(), this.getService(), null, "service", null, 0, 1, ActionStartService.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

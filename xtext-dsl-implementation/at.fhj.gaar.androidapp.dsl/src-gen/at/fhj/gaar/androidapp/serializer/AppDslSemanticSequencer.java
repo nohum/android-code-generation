@@ -256,7 +256,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     activity=JAVA_IDENTIFIER
+	 *     activity=[Activity|ID]
 	 */
 	protected void sequence_ActionStartActivity(EObject context, ActionStartActivity semanticObject) {
 		if(errorAcceptor != null) {
@@ -265,14 +265,14 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionStartActivityAccess().getActivityJAVA_IDENTIFIERTerminalRuleCall_1_0(), semanticObject.getActivity());
+		feeder.accept(grammarAccess.getActionStartActivityAccess().getActivityActivityIDTerminalRuleCall_1_0_1(), semanticObject.getActivity());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     service=JAVA_IDENTIFIER
+	 *     service=[Service|ID]
 	 */
 	protected void sequence_ActionStartService(EObject context, ActionStartService semanticObject) {
 		if(errorAcceptor != null) {
@@ -281,7 +281,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActionStartServiceAccess().getServiceJAVA_IDENTIFIERTerminalRuleCall_1_0(), semanticObject.getService());
+		feeder.accept(grammarAccess.getActionStartServiceAccess().getServiceServiceIDTerminalRuleCall_1_0_1(), semanticObject.getService());
 		feeder.finish();
 	}
 	
@@ -297,7 +297,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     parent=JAVA_IDENTIFIER
+	 *     parent=[Activity|ID]
 	 */
 	protected void sequence_ActivityParentAttribute(EObject context, ActivityParentAttribute semanticObject) {
 		if(errorAcceptor != null) {
@@ -306,14 +306,14 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getActivityParentAttributeAccess().getParentJAVA_IDENTIFIERTerminalRuleCall_1_0(), semanticObject.getParent());
+		feeder.accept(grammarAccess.getActivityParentAttributeAccess().getParentActivityIDTerminalRuleCall_1_0_1(), semanticObject.getParent());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (className=JAVA_IDENTIFIER attributes+=ActivityAttribute attributes+=ActivityAttribute*)
+	 *     (name=ID attributes+=ActivityAttribute attributes+=ActivityAttribute*)
 	 */
 	protected void sequence_Activity(EObject context, Activity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -356,7 +356,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     launcherActivity=JAVA_IDENTIFIER
+	 *     launcherActivity=[Activity|ID]
 	 */
 	protected void sequence_ApplicationMainActivity(EObject context, ApplicationMainActivity semanticObject) {
 		if(errorAcceptor != null) {
@@ -365,7 +365,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityJAVA_IDENTIFIERTerminalRuleCall_1_0(), semanticObject.getLauncherActivity());
+		feeder.accept(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityActivityIDTerminalRuleCall_1_0_1(), semanticObject.getLauncherActivity());
 		feeder.finish();
 	}
 	
@@ -413,7 +413,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (packageName=PACKAGE_NAME attributes+=ApplicationAttribute attributes+=ApplicationAttribute*)
+	 *     (name=PACKAGE_NAME attributes+=ApplicationAttribute attributes+=ApplicationAttribute*)
 	 */
 	protected void sequence_Application(EObject context, Application semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -438,7 +438,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (className=JAVA_IDENTIFIER attributes+=BroadcastReceiverAttribute attributes+=BroadcastReceiverAttribute*)
+	 *     (name=ID attributes+=BroadcastReceiverAttribute attributes+=BroadcastReceiverAttribute*)
 	 */
 	protected void sequence_BroadcastReceiver(EObject context, BroadcastReceiver semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -479,7 +479,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (buttonName=JAVA_IDENTIFIER attributes+=ButtonAttribute attributes+=ButtonAttribute*)
+	 *     (buttonName=ID attributes+=ButtonAttribute attributes+=ButtonAttribute*)
 	 */
 	protected void sequence_Button(EObject context, Button semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -545,7 +545,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (className=JAVA_IDENTIFIER attributes+=ServiceAttribute attributes+=ServiceAttribute*)
+	 *     (name=ID attributes+=ServiceAttribute attributes+=ServiceAttribute*)
 	 */
 	protected void sequence_Service(EObject context, Service semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

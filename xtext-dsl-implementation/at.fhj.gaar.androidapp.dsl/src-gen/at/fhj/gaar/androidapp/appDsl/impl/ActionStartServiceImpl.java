@@ -4,10 +4,12 @@ package at.fhj.gaar.androidapp.appDsl.impl;
 
 import at.fhj.gaar.androidapp.appDsl.ActionStartService;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
+import at.fhj.gaar.androidapp.appDsl.Service;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ActionStartServiceImpl extends LayoutElementClickActionImpl implements ActionStartService
 {
   /**
-   * The default value of the '{@link #getService() <em>Service</em>}' attribute.
+   * The cached value of the '{@link #getService() <em>Service</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getService()
    * @generated
    * @ordered
    */
-  protected static final String SERVICE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getService() <em>Service</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getService()
-   * @generated
-   * @ordered
-   */
-  protected String service = SERVICE_EDEFAULT;
+  protected Service service;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +64,27 @@ public class ActionStartServiceImpl extends LayoutElementClickActionImpl impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getService()
+  public Service getService()
+  {
+    if (service != null && service.eIsProxy())
+    {
+      InternalEObject oldService = (InternalEObject)service;
+      service = (Service)eResolveProxy(oldService);
+      if (service != oldService)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AppDslPackage.ACTION_START_SERVICE__SERVICE, oldService, service));
+      }
+    }
+    return service;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Service basicGetService()
   {
     return service;
   }
@@ -82,9 +94,9 @@ public class ActionStartServiceImpl extends LayoutElementClickActionImpl impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setService(String newService)
+  public void setService(Service newService)
   {
-    String oldService = service;
+    Service oldService = service;
     service = newService;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.ACTION_START_SERVICE__SERVICE, oldService, service));
@@ -101,7 +113,8 @@ public class ActionStartServiceImpl extends LayoutElementClickActionImpl impleme
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_SERVICE__SERVICE:
-        return getService();
+        if (resolve) return getService();
+        return basicGetService();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,7 +130,7 @@ public class ActionStartServiceImpl extends LayoutElementClickActionImpl impleme
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_SERVICE__SERVICE:
-        setService((String)newValue);
+        setService((Service)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +147,7 @@ public class ActionStartServiceImpl extends LayoutElementClickActionImpl impleme
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_SERVICE__SERVICE:
-        setService(SERVICE_EDEFAULT);
+        setService((Service)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +164,9 @@ public class ActionStartServiceImpl extends LayoutElementClickActionImpl impleme
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_SERVICE__SERVICE:
-        return SERVICE_EDEFAULT == null ? service != null : !SERVICE_EDEFAULT.equals(service);
+        return service != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (service: ");
-    result.append(service);
-    result.append(')');
-    return result.toString();
   }
 
 } //ActionStartServiceImpl

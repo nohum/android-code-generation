@@ -22,29 +22,29 @@ package at.fhj.gaar.androidapp.appDsl;
 public interface ActionStartActivity extends LayoutElementClickAction, BroadcastReceiverAction
 {
   /**
-   * Returns the value of the '<em><b>Activity</b></em>' attribute.
+   * Returns the value of the '<em><b>Activity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Activity</em>' attribute isn't clear,
+   * If the meaning of the '<em>Activity</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Activity</em>' attribute.
-   * @see #setActivity(String)
+   * @return the value of the '<em>Activity</em>' reference.
+   * @see #setActivity(Activity)
    * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getActionStartActivity_Activity()
    * @model
    * @generated
    */
-  String getActivity();
+  Activity getActivity();
 
   /**
-   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.ActionStartActivity#getActivity <em>Activity</em>}' attribute.
+   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.ActionStartActivity#getActivity <em>Activity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Activity</em>' attribute.
+   * @param value the new value of the '<em>Activity</em>' reference.
    * @see #getActivity()
    * @generated
    */
-  void setActivity(String value);
+  void setActivity(Activity value);
 
 } // ActionStartActivity

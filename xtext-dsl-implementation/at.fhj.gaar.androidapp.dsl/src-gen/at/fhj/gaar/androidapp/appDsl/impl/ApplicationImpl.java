@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationImpl#getPackageName <em>Package Name</em>}</li>
+ *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
@@ -39,24 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ApplicationImpl extends MinimalEObjectImpl.Container implements Application
 {
   /**
-   * The default value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackageName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String PACKAGE_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPackageName() <em>Package Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPackageName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String packageName = PACKAGE_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
@@ -94,9 +94,9 @@ public class ApplicationImpl extends MinimalEObjectImpl.Container implements App
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getPackageName()
+  public String getName()
   {
-    return packageName;
+    return name;
   }
 
   /**
@@ -104,12 +104,12 @@ public class ApplicationImpl extends MinimalEObjectImpl.Container implements App
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setPackageName(String newPackageName)
+  public void setName(String newName)
   {
-    String oldPackageName = packageName;
-    packageName = newPackageName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.APPLICATION__PACKAGE_NAME, oldPackageName, packageName));
+      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.APPLICATION__NAME, oldName, name));
   }
 
   /**
@@ -152,8 +152,8 @@ public class ApplicationImpl extends MinimalEObjectImpl.Container implements App
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION__PACKAGE_NAME:
-        return getPackageName();
+      case AppDslPackage.APPLICATION__NAME:
+        return getName();
       case AppDslPackage.APPLICATION__ATTRIBUTES:
         return getAttributes();
     }
@@ -171,8 +171,8 @@ public class ApplicationImpl extends MinimalEObjectImpl.Container implements App
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION__PACKAGE_NAME:
-        setPackageName((String)newValue);
+      case AppDslPackage.APPLICATION__NAME:
+        setName((String)newValue);
         return;
       case AppDslPackage.APPLICATION__ATTRIBUTES:
         getAttributes().clear();
@@ -192,8 +192,8 @@ public class ApplicationImpl extends MinimalEObjectImpl.Container implements App
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION__PACKAGE_NAME:
-        setPackageName(PACKAGE_NAME_EDEFAULT);
+      case AppDslPackage.APPLICATION__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case AppDslPackage.APPLICATION__ATTRIBUTES:
         getAttributes().clear();
@@ -212,8 +212,8 @@ public class ApplicationImpl extends MinimalEObjectImpl.Container implements App
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION__PACKAGE_NAME:
-        return PACKAGE_NAME_EDEFAULT == null ? packageName != null : !PACKAGE_NAME_EDEFAULT.equals(packageName);
+      case AppDslPackage.APPLICATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AppDslPackage.APPLICATION__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
     }
@@ -231,8 +231,8 @@ public class ApplicationImpl extends MinimalEObjectImpl.Container implements App
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (packageName: ");
-    result.append(packageName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

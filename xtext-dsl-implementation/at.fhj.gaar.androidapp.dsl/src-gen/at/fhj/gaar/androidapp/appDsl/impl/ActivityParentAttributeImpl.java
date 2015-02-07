@@ -2,12 +2,14 @@
  */
 package at.fhj.gaar.androidapp.appDsl.impl;
 
+import at.fhj.gaar.androidapp.appDsl.Activity;
 import at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ActivityParentAttributeImpl extends ActivityAttributeImpl implements ActivityParentAttribute
 {
   /**
-   * The default value of the '{@link #getParent() <em>Parent</em>}' attribute.
+   * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getParent()
    * @generated
    * @ordered
    */
-  protected static final String PARENT_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getParent() <em>Parent</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getParent()
-   * @generated
-   * @ordered
-   */
-  protected String parent = PARENT_EDEFAULT;
+  protected Activity parent;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +64,27 @@ public class ActivityParentAttributeImpl extends ActivityAttributeImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getParent()
+  public Activity getParent()
+  {
+    if (parent != null && parent.eIsProxy())
+    {
+      InternalEObject oldParent = (InternalEObject)parent;
+      parent = (Activity)eResolveProxy(oldParent);
+      if (parent != oldParent)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE__PARENT, oldParent, parent));
+      }
+    }
+    return parent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Activity basicGetParent()
   {
     return parent;
   }
@@ -82,9 +94,9 @@ public class ActivityParentAttributeImpl extends ActivityAttributeImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setParent(String newParent)
+  public void setParent(Activity newParent)
   {
-    String oldParent = parent;
+    Activity oldParent = parent;
     parent = newParent;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE__PARENT, oldParent, parent));
@@ -101,7 +113,8 @@ public class ActivityParentAttributeImpl extends ActivityAttributeImpl implement
     switch (featureID)
     {
       case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE__PARENT:
-        return getParent();
+        if (resolve) return getParent();
+        return basicGetParent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,7 +130,7 @@ public class ActivityParentAttributeImpl extends ActivityAttributeImpl implement
     switch (featureID)
     {
       case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE__PARENT:
-        setParent((String)newValue);
+        setParent((Activity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +147,7 @@ public class ActivityParentAttributeImpl extends ActivityAttributeImpl implement
     switch (featureID)
     {
       case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE__PARENT:
-        setParent(PARENT_EDEFAULT);
+        setParent((Activity)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +164,9 @@ public class ActivityParentAttributeImpl extends ActivityAttributeImpl implement
     switch (featureID)
     {
       case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE__PARENT:
-        return PARENT_EDEFAULT == null ? parent != null : !PARENT_EDEFAULT.equals(parent);
+        return parent != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (parent: ");
-    result.append(parent);
-    result.append(')');
-    return result.toString();
   }
 
 } //ActivityParentAttributeImpl

@@ -22,29 +22,29 @@ package at.fhj.gaar.androidapp.appDsl;
 public interface ActivityParentAttribute extends ActivityAttribute
 {
   /**
-   * Returns the value of the '<em><b>Parent</b></em>' attribute.
+   * Returns the value of the '<em><b>Parent</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Parent</em>' attribute isn't clear,
+   * If the meaning of the '<em>Parent</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Parent</em>' attribute.
-   * @see #setParent(String)
+   * @return the value of the '<em>Parent</em>' reference.
+   * @see #setParent(Activity)
    * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getActivityParentAttribute_Parent()
    * @model
    * @generated
    */
-  String getParent();
+  Activity getParent();
 
   /**
-   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute#getParent <em>Parent</em>}' attribute.
+   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute#getParent <em>Parent</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Parent</em>' attribute.
+   * @param value the new value of the '<em>Parent</em>' reference.
    * @see #getParent()
    * @generated
    */
-  void setParent(String value);
+  void setParent(Activity value);
 
 } // ActivityParentAttribute

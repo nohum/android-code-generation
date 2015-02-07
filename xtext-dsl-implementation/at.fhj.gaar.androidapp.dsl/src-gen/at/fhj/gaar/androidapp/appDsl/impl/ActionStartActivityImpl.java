@@ -3,11 +3,13 @@
 package at.fhj.gaar.androidapp.appDsl.impl;
 
 import at.fhj.gaar.androidapp.appDsl.ActionStartActivity;
+import at.fhj.gaar.androidapp.appDsl.Activity;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ActionStartActivityImpl extends LayoutElementClickActionImpl implements ActionStartActivity
 {
   /**
-   * The default value of the '{@link #getActivity() <em>Activity</em>}' attribute.
+   * The cached value of the '{@link #getActivity() <em>Activity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getActivity()
    * @generated
    * @ordered
    */
-  protected static final String ACTIVITY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getActivity() <em>Activity</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getActivity()
-   * @generated
-   * @ordered
-   */
-  protected String activity = ACTIVITY_EDEFAULT;
+  protected Activity activity;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +64,27 @@ public class ActionStartActivityImpl extends LayoutElementClickActionImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getActivity()
+  public Activity getActivity()
+  {
+    if (activity != null && activity.eIsProxy())
+    {
+      InternalEObject oldActivity = (InternalEObject)activity;
+      activity = (Activity)eResolveProxy(oldActivity);
+      if (activity != oldActivity)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AppDslPackage.ACTION_START_ACTIVITY__ACTIVITY, oldActivity, activity));
+      }
+    }
+    return activity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Activity basicGetActivity()
   {
     return activity;
   }
@@ -82,9 +94,9 @@ public class ActionStartActivityImpl extends LayoutElementClickActionImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setActivity(String newActivity)
+  public void setActivity(Activity newActivity)
   {
-    String oldActivity = activity;
+    Activity oldActivity = activity;
     activity = newActivity;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.ACTION_START_ACTIVITY__ACTIVITY, oldActivity, activity));
@@ -101,7 +113,8 @@ public class ActionStartActivityImpl extends LayoutElementClickActionImpl implem
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_ACTIVITY__ACTIVITY:
-        return getActivity();
+        if (resolve) return getActivity();
+        return basicGetActivity();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,7 +130,7 @@ public class ActionStartActivityImpl extends LayoutElementClickActionImpl implem
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_ACTIVITY__ACTIVITY:
-        setActivity((String)newValue);
+        setActivity((Activity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +147,7 @@ public class ActionStartActivityImpl extends LayoutElementClickActionImpl implem
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_ACTIVITY__ACTIVITY:
-        setActivity(ACTIVITY_EDEFAULT);
+        setActivity((Activity)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +164,9 @@ public class ActionStartActivityImpl extends LayoutElementClickActionImpl implem
     switch (featureID)
     {
       case AppDslPackage.ACTION_START_ACTIVITY__ACTIVITY:
-        return ACTIVITY_EDEFAULT == null ? activity != null : !ACTIVITY_EDEFAULT.equals(activity);
+        return activity != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (activity: ");
-    result.append(activity);
-    result.append(')');
-    return result.toString();
   }
 
 } //ActionStartActivityImpl

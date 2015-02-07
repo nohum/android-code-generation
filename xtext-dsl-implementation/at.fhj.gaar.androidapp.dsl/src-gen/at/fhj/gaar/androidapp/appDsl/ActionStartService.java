@@ -22,29 +22,29 @@ package at.fhj.gaar.androidapp.appDsl;
 public interface ActionStartService extends LayoutElementClickAction, BroadcastReceiverAction
 {
   /**
-   * Returns the value of the '<em><b>Service</b></em>' attribute.
+   * Returns the value of the '<em><b>Service</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Service</em>' attribute isn't clear,
+   * If the meaning of the '<em>Service</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Service</em>' attribute.
-   * @see #setService(String)
+   * @return the value of the '<em>Service</em>' reference.
+   * @see #setService(Service)
    * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getActionStartService_Service()
    * @model
    * @generated
    */
-  String getService();
+  Service getService();
 
   /**
-   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.ActionStartService#getService <em>Service</em>}' attribute.
+   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.ActionStartService#getService <em>Service</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Service</em>' attribute.
+   * @param value the new value of the '<em>Service</em>' reference.
    * @see #getService()
    * @generated
    */
-  void setService(String value);
+  void setService(Service value);
 
 } // ActionStartService

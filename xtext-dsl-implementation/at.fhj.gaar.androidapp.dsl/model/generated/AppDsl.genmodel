@@ -11,7 +11,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//AndroidAppProject/applications"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//Application">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Application/packageName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Application/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Application/attributes"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationAttribute"/>
@@ -31,10 +31,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ApplicationElementList/elements"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationMainActivity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationMainActivity/launcherActivity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ApplicationMainActivity/launcherActivity"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationElement/className"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationElement/name"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//Activity">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Activity/attributes"/>
@@ -61,7 +61,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementIntentList/intents"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ActivityParentAttribute">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActivityParentAttribute/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ActivityParentAttribute/parent"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ActivityLayoutAttribute">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ActivityLayoutAttribute/layoutElements"/>
@@ -90,10 +90,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActionShowToast/toastText"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ActionStartActivity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActionStartActivity/activity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ActionStartActivity/activity"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ActionStartService">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ActionStartService/service"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ActionStartService/service"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

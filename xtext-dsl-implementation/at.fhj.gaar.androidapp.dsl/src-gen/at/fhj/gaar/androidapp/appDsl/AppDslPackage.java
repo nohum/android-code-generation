@@ -95,13 +95,13 @@ public interface AppDslPackage extends EPackage
   int APPLICATION = 1;
 
   /**
-   * The feature id for the '<em><b>Package Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int APPLICATION__PACKAGE_NAME = 0;
+  int APPLICATION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -291,7 +291,7 @@ public interface AppDslPackage extends EPackage
   int APPLICATION_MAIN_ACTIVITY = 8;
 
   /**
-   * The feature id for the '<em><b>Launcher Activity</b></em>' attribute.
+   * The feature id for the '<em><b>Launcher Activity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -319,13 +319,13 @@ public interface AppDslPackage extends EPackage
   int APPLICATION_ELEMENT = 9;
 
   /**
-   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int APPLICATION_ELEMENT__CLASS_NAME = 0;
+  int APPLICATION_ELEMENT__NAME = 0;
 
   /**
    * The number of structural features of the '<em>Application Element</em>' class.
@@ -347,13 +347,13 @@ public interface AppDslPackage extends EPackage
   int ACTIVITY = 10;
 
   /**
-   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTIVITY__CLASS_NAME = APPLICATION_ELEMENT__CLASS_NAME;
+  int ACTIVITY__NAME = APPLICATION_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -384,13 +384,13 @@ public interface AppDslPackage extends EPackage
   int BROADCAST_RECEIVER = 11;
 
   /**
-   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BROADCAST_RECEIVER__CLASS_NAME = APPLICATION_ELEMENT__CLASS_NAME;
+  int BROADCAST_RECEIVER__NAME = APPLICATION_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -421,13 +421,13 @@ public interface AppDslPackage extends EPackage
   int SERVICE = 12;
 
   /**
-   * The feature id for the '<em><b>Class Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVICE__CLASS_NAME = APPLICATION_ELEMENT__CLASS_NAME;
+  int SERVICE__NAME = APPLICATION_ELEMENT__NAME;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -627,7 +627,7 @@ public interface AppDslPackage extends EPackage
   int ACTIVITY_PARENT_ATTRIBUTE = 20;
 
   /**
-   * The feature id for the '<em><b>Parent</b></em>' attribute.
+   * The feature id for the '<em><b>Parent</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -936,7 +936,7 @@ public interface AppDslPackage extends EPackage
   int ACTION_START_ACTIVITY = 32;
 
   /**
-   * The feature id for the '<em><b>Activity</b></em>' attribute.
+   * The feature id for the '<em><b>Activity</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -964,7 +964,7 @@ public interface AppDslPackage extends EPackage
   int ACTION_START_SERVICE = 33;
 
   /**
-   * The feature id for the '<em><b>Service</b></em>' attribute.
+   * The feature id for the '<em><b>Service</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1014,15 +1014,15 @@ public interface AppDslPackage extends EPackage
   EClass getApplication();
 
   /**
-   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.Application#getPackageName <em>Package Name</em>}'.
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.Application#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Package Name</em>'.
-   * @see at.fhj.gaar.androidapp.appDsl.Application#getPackageName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Application#getName()
    * @see #getApplication()
    * @generated
    */
-  EAttribute getApplication_PackageName();
+  EAttribute getApplication_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.Application#getAttributes <em>Attributes</em>}'.
@@ -1161,15 +1161,15 @@ public interface AppDslPackage extends EPackage
   EClass getApplicationMainActivity();
 
   /**
-   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity#getLauncherActivity <em>Launcher Activity</em>}'.
+   * Returns the meta object for the reference '{@link at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity#getLauncherActivity <em>Launcher Activity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Launcher Activity</em>'.
+   * @return the meta object for the reference '<em>Launcher Activity</em>'.
    * @see at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity#getLauncherActivity()
    * @see #getApplicationMainActivity()
    * @generated
    */
-  EAttribute getApplicationMainActivity_LauncherActivity();
+  EReference getApplicationMainActivity_LauncherActivity();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement <em>Application Element</em>}'.
@@ -1182,15 +1182,15 @@ public interface AppDslPackage extends EPackage
   EClass getApplicationElement();
 
   /**
-   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement#getClassName <em>Class Name</em>}'.
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Class Name</em>'.
-   * @see at.fhj.gaar.androidapp.appDsl.ApplicationElement#getClassName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.ApplicationElement#getName()
    * @see #getApplicationElement()
    * @generated
    */
-  EAttribute getApplicationElement_ClassName();
+  EAttribute getApplicationElement_Name();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Activity <em>Activity</em>}'.
@@ -1380,15 +1380,15 @@ public interface AppDslPackage extends EPackage
   EClass getActivityParentAttribute();
 
   /**
-   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute#getParent <em>Parent</em>}'.
+   * Returns the meta object for the reference '{@link at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute#getParent <em>Parent</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Parent</em>'.
+   * @return the meta object for the reference '<em>Parent</em>'.
    * @see at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute#getParent()
    * @see #getActivityParentAttribute()
    * @generated
    */
-  EAttribute getActivityParentAttribute_Parent();
+  EReference getActivityParentAttribute_Parent();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute <em>Activity Layout Attribute</em>}'.
@@ -1599,15 +1599,15 @@ public interface AppDslPackage extends EPackage
   EClass getActionStartActivity();
 
   /**
-   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ActionStartActivity#getActivity <em>Activity</em>}'.
+   * Returns the meta object for the reference '{@link at.fhj.gaar.androidapp.appDsl.ActionStartActivity#getActivity <em>Activity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Activity</em>'.
+   * @return the meta object for the reference '<em>Activity</em>'.
    * @see at.fhj.gaar.androidapp.appDsl.ActionStartActivity#getActivity()
    * @see #getActionStartActivity()
    * @generated
    */
-  EAttribute getActionStartActivity_Activity();
+  EReference getActionStartActivity_Activity();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ActionStartService <em>Action Start Service</em>}'.
@@ -1620,15 +1620,15 @@ public interface AppDslPackage extends EPackage
   EClass getActionStartService();
 
   /**
-   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.ActionStartService#getService <em>Service</em>}'.
+   * Returns the meta object for the reference '{@link at.fhj.gaar.androidapp.appDsl.ActionStartService#getService <em>Service</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Service</em>'.
+   * @return the meta object for the reference '<em>Service</em>'.
    * @see at.fhj.gaar.androidapp.appDsl.ActionStartService#getService()
    * @see #getActionStartService()
    * @generated
    */
-  EAttribute getActionStartService_Service();
+  EReference getActionStartService_Service();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1682,12 +1682,12 @@ public interface AppDslPackage extends EPackage
     EClass APPLICATION = eINSTANCE.getApplication();
 
     /**
-     * The meta object literal for the '<em><b>Package Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute APPLICATION__PACKAGE_NAME = eINSTANCE.getApplication_PackageName();
+    EAttribute APPLICATION__NAME = eINSTANCE.getApplication_Name();
 
     /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.
@@ -1808,12 +1808,12 @@ public interface AppDslPackage extends EPackage
     EClass APPLICATION_MAIN_ACTIVITY = eINSTANCE.getApplicationMainActivity();
 
     /**
-     * The meta object literal for the '<em><b>Launcher Activity</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Launcher Activity</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY = eINSTANCE.getApplicationMainActivity_LauncherActivity();
+    EReference APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY = eINSTANCE.getApplicationMainActivity_LauncherActivity();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl <em>Application Element</em>}' class.
@@ -1826,12 +1826,12 @@ public interface AppDslPackage extends EPackage
     EClass APPLICATION_ELEMENT = eINSTANCE.getApplicationElement();
 
     /**
-     * The meta object literal for the '<em><b>Class Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute APPLICATION_ELEMENT__CLASS_NAME = eINSTANCE.getApplicationElement_ClassName();
+    EAttribute APPLICATION_ELEMENT__NAME = eINSTANCE.getApplicationElement_Name();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityImpl <em>Activity</em>}' class.
@@ -2000,12 +2000,12 @@ public interface AppDslPackage extends EPackage
     EClass ACTIVITY_PARENT_ATTRIBUTE = eINSTANCE.getActivityParentAttribute();
 
     /**
-     * The meta object literal for the '<em><b>Parent</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTIVITY_PARENT_ATTRIBUTE__PARENT = eINSTANCE.getActivityParentAttribute_Parent();
+    EReference ACTIVITY_PARENT_ATTRIBUTE__PARENT = eINSTANCE.getActivityParentAttribute_Parent();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityLayoutAttributeImpl <em>Activity Layout Attribute</em>}' class.
@@ -2192,12 +2192,12 @@ public interface AppDslPackage extends EPackage
     EClass ACTION_START_ACTIVITY = eINSTANCE.getActionStartActivity();
 
     /**
-     * The meta object literal for the '<em><b>Activity</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Activity</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_START_ACTIVITY__ACTIVITY = eINSTANCE.getActionStartActivity_Activity();
+    EReference ACTION_START_ACTIVITY__ACTIVITY = eINSTANCE.getActionStartActivity_Activity();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActionStartServiceImpl <em>Action Start Service</em>}' class.
@@ -2210,12 +2210,12 @@ public interface AppDslPackage extends EPackage
     EClass ACTION_START_SERVICE = eINSTANCE.getActionStartService();
 
     /**
-     * The meta object literal for the '<em><b>Service</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Service</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ACTION_START_SERVICE__SERVICE = eINSTANCE.getActionStartService_Service();
+    EReference ACTION_START_SERVICE__SERVICE = eINSTANCE.getActionStartService_Service();
 
   }
 

@@ -83,7 +83,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionStartServiceAccess().getGroup(), "rule__ActionStartService__Group__0");
 					put(grammarAccess.getAndroidAppProjectAccess().getApplicationsAssignment_0(), "rule__AndroidAppProject__ApplicationsAssignment_0");
 					put(grammarAccess.getAndroidAppProjectAccess().getApplicationsAssignment_1_1(), "rule__AndroidAppProject__ApplicationsAssignment_1_1");
-					put(grammarAccess.getApplicationAccess().getPackageNameAssignment_1(), "rule__Application__PackageNameAssignment_1");
+					put(grammarAccess.getApplicationAccess().getNameAssignment_1(), "rule__Application__NameAssignment_1");
 					put(grammarAccess.getApplicationAccess().getAttributesAssignment_3(), "rule__Application__AttributesAssignment_3");
 					put(grammarAccess.getApplicationAccess().getAttributesAssignment_4_1(), "rule__Application__AttributesAssignment_4_1");
 					put(grammarAccess.getApplicationMinSdkAccess().getMinSdkAssignment_1(), "rule__ApplicationMinSdk__MinSdkAssignment_1");
@@ -94,13 +94,13 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationElementListAccess().getElementsAssignment_2(), "rule__ApplicationElementList__ElementsAssignment_2");
 					put(grammarAccess.getApplicationElementListAccess().getElementsAssignment_3_1(), "rule__ApplicationElementList__ElementsAssignment_3_1");
 					put(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityAssignment_1(), "rule__ApplicationMainActivity__LauncherActivityAssignment_1");
-					put(grammarAccess.getActivityAccess().getClassNameAssignment_1(), "rule__Activity__ClassNameAssignment_1");
+					put(grammarAccess.getActivityAccess().getNameAssignment_1(), "rule__Activity__NameAssignment_1");
 					put(grammarAccess.getActivityAccess().getAttributesAssignment_3(), "rule__Activity__AttributesAssignment_3");
 					put(grammarAccess.getActivityAccess().getAttributesAssignment_4_1(), "rule__Activity__AttributesAssignment_4_1");
-					put(grammarAccess.getBroadcastReceiverAccess().getClassNameAssignment_1(), "rule__BroadcastReceiver__ClassNameAssignment_1");
+					put(grammarAccess.getBroadcastReceiverAccess().getNameAssignment_1(), "rule__BroadcastReceiver__NameAssignment_1");
 					put(grammarAccess.getBroadcastReceiverAccess().getAttributesAssignment_3(), "rule__BroadcastReceiver__AttributesAssignment_3");
 					put(grammarAccess.getBroadcastReceiverAccess().getAttributesAssignment_4_1(), "rule__BroadcastReceiver__AttributesAssignment_4_1");
-					put(grammarAccess.getServiceAccess().getClassNameAssignment_1(), "rule__Service__ClassNameAssignment_1");
+					put(grammarAccess.getServiceAccess().getNameAssignment_1(), "rule__Service__NameAssignment_1");
 					put(grammarAccess.getServiceAccess().getAttributesAssignment_3(), "rule__Service__AttributesAssignment_3");
 					put(grammarAccess.getServiceAccess().getAttributesAssignment_4_1(), "rule__Service__AttributesAssignment_4_1");
 					put(grammarAccess.getElementEnabledAttributeAccess().getEnabledAssignment_1(), "rule__ElementEnabledAttribute__EnabledAssignment_1");

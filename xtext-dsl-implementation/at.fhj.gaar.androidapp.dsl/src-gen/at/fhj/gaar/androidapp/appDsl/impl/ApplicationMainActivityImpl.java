@@ -2,12 +2,14 @@
  */
 package at.fhj.gaar.androidapp.appDsl.impl;
 
+import at.fhj.gaar.androidapp.appDsl.Activity;
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -27,24 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ApplicationMainActivityImpl extends ApplicationAttributeImpl implements ApplicationMainActivity
 {
   /**
-   * The default value of the '{@link #getLauncherActivity() <em>Launcher Activity</em>}' attribute.
+   * The cached value of the '{@link #getLauncherActivity() <em>Launcher Activity</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getLauncherActivity()
    * @generated
    * @ordered
    */
-  protected static final String LAUNCHER_ACTIVITY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLauncherActivity() <em>Launcher Activity</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLauncherActivity()
-   * @generated
-   * @ordered
-   */
-  protected String launcherActivity = LAUNCHER_ACTIVITY_EDEFAULT;
+  protected Activity launcherActivity;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +64,27 @@ public class ApplicationMainActivityImpl extends ApplicationAttributeImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLauncherActivity()
+  public Activity getLauncherActivity()
+  {
+    if (launcherActivity != null && launcherActivity.eIsProxy())
+    {
+      InternalEObject oldLauncherActivity = (InternalEObject)launcherActivity;
+      launcherActivity = (Activity)eResolveProxy(oldLauncherActivity);
+      if (launcherActivity != oldLauncherActivity)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AppDslPackage.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY, oldLauncherActivity, launcherActivity));
+      }
+    }
+    return launcherActivity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Activity basicGetLauncherActivity()
   {
     return launcherActivity;
   }
@@ -82,9 +94,9 @@ public class ApplicationMainActivityImpl extends ApplicationAttributeImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLauncherActivity(String newLauncherActivity)
+  public void setLauncherActivity(Activity newLauncherActivity)
   {
-    String oldLauncherActivity = launcherActivity;
+    Activity oldLauncherActivity = launcherActivity;
     launcherActivity = newLauncherActivity;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY, oldLauncherActivity, launcherActivity));
@@ -101,7 +113,8 @@ public class ApplicationMainActivityImpl extends ApplicationAttributeImpl implem
     switch (featureID)
     {
       case AppDslPackage.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY:
-        return getLauncherActivity();
+        if (resolve) return getLauncherActivity();
+        return basicGetLauncherActivity();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,7 +130,7 @@ public class ApplicationMainActivityImpl extends ApplicationAttributeImpl implem
     switch (featureID)
     {
       case AppDslPackage.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY:
-        setLauncherActivity((String)newValue);
+        setLauncherActivity((Activity)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,7 +147,7 @@ public class ApplicationMainActivityImpl extends ApplicationAttributeImpl implem
     switch (featureID)
     {
       case AppDslPackage.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY:
-        setLauncherActivity(LAUNCHER_ACTIVITY_EDEFAULT);
+        setLauncherActivity((Activity)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,26 +164,9 @@ public class ApplicationMainActivityImpl extends ApplicationAttributeImpl implem
     switch (featureID)
     {
       case AppDslPackage.APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY:
-        return LAUNCHER_ACTIVITY_EDEFAULT == null ? launcherActivity != null : !LAUNCHER_ACTIVITY_EDEFAULT.equals(launcherActivity);
+        return launcherActivity != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (launcherActivity: ");
-    result.append(launcherActivity);
-    result.append(')');
-    return result.toString();
   }
 
 } //ApplicationMainActivityImpl

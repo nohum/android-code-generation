@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl#getClassName <em>Class Name</em>}</li>
+ *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,24 +28,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ApplicationElementImpl extends MinimalEObjectImpl.Container implements ApplicationElement
 {
   /**
-   * The default value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClassName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String CLASS_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getClassName() <em>Class Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClassName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String className = CLASS_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +73,9 @@ public class ApplicationElementImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getClassName()
+  public String getName()
   {
-    return className;
+    return name;
   }
 
   /**
@@ -83,12 +83,12 @@ public class ApplicationElementImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClassName(String newClassName)
+  public void setName(String newName)
   {
-    String oldClassName = className;
-    className = newClassName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.APPLICATION_ELEMENT__CLASS_NAME, oldClassName, className));
+      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.APPLICATION_ELEMENT__NAME, oldName, name));
   }
 
   /**
@@ -101,8 +101,8 @@ public class ApplicationElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT__CLASS_NAME:
-        return getClassName();
+      case AppDslPackage.APPLICATION_ELEMENT__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +117,8 @@ public class ApplicationElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT__CLASS_NAME:
-        setClassName((String)newValue);
+      case AppDslPackage.APPLICATION_ELEMENT__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +134,8 @@ public class ApplicationElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT__CLASS_NAME:
-        setClassName(CLASS_NAME_EDEFAULT);
+      case AppDslPackage.APPLICATION_ELEMENT__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +151,8 @@ public class ApplicationElementImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case AppDslPackage.APPLICATION_ELEMENT__CLASS_NAME:
-        return CLASS_NAME_EDEFAULT == null ? className != null : !CLASS_NAME_EDEFAULT.equals(className);
+      case AppDslPackage.APPLICATION_ELEMENT__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -168,8 +168,8 @@ public class ApplicationElementImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (className: ");
-    result.append(className);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

@@ -154,23 +154,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     }
     
     @Check
-    def void checkForValidMainActivity(ApplicationMainActivity mainActivity) {
-    	if (mainActivity.launcherActivity.length() == 0) {
-    		logger.info("checkForValidMainActivity: launcherActivity string is empty");
-    		return;
-    	}
-    	
-    	var Application application = (mainActivity.eContainer() as Application);
-    	if (isElementExisting(application, mainActivity.launcherActivity, typeof(Activity))) {
-    		return;
-    	}
-    	
-    	error(String.format("Activity with identifier \"%s\" is unknown",mainActivity.launcherActivity),
-    		AppDslPackage.Literals::APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY
-    	);
-    }
-    
-    @Check
     def void checkForDuplicatePermission(ApplicationPermissionList permissions) {
     	findStringDuplicates(permissions.permissions, [ name, index |
     		error("Permissions have to be unique",
@@ -193,13 +176,13 @@ class AppDslValidator extends AbstractAppDslValidator {
     	var List<String> foundElementNames = new ArrayList<String>();
 
     	for (ApplicationElement element : elements.elements) {
-    		if (foundElementNames.contains(element.className)) {
-    			error(String.format("Identifier \"%s\" has already been used", element.className),
-    				element, AppDslPackage.Literals::APPLICATION_ELEMENT__CLASS_NAME
+    		if (foundElementNames.contains(element.name)) {
+    			error(String.format("Identifier \"%s\" has already been used", element.name),
+    				element, AppDslPackage.Literals::APPLICATION_ELEMENT__NAME
     			);
     		}
     		
-    		foundElementNames.add(element.className);
+    		foundElementNames.add(element.name);
     	}
     }
     
@@ -221,38 +204,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     			foundNames.add(buttonName);
     		}
     	}
-    }
-    
-    @Check
-    def void checkForValidActionStartActivity(ActionStartActivity startActivity) {
-    	if (startActivity.activity.length == 0) {
-    		logger.info("checkForValidActionStartActivity: activity string is empty");
-    		return;
-    	}
-    	
-    	if (isElementExisting(getRootApplication(startActivity), startActivity.activity, typeof(Activity))) {
-    		return;
-    	}
-    	
-    	error(String.format("Activity with identifier \"%s\" is unknown", startActivity.activity),
-    		startActivity, AppDslPackage.Literals::ACTION_START_ACTIVITY__ACTIVITY
-    	);
-    }
-    
-    @Check
-    def void checkForValidActionStartService(ActionStartService startService) {
-    	if (startService.service.length == 0) {
-    		logger.info("checkForValidActionStartService: service string is empty");
-    		return;
-    	}
-    	
-    	if (isElementExisting(getRootApplication(startService), startService.service, typeof(Service))) {
-    		return;
-    	}
-    	
-    	error(String.format("Service with identifier \"%s\" is unknown", startService.service),
-    		startService, AppDslPackage.Literals::ACTION_START_SERVICE__SERVICE
-    	);
     }
     
     /**
@@ -287,41 +238,6 @@ class AppDslValidator extends AbstractAppDslValidator {
     		
     		foundIntents.add(element);
     		listIndex++;
-    	}
-    }
-    
-    /**
-     * Checks if an element is existing in the applications element list.
-     */
-    private def <T> boolean isElementExisting(Application application, String elementName, Class<T> elementType) {
-    	var ApplicationElementList elementList = getApplicationField(application,
-    		typeof(ApplicationElementList)
-    	);
-    	
-    	if (elementList == null) {
-    		logger.warning("isElementExisting: no element list found, aborting");
-    		return false;
-    	}   	
-    	
-    	for (ApplicationElement element : elementList.elements) {
-    		if (elementType.isAssignableFrom(element.class) && element.className.equals(elementName)) {
-    			return true;
-    		}
-    	}
-    	
-    	return false;
-    }
-    
-    private def Application getRootApplication(EObject object) {
-    	var EObject current = object;
-    	
-    	// there must always be an Application root object as by our grammar model
-    	while (true) {
-    		current = current.eContainer();
-    		
-    		if (current instanceof Application) {
-    			return current as Application;
-    		}
     	}
     }
     

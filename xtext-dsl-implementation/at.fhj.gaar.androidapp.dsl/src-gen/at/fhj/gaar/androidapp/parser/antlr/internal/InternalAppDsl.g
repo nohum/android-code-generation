@@ -144,9 +144,9 @@ ruleApplication returns [EObject current=null]
     }
 (
 (
-		lv_packageName_1_0=RULE_PACKAGE_NAME
+		lv_name_1_0=RULE_PACKAGE_NAME
 		{
-			newLeafNode(lv_packageName_1_0, grammarAccess.getApplicationAccess().getPackageNamePACKAGE_NAMETerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getApplicationAccess().getNamePACKAGE_NAMETerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -154,8 +154,8 @@ ruleApplication returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"packageName",
-        		lv_packageName_1_0, 
+       			"name",
+        		lv_name_1_0, 
         		"PACKAGE_NAME");
 	    }
 
@@ -600,20 +600,15 @@ ruleApplicationMainActivity returns [EObject current=null]
     }
 (
 (
-		lv_launcherActivity_1_0=RULE_JAVA_IDENTIFIER
 		{
-			newLeafNode(lv_launcherActivity_1_0, grammarAccess.getApplicationMainActivityAccess().getLauncherActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getApplicationMainActivityRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"launcherActivity",
-        		lv_launcherActivity_1_0, 
-        		"JAVA_IDENTIFIER");
-	    }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getApplicationMainActivityAccess().getLauncherActivityActivityCrossReference_1_0()); 
+	}
 
 )
 ))
@@ -721,9 +716,9 @@ ruleActivity returns [EObject current=null]
     }
 (
 (
-		lv_className_1_0=RULE_JAVA_IDENTIFIER
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_className_1_0, grammarAccess.getActivityAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getActivityAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -731,9 +726,9 @@ ruleActivity returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"className",
-        		lv_className_1_0, 
-        		"JAVA_IDENTIFIER");
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
 	    }
 
 )
@@ -812,9 +807,9 @@ ruleBroadcastReceiver returns [EObject current=null]
     }
 (
 (
-		lv_className_1_0=RULE_JAVA_IDENTIFIER
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_className_1_0, grammarAccess.getBroadcastReceiverAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getBroadcastReceiverAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -822,9 +817,9 @@ ruleBroadcastReceiver returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"className",
-        		lv_className_1_0, 
-        		"JAVA_IDENTIFIER");
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
 	    }
 
 )
@@ -903,9 +898,9 @@ ruleService returns [EObject current=null]
     }
 (
 (
-		lv_className_1_0=RULE_JAVA_IDENTIFIER
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_className_1_0, grammarAccess.getServiceAccess().getClassNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getServiceAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -913,9 +908,9 @@ ruleService returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"className",
-        		lv_className_1_0, 
-        		"JAVA_IDENTIFIER");
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
 	    }
 
 )
@@ -1434,20 +1429,15 @@ ruleActivityParentAttribute returns [EObject current=null]
     }
 (
 (
-		lv_parent_1_0=RULE_JAVA_IDENTIFIER
 		{
-			newLeafNode(lv_parent_1_0, grammarAccess.getActivityParentAttributeAccess().getParentJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getActivityParentAttributeRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"parent",
-        		lv_parent_1_0, 
-        		"JAVA_IDENTIFIER");
-	    }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getActivityParentAttributeAccess().getParentActivityCrossReference_1_0()); 
+	}
 
 )
 ))
@@ -1599,9 +1589,9 @@ ruleButton returns [EObject current=null]
     }
 (
 (
-		lv_buttonName_1_0=RULE_JAVA_IDENTIFIER
+		lv_buttonName_1_0=RULE_ID
 		{
-			newLeafNode(lv_buttonName_1_0, grammarAccess.getButtonAccess().getButtonNameJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
+			newLeafNode(lv_buttonName_1_0, grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1611,7 +1601,7 @@ ruleButton returns [EObject current=null]
        			$current, 
        			"buttonName",
         		lv_buttonName_1_0, 
-        		"JAVA_IDENTIFIER");
+        		"ID");
 	    }
 
 )
@@ -2072,20 +2062,15 @@ ruleActionStartActivity returns [EObject current=null]
     }
 (
 (
-		lv_activity_1_0=RULE_JAVA_IDENTIFIER
 		{
-			newLeafNode(lv_activity_1_0, grammarAccess.getActionStartActivityAccess().getActivityJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getActionStartActivityRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"activity",
-        		lv_activity_1_0, 
-        		"JAVA_IDENTIFIER");
-	    }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getActionStartActivityAccess().getActivityActivityCrossReference_1_0()); 
+	}
 
 )
 ))
@@ -2115,20 +2100,15 @@ ruleActionStartService returns [EObject current=null]
     }
 (
 (
-		lv_service_1_0=RULE_JAVA_IDENTIFIER
 		{
-			newLeafNode(lv_service_1_0, grammarAccess.getActionStartServiceAccess().getServiceJAVA_IDENTIFIERTerminalRuleCall_1_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getActionStartServiceRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"service",
-        		lv_service_1_0, 
-        		"JAVA_IDENTIFIER");
-	    }
+        }
+	otherlv_1=RULE_ID
+	{
+		newLeafNode(otherlv_1, grammarAccess.getActionStartServiceAccess().getServiceServiceCrossReference_1_0()); 
+	}
 
 )
 ))

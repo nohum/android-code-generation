@@ -6,7 +6,7 @@
         eType="#//Application" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Application">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//ApplicationAttribute" containment="true"/>
   </eClassifiers>
@@ -29,10 +29,10 @@
         eType="#//ApplicationElement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationMainActivity" eSuperTypes="#//ApplicationAttribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="launcherActivity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="launcherActivity" eType="#//Activity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="className" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="#//ApplicationElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
@@ -63,7 +63,7 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityParentAttribute" eSuperTypes="#//ActivityAttribute">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Activity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityLayoutAttribute" eSuperTypes="#//ActivityAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="layoutElements" upperBound="-1"
@@ -96,9 +96,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="toastText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionStartActivity" eSuperTypes="#//LayoutElementClickAction #//BroadcastReceiverAction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="#//Activity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionStartService" eSuperTypes="#//LayoutElementClickAction #//BroadcastReceiverAction">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="service" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" eType="#//Service"/>
   </eClassifiers>
 </ecore:EPackage>

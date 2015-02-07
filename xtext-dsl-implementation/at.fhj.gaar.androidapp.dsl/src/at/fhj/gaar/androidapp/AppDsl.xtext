@@ -15,16 +15,12 @@ terminal BOOLEAN returns ecore::EBoolean:
     'FALSE'
 ;
 
-terminal JAVA_IDENTIFIER:
-	'"' ( ID ) '"'
-;
-
 terminal PACKAGE_NAME:
 	'"' ( ID ('.' ID)* ) '"'
 ;
 
 Application:
-	'application' packageName = PACKAGE_NAME
+	'application' name = PACKAGE_NAME
 	'{'
 		// allow only one attribute or more than one (separated by ",")
 		attributes += ApplicationAttribute (',' attributes += ApplicationAttribute)*
@@ -70,7 +66,7 @@ ApplicationElementList:
 ;
 
 ApplicationMainActivity:
-	'main-activity' launcherActivity = JAVA_IDENTIFIER
+	'main-activity' launcherActivity = [Activity] // referenced by the magical "name" of an Activity
 ;
 
 Permission:
@@ -82,7 +78,7 @@ ApplicationElement:
 ;
 
 Activity:
-	'activity' className = JAVA_IDENTIFIER
+	'activity' name = ID // JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += ActivityAttribute (',' attributes += ActivityAttribute)*
@@ -90,7 +86,7 @@ Activity:
 ;
 
 BroadcastReceiver:
-	'receiver' className = JAVA_IDENTIFIER
+	'receiver' name = ID // JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += BroadcastReceiverAttribute (',' attributes += BroadcastReceiverAttribute)*
@@ -98,7 +94,7 @@ BroadcastReceiver:
 ;
 
 Service:
-	'service' className = JAVA_IDENTIFIER
+	'service' name = ID // JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += ServiceAttribute (',' attributes += ServiceAttribute)*
@@ -154,7 +150,7 @@ Intent:
 ;
 
 ActivityParentAttribute:
-	'parent' parent = JAVA_IDENTIFIER
+	'parent' parent = [Activity]
 ;
 
 ActivityLayoutAttribute:
@@ -170,7 +166,7 @@ LayoutElement:
 ;
 
 Button:
-	'button' buttonName = JAVA_IDENTIFIER
+	'button' buttonName = ID // JAVA_IDENTIFIER
 	'{'
 		// TODO make empty list possible
 		attributes += ButtonAttribute (',' attributes += ButtonAttribute)*
@@ -219,9 +215,9 @@ ActionShowToast:
 ;
 
 ActionStartActivity:
-	'start-activity' activity = JAVA_IDENTIFIER
+	'start-activity' activity = [Activity]
 ;
 
 ActionStartService:
-	'start-service' service = JAVA_IDENTIFIER
+	'start-service' service = [Service] // makes a reference to the "name" of an Service
 ;
