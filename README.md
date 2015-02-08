@@ -35,7 +35,10 @@ application "at.fhj.demoapp" {
 
 ## How to use
 
-After importing the projects located in the "xtext-dsl-implementation" subfolder into an Eclipse IDE with Xtext support, you will find the "Launch Runtime Eclipse" option in the "Run" menu. Using this newly launched IDE, you can create your Android applications with the DSL shown above. For that, create a new project and add a new file which ends with the file extension ".androidapp". The opened editor then provides code completion and validation for the DSL. 
+* Import the projects located in the "xtext-dsl-implementation" subfolder into an Eclipse IDE with Xtext support
+* For the "at.fhj.gaar.androidapp.dsl" project: Add the files located in the lib-directory to the build path of that project
+
+You will find the "Launch Runtime Eclipse" option in the "Run" menu. Using this newly launched IDE, you can create your Android applications with the DSL shown above. For that, create a new project and add a new file which ends with the file extension ".androidapp". The opened editor then provides code completion and validation for the DSL. 
 
 ## Code validation
 
