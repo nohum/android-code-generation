@@ -33,11 +33,11 @@ application "at.fhj.demoapp" {
 }
 ```
 
-## Project creation
+## How to use
 
 After importing the projects located in the "xtext-dsl-implementation" subfolder into an Eclipse IDE with Xtext support, you will find the "Launch Runtime Eclipse" option in the "Run" menu. Using this newly launched IDE, you can create your Android applications with the DSL shown above. For that, create a new project and add a new file which ends with the file extension ".androidapp". The opened editor then provides code completion and validation for the DSL. 
 
-## Validation
+## Code validation
 
 When editing your application source code in the IDE some features are validated. Examples are duplicated application elements, duplicated intents, duplicated permissions or unknown identifiers.
 
@@ -47,5 +47,5 @@ Interesting resources to read about Xtext that helped me developing:
 
 * [The official tutorial](http://www.eclipse.org/Xtext/documentation.html#DomainModelWalkThrough)
 * http://www.slideshare.net/schwurbel/the-xtext-grammar-language
-* [Itemis about cross-referencing](https://blogs.itemis.de/leipzig/archives/776)
-
+* [About cross-referencing elements](https://blogs.itemis.de/leipzig/archives/776)
+* [Naming elements with the "name" attribute](http://www.euclideanspace.com/software/development/eclipse/xtext/infrastructure/naming/index.htm)
