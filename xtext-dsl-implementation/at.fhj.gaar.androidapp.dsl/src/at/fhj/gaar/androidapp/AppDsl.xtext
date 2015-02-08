@@ -78,7 +78,7 @@ ApplicationElement:
 ;
 
 Activity:
-	'activity' name = ID // JAVA_IDENTIFIER
+	'activity' name = ID
 	'{'
 		// TODO make empty list possible
 		attributes += ActivityAttribute (',' attributes += ActivityAttribute)*
@@ -86,7 +86,7 @@ Activity:
 ;
 
 BroadcastReceiver:
-	'receiver' name = ID // JAVA_IDENTIFIER
+	'receiver' name = ID
 	'{'
 		// TODO make empty list possible
 		attributes += BroadcastReceiverAttribute (',' attributes += BroadcastReceiverAttribute)*
@@ -94,7 +94,7 @@ BroadcastReceiver:
 ;
 
 Service:
-	'service' name = ID // JAVA_IDENTIFIER
+	'service' name = ID
 	'{'
 		// TODO make empty list possible
 		attributes += ServiceAttribute (',' attributes += ServiceAttribute)*
@@ -166,7 +166,7 @@ LayoutElement:
 ;
 
 Button:
-	'button' buttonName = ID // JAVA_IDENTIFIER
+	'button' name = ID
 	'{'
 		// TODO make empty list possible
 		attributes += ButtonAttribute (',' attributes += ButtonAttribute)*

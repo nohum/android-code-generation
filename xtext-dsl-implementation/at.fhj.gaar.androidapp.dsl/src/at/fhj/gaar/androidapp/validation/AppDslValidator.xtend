@@ -3,35 +3,31 @@
  */
 package at.fhj.gaar.androidapp.validation
 
-import at.fhj.gaar.androidapp.appDsl.ActionStartActivity
-import at.fhj.gaar.androidapp.appDsl.ActionStartService
 import at.fhj.gaar.androidapp.appDsl.Activity
+import at.fhj.gaar.androidapp.appDsl.ActivityAttribute
 import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage
 import at.fhj.gaar.androidapp.appDsl.Application
 import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute
+import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk
 import at.fhj.gaar.androidapp.appDsl.ApplicationElement
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList
-import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity
+import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList
+import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute
 import at.fhj.gaar.androidapp.appDsl.Button
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList
 import at.fhj.gaar.androidapp.appDsl.LayoutElement
+import at.fhj.gaar.androidapp.appDsl.Service
+import at.fhj.gaar.androidapp.appDsl.ServiceAttribute
 import java.util.ArrayList
 import java.util.Iterator
 import java.util.List
 import java.util.logging.Logger
-import org.eclipse.xtext.validation.Check
 import org.eclipse.emf.common.util.EList
-import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk
-import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk
-import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk
-import at.fhj.gaar.androidapp.appDsl.Service
-import org.eclipse.emf.ecore.EObject
-import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
-import at.fhj.gaar.androidapp.appDsl.ActivityAttribute
-import at.fhj.gaar.androidapp.appDsl.ServiceAttribute
-import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute
+import org.eclipse.xtext.validation.Check
 
 /**
  * Custom validation rules. 
@@ -192,12 +188,12 @@ class AppDslValidator extends AbstractAppDslValidator {
 
     	for (LayoutElement element : layoutElements.layoutElements) {
     		if (element instanceof Button) {
-    			var String buttonName = (element as Button).buttonName;
+    			var String buttonName = (element as Button).name;
 
     			// button names must be unique within an activity
     			if (foundNames.contains(buttonName)) {
     				error(String.format("Button name \"%s\" is not unique", buttonName), element,
-    					AppDslPackage.Literals::BUTTON__BUTTON_NAME
+    					AppDslPackage.Literals::BUTTON__NAME
     				);
     			}
     			

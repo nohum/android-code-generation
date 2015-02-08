@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ButtonImpl#getButtonName <em>Button Name</em>}</li>
+ *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ButtonImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.fhj.gaar.androidapp.appDsl.impl.ButtonImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
@@ -38,24 +38,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ButtonImpl extends LayoutElementImpl implements Button
 {
   /**
-   * The default value of the '{@link #getButtonName() <em>Button Name</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getButtonName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String BUTTON_NAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getButtonName() <em>Button Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getButtonName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String buttonName = BUTTON_NAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
@@ -93,9 +93,9 @@ public class ButtonImpl extends LayoutElementImpl implements Button
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getButtonName()
+  public String getName()
   {
-    return buttonName;
+    return name;
   }
 
   /**
@@ -103,12 +103,12 @@ public class ButtonImpl extends LayoutElementImpl implements Button
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setButtonName(String newButtonName)
+  public void setName(String newName)
   {
-    String oldButtonName = buttonName;
-    buttonName = newButtonName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.BUTTON__BUTTON_NAME, oldButtonName, buttonName));
+      eNotify(new ENotificationImpl(this, Notification.SET, AppDslPackage.BUTTON__NAME, oldName, name));
   }
 
   /**
@@ -151,8 +151,8 @@ public class ButtonImpl extends LayoutElementImpl implements Button
   {
     switch (featureID)
     {
-      case AppDslPackage.BUTTON__BUTTON_NAME:
-        return getButtonName();
+      case AppDslPackage.BUTTON__NAME:
+        return getName();
       case AppDslPackage.BUTTON__ATTRIBUTES:
         return getAttributes();
     }
@@ -170,8 +170,8 @@ public class ButtonImpl extends LayoutElementImpl implements Button
   {
     switch (featureID)
     {
-      case AppDslPackage.BUTTON__BUTTON_NAME:
-        setButtonName((String)newValue);
+      case AppDslPackage.BUTTON__NAME:
+        setName((String)newValue);
         return;
       case AppDslPackage.BUTTON__ATTRIBUTES:
         getAttributes().clear();
@@ -191,8 +191,8 @@ public class ButtonImpl extends LayoutElementImpl implements Button
   {
     switch (featureID)
     {
-      case AppDslPackage.BUTTON__BUTTON_NAME:
-        setButtonName(BUTTON_NAME_EDEFAULT);
+      case AppDslPackage.BUTTON__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case AppDslPackage.BUTTON__ATTRIBUTES:
         getAttributes().clear();
@@ -211,8 +211,8 @@ public class ButtonImpl extends LayoutElementImpl implements Button
   {
     switch (featureID)
     {
-      case AppDslPackage.BUTTON__BUTTON_NAME:
-        return BUTTON_NAME_EDEFAULT == null ? buttonName != null : !BUTTON_NAME_EDEFAULT.equals(buttonName);
+      case AppDslPackage.BUTTON__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AppDslPackage.BUTTON__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
     }
@@ -230,8 +230,8 @@ public class ButtonImpl extends LayoutElementImpl implements Button
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (buttonName: ");
-    result.append(buttonName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

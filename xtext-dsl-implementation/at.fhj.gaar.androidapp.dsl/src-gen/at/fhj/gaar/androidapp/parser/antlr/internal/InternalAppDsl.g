@@ -1589,9 +1589,9 @@ ruleButton returns [EObject current=null]
     }
 (
 (
-		lv_buttonName_1_0=RULE_ID
+		lv_name_1_0=RULE_ID
 		{
-			newLeafNode(lv_buttonName_1_0, grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_1_0, grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1599,8 +1599,8 @@ ruleButton returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"buttonName",
-        		lv_buttonName_1_0, 
+       			"name",
+        		lv_name_1_0, 
         		"ID");
 	    }
 
@@ -2119,8 +2119,6 @@ ruleActionStartService returns [EObject current=null]
 
 
 RULE_BOOLEAN : ('true'|'false'|'TRUE'|'FALSE');
-
-RULE_JAVA_IDENTIFIER : '"' RULE_ID '"';
 
 RULE_PACKAGE_NAME : '"' RULE_ID ('.' RULE_ID)* '"';
 

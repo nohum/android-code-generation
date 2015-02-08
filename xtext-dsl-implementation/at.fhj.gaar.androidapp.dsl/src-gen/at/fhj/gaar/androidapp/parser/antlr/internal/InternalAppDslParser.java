@@ -21,12 +21,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_PACKAGE_NAME", "RULE_INT", "RULE_ID", "RULE_BOOLEAN", "RULE_STRING", "RULE_JAVA_IDENTIFIER", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'application'", "'{'", "'}'", "'min-sdk'", "'target-sdk'", "'compile-sdk'", "'permissions'", "'['", "']'", "'elements'", "'main-activity'", "'activity'", "'receiver'", "'service'", "'enabled'", "'exported'", "'title'", "'intents'", "'parent'", "'layout-elements'", "'button'", "'action'", "'spacer'", "'text'", "'show-toast'", "'start-activity'", "'start-service'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_PACKAGE_NAME", "RULE_INT", "RULE_ID", "RULE_BOOLEAN", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "','", "'application'", "'{'", "'}'", "'min-sdk'", "'target-sdk'", "'compile-sdk'", "'permissions'", "'['", "']'", "'elements'", "'main-activity'", "'activity'", "'receiver'", "'service'", "'enabled'", "'exported'", "'title'", "'intents'", "'parent'", "'layout-elements'", "'button'", "'action'", "'spacer'", "'text'", "'show-toast'", "'start-activity'", "'start-service'"
     };
     public static final int RULE_BOOLEAN=7;
     public static final int RULE_ID=6;
     public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -36,15 +35,14 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final int RULE_PACKAGE_NAME=4;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=13;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=11;
+    public static final int RULE_SL_COMMENT=10;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=10;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__30=30;
     public static final int T__19=19;
-    public static final int RULE_JAVA_IDENTIFIER=9;
     public static final int T__31=31;
     public static final int RULE_STRING=8;
     public static final int T__32=32;
@@ -60,8 +58,9 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__14=14;
+    public static final int T__13=13;
     public static final int RULE_INT=5;
-    public static final int RULE_WS=12;
+    public static final int RULE_WS=11;
 
     // delegates
     // delegators
@@ -194,7 +193,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==14) ) {
+                if ( (LA1_0==13) ) {
                     alt1=1;
                 }
 
@@ -203,7 +202,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:98:4: otherlv_1= ',' ( (lv_applications_2_0= ruleApplication ) )
             	    {
-            	    otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleAndroidAppProject144); 
+            	    otherlv_1=(Token)match(input,13,FOLLOW_13_in_ruleAndroidAppProject144); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getAndroidAppProjectAccess().getCommaKeyword_1_0());
             	        
@@ -327,7 +326,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:141:1: (otherlv_0= 'application' ( (lv_name_1_0= RULE_PACKAGE_NAME ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleApplicationAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleApplicationAttribute ) ) )* otherlv_6= '}' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:141:3: otherlv_0= 'application' ( (lv_name_1_0= RULE_PACKAGE_NAME ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleApplicationAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleApplicationAttribute ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,15,FOLLOW_15_in_ruleApplication250); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleApplication250); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationAccess().getApplicationKeyword_0());
                 
@@ -357,7 +356,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleApplication284); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleApplication284); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getApplicationAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -398,7 +397,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==14) ) {
+                if ( (LA2_0==13) ) {
                     alt2=1;
                 }
 
@@ -407,7 +406,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:185:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleApplicationAttribute ) )
             	    {
-            	    otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleApplication318); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleApplication318); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getApplicationAccess().getCommaKeyword_4_0());
             	        
@@ -451,7 +450,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,17,FOLLOW_17_in_ruleApplication353); 
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleApplication353); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getApplicationAccess().getRightCurlyBracketKeyword_5());
                 
@@ -540,37 +539,37 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:232:1: (this_ElementLabelAttribute_0= ruleElementLabelAttribute | this_ApplicationMinSdk_1= ruleApplicationMinSdk | this_ApplicationTargetSdk_2= ruleApplicationTargetSdk | this_ApplicationCompileSdk_3= ruleApplicationCompileSdk | this_ApplicationPermissionList_4= ruleApplicationPermissionList | this_ApplicationElementList_5= ruleApplicationElementList | this_ApplicationMainActivity_6= ruleApplicationMainActivity )
             int alt3=7;
             switch ( input.LA(1) ) {
-            case 31:
+            case 30:
                 {
                 alt3=1;
                 }
                 break;
-            case 18:
+            case 17:
                 {
                 alt3=2;
                 }
                 break;
-            case 19:
+            case 18:
                 {
                 alt3=3;
                 }
                 break;
-            case 20:
+            case 19:
                 {
                 alt3=4;
                 }
                 break;
-            case 21:
+            case 20:
                 {
                 alt3=5;
                 }
                 break;
-            case 24:
+            case 23:
                 {
                 alt3=6;
                 }
                 break;
-            case 25:
+            case 24:
                 {
                 alt3=7;
                 }
@@ -782,7 +781,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:322:1: (otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:322:3: otherlv_0= 'min-sdk' ( (lv_minSdk_1_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleApplicationMinSdk690); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleApplicationMinSdk690); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationMinSdkAccess().getMinSdkKeyword_0());
                 
@@ -885,7 +884,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:365:1: (otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:365:3: otherlv_0= 'target-sdk' ( (lv_targetSdk_1_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleApplicationTargetSdk795); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleApplicationTargetSdk795); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationTargetSdkAccess().getTargetSdkKeyword_0());
                 
@@ -988,7 +987,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:408:1: (otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:408:3: otherlv_0= 'compile-sdk' ( (lv_compileSdk_1_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleApplicationCompileSdk900); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleApplicationCompileSdk900); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationCompileSdkAccess().getCompileSdkKeyword_0());
                 
@@ -1097,11 +1096,11 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:451:1: (otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:451:3: otherlv_0= 'permissions' otherlv_1= '[' ( (lv_permissions_2_0= rulePermission ) ) (otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) ) )* otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleApplicationPermissionList1005); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleApplicationPermissionList1005); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationPermissionListAccess().getPermissionsKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleApplicationPermissionList1017); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleApplicationPermissionList1017); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getApplicationPermissionListAccess().getLeftSquareBracketKeyword_1());
                 
@@ -1142,7 +1141,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==14) ) {
+                if ( (LA4_0==13) ) {
                     alt4=1;
                 }
 
@@ -1151,7 +1150,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:477:4: otherlv_3= ',' ( (lv_permissions_4_0= rulePermission ) )
             	    {
-            	    otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleApplicationPermissionList1051); 
+            	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleApplicationPermissionList1051); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getApplicationPermissionListAccess().getCommaKeyword_3_0());
             	        
@@ -1195,7 +1194,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleApplicationPermissionList1086); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleApplicationPermissionList1086); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getApplicationPermissionListAccess().getRightSquareBracketKeyword_4());
                 
@@ -1278,11 +1277,11 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:524:1: (otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleApplicationElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )* otherlv_5= ']' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:524:3: otherlv_0= 'elements' otherlv_1= '[' ( (lv_elements_2_0= ruleApplicationElement ) ) (otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) ) )* otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleApplicationElementList1169); 
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleApplicationElementList1169); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationElementListAccess().getElementsKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleApplicationElementList1181); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleApplicationElementList1181); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getApplicationElementListAccess().getLeftSquareBracketKeyword_1());
                 
@@ -1323,7 +1322,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==14) ) {
+                if ( (LA5_0==13) ) {
                     alt5=1;
                 }
 
@@ -1332,7 +1331,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:550:4: otherlv_3= ',' ( (lv_elements_4_0= ruleApplicationElement ) )
             	    {
-            	    otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleApplicationElementList1215); 
+            	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleApplicationElementList1215); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getApplicationElementListAccess().getCommaKeyword_3_0());
             	        
@@ -1376,7 +1375,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleApplicationElementList1250); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleApplicationElementList1250); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getApplicationElementListAccess().getRightSquareBracketKeyword_4());
                 
@@ -1453,7 +1452,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:597:1: (otherlv_0= 'main-activity' ( (otherlv_1= RULE_ID ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:597:3: otherlv_0= 'main-activity' ( (otherlv_1= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleApplicationMainActivity1333); 
+            otherlv_0=(Token)match(input,24,FOLLOW_24_in_ruleApplicationMainActivity1333); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getApplicationMainActivityAccess().getMainActivityKeyword_0());
                 
@@ -1628,17 +1627,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:663:1: (this_Activity_0= ruleActivity | this_BroadcastReceiver_1= ruleBroadcastReceiver | this_Service_2= ruleService )
             int alt6=3;
             switch ( input.LA(1) ) {
-            case 26:
+            case 25:
                 {
                 alt6=1;
                 }
                 break;
-            case 27:
+            case 26:
                 {
                 alt6=2;
                 }
                 break;
-            case 28:
+            case 27:
                 {
                 alt6=3;
                 }
@@ -1785,7 +1784,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:713:1: (otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleActivityAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )* otherlv_6= '}' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:713:3: otherlv_0= 'activity' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleActivityAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleActivity1677); 
+            otherlv_0=(Token)match(input,25,FOLLOW_25_in_ruleActivity1677); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActivityAccess().getActivityKeyword_0());
                 
@@ -1815,7 +1814,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleActivity1711); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleActivity1711); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -1856,7 +1855,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==14) ) {
+                if ( (LA7_0==13) ) {
                     alt7=1;
                 }
 
@@ -1865,7 +1864,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:757:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleActivityAttribute ) )
             	    {
-            	    otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleActivity1745); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleActivity1745); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getActivityAccess().getCommaKeyword_4_0());
             	        
@@ -1909,7 +1908,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,17,FOLLOW_17_in_ruleActivity1780); 
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleActivity1780); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_5());
                 
@@ -1993,7 +1992,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:804:1: (otherlv_0= 'receiver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )* otherlv_6= '}' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:804:3: otherlv_0= 'receiver' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleBroadcastReceiverAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleBroadcastReceiver1863); 
+            otherlv_0=(Token)match(input,26,FOLLOW_26_in_ruleBroadcastReceiver1863); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBroadcastReceiverAccess().getReceiverKeyword_0());
                 
@@ -2023,7 +2022,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleBroadcastReceiver1897); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleBroadcastReceiver1897); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getBroadcastReceiverAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -2064,7 +2063,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==14) ) {
+                if ( (LA8_0==13) ) {
                     alt8=1;
                 }
 
@@ -2073,7 +2072,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:848:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleBroadcastReceiverAttribute ) )
             	    {
-            	    otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleBroadcastReceiver1931); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleBroadcastReceiver1931); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getBroadcastReceiverAccess().getCommaKeyword_4_0());
             	        
@@ -2117,7 +2116,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,17,FOLLOW_17_in_ruleBroadcastReceiver1966); 
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleBroadcastReceiver1966); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getBroadcastReceiverAccess().getRightCurlyBracketKeyword_5());
                 
@@ -2201,7 +2200,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:895:1: (otherlv_0= 'service' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleServiceAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )* otherlv_6= '}' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:895:3: otherlv_0= 'service' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleServiceAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleService2049); 
+            otherlv_0=(Token)match(input,27,FOLLOW_27_in_ruleService2049); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getServiceAccess().getServiceKeyword_0());
                 
@@ -2231,7 +2230,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleService2083); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleService2083); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -2272,7 +2271,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==14) ) {
+                if ( (LA9_0==13) ) {
                     alt9=1;
                 }
 
@@ -2281,7 +2280,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:939:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleServiceAttribute ) )
             	    {
-            	    otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleService2117); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleService2117); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getServiceAccess().getCommaKeyword_4_0());
             	        
@@ -2325,7 +2324,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,17,FOLLOW_17_in_ruleService2152); 
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleService2152); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_5());
                 
@@ -2412,32 +2411,32 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:986:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute | this_ElementLabelAttribute_2= ruleElementLabelAttribute | this_ElementIntentList_3= ruleElementIntentList | this_ActivityParentAttribute_4= ruleActivityParentAttribute | this_ActivityLayoutAttribute_5= ruleActivityLayoutAttribute )
             int alt10=6;
             switch ( input.LA(1) ) {
-            case 29:
+            case 28:
                 {
                 alt10=1;
                 }
                 break;
-            case 30:
+            case 29:
                 {
                 alt10=2;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt10=3;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt10=4;
                 }
                 break;
-            case 33:
+            case 32:
                 {
                 alt10=5;
                 }
                 break;
-            case 34:
+            case 33:
                 {
                 alt10=6;
                 }
@@ -2639,27 +2638,27 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1066:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute | this_ElementLabelAttribute_2= ruleElementLabelAttribute | this_ElementIntentList_3= ruleElementIntentList | this_BroadcastReceiverActionAttribute_4= ruleBroadcastReceiverActionAttribute )
             int alt11=5;
             switch ( input.LA(1) ) {
-            case 29:
+            case 28:
                 {
                 alt11=1;
                 }
                 break;
-            case 30:
+            case 29:
                 {
                 alt11=2;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt11=3;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt11=4;
                 }
                 break;
-            case 36:
+            case 35:
                 {
                 alt11=5;
                 }
@@ -2841,22 +2840,22 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1136:1: (this_ElementEnabledAttribute_0= ruleElementEnabledAttribute | this_ElementExportedAttribute_1= ruleElementExportedAttribute | this_ElementLabelAttribute_2= ruleElementLabelAttribute | this_ElementIntentList_3= ruleElementIntentList )
             int alt12=4;
             switch ( input.LA(1) ) {
-            case 29:
+            case 28:
                 {
                 alt12=1;
                 }
                 break;
-            case 30:
+            case 29:
                 {
                 alt12=2;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt12=3;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt12=4;
                 }
@@ -3014,7 +3013,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1196:1: (otherlv_0= 'enabled' ( (lv_enabled_1_0= RULE_BOOLEAN ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1196:3: otherlv_0= 'enabled' ( (lv_enabled_1_0= RULE_BOOLEAN ) )
             {
-            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleElementEnabledAttribute2835); 
+            otherlv_0=(Token)match(input,28,FOLLOW_28_in_ruleElementEnabledAttribute2835); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getElementEnabledAttributeAccess().getEnabledKeyword_0());
                 
@@ -3117,7 +3116,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1239:1: (otherlv_0= 'exported' ( (lv_exported_1_0= RULE_BOOLEAN ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1239:3: otherlv_0= 'exported' ( (lv_exported_1_0= RULE_BOOLEAN ) )
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleElementExportedAttribute2940); 
+            otherlv_0=(Token)match(input,29,FOLLOW_29_in_ruleElementExportedAttribute2940); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getElementExportedAttributeAccess().getExportedKeyword_0());
                 
@@ -3220,7 +3219,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1282:1: (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1282:3: otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleElementLabelAttribute3045); 
+            otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleElementLabelAttribute3045); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getElementLabelAttributeAccess().getTitleKeyword_0());
                 
@@ -3329,11 +3328,11 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1325:1: (otherlv_0= 'intents' otherlv_1= '[' ( (lv_intents_2_0= ruleIntent ) ) (otherlv_3= ',' ( (lv_intents_4_0= ruleIntent ) ) )* otherlv_5= ']' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1325:3: otherlv_0= 'intents' otherlv_1= '[' ( (lv_intents_2_0= ruleIntent ) ) (otherlv_3= ',' ( (lv_intents_4_0= ruleIntent ) ) )* otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleElementIntentList3150); 
+            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleElementIntentList3150); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getElementIntentListAccess().getIntentsKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleElementIntentList3162); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleElementIntentList3162); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getElementIntentListAccess().getLeftSquareBracketKeyword_1());
                 
@@ -3374,7 +3373,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==14) ) {
+                if ( (LA13_0==13) ) {
                     alt13=1;
                 }
 
@@ -3383,7 +3382,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1351:4: otherlv_3= ',' ( (lv_intents_4_0= ruleIntent ) )
             	    {
-            	    otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleElementIntentList3196); 
+            	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleElementIntentList3196); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getElementIntentListAccess().getCommaKeyword_3_0());
             	        
@@ -3427,7 +3426,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleElementIntentList3231); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleElementIntentList3231); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getElementIntentListAccess().getRightSquareBracketKeyword_4());
                 
@@ -3577,7 +3576,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1426:1: (otherlv_0= 'parent' ( (otherlv_1= RULE_ID ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1426:3: otherlv_0= 'parent' ( (otherlv_1= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_33_in_ruleActivityParentAttribute3409); 
+            otherlv_0=(Token)match(input,32,FOLLOW_32_in_ruleActivityParentAttribute3409); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActivityParentAttributeAccess().getParentKeyword_0());
                 
@@ -3681,11 +3680,11 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1464:1: (otherlv_0= 'layout-elements' otherlv_1= '[' ( (lv_layoutElements_2_0= ruleLayoutElement ) ) (otherlv_3= ',' ( (lv_layoutElements_4_0= ruleLayoutElement ) ) )* otherlv_5= ']' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1464:3: otherlv_0= 'layout-elements' otherlv_1= '[' ( (lv_layoutElements_2_0= ruleLayoutElement ) ) (otherlv_3= ',' ( (lv_layoutElements_4_0= ruleLayoutElement ) ) )* otherlv_5= ']'
             {
-            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleActivityLayoutAttribute3512); 
+            otherlv_0=(Token)match(input,33,FOLLOW_33_in_ruleActivityLayoutAttribute3512); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActivityLayoutAttributeAccess().getLayoutElementsKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleActivityLayoutAttribute3524); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleActivityLayoutAttribute3524); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getActivityLayoutAttributeAccess().getLeftSquareBracketKeyword_1());
                 
@@ -3726,7 +3725,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==14) ) {
+                if ( (LA14_0==13) ) {
                     alt14=1;
                 }
 
@@ -3735,7 +3734,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1490:4: otherlv_3= ',' ( (lv_layoutElements_4_0= ruleLayoutElement ) )
             	    {
-            	    otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleActivityLayoutAttribute3558); 
+            	    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleActivityLayoutAttribute3558); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getActivityLayoutAttributeAccess().getCommaKeyword_3_0());
             	        
@@ -3779,7 +3778,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,23,FOLLOW_23_in_ruleActivityLayoutAttribute3593); 
+            otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleActivityLayoutAttribute3593); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getActivityLayoutAttributeAccess().getRightSquareBracketKeyword_4());
                 
@@ -3858,17 +3857,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1537:1: (this_Button_0= ruleButton | ruleSpacer | this_Text_2= ruleText )
             int alt15=3;
             switch ( input.LA(1) ) {
-            case 35:
+            case 34:
                 {
                 alt15=1;
                 }
                 break;
-            case 37:
+            case 36:
                 {
                 alt15=2;
                 }
                 break;
-            case 38:
+            case 37:
                 {
                 alt15=3;
                 }
@@ -3991,12 +3990,12 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleButton"
-    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1582:1: ruleButton returns [EObject current=null] : (otherlv_0= 'button' ( (lv_buttonName_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' ) ;
+    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1582:1: ruleButton returns [EObject current=null] : (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleButton() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_buttonName_1_0=null;
+        Token lv_name_1_0=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
@@ -4008,25 +4007,25 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1585:28: ( (otherlv_0= 'button' ( (lv_buttonName_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1586:1: (otherlv_0= 'button' ( (lv_buttonName_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1585:28: ( (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1586:1: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1586:1: (otherlv_0= 'button' ( (lv_buttonName_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1586:3: otherlv_0= 'button' ( (lv_buttonName_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}'
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1586:1: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}' )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1586:3: otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_attributes_3_0= ruleButtonAttribute ) ) (otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleButton3816); 
+            otherlv_0=(Token)match(input,34,FOLLOW_34_in_ruleButton3816); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getButtonAccess().getButtonKeyword_0());
                 
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1590:1: ( (lv_buttonName_1_0= RULE_ID ) )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1591:1: (lv_buttonName_1_0= RULE_ID )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1590:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1591:1: (lv_name_1_0= RULE_ID )
             {
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1591:1: (lv_buttonName_1_0= RULE_ID )
-            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1592:3: lv_buttonName_1_0= RULE_ID
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1591:1: (lv_name_1_0= RULE_ID )
+            // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1592:3: lv_name_1_0= RULE_ID
             {
-            lv_buttonName_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleButton3833); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleButton3833); 
 
-            			newLeafNode(lv_buttonName_1_0, grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); 
+            			newLeafNode(lv_name_1_0, grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -4034,8 +4033,8 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	        }
                    		setWithLastConsumed(
                    			current, 
-                   			"buttonName",
-                    		lv_buttonName_1_0, 
+                   			"name",
+                    		lv_name_1_0, 
                     		"ID");
             	    
 
@@ -4044,7 +4043,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,16,FOLLOW_16_in_ruleButton3850); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleButton3850); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getButtonAccess().getLeftCurlyBracketKeyword_2());
                 
@@ -4085,7 +4084,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==14) ) {
+                if ( (LA16_0==13) ) {
                     alt16=1;
                 }
 
@@ -4094,7 +4093,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1630:4: otherlv_4= ',' ( (lv_attributes_5_0= ruleButtonAttribute ) )
             	    {
-            	    otherlv_4=(Token)match(input,14,FOLLOW_14_in_ruleButton3884); 
+            	    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleButton3884); 
 
             	        	newLeafNode(otherlv_4, grammarAccess.getButtonAccess().getCommaKeyword_4_0());
             	        
@@ -4138,7 +4137,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,17,FOLLOW_17_in_ruleButton3919); 
+            otherlv_6=(Token)match(input,16,FOLLOW_16_in_ruleButton3919); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getButtonAccess().getRightCurlyBracketKeyword_5());
                 
@@ -4218,10 +4217,10 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==31) ) {
+            if ( (LA17_0==30) ) {
                 alt17=1;
             }
-            else if ( (LA17_0==36) ) {
+            else if ( (LA17_0==35) ) {
                 alt17=2;
             }
             else {
@@ -4340,7 +4339,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1717:1: (otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1717:3: otherlv_0= 'title' ( (lv_title_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,31,FOLLOW_31_in_ruleButtonLabelAttribute4121); 
+            otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleButtonLabelAttribute4121); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getButtonLabelAttributeAccess().getTitleKeyword_0());
                 
@@ -4444,7 +4443,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1760:1: (otherlv_0= 'action' ( (lv_action_1_0= ruleLayoutElementClickAction ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1760:3: otherlv_0= 'action' ( (lv_action_1_0= ruleLayoutElementClickAction ) )
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleButtonActionAttribute4226); 
+            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleButtonActionAttribute4226); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getButtonActionAttributeAccess().getActionKeyword_0());
                 
@@ -4548,7 +4547,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1802:28: (kw= 'spacer' )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1804:2: kw= 'spacer'
             {
-            kw=(Token)match(input,37,FOLLOW_37_in_ruleSpacer4332); 
+            kw=(Token)match(input,36,FOLLOW_36_in_ruleSpacer4332); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getSpacerAccess().getSpacerKeyword()); 
@@ -4623,7 +4622,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1830:1: (otherlv_0= 'text' ( (lv_text_1_0= RULE_STRING ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1830:3: otherlv_0= 'text' ( (lv_text_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,38,FOLLOW_38_in_ruleText4418); 
+            otherlv_0=(Token)match(input,37,FOLLOW_37_in_ruleText4418); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTextAccess().getTextKeyword_0());
                 
@@ -4730,17 +4729,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1873:1: (this_ActionShowToast_0= ruleActionShowToast | this_ActionStartActivity_1= ruleActionStartActivity | this_ActionStartService_2= ruleActionStartService )
             int alt18=3;
             switch ( input.LA(1) ) {
-            case 39:
+            case 38:
                 {
                 alt18=1;
                 }
                 break;
-            case 40:
+            case 39:
                 {
                 alt18=2;
                 }
                 break;
-            case 41:
+            case 40:
                 {
                 alt18=3;
                 }
@@ -4881,7 +4880,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1923:1: (otherlv_0= 'action' ( (lv_action_1_0= ruleBroadcastReceiverAction ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1923:3: otherlv_0= 'action' ( (lv_action_1_0= ruleBroadcastReceiverAction ) )
             {
-            otherlv_0=(Token)match(input,36,FOLLOW_36_in_ruleBroadcastReceiverActionAttribute4669); 
+            otherlv_0=(Token)match(input,35,FOLLOW_35_in_ruleBroadcastReceiverActionAttribute4669); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBroadcastReceiverActionAttributeAccess().getActionKeyword_0());
                 
@@ -4993,17 +4992,17 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:1966:1: (this_ActionShowToast_0= ruleActionShowToast | this_ActionStartActivity_1= ruleActionStartActivity | this_ActionStartService_2= ruleActionStartService )
             int alt19=3;
             switch ( input.LA(1) ) {
-            case 39:
+            case 38:
                 {
                 alt19=1;
                 }
                 break;
-            case 40:
+            case 39:
                 {
                 alt19=2;
                 }
                 break;
-            case 41:
+            case 40:
                 {
                 alt19=3;
                 }
@@ -5143,7 +5142,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2016:1: (otherlv_0= 'show-toast' ( (lv_toastText_1_0= RULE_STRING ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2016:3: otherlv_0= 'show-toast' ( (lv_toastText_1_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleActionShowToast4919); 
+            otherlv_0=(Token)match(input,38,FOLLOW_38_in_ruleActionShowToast4919); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionShowToastAccess().getShowToastKeyword_0());
                 
@@ -5246,7 +5245,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2059:1: (otherlv_0= 'start-activity' ( (otherlv_1= RULE_ID ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2059:3: otherlv_0= 'start-activity' ( (otherlv_1= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleActionStartActivity5024); 
+            otherlv_0=(Token)match(input,39,FOLLOW_39_in_ruleActionStartActivity5024); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionStartActivityAccess().getStartActivityKeyword_0());
                 
@@ -5344,7 +5343,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2097:1: (otherlv_0= 'start-service' ( (otherlv_1= RULE_ID ) ) )
             // ../at.fhj.gaar.androidapp.dsl/src-gen/at/fhj/gaar/androidapp/parser/antlr/internal/InternalAppDsl.g:2097:3: otherlv_0= 'start-service' ( (otherlv_1= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,41,FOLLOW_41_in_ruleActionStartService5127); 
+            otherlv_0=(Token)match(input,40,FOLLOW_40_in_ruleActionStartService5127); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getActionStartServiceAccess().getStartServiceKeyword_0());
                 
@@ -5395,18 +5394,18 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleAndroidAppProject_in_entryRuleAndroidAppProject75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAndroidAppProject85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject131 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_14_in_ruleAndroidAppProject144 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject165 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject131 = new BitSet(new long[]{0x0000000000002002L});
+    public static final BitSet FOLLOW_13_in_ruleAndroidAppProject144 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleApplication_in_ruleAndroidAppProject165 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_ruleApplication_in_entryRuleApplication203 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplication213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleApplication250 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_PACKAGE_NAME_in_ruleApplication267 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleApplication284 = new BitSet(new long[]{0x00000000833C0000L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication305 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_14_in_ruleApplication318 = new BitSet(new long[]{0x00000000833C0000L});
-    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication339 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_17_in_ruleApplication353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleApplication250 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_PACKAGE_NAME_in_ruleApplication267 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleApplication284 = new BitSet(new long[]{0x00000000419E0000L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication305 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleApplication318 = new BitSet(new long[]{0x00000000419E0000L});
+    public static final BitSet FOLLOW_ruleApplicationAttribute_in_ruleApplication339 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleApplication353 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplicationAttribute_in_entryRuleApplicationAttribute389 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplicationAttribute399 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementLabelAttribute_in_ruleApplicationAttribute446 = new BitSet(new long[]{0x0000000000000002L});
@@ -5418,35 +5417,35 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleApplicationMainActivity_in_ruleApplicationAttribute608 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplicationMinSdk_in_entryRuleApplicationMinSdk643 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplicationMinSdk653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleApplicationMinSdk690 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_17_in_ruleApplicationMinSdk690 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationMinSdk707 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplicationTargetSdk_in_entryRuleApplicationTargetSdk748 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplicationTargetSdk758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleApplicationTargetSdk795 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_18_in_ruleApplicationTargetSdk795 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationTargetSdk812 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplicationCompileSdk_in_entryRuleApplicationCompileSdk853 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplicationCompileSdk863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleApplicationCompileSdk900 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_19_in_ruleApplicationCompileSdk900 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleApplicationCompileSdk917 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplicationPermissionList_in_entryRuleApplicationPermissionList958 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplicationPermissionList968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleApplicationPermissionList1005 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleApplicationPermissionList1017 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1038 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_14_in_ruleApplicationPermissionList1051 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1072 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_23_in_ruleApplicationPermissionList1086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleApplicationPermissionList1005 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleApplicationPermissionList1017 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1038 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_13_in_ruleApplicationPermissionList1051 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rulePermission_in_ruleApplicationPermissionList1072 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_22_in_ruleApplicationPermissionList1086 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplicationElementList_in_entryRuleApplicationElementList1122 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplicationElementList1132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleApplicationElementList1169 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleApplicationElementList1181 = new BitSet(new long[]{0x000000001C000000L});
-    public static final BitSet FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1202 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_14_in_ruleApplicationElementList1215 = new BitSet(new long[]{0x000000001C000000L});
-    public static final BitSet FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1236 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_23_in_ruleApplicationElementList1250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleApplicationElementList1169 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleApplicationElementList1181 = new BitSet(new long[]{0x000000000E000000L});
+    public static final BitSet FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1202 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_13_in_ruleApplicationElementList1215 = new BitSet(new long[]{0x000000000E000000L});
+    public static final BitSet FOLLOW_ruleApplicationElement_in_ruleApplicationElementList1236 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_22_in_ruleApplicationElementList1250 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplicationMainActivity_in_entryRuleApplicationMainActivity1286 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleApplicationMainActivity1296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleApplicationMainActivity1333 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_24_in_ruleApplicationMainActivity1333 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleApplicationMainActivity1353 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePermission_in_entryRulePermission1390 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRulePermission1401 = new BitSet(new long[]{0x0000000000000002L});
@@ -5458,31 +5457,31 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleService_in_ruleApplicationElement1595 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActivity_in_entryRuleActivity1630 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActivity1640 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleActivity1677 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleActivity1694 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleActivity1711 = new BitSet(new long[]{0x00000007E0000000L});
-    public static final BitSet FOLLOW_ruleActivityAttribute_in_ruleActivity1732 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_14_in_ruleActivity1745 = new BitSet(new long[]{0x00000007E0000000L});
-    public static final BitSet FOLLOW_ruleActivityAttribute_in_ruleActivity1766 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_17_in_ruleActivity1780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleActivity1677 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleActivity1694 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleActivity1711 = new BitSet(new long[]{0x00000003F0000000L});
+    public static final BitSet FOLLOW_ruleActivityAttribute_in_ruleActivity1732 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleActivity1745 = new BitSet(new long[]{0x00000003F0000000L});
+    public static final BitSet FOLLOW_ruleActivityAttribute_in_ruleActivity1766 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleActivity1780 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBroadcastReceiver_in_entryRuleBroadcastReceiver1816 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBroadcastReceiver1826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleBroadcastReceiver1863 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleBroadcastReceiver1880 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleBroadcastReceiver1897 = new BitSet(new long[]{0x00000011E0000000L});
-    public static final BitSet FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver1918 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_14_in_ruleBroadcastReceiver1931 = new BitSet(new long[]{0x00000011E0000000L});
-    public static final BitSet FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver1952 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_17_in_ruleBroadcastReceiver1966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleBroadcastReceiver1863 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleBroadcastReceiver1880 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleBroadcastReceiver1897 = new BitSet(new long[]{0x00000008F0000000L});
+    public static final BitSet FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver1918 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleBroadcastReceiver1931 = new BitSet(new long[]{0x00000008F0000000L});
+    public static final BitSet FOLLOW_ruleBroadcastReceiverAttribute_in_ruleBroadcastReceiver1952 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleBroadcastReceiver1966 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleService_in_entryRuleService2002 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleService2012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleService2049 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleService2066 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleService2083 = new BitSet(new long[]{0x00000001E0000000L});
-    public static final BitSet FOLLOW_ruleServiceAttribute_in_ruleService2104 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_14_in_ruleService2117 = new BitSet(new long[]{0x00000001E0000000L});
-    public static final BitSet FOLLOW_ruleServiceAttribute_in_ruleService2138 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_17_in_ruleService2152 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_ruleService2049 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleService2066 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleService2083 = new BitSet(new long[]{0x00000000F0000000L});
+    public static final BitSet FOLLOW_ruleServiceAttribute_in_ruleService2104 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleService2117 = new BitSet(new long[]{0x00000000F0000000L});
+    public static final BitSet FOLLOW_ruleServiceAttribute_in_ruleService2138 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleService2152 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActivityAttribute_in_entryRuleActivityAttribute2188 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActivityAttribute2198 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementEnabledAttribute_in_ruleActivityAttribute2245 = new BitSet(new long[]{0x0000000000000002L});
@@ -5506,39 +5505,39 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleElementIntentList_in_ruleServiceAttribute2753 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementEnabledAttribute_in_entryRuleElementEnabledAttribute2788 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleElementEnabledAttribute2798 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleElementEnabledAttribute2835 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_28_in_ruleElementEnabledAttribute2835 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleElementEnabledAttribute2852 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementExportedAttribute_in_entryRuleElementExportedAttribute2893 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleElementExportedAttribute2903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleElementExportedAttribute2940 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_29_in_ruleElementExportedAttribute2940 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_RULE_BOOLEAN_in_ruleElementExportedAttribute2957 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementLabelAttribute_in_entryRuleElementLabelAttribute2998 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleElementLabelAttribute3008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleElementLabelAttribute3045 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_30_in_ruleElementLabelAttribute3045 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleElementLabelAttribute3062 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleElementIntentList_in_entryRuleElementIntentList3103 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleElementIntentList3113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleElementIntentList3150 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleElementIntentList3162 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleIntent_in_ruleElementIntentList3183 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_14_in_ruleElementIntentList3196 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleIntent_in_ruleElementIntentList3217 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_23_in_ruleElementIntentList3231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleElementIntentList3150 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleElementIntentList3162 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleIntent_in_ruleElementIntentList3183 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_13_in_ruleElementIntentList3196 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleIntent_in_ruleElementIntentList3217 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_22_in_ruleElementIntentList3231 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleIntent_in_entryRuleIntent3268 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleIntent3279 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_PACKAGE_NAME_in_ruleIntent3318 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActivityParentAttribute_in_entryRuleActivityParentAttribute3362 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActivityParentAttribute3372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleActivityParentAttribute3409 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_32_in_ruleActivityParentAttribute3409 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleActivityParentAttribute3429 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActivityLayoutAttribute_in_entryRuleActivityLayoutAttribute3465 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActivityLayoutAttribute3475 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleActivityLayoutAttribute3512 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleActivityLayoutAttribute3524 = new BitSet(new long[]{0x0000006800000000L});
-    public static final BitSet FOLLOW_ruleLayoutElement_in_ruleActivityLayoutAttribute3545 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_14_in_ruleActivityLayoutAttribute3558 = new BitSet(new long[]{0x0000006800000000L});
-    public static final BitSet FOLLOW_ruleLayoutElement_in_ruleActivityLayoutAttribute3579 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_23_in_ruleActivityLayoutAttribute3593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_ruleActivityLayoutAttribute3512 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleActivityLayoutAttribute3524 = new BitSet(new long[]{0x0000003400000000L});
+    public static final BitSet FOLLOW_ruleLayoutElement_in_ruleActivityLayoutAttribute3545 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_13_in_ruleActivityLayoutAttribute3558 = new BitSet(new long[]{0x0000003400000000L});
+    public static final BitSet FOLLOW_ruleLayoutElement_in_ruleActivityLayoutAttribute3579 = new BitSet(new long[]{0x0000000000402000L});
+    public static final BitSet FOLLOW_22_in_ruleActivityLayoutAttribute3593 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLayoutElement_in_entryRuleLayoutElement3629 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleLayoutElement3639 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButton_in_ruleLayoutElement3686 = new BitSet(new long[]{0x0000000000000002L});
@@ -5546,31 +5545,31 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleText_in_ruleLayoutElement3734 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButton_in_entryRuleButton3769 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleButton3779 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_ruleButton3816 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleButton3833 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_16_in_ruleButton3850 = new BitSet(new long[]{0x0000001080000000L});
-    public static final BitSet FOLLOW_ruleButtonAttribute_in_ruleButton3871 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_14_in_ruleButton3884 = new BitSet(new long[]{0x0000001080000000L});
-    public static final BitSet FOLLOW_ruleButtonAttribute_in_ruleButton3905 = new BitSet(new long[]{0x0000000000024000L});
-    public static final BitSet FOLLOW_17_in_ruleButton3919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleButton3816 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleButton3833 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleButton3850 = new BitSet(new long[]{0x0000000840000000L});
+    public static final BitSet FOLLOW_ruleButtonAttribute_in_ruleButton3871 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_13_in_ruleButton3884 = new BitSet(new long[]{0x0000000840000000L});
+    public static final BitSet FOLLOW_ruleButtonAttribute_in_ruleButton3905 = new BitSet(new long[]{0x0000000000012000L});
+    public static final BitSet FOLLOW_16_in_ruleButton3919 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButtonAttribute_in_entryRuleButtonAttribute3955 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleButtonAttribute3965 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButtonLabelAttribute_in_ruleButtonAttribute4012 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButtonActionAttribute_in_ruleButtonAttribute4039 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButtonLabelAttribute_in_entryRuleButtonLabelAttribute4074 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleButtonLabelAttribute4084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleButtonLabelAttribute4121 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_30_in_ruleButtonLabelAttribute4121 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleButtonLabelAttribute4138 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButtonActionAttribute_in_entryRuleButtonActionAttribute4179 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleButtonActionAttribute4189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleButtonActionAttribute4226 = new BitSet(new long[]{0x0000038000000000L});
+    public static final BitSet FOLLOW_35_in_ruleButtonActionAttribute4226 = new BitSet(new long[]{0x000001C000000000L});
     public static final BitSet FOLLOW_ruleLayoutElementClickAction_in_ruleButtonActionAttribute4247 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpacer_in_entryRuleSpacer4284 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSpacer4295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_ruleSpacer4332 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_ruleSpacer4332 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleText_in_entryRuleText4371 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleText4381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_ruleText4418 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_37_in_ruleText4418 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleText4435 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLayoutElementClickAction_in_entryRuleLayoutElementClickAction4476 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleLayoutElementClickAction4486 = new BitSet(new long[]{0x0000000000000002L});
@@ -5579,7 +5578,7 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleActionStartService_in_ruleLayoutElementClickAction4587 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBroadcastReceiverActionAttribute_in_entryRuleBroadcastReceiverActionAttribute4622 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBroadcastReceiverActionAttribute4632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_ruleBroadcastReceiverActionAttribute4669 = new BitSet(new long[]{0x0000038000000000L});
+    public static final BitSet FOLLOW_35_in_ruleBroadcastReceiverActionAttribute4669 = new BitSet(new long[]{0x000001C000000000L});
     public static final BitSet FOLLOW_ruleBroadcastReceiverAction_in_ruleBroadcastReceiverActionAttribute4690 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleBroadcastReceiverAction_in_entryRuleBroadcastReceiverAction4726 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBroadcastReceiverAction4736 = new BitSet(new long[]{0x0000000000000002L});
@@ -5588,15 +5587,15 @@ public class InternalAppDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleActionStartService_in_ruleBroadcastReceiverAction4837 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionShowToast_in_entryRuleActionShowToast4872 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActionShowToast4882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_ruleActionShowToast4919 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_38_in_ruleActionShowToast4919 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleActionShowToast4936 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionStartActivity_in_entryRuleActionStartActivity4977 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActionStartActivity4987 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_ruleActionStartActivity5024 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_39_in_ruleActionStartActivity5024 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleActionStartActivity5044 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionStartService_in_entryRuleActionStartService5080 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleActionStartService5090 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_ruleActionStartService5127 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_40_in_ruleActionStartService5127 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleActionStartService5147 = new BitSet(new long[]{0x0000000000000002L});
 
 }

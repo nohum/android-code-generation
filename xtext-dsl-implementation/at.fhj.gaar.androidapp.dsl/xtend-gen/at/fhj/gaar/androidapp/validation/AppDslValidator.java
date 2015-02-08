@@ -219,12 +219,12 @@ public class AppDslValidator extends AbstractAppDslValidator {
     EList<LayoutElement> _layoutElements = layoutElements.getLayoutElements();
     for (final LayoutElement element : _layoutElements) {
       if ((element instanceof Button)) {
-        String buttonName = ((Button) element).getButtonName();
+        String buttonName = ((Button) element).getName();
         boolean _contains = foundNames.contains(buttonName);
         if (_contains) {
           String _format = String.format("Button name \"%s\" is not unique", buttonName);
           this.error(_format, element, 
-            AppDslPackage.Literals.BUTTON__BUTTON_NAME);
+            AppDslPackage.Literals.BUTTON__NAME);
         }
         foundNames.add(buttonName);
       }

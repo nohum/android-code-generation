@@ -111,7 +111,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActivityParentAttributeAccess().getParentAssignment_1(), "rule__ActivityParentAttribute__ParentAssignment_1");
 					put(grammarAccess.getActivityLayoutAttributeAccess().getLayoutElementsAssignment_2(), "rule__ActivityLayoutAttribute__LayoutElementsAssignment_2");
 					put(grammarAccess.getActivityLayoutAttributeAccess().getLayoutElementsAssignment_3_1(), "rule__ActivityLayoutAttribute__LayoutElementsAssignment_3_1");
-					put(grammarAccess.getButtonAccess().getButtonNameAssignment_1(), "rule__Button__ButtonNameAssignment_1");
+					put(grammarAccess.getButtonAccess().getNameAssignment_1(), "rule__Button__NameAssignment_1");
 					put(grammarAccess.getButtonAccess().getAttributesAssignment_3(), "rule__Button__AttributesAssignment_3");
 					put(grammarAccess.getButtonAccess().getAttributesAssignment_4_1(), "rule__Button__AttributesAssignment_4_1");
 					put(grammarAccess.getButtonLabelAttributeAccess().getTitleAssignment_1(), "rule__ButtonLabelAttribute__TitleAssignment_1");

@@ -68,7 +68,7 @@
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//LayoutElement"/>
     <genClasses ecoreClass="AppDsl.ecore#//Button">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Button/buttonName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Button/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Button/attributes"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ButtonAttribute"/>

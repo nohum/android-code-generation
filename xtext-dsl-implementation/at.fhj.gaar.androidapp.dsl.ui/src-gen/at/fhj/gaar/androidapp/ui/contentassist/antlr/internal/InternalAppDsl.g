@@ -3988,9 +3988,9 @@ rule__Button__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getButtonAccess().getButtonNameAssignment_1()); }
-(rule__Button__ButtonNameAssignment_1)
-{ after(grammarAccess.getButtonAccess().getButtonNameAssignment_1()); }
+{ before(grammarAccess.getButtonAccess().getNameAssignment_1()); }
+(rule__Button__NameAssignment_1)
+{ after(grammarAccess.getButtonAccess().getNameAssignment_1()); }
 )
 
 ;
@@ -5093,14 +5093,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Button__ButtonNameAssignment_1
+rule__Button__NameAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); }
-	RULE_ID{ after(grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); }
+	RULE_ID{ after(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -5253,8 +5253,6 @@ finally {
 
 
 RULE_BOOLEAN : ('true'|'false'|'TRUE'|'FALSE');
-
-RULE_JAVA_IDENTIFIER : '"' RULE_ID '"';
 
 RULE_PACKAGE_NAME : '"' RULE_ID ('.' RULE_ID)* '"';
 

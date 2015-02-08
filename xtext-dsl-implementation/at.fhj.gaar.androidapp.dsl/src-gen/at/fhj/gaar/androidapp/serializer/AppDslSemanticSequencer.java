@@ -479,7 +479,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (buttonName=ID attributes+=ButtonAttribute attributes+=ButtonAttribute*)
+	 *     (name=ID attributes+=ButtonAttribute attributes+=ButtonAttribute*)
 	 */
 	protected void sequence_Button(EObject context, Button semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

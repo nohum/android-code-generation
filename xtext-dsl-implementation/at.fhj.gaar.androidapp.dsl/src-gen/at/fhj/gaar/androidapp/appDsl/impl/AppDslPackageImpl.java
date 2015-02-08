@@ -790,7 +790,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getButton_ButtonName()
+  public EAttribute getButton_Name()
   {
     return (EAttribute)buttonEClass.getEStructuralFeatures().get(0);
   }
@@ -1071,7 +1071,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     layoutElementEClass = createEClass(LAYOUT_ELEMENT);
 
     buttonEClass = createEClass(BUTTON);
-    createEAttribute(buttonEClass, BUTTON__BUTTON_NAME);
+    createEAttribute(buttonEClass, BUTTON__NAME);
     createEReference(buttonEClass, BUTTON__ATTRIBUTES);
 
     buttonAttributeEClass = createEClass(BUTTON_ATTRIBUTE);
@@ -1234,7 +1234,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEClass(layoutElementEClass, LayoutElement.class, "LayoutElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getButton_ButtonName(), ecorePackage.getEString(), "buttonName", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButton_Name(), ecorePackage.getEString(), "name", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getButton_Attributes(), this.getButtonAttribute(), null, "attributes", null, 0, -1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(buttonAttributeEClass, ButtonAttribute.class, "ButtonAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -22,12 +22,11 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalAppDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_PACKAGE_NAME", "RULE_INT", "RULE_ID", "RULE_BOOLEAN", "RULE_STRING", "RULE_JAVA_IDENTIFIER", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'spacer'", "','", "'application'", "'{'", "'}'", "'min-sdk'", "'target-sdk'", "'compile-sdk'", "'permissions'", "'['", "']'", "'elements'", "'main-activity'", "'activity'", "'receiver'", "'service'", "'enabled'", "'exported'", "'title'", "'intents'", "'parent'", "'layout-elements'", "'button'", "'action'", "'text'", "'show-toast'", "'start-activity'", "'start-service'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_PACKAGE_NAME", "RULE_INT", "RULE_ID", "RULE_BOOLEAN", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'spacer'", "','", "'application'", "'{'", "'}'", "'min-sdk'", "'target-sdk'", "'compile-sdk'", "'permissions'", "'['", "']'", "'elements'", "'main-activity'", "'activity'", "'receiver'", "'service'", "'enabled'", "'exported'", "'title'", "'intents'", "'parent'", "'layout-elements'", "'button'", "'action'", "'text'", "'show-toast'", "'start-activity'", "'start-service'"
     };
     public static final int RULE_BOOLEAN=7;
     public static final int RULE_ID=6;
     public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -37,15 +36,14 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
     public static final int RULE_PACKAGE_NAME=4;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=13;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=11;
+    public static final int RULE_SL_COMMENT=10;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=10;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__30=30;
     public static final int T__19=19;
-    public static final int RULE_JAVA_IDENTIFIER=9;
     public static final int T__31=31;
     public static final int RULE_STRING=8;
     public static final int T__32=32;
@@ -61,8 +59,9 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
     public static final int T__38=38;
     public static final int T__39=39;
     public static final int T__14=14;
+    public static final int T__13=13;
     public static final int RULE_INT=5;
-    public static final int RULE_WS=12;
+    public static final int RULE_WS=11;
 
     // delegates
     // delegators
@@ -2358,7 +2357,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:887:1: 'spacer'
             {
              before(grammarAccess.getSpacerAccess().getSpacerKeyword()); 
-            match(input,14,FOLLOW_14_in_ruleSpacer1833); 
+            match(input,13,FOLLOW_13_in_ruleSpacer1833); 
              after(grammarAccess.getSpacerAccess().getSpacerKeyword()); 
 
             }
@@ -2930,37 +2929,37 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1102:1: ( ( ruleElementLabelAttribute ) | ( ruleApplicationMinSdk ) | ( ruleApplicationTargetSdk ) | ( ruleApplicationCompileSdk ) | ( ruleApplicationPermissionList ) | ( ruleApplicationElementList ) | ( ruleApplicationMainActivity ) )
             int alt1=7;
             switch ( input.LA(1) ) {
-            case 32:
+            case 31:
                 {
                 alt1=1;
                 }
                 break;
-            case 19:
+            case 18:
                 {
                 alt1=2;
                 }
                 break;
-            case 20:
+            case 19:
                 {
                 alt1=3;
                 }
                 break;
-            case 21:
+            case 20:
                 {
                 alt1=4;
                 }
                 break;
-            case 22:
+            case 21:
                 {
                 alt1=5;
                 }
                 break;
-            case 25:
+            case 24:
                 {
                 alt1=6;
                 }
                 break;
-            case 26:
+            case 25:
                 {
                 alt1=7;
                 }
@@ -3133,17 +3132,17 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1154:1: ( ( ruleActivity ) | ( ruleBroadcastReceiver ) | ( ruleService ) )
             int alt2=3;
             switch ( input.LA(1) ) {
-            case 27:
+            case 26:
                 {
                 alt2=1;
                 }
                 break;
-            case 28:
+            case 27:
                 {
                 alt2=2;
                 }
                 break;
-            case 29:
+            case 28:
                 {
                 alt2=3;
                 }
@@ -3240,32 +3239,32 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1182:1: ( ( ruleElementEnabledAttribute ) | ( ruleElementExportedAttribute ) | ( ruleElementLabelAttribute ) | ( ruleElementIntentList ) | ( ruleActivityParentAttribute ) | ( ruleActivityLayoutAttribute ) )
             int alt3=6;
             switch ( input.LA(1) ) {
-            case 30:
+            case 29:
                 {
                 alt3=1;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt3=2;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt3=3;
                 }
                 break;
-            case 33:
+            case 32:
                 {
                 alt3=4;
                 }
                 break;
-            case 34:
+            case 33:
                 {
                 alt3=5;
                 }
                 break;
-            case 35:
+            case 34:
                 {
                 alt3=6;
                 }
@@ -3419,27 +3418,27 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1228:1: ( ( ruleElementEnabledAttribute ) | ( ruleElementExportedAttribute ) | ( ruleElementLabelAttribute ) | ( ruleElementIntentList ) | ( ruleBroadcastReceiverActionAttribute ) )
             int alt4=5;
             switch ( input.LA(1) ) {
-            case 30:
+            case 29:
                 {
                 alt4=1;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt4=2;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt4=3;
                 }
                 break;
-            case 33:
+            case 32:
                 {
                 alt4=4;
                 }
                 break;
-            case 37:
+            case 36:
                 {
                 alt4=5;
                 }
@@ -3574,22 +3573,22 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1268:1: ( ( ruleElementEnabledAttribute ) | ( ruleElementExportedAttribute ) | ( ruleElementLabelAttribute ) | ( ruleElementIntentList ) )
             int alt5=4;
             switch ( input.LA(1) ) {
-            case 30:
+            case 29:
                 {
                 alt5=1;
                 }
                 break;
-            case 31:
+            case 30:
                 {
                 alt5=2;
                 }
                 break;
-            case 32:
+            case 31:
                 {
                 alt5=3;
                 }
                 break;
-            case 33:
+            case 32:
                 {
                 alt5=4;
                 }
@@ -3705,17 +3704,17 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1302:1: ( ( ruleButton ) | ( ruleSpacer ) | ( ruleText ) )
             int alt6=3;
             switch ( input.LA(1) ) {
-            case 36:
+            case 35:
                 {
                 alt6=1;
                 }
                 break;
-            case 14:
+            case 13:
                 {
                 alt6=2;
                 }
                 break;
-            case 38:
+            case 37:
                 {
                 alt6=3;
                 }
@@ -3813,10 +3812,10 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==32) ) {
+            if ( (LA7_0==31) ) {
                 alt7=1;
             }
-            else if ( (LA7_0==37) ) {
+            else if ( (LA7_0==36) ) {
                 alt7=2;
             }
             else {
@@ -3891,17 +3890,17 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1352:1: ( ( ruleActionShowToast ) | ( ruleActionStartActivity ) | ( ruleActionStartService ) )
             int alt8=3;
             switch ( input.LA(1) ) {
-            case 39:
+            case 38:
                 {
                 alt8=1;
                 }
                 break;
-            case 40:
+            case 39:
                 {
                 alt8=2;
                 }
                 break;
-            case 41:
+            case 40:
                 {
                 alt8=3;
                 }
@@ -3998,17 +3997,17 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1380:1: ( ( ruleActionShowToast ) | ( ruleActionStartActivity ) | ( ruleActionStartService ) )
             int alt9=3;
             switch ( input.LA(1) ) {
-            case 39:
+            case 38:
                 {
                 alt9=1;
                 }
                 break;
-            case 40:
+            case 39:
                 {
                 alt9=2;
                 }
                 break;
-            case 41:
+            case 40:
                 {
                 alt9=3;
                 }
@@ -4233,7 +4232,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==15) ) {
+                if ( (LA10_0==14) ) {
                     alt10=1;
                 }
 
@@ -4330,7 +4329,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1485:1: ','
             {
              before(grammarAccess.getAndroidAppProjectAccess().getCommaKeyword_1_0()); 
-            match(input,15,FOLLOW_15_in_rule__AndroidAppProject__Group_1__0__Impl3188); 
+            match(input,14,FOLLOW_14_in_rule__AndroidAppProject__Group_1__0__Impl3188); 
              after(grammarAccess.getAndroidAppProjectAccess().getCommaKeyword_1_0()); 
 
             }
@@ -4485,7 +4484,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1548:1: 'application'
             {
              before(grammarAccess.getApplicationAccess().getApplicationKeyword_0()); 
-            match(input,16,FOLLOW_16_in_rule__Application__Group__0__Impl3311); 
+            match(input,15,FOLLOW_15_in_rule__Application__Group__0__Impl3311); 
              after(grammarAccess.getApplicationAccess().getApplicationKeyword_0()); 
 
             }
@@ -4645,7 +4644,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1608:1: '{'
             {
              before(grammarAccess.getApplicationAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FOLLOW_17_in_rule__Application__Group__2__Impl3433); 
+            match(input,16,FOLLOW_16_in_rule__Application__Group__2__Impl3433); 
              after(grammarAccess.getApplicationAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -4811,7 +4810,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==15) ) {
+                if ( (LA11_0==14) ) {
                     alt11=1;
                 }
 
@@ -4903,7 +4902,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1696:1: '}'
             {
              before(grammarAccess.getApplicationAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,18,FOLLOW_18_in_rule__Application__Group__5__Impl3613); 
+            match(input,17,FOLLOW_17_in_rule__Application__Group__5__Impl3613); 
              after(grammarAccess.getApplicationAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -4978,7 +4977,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1739:1: ','
             {
              before(grammarAccess.getApplicationAccess().getCommaKeyword_4_0()); 
-            match(input,15,FOLLOW_15_in_rule__Application__Group_4__0__Impl3687); 
+            match(input,14,FOLLOW_14_in_rule__Application__Group_4__0__Impl3687); 
              after(grammarAccess.getApplicationAccess().getCommaKeyword_4_0()); 
 
             }
@@ -5133,7 +5132,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1802:1: 'min-sdk'
             {
              before(grammarAccess.getApplicationMinSdkAccess().getMinSdkKeyword_0()); 
-            match(input,19,FOLLOW_19_in_rule__ApplicationMinSdk__Group__0__Impl3810); 
+            match(input,18,FOLLOW_18_in_rule__ApplicationMinSdk__Group__0__Impl3810); 
              after(grammarAccess.getApplicationMinSdkAccess().getMinSdkKeyword_0()); 
 
             }
@@ -5288,7 +5287,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1865:1: 'target-sdk'
             {
              before(grammarAccess.getApplicationTargetSdkAccess().getTargetSdkKeyword_0()); 
-            match(input,20,FOLLOW_20_in_rule__ApplicationTargetSdk__Group__0__Impl3933); 
+            match(input,19,FOLLOW_19_in_rule__ApplicationTargetSdk__Group__0__Impl3933); 
              after(grammarAccess.getApplicationTargetSdkAccess().getTargetSdkKeyword_0()); 
 
             }
@@ -5443,7 +5442,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1928:1: 'compile-sdk'
             {
              before(grammarAccess.getApplicationCompileSdkAccess().getCompileSdkKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__ApplicationCompileSdk__Group__0__Impl4056); 
+            match(input,20,FOLLOW_20_in_rule__ApplicationCompileSdk__Group__0__Impl4056); 
              after(grammarAccess.getApplicationCompileSdkAccess().getCompileSdkKeyword_0()); 
 
             }
@@ -5598,7 +5597,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1991:1: 'permissions'
             {
              before(grammarAccess.getApplicationPermissionListAccess().getPermissionsKeyword_0()); 
-            match(input,22,FOLLOW_22_in_rule__ApplicationPermissionList__Group__0__Impl4179); 
+            match(input,21,FOLLOW_21_in_rule__ApplicationPermissionList__Group__0__Impl4179); 
              after(grammarAccess.getApplicationPermissionListAccess().getPermissionsKeyword_0()); 
 
             }
@@ -5673,7 +5672,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2022:1: '['
             {
              before(grammarAccess.getApplicationPermissionListAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__ApplicationPermissionList__Group__1__Impl4241); 
+            match(input,22,FOLLOW_22_in_rule__ApplicationPermissionList__Group__1__Impl4241); 
              after(grammarAccess.getApplicationPermissionListAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -5839,7 +5838,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==15) ) {
+                if ( (LA12_0==14) ) {
                     alt12=1;
                 }
 
@@ -5931,7 +5930,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2110:1: ']'
             {
              before(grammarAccess.getApplicationPermissionListAccess().getRightSquareBracketKeyword_4()); 
-            match(input,24,FOLLOW_24_in_rule__ApplicationPermissionList__Group__4__Impl4421); 
+            match(input,23,FOLLOW_23_in_rule__ApplicationPermissionList__Group__4__Impl4421); 
              after(grammarAccess.getApplicationPermissionListAccess().getRightSquareBracketKeyword_4()); 
 
             }
@@ -6006,7 +6005,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2151:1: ','
             {
              before(grammarAccess.getApplicationPermissionListAccess().getCommaKeyword_3_0()); 
-            match(input,15,FOLLOW_15_in_rule__ApplicationPermissionList__Group_3__0__Impl4493); 
+            match(input,14,FOLLOW_14_in_rule__ApplicationPermissionList__Group_3__0__Impl4493); 
              after(grammarAccess.getApplicationPermissionListAccess().getCommaKeyword_3_0()); 
 
             }
@@ -6161,7 +6160,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2214:1: 'elements'
             {
              before(grammarAccess.getApplicationElementListAccess().getElementsKeyword_0()); 
-            match(input,25,FOLLOW_25_in_rule__ApplicationElementList__Group__0__Impl4616); 
+            match(input,24,FOLLOW_24_in_rule__ApplicationElementList__Group__0__Impl4616); 
              after(grammarAccess.getApplicationElementListAccess().getElementsKeyword_0()); 
 
             }
@@ -6236,7 +6235,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2245:1: '['
             {
              before(grammarAccess.getApplicationElementListAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__ApplicationElementList__Group__1__Impl4678); 
+            match(input,22,FOLLOW_22_in_rule__ApplicationElementList__Group__1__Impl4678); 
              after(grammarAccess.getApplicationElementListAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -6402,7 +6401,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==15) ) {
+                if ( (LA13_0==14) ) {
                     alt13=1;
                 }
 
@@ -6494,7 +6493,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2333:1: ']'
             {
              before(grammarAccess.getApplicationElementListAccess().getRightSquareBracketKeyword_4()); 
-            match(input,24,FOLLOW_24_in_rule__ApplicationElementList__Group__4__Impl4858); 
+            match(input,23,FOLLOW_23_in_rule__ApplicationElementList__Group__4__Impl4858); 
              after(grammarAccess.getApplicationElementListAccess().getRightSquareBracketKeyword_4()); 
 
             }
@@ -6569,7 +6568,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2374:1: ','
             {
              before(grammarAccess.getApplicationElementListAccess().getCommaKeyword_3_0()); 
-            match(input,15,FOLLOW_15_in_rule__ApplicationElementList__Group_3__0__Impl4930); 
+            match(input,14,FOLLOW_14_in_rule__ApplicationElementList__Group_3__0__Impl4930); 
              after(grammarAccess.getApplicationElementListAccess().getCommaKeyword_3_0()); 
 
             }
@@ -6724,7 +6723,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2437:1: 'main-activity'
             {
              before(grammarAccess.getApplicationMainActivityAccess().getMainActivityKeyword_0()); 
-            match(input,26,FOLLOW_26_in_rule__ApplicationMainActivity__Group__0__Impl5053); 
+            match(input,25,FOLLOW_25_in_rule__ApplicationMainActivity__Group__0__Impl5053); 
              after(grammarAccess.getApplicationMainActivityAccess().getMainActivityKeyword_0()); 
 
             }
@@ -6879,7 +6878,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2500:1: 'activity'
             {
              before(grammarAccess.getActivityAccess().getActivityKeyword_0()); 
-            match(input,27,FOLLOW_27_in_rule__Activity__Group__0__Impl5176); 
+            match(input,26,FOLLOW_26_in_rule__Activity__Group__0__Impl5176); 
              after(grammarAccess.getActivityAccess().getActivityKeyword_0()); 
 
             }
@@ -7039,7 +7038,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2560:1: '{'
             {
              before(grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FOLLOW_17_in_rule__Activity__Group__2__Impl5298); 
+            match(input,16,FOLLOW_16_in_rule__Activity__Group__2__Impl5298); 
              after(grammarAccess.getActivityAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -7205,7 +7204,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==15) ) {
+                if ( (LA14_0==14) ) {
                     alt14=1;
                 }
 
@@ -7297,7 +7296,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2648:1: '}'
             {
              before(grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,18,FOLLOW_18_in_rule__Activity__Group__5__Impl5478); 
+            match(input,17,FOLLOW_17_in_rule__Activity__Group__5__Impl5478); 
              after(grammarAccess.getActivityAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -7372,7 +7371,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2691:1: ','
             {
              before(grammarAccess.getActivityAccess().getCommaKeyword_4_0()); 
-            match(input,15,FOLLOW_15_in_rule__Activity__Group_4__0__Impl5552); 
+            match(input,14,FOLLOW_14_in_rule__Activity__Group_4__0__Impl5552); 
              after(grammarAccess.getActivityAccess().getCommaKeyword_4_0()); 
 
             }
@@ -7527,7 +7526,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2754:1: 'receiver'
             {
              before(grammarAccess.getBroadcastReceiverAccess().getReceiverKeyword_0()); 
-            match(input,28,FOLLOW_28_in_rule__BroadcastReceiver__Group__0__Impl5675); 
+            match(input,27,FOLLOW_27_in_rule__BroadcastReceiver__Group__0__Impl5675); 
              after(grammarAccess.getBroadcastReceiverAccess().getReceiverKeyword_0()); 
 
             }
@@ -7687,7 +7686,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2814:1: '{'
             {
              before(grammarAccess.getBroadcastReceiverAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FOLLOW_17_in_rule__BroadcastReceiver__Group__2__Impl5797); 
+            match(input,16,FOLLOW_16_in_rule__BroadcastReceiver__Group__2__Impl5797); 
              after(grammarAccess.getBroadcastReceiverAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -7853,7 +7852,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( (LA15_0==15) ) {
+                if ( (LA15_0==14) ) {
                     alt15=1;
                 }
 
@@ -7945,7 +7944,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2902:1: '}'
             {
              before(grammarAccess.getBroadcastReceiverAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,18,FOLLOW_18_in_rule__BroadcastReceiver__Group__5__Impl5977); 
+            match(input,17,FOLLOW_17_in_rule__BroadcastReceiver__Group__5__Impl5977); 
              after(grammarAccess.getBroadcastReceiverAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -8020,7 +8019,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:2945:1: ','
             {
              before(grammarAccess.getBroadcastReceiverAccess().getCommaKeyword_4_0()); 
-            match(input,15,FOLLOW_15_in_rule__BroadcastReceiver__Group_4__0__Impl6051); 
+            match(input,14,FOLLOW_14_in_rule__BroadcastReceiver__Group_4__0__Impl6051); 
              after(grammarAccess.getBroadcastReceiverAccess().getCommaKeyword_4_0()); 
 
             }
@@ -8175,7 +8174,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3008:1: 'service'
             {
              before(grammarAccess.getServiceAccess().getServiceKeyword_0()); 
-            match(input,29,FOLLOW_29_in_rule__Service__Group__0__Impl6174); 
+            match(input,28,FOLLOW_28_in_rule__Service__Group__0__Impl6174); 
              after(grammarAccess.getServiceAccess().getServiceKeyword_0()); 
 
             }
@@ -8335,7 +8334,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3068:1: '{'
             {
              before(grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FOLLOW_17_in_rule__Service__Group__2__Impl6296); 
+            match(input,16,FOLLOW_16_in_rule__Service__Group__2__Impl6296); 
              after(grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -8501,7 +8500,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt16=2;
                 int LA16_0 = input.LA(1);
 
-                if ( (LA16_0==15) ) {
+                if ( (LA16_0==14) ) {
                     alt16=1;
                 }
 
@@ -8593,7 +8592,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3156:1: '}'
             {
              before(grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,18,FOLLOW_18_in_rule__Service__Group__5__Impl6476); 
+            match(input,17,FOLLOW_17_in_rule__Service__Group__5__Impl6476); 
              after(grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -8668,7 +8667,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3199:1: ','
             {
              before(grammarAccess.getServiceAccess().getCommaKeyword_4_0()); 
-            match(input,15,FOLLOW_15_in_rule__Service__Group_4__0__Impl6550); 
+            match(input,14,FOLLOW_14_in_rule__Service__Group_4__0__Impl6550); 
              after(grammarAccess.getServiceAccess().getCommaKeyword_4_0()); 
 
             }
@@ -8823,7 +8822,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3262:1: 'enabled'
             {
              before(grammarAccess.getElementEnabledAttributeAccess().getEnabledKeyword_0()); 
-            match(input,30,FOLLOW_30_in_rule__ElementEnabledAttribute__Group__0__Impl6673); 
+            match(input,29,FOLLOW_29_in_rule__ElementEnabledAttribute__Group__0__Impl6673); 
              after(grammarAccess.getElementEnabledAttributeAccess().getEnabledKeyword_0()); 
 
             }
@@ -8978,7 +8977,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3325:1: 'exported'
             {
              before(grammarAccess.getElementExportedAttributeAccess().getExportedKeyword_0()); 
-            match(input,31,FOLLOW_31_in_rule__ElementExportedAttribute__Group__0__Impl6796); 
+            match(input,30,FOLLOW_30_in_rule__ElementExportedAttribute__Group__0__Impl6796); 
              after(grammarAccess.getElementExportedAttributeAccess().getExportedKeyword_0()); 
 
             }
@@ -9133,7 +9132,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3388:1: 'title'
             {
              before(grammarAccess.getElementLabelAttributeAccess().getTitleKeyword_0()); 
-            match(input,32,FOLLOW_32_in_rule__ElementLabelAttribute__Group__0__Impl6919); 
+            match(input,31,FOLLOW_31_in_rule__ElementLabelAttribute__Group__0__Impl6919); 
              after(grammarAccess.getElementLabelAttributeAccess().getTitleKeyword_0()); 
 
             }
@@ -9288,7 +9287,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3451:1: 'intents'
             {
              before(grammarAccess.getElementIntentListAccess().getIntentsKeyword_0()); 
-            match(input,33,FOLLOW_33_in_rule__ElementIntentList__Group__0__Impl7042); 
+            match(input,32,FOLLOW_32_in_rule__ElementIntentList__Group__0__Impl7042); 
              after(grammarAccess.getElementIntentListAccess().getIntentsKeyword_0()); 
 
             }
@@ -9363,7 +9362,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3482:1: '['
             {
              before(grammarAccess.getElementIntentListAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__ElementIntentList__Group__1__Impl7104); 
+            match(input,22,FOLLOW_22_in_rule__ElementIntentList__Group__1__Impl7104); 
              after(grammarAccess.getElementIntentListAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -9529,7 +9528,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt17=2;
                 int LA17_0 = input.LA(1);
 
-                if ( (LA17_0==15) ) {
+                if ( (LA17_0==14) ) {
                     alt17=1;
                 }
 
@@ -9621,7 +9620,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3570:1: ']'
             {
              before(grammarAccess.getElementIntentListAccess().getRightSquareBracketKeyword_4()); 
-            match(input,24,FOLLOW_24_in_rule__ElementIntentList__Group__4__Impl7284); 
+            match(input,23,FOLLOW_23_in_rule__ElementIntentList__Group__4__Impl7284); 
              after(grammarAccess.getElementIntentListAccess().getRightSquareBracketKeyword_4()); 
 
             }
@@ -9696,7 +9695,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3611:1: ','
             {
              before(grammarAccess.getElementIntentListAccess().getCommaKeyword_3_0()); 
-            match(input,15,FOLLOW_15_in_rule__ElementIntentList__Group_3__0__Impl7356); 
+            match(input,14,FOLLOW_14_in_rule__ElementIntentList__Group_3__0__Impl7356); 
              after(grammarAccess.getElementIntentListAccess().getCommaKeyword_3_0()); 
 
             }
@@ -9851,7 +9850,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3674:1: 'parent'
             {
              before(grammarAccess.getActivityParentAttributeAccess().getParentKeyword_0()); 
-            match(input,34,FOLLOW_34_in_rule__ActivityParentAttribute__Group__0__Impl7479); 
+            match(input,33,FOLLOW_33_in_rule__ActivityParentAttribute__Group__0__Impl7479); 
              after(grammarAccess.getActivityParentAttributeAccess().getParentKeyword_0()); 
 
             }
@@ -10006,7 +10005,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3737:1: 'layout-elements'
             {
              before(grammarAccess.getActivityLayoutAttributeAccess().getLayoutElementsKeyword_0()); 
-            match(input,35,FOLLOW_35_in_rule__ActivityLayoutAttribute__Group__0__Impl7602); 
+            match(input,34,FOLLOW_34_in_rule__ActivityLayoutAttribute__Group__0__Impl7602); 
              after(grammarAccess.getActivityLayoutAttributeAccess().getLayoutElementsKeyword_0()); 
 
             }
@@ -10081,7 +10080,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3768:1: '['
             {
              before(grammarAccess.getActivityLayoutAttributeAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__ActivityLayoutAttribute__Group__1__Impl7664); 
+            match(input,22,FOLLOW_22_in_rule__ActivityLayoutAttribute__Group__1__Impl7664); 
              after(grammarAccess.getActivityLayoutAttributeAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -10247,7 +10246,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt18=2;
                 int LA18_0 = input.LA(1);
 
-                if ( (LA18_0==15) ) {
+                if ( (LA18_0==14) ) {
                     alt18=1;
                 }
 
@@ -10339,7 +10338,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3856:1: ']'
             {
              before(grammarAccess.getActivityLayoutAttributeAccess().getRightSquareBracketKeyword_4()); 
-            match(input,24,FOLLOW_24_in_rule__ActivityLayoutAttribute__Group__4__Impl7844); 
+            match(input,23,FOLLOW_23_in_rule__ActivityLayoutAttribute__Group__4__Impl7844); 
              after(grammarAccess.getActivityLayoutAttributeAccess().getRightSquareBracketKeyword_4()); 
 
             }
@@ -10414,7 +10413,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3897:1: ','
             {
              before(grammarAccess.getActivityLayoutAttributeAccess().getCommaKeyword_3_0()); 
-            match(input,15,FOLLOW_15_in_rule__ActivityLayoutAttribute__Group_3__0__Impl7916); 
+            match(input,14,FOLLOW_14_in_rule__ActivityLayoutAttribute__Group_3__0__Impl7916); 
              after(grammarAccess.getActivityLayoutAttributeAccess().getCommaKeyword_3_0()); 
 
             }
@@ -10569,7 +10568,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3960:1: 'button'
             {
              before(grammarAccess.getButtonAccess().getButtonKeyword_0()); 
-            match(input,36,FOLLOW_36_in_rule__Button__Group__0__Impl8039); 
+            match(input,35,FOLLOW_35_in_rule__Button__Group__0__Impl8039); 
              after(grammarAccess.getButtonAccess().getButtonKeyword_0()); 
 
             }
@@ -10631,31 +10630,31 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Button__Group__1__Impl"
-    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3985:1: rule__Button__Group__1__Impl : ( ( rule__Button__ButtonNameAssignment_1 ) ) ;
+    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3985:1: rule__Button__Group__1__Impl : ( ( rule__Button__NameAssignment_1 ) ) ;
     public final void rule__Button__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3989:1: ( ( ( rule__Button__ButtonNameAssignment_1 ) ) )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3990:1: ( ( rule__Button__ButtonNameAssignment_1 ) )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3989:1: ( ( ( rule__Button__NameAssignment_1 ) ) )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3990:1: ( ( rule__Button__NameAssignment_1 ) )
             {
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3990:1: ( ( rule__Button__ButtonNameAssignment_1 ) )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3991:1: ( rule__Button__ButtonNameAssignment_1 )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3990:1: ( ( rule__Button__NameAssignment_1 ) )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3991:1: ( rule__Button__NameAssignment_1 )
             {
-             before(grammarAccess.getButtonAccess().getButtonNameAssignment_1()); 
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3992:1: ( rule__Button__ButtonNameAssignment_1 )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3992:2: rule__Button__ButtonNameAssignment_1
+             before(grammarAccess.getButtonAccess().getNameAssignment_1()); 
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3992:1: ( rule__Button__NameAssignment_1 )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:3992:2: rule__Button__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Button__ButtonNameAssignment_1_in_rule__Button__Group__1__Impl8100);
-            rule__Button__ButtonNameAssignment_1();
+            pushFollow(FOLLOW_rule__Button__NameAssignment_1_in_rule__Button__Group__1__Impl8100);
+            rule__Button__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getButtonAccess().getButtonNameAssignment_1()); 
+             after(grammarAccess.getButtonAccess().getNameAssignment_1()); 
 
             }
 
@@ -10729,7 +10728,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4020:1: '{'
             {
              before(grammarAccess.getButtonAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,17,FOLLOW_17_in_rule__Button__Group__2__Impl8161); 
+            match(input,16,FOLLOW_16_in_rule__Button__Group__2__Impl8161); 
              after(grammarAccess.getButtonAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -10895,7 +10894,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( (LA19_0==15) ) {
+                if ( (LA19_0==14) ) {
                     alt19=1;
                 }
 
@@ -10987,7 +10986,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4108:1: '}'
             {
              before(grammarAccess.getButtonAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,18,FOLLOW_18_in_rule__Button__Group__5__Impl8341); 
+            match(input,17,FOLLOW_17_in_rule__Button__Group__5__Impl8341); 
              after(grammarAccess.getButtonAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -11062,7 +11061,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4151:1: ','
             {
              before(grammarAccess.getButtonAccess().getCommaKeyword_4_0()); 
-            match(input,15,FOLLOW_15_in_rule__Button__Group_4__0__Impl8415); 
+            match(input,14,FOLLOW_14_in_rule__Button__Group_4__0__Impl8415); 
              after(grammarAccess.getButtonAccess().getCommaKeyword_4_0()); 
 
             }
@@ -11217,7 +11216,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4214:1: 'title'
             {
              before(grammarAccess.getButtonLabelAttributeAccess().getTitleKeyword_0()); 
-            match(input,32,FOLLOW_32_in_rule__ButtonLabelAttribute__Group__0__Impl8538); 
+            match(input,31,FOLLOW_31_in_rule__ButtonLabelAttribute__Group__0__Impl8538); 
              after(grammarAccess.getButtonLabelAttributeAccess().getTitleKeyword_0()); 
 
             }
@@ -11372,7 +11371,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4277:1: 'action'
             {
              before(grammarAccess.getButtonActionAttributeAccess().getActionKeyword_0()); 
-            match(input,37,FOLLOW_37_in_rule__ButtonActionAttribute__Group__0__Impl8661); 
+            match(input,36,FOLLOW_36_in_rule__ButtonActionAttribute__Group__0__Impl8661); 
              after(grammarAccess.getButtonActionAttributeAccess().getActionKeyword_0()); 
 
             }
@@ -11527,7 +11526,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4340:1: 'text'
             {
              before(grammarAccess.getTextAccess().getTextKeyword_0()); 
-            match(input,38,FOLLOW_38_in_rule__Text__Group__0__Impl8784); 
+            match(input,37,FOLLOW_37_in_rule__Text__Group__0__Impl8784); 
              after(grammarAccess.getTextAccess().getTextKeyword_0()); 
 
             }
@@ -11682,7 +11681,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4403:1: 'action'
             {
              before(grammarAccess.getBroadcastReceiverActionAttributeAccess().getActionKeyword_0()); 
-            match(input,37,FOLLOW_37_in_rule__BroadcastReceiverActionAttribute__Group__0__Impl8907); 
+            match(input,36,FOLLOW_36_in_rule__BroadcastReceiverActionAttribute__Group__0__Impl8907); 
              after(grammarAccess.getBroadcastReceiverActionAttributeAccess().getActionKeyword_0()); 
 
             }
@@ -11837,7 +11836,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4466:1: 'show-toast'
             {
              before(grammarAccess.getActionShowToastAccess().getShowToastKeyword_0()); 
-            match(input,39,FOLLOW_39_in_rule__ActionShowToast__Group__0__Impl9030); 
+            match(input,38,FOLLOW_38_in_rule__ActionShowToast__Group__0__Impl9030); 
              after(grammarAccess.getActionShowToastAccess().getShowToastKeyword_0()); 
 
             }
@@ -11992,7 +11991,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4529:1: 'start-activity'
             {
              before(grammarAccess.getActionStartActivityAccess().getStartActivityKeyword_0()); 
-            match(input,40,FOLLOW_40_in_rule__ActionStartActivity__Group__0__Impl9153); 
+            match(input,39,FOLLOW_39_in_rule__ActionStartActivity__Group__0__Impl9153); 
              after(grammarAccess.getActionStartActivityAccess().getStartActivityKeyword_0()); 
 
             }
@@ -12147,7 +12146,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:4592:1: 'start-service'
             {
              before(grammarAccess.getActionStartServiceAccess().getStartServiceKeyword_0()); 
-            match(input,41,FOLLOW_41_in_rule__ActionStartService__Group__0__Impl9276); 
+            match(input,40,FOLLOW_40_in_rule__ActionStartService__Group__0__Impl9276); 
              after(grammarAccess.getActionStartServiceAccess().getStartServiceKeyword_0()); 
 
             }
@@ -13448,9 +13447,9 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ActivityLayoutAttribute__LayoutElementsAssignment_3_1"
 
 
-    // $ANTLR start "rule__Button__ButtonNameAssignment_1"
-    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5096:1: rule__Button__ButtonNameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Button__ButtonNameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Button__NameAssignment_1"
+    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5096:1: rule__Button__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Button__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -13461,9 +13460,9 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5101:1: ( RULE_ID )
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5102:1: RULE_ID
             {
-             before(grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Button__ButtonNameAssignment_110319); 
-             after(grammarAccess.getButtonAccess().getButtonNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Button__NameAssignment_110319); 
+             after(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -13482,7 +13481,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Button__ButtonNameAssignment_1"
+    // $ANTLR end "rule__Button__NameAssignment_1"
 
 
     // $ANTLR start "rule__Button__AttributesAssignment_3"
@@ -13943,7 +13942,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ButtonActionAttribute__Group__0_in_ruleButtonActionAttribute1772 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleSpacer_in_entryRuleSpacer1799 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSpacer1806 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleSpacer1833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleSpacer1833 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleText_in_entryRuleText1861 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleText1868 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Text__Group__0_in_ruleText1894 = new BitSet(new long[]{0x0000000000000002L});
@@ -14001,275 +14000,275 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleActionShowToast_in_rule__BroadcastReceiverAction__Alternatives2971 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionStartActivity_in_rule__BroadcastReceiverAction__Alternatives2988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleActionStartService_in_rule__BroadcastReceiverAction__Alternatives3005 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndroidAppProject__Group__0__Impl_in_rule__AndroidAppProject__Group__03035 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__AndroidAppProject__Group__0__Impl_in_rule__AndroidAppProject__Group__03035 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_rule__AndroidAppProject__Group__1_in_rule__AndroidAppProject__Group__03038 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndroidAppProject__ApplicationsAssignment_0_in_rule__AndroidAppProject__Group__0__Impl3065 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndroidAppProject__Group__1__Impl_in_rule__AndroidAppProject__Group__13095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndroidAppProject__Group_1__0_in_rule__AndroidAppProject__Group__1__Impl3122 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_rule__AndroidAppProject__Group_1__0__Impl_in_rule__AndroidAppProject__Group_1__03157 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__AndroidAppProject__Group_1__0_in_rule__AndroidAppProject__Group__1__Impl3122 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_rule__AndroidAppProject__Group_1__0__Impl_in_rule__AndroidAppProject__Group_1__03157 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_rule__AndroidAppProject__Group_1__1_in_rule__AndroidAppProject__Group_1__03160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__AndroidAppProject__Group_1__0__Impl3188 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__AndroidAppProject__Group_1__0__Impl3188 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndroidAppProject__Group_1__1__Impl_in_rule__AndroidAppProject__Group_1__13219 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__AndroidAppProject__ApplicationsAssignment_1_1_in_rule__AndroidAppProject__Group_1__1__Impl3246 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Application__Group__0__Impl_in_rule__Application__Group__03280 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__Application__Group__1_in_rule__Application__Group__03283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Application__Group__0__Impl3311 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Application__Group__1__Impl_in_rule__Application__Group__13342 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_15_in_rule__Application__Group__0__Impl3311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Application__Group__1__Impl_in_rule__Application__Group__13342 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_rule__Application__Group__2_in_rule__Application__Group__13345 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Application__NameAssignment_1_in_rule__Application__Group__1__Impl3372 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Application__Group__2__Impl_in_rule__Application__Group__23402 = new BitSet(new long[]{0x0000000106780000L});
+    public static final BitSet FOLLOW_rule__Application__Group__2__Impl_in_rule__Application__Group__23402 = new BitSet(new long[]{0x00000000833C0000L});
     public static final BitSet FOLLOW_rule__Application__Group__3_in_rule__Application__Group__23405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Application__Group__2__Impl3433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Application__Group__3__Impl_in_rule__Application__Group__33464 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_16_in_rule__Application__Group__2__Impl3433 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Application__Group__3__Impl_in_rule__Application__Group__33464 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Application__Group__4_in_rule__Application__Group__33467 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Application__AttributesAssignment_3_in_rule__Application__Group__3__Impl3494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Application__Group__4__Impl_in_rule__Application__Group__43524 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_rule__Application__Group__4__Impl_in_rule__Application__Group__43524 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Application__Group__5_in_rule__Application__Group__43527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Application__Group_4__0_in_rule__Application__Group__4__Impl3554 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__Application__Group_4__0_in_rule__Application__Group__4__Impl3554 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__Application__Group__5__Impl_in_rule__Application__Group__53585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Application__Group__5__Impl3613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Application__Group_4__0__Impl_in_rule__Application__Group_4__03656 = new BitSet(new long[]{0x0000000106780000L});
+    public static final BitSet FOLLOW_17_in_rule__Application__Group__5__Impl3613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Application__Group_4__0__Impl_in_rule__Application__Group_4__03656 = new BitSet(new long[]{0x00000000833C0000L});
     public static final BitSet FOLLOW_rule__Application__Group_4__1_in_rule__Application__Group_4__03659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Application__Group_4__0__Impl3687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Application__Group_4__0__Impl3687 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Application__Group_4__1__Impl_in_rule__Application__Group_4__13718 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Application__AttributesAssignment_4_1_in_rule__Application__Group_4__1__Impl3745 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationMinSdk__Group__0__Impl_in_rule__ApplicationMinSdk__Group__03779 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__ApplicationMinSdk__Group__1_in_rule__ApplicationMinSdk__Group__03782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__ApplicationMinSdk__Group__0__Impl3810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__ApplicationMinSdk__Group__0__Impl3810 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationMinSdk__Group__1__Impl_in_rule__ApplicationMinSdk__Group__13841 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationMinSdk__MinSdkAssignment_1_in_rule__ApplicationMinSdk__Group__1__Impl3868 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationTargetSdk__Group__0__Impl_in_rule__ApplicationTargetSdk__Group__03902 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__ApplicationTargetSdk__Group__1_in_rule__ApplicationTargetSdk__Group__03905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__ApplicationTargetSdk__Group__0__Impl3933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__ApplicationTargetSdk__Group__0__Impl3933 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationTargetSdk__Group__1__Impl_in_rule__ApplicationTargetSdk__Group__13964 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationTargetSdk__TargetSdkAssignment_1_in_rule__ApplicationTargetSdk__Group__1__Impl3991 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationCompileSdk__Group__0__Impl_in_rule__ApplicationCompileSdk__Group__04025 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__ApplicationCompileSdk__Group__1_in_rule__ApplicationCompileSdk__Group__04028 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__ApplicationCompileSdk__Group__0__Impl4056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__ApplicationCompileSdk__Group__0__Impl4056 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationCompileSdk__Group__1__Impl_in_rule__ApplicationCompileSdk__Group__14087 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationCompileSdk__CompileSdkAssignment_1_in_rule__ApplicationCompileSdk__Group__1__Impl4114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__0__Impl_in_rule__ApplicationPermissionList__Group__04148 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__0__Impl_in_rule__ApplicationPermissionList__Group__04148 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__1_in_rule__ApplicationPermissionList__Group__04151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__ApplicationPermissionList__Group__0__Impl4179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__ApplicationPermissionList__Group__0__Impl4179 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__1__Impl_in_rule__ApplicationPermissionList__Group__14210 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__2_in_rule__ApplicationPermissionList__Group__14213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__ApplicationPermissionList__Group__1__Impl4241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__2__Impl_in_rule__ApplicationPermissionList__Group__24272 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_22_in_rule__ApplicationPermissionList__Group__1__Impl4241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__2__Impl_in_rule__ApplicationPermissionList__Group__24272 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__3_in_rule__ApplicationPermissionList__Group__24275 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__PermissionsAssignment_2_in_rule__ApplicationPermissionList__Group__2__Impl4302 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__3__Impl_in_rule__ApplicationPermissionList__Group__34332 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__3__Impl_in_rule__ApplicationPermissionList__Group__34332 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__4_in_rule__ApplicationPermissionList__Group__34335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group_3__0_in_rule__ApplicationPermissionList__Group__3__Impl4362 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group_3__0_in_rule__ApplicationPermissionList__Group__3__Impl4362 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group__4__Impl_in_rule__ApplicationPermissionList__Group__44393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__ApplicationPermissionList__Group__4__Impl4421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__ApplicationPermissionList__Group__4__Impl4421 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group_3__0__Impl_in_rule__ApplicationPermissionList__Group_3__04462 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group_3__1_in_rule__ApplicationPermissionList__Group_3__04465 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__ApplicationPermissionList__Group_3__0__Impl4493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__ApplicationPermissionList__Group_3__0__Impl4493 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__Group_3__1__Impl_in_rule__ApplicationPermissionList__Group_3__14524 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationPermissionList__PermissionsAssignment_3_1_in_rule__ApplicationPermissionList__Group_3__1__Impl4551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__0__Impl_in_rule__ApplicationElementList__Group__04585 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__0__Impl_in_rule__ApplicationElementList__Group__04585 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__Group__1_in_rule__ApplicationElementList__Group__04588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__ApplicationElementList__Group__0__Impl4616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__1__Impl_in_rule__ApplicationElementList__Group__14647 = new BitSet(new long[]{0x0000000038000000L});
+    public static final BitSet FOLLOW_24_in_rule__ApplicationElementList__Group__0__Impl4616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__1__Impl_in_rule__ApplicationElementList__Group__14647 = new BitSet(new long[]{0x000000001C000000L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__Group__2_in_rule__ApplicationElementList__Group__14650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__ApplicationElementList__Group__1__Impl4678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__2__Impl_in_rule__ApplicationElementList__Group__24709 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_22_in_rule__ApplicationElementList__Group__1__Impl4678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__2__Impl_in_rule__ApplicationElementList__Group__24709 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__Group__3_in_rule__ApplicationElementList__Group__24712 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__ElementsAssignment_2_in_rule__ApplicationElementList__Group__2__Impl4739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__3__Impl_in_rule__ApplicationElementList__Group__34769 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_rule__ApplicationElementList__Group__3__Impl_in_rule__ApplicationElementList__Group__34769 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__Group__4_in_rule__ApplicationElementList__Group__34772 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationElementList__Group_3__0_in_rule__ApplicationElementList__Group__3__Impl4799 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__ApplicationElementList__Group_3__0_in_rule__ApplicationElementList__Group__3__Impl4799 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__Group__4__Impl_in_rule__ApplicationElementList__Group__44830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__ApplicationElementList__Group__4__Impl4858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ApplicationElementList__Group_3__0__Impl_in_rule__ApplicationElementList__Group_3__04899 = new BitSet(new long[]{0x0000000038000000L});
+    public static final BitSet FOLLOW_23_in_rule__ApplicationElementList__Group__4__Impl4858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ApplicationElementList__Group_3__0__Impl_in_rule__ApplicationElementList__Group_3__04899 = new BitSet(new long[]{0x000000001C000000L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__Group_3__1_in_rule__ApplicationElementList__Group_3__04902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__ApplicationElementList__Group_3__0__Impl4930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__ApplicationElementList__Group_3__0__Impl4930 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__Group_3__1__Impl_in_rule__ApplicationElementList__Group_3__14961 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationElementList__ElementsAssignment_3_1_in_rule__ApplicationElementList__Group_3__1__Impl4988 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationMainActivity__Group__0__Impl_in_rule__ApplicationMainActivity__Group__05022 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__ApplicationMainActivity__Group__1_in_rule__ApplicationMainActivity__Group__05025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__ApplicationMainActivity__Group__0__Impl5053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__ApplicationMainActivity__Group__0__Impl5053 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationMainActivity__Group__1__Impl_in_rule__ApplicationMainActivity__Group__15084 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ApplicationMainActivity__LauncherActivityAssignment_1_in_rule__ApplicationMainActivity__Group__1__Impl5111 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Activity__Group__0__Impl_in_rule__Activity__Group__05145 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__Activity__Group__1_in_rule__Activity__Group__05148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Activity__Group__0__Impl5176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__1__Impl_in_rule__Activity__Group__15207 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_26_in_rule__Activity__Group__0__Impl5176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__1__Impl_in_rule__Activity__Group__15207 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_rule__Activity__Group__2_in_rule__Activity__Group__15210 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Activity__NameAssignment_1_in_rule__Activity__Group__1__Impl5237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__2__Impl_in_rule__Activity__Group__25267 = new BitSet(new long[]{0x0000000FC0000000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__2__Impl_in_rule__Activity__Group__25267 = new BitSet(new long[]{0x00000007E0000000L});
     public static final BitSet FOLLOW_rule__Activity__Group__3_in_rule__Activity__Group__25270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Activity__Group__2__Impl5298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__3__Impl_in_rule__Activity__Group__35329 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_16_in_rule__Activity__Group__2__Impl5298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group__3__Impl_in_rule__Activity__Group__35329 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Activity__Group__4_in_rule__Activity__Group__35332 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Activity__AttributesAssignment_3_in_rule__Activity__Group__3__Impl5359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group__4__Impl_in_rule__Activity__Group__45389 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_rule__Activity__Group__4__Impl_in_rule__Activity__Group__45389 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Activity__Group__5_in_rule__Activity__Group__45392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_4__0_in_rule__Activity__Group__4__Impl5419 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_4__0_in_rule__Activity__Group__4__Impl5419 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__Activity__Group__5__Impl_in_rule__Activity__Group__55450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Activity__Group__5__Impl5478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Activity__Group_4__0__Impl_in_rule__Activity__Group_4__05521 = new BitSet(new long[]{0x0000000FC0000000L});
+    public static final BitSet FOLLOW_17_in_rule__Activity__Group__5__Impl5478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Activity__Group_4__0__Impl_in_rule__Activity__Group_4__05521 = new BitSet(new long[]{0x00000007E0000000L});
     public static final BitSet FOLLOW_rule__Activity__Group_4__1_in_rule__Activity__Group_4__05524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Activity__Group_4__0__Impl5552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Activity__Group_4__0__Impl5552 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Activity__Group_4__1__Impl_in_rule__Activity__Group_4__15583 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Activity__AttributesAssignment_4_1_in_rule__Activity__Group_4__1__Impl5610 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__0__Impl_in_rule__BroadcastReceiver__Group__05644 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__1_in_rule__BroadcastReceiver__Group__05647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__BroadcastReceiver__Group__0__Impl5675 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__1__Impl_in_rule__BroadcastReceiver__Group__15706 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_27_in_rule__BroadcastReceiver__Group__0__Impl5675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__1__Impl_in_rule__BroadcastReceiver__Group__15706 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__2_in_rule__BroadcastReceiver__Group__15709 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__NameAssignment_1_in_rule__BroadcastReceiver__Group__1__Impl5736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__2__Impl_in_rule__BroadcastReceiver__Group__25766 = new BitSet(new long[]{0x00000023C0000000L});
+    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__2__Impl_in_rule__BroadcastReceiver__Group__25766 = new BitSet(new long[]{0x00000011E0000000L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__3_in_rule__BroadcastReceiver__Group__25769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__BroadcastReceiver__Group__2__Impl5797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__3__Impl_in_rule__BroadcastReceiver__Group__35828 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_16_in_rule__BroadcastReceiver__Group__2__Impl5797 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__3__Impl_in_rule__BroadcastReceiver__Group__35828 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__4_in_rule__BroadcastReceiver__Group__35831 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__AttributesAssignment_3_in_rule__BroadcastReceiver__Group__3__Impl5858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__4__Impl_in_rule__BroadcastReceiver__Group__45888 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__4__Impl_in_rule__BroadcastReceiver__Group__45888 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__5_in_rule__BroadcastReceiver__Group__45891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group_4__0_in_rule__BroadcastReceiver__Group__4__Impl5918 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group_4__0_in_rule__BroadcastReceiver__Group__4__Impl5918 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group__5__Impl_in_rule__BroadcastReceiver__Group__55949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__BroadcastReceiver__Group__5__Impl5977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group_4__0__Impl_in_rule__BroadcastReceiver__Group_4__06020 = new BitSet(new long[]{0x00000023C0000000L});
+    public static final BitSet FOLLOW_17_in_rule__BroadcastReceiver__Group__5__Impl5977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BroadcastReceiver__Group_4__0__Impl_in_rule__BroadcastReceiver__Group_4__06020 = new BitSet(new long[]{0x00000011E0000000L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group_4__1_in_rule__BroadcastReceiver__Group_4__06023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__BroadcastReceiver__Group_4__0__Impl6051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__BroadcastReceiver__Group_4__0__Impl6051 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__Group_4__1__Impl_in_rule__BroadcastReceiver__Group_4__16082 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiver__AttributesAssignment_4_1_in_rule__BroadcastReceiver__Group_4__1__Impl6109 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Service__Group__0__Impl_in_rule__Service__Group__06143 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__Service__Group__1_in_rule__Service__Group__06146 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__Service__Group__0__Impl6174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__1__Impl_in_rule__Service__Group__16205 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_28_in_rule__Service__Group__0__Impl6174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group__1__Impl_in_rule__Service__Group__16205 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_rule__Service__Group__2_in_rule__Service__Group__16208 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Service__NameAssignment_1_in_rule__Service__Group__1__Impl6235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__2__Impl_in_rule__Service__Group__26265 = new BitSet(new long[]{0x00000003C0000000L});
+    public static final BitSet FOLLOW_rule__Service__Group__2__Impl_in_rule__Service__Group__26265 = new BitSet(new long[]{0x00000001E0000000L});
     public static final BitSet FOLLOW_rule__Service__Group__3_in_rule__Service__Group__26268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Service__Group__2__Impl6296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__3__Impl_in_rule__Service__Group__36327 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_16_in_rule__Service__Group__2__Impl6296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group__3__Impl_in_rule__Service__Group__36327 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Service__Group__4_in_rule__Service__Group__36330 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Service__AttributesAssignment_3_in_rule__Service__Group__3__Impl6357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__4__Impl_in_rule__Service__Group__46387 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_rule__Service__Group__4__Impl_in_rule__Service__Group__46387 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Service__Group__5_in_rule__Service__Group__46390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group_4__0_in_rule__Service__Group__4__Impl6417 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__Service__Group_4__0_in_rule__Service__Group__4__Impl6417 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__Service__Group__5__Impl_in_rule__Service__Group__56448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Service__Group__5__Impl6476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group_4__0__Impl_in_rule__Service__Group_4__06519 = new BitSet(new long[]{0x00000003C0000000L});
+    public static final BitSet FOLLOW_17_in_rule__Service__Group__5__Impl6476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group_4__0__Impl_in_rule__Service__Group_4__06519 = new BitSet(new long[]{0x00000001E0000000L});
     public static final BitSet FOLLOW_rule__Service__Group_4__1_in_rule__Service__Group_4__06522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Service__Group_4__0__Impl6550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Service__Group_4__0__Impl6550 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Service__Group_4__1__Impl_in_rule__Service__Group_4__16581 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Service__AttributesAssignment_4_1_in_rule__Service__Group_4__1__Impl6608 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementEnabledAttribute__Group__0__Impl_in_rule__ElementEnabledAttribute__Group__06642 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_rule__ElementEnabledAttribute__Group__1_in_rule__ElementEnabledAttribute__Group__06645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__ElementEnabledAttribute__Group__0__Impl6673 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__ElementEnabledAttribute__Group__0__Impl6673 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementEnabledAttribute__Group__1__Impl_in_rule__ElementEnabledAttribute__Group__16704 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementEnabledAttribute__EnabledAssignment_1_in_rule__ElementEnabledAttribute__Group__1__Impl6731 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementExportedAttribute__Group__0__Impl_in_rule__ElementExportedAttribute__Group__06765 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_rule__ElementExportedAttribute__Group__1_in_rule__ElementExportedAttribute__Group__06768 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__ElementExportedAttribute__Group__0__Impl6796 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__ElementExportedAttribute__Group__0__Impl6796 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementExportedAttribute__Group__1__Impl_in_rule__ElementExportedAttribute__Group__16827 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementExportedAttribute__ExportedAssignment_1_in_rule__ElementExportedAttribute__Group__1__Impl6854 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementLabelAttribute__Group__0__Impl_in_rule__ElementLabelAttribute__Group__06888 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_rule__ElementLabelAttribute__Group__1_in_rule__ElementLabelAttribute__Group__06891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__ElementLabelAttribute__Group__0__Impl6919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__ElementLabelAttribute__Group__0__Impl6919 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementLabelAttribute__Group__1__Impl_in_rule__ElementLabelAttribute__Group__16950 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementLabelAttribute__TitleAssignment_1_in_rule__ElementLabelAttribute__Group__1__Impl6977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementIntentList__Group__0__Impl_in_rule__ElementIntentList__Group__07011 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__ElementIntentList__Group__0__Impl_in_rule__ElementIntentList__Group__07011 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group__1_in_rule__ElementIntentList__Group__07014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__ElementIntentList__Group__0__Impl7042 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__ElementIntentList__Group__0__Impl7042 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group__1__Impl_in_rule__ElementIntentList__Group__17073 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group__2_in_rule__ElementIntentList__Group__17076 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__ElementIntentList__Group__1__Impl7104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementIntentList__Group__2__Impl_in_rule__ElementIntentList__Group__27135 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_22_in_rule__ElementIntentList__Group__1__Impl7104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ElementIntentList__Group__2__Impl_in_rule__ElementIntentList__Group__27135 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group__3_in_rule__ElementIntentList__Group__27138 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementIntentList__IntentsAssignment_2_in_rule__ElementIntentList__Group__2__Impl7165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementIntentList__Group__3__Impl_in_rule__ElementIntentList__Group__37195 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_rule__ElementIntentList__Group__3__Impl_in_rule__ElementIntentList__Group__37195 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group__4_in_rule__ElementIntentList__Group__37198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ElementIntentList__Group_3__0_in_rule__ElementIntentList__Group__3__Impl7225 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__ElementIntentList__Group_3__0_in_rule__ElementIntentList__Group__3__Impl7225 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group__4__Impl_in_rule__ElementIntentList__Group__47256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__ElementIntentList__Group__4__Impl7284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__ElementIntentList__Group__4__Impl7284 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group_3__0__Impl_in_rule__ElementIntentList__Group_3__07325 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group_3__1_in_rule__ElementIntentList__Group_3__07328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__ElementIntentList__Group_3__0__Impl7356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__ElementIntentList__Group_3__0__Impl7356 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementIntentList__Group_3__1__Impl_in_rule__ElementIntentList__Group_3__17387 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ElementIntentList__IntentsAssignment_3_1_in_rule__ElementIntentList__Group_3__1__Impl7414 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActivityParentAttribute__Group__0__Impl_in_rule__ActivityParentAttribute__Group__07448 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__ActivityParentAttribute__Group__1_in_rule__ActivityParentAttribute__Group__07451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__ActivityParentAttribute__Group__0__Impl7479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__ActivityParentAttribute__Group__0__Impl7479 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActivityParentAttribute__Group__1__Impl_in_rule__ActivityParentAttribute__Group__17510 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActivityParentAttribute__ParentAssignment_1_in_rule__ActivityParentAttribute__Group__1__Impl7537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__0__Impl_in_rule__ActivityLayoutAttribute__Group__07571 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__0__Impl_in_rule__ActivityLayoutAttribute__Group__07571 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__1_in_rule__ActivityLayoutAttribute__Group__07574 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ActivityLayoutAttribute__Group__0__Impl7602 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__1__Impl_in_rule__ActivityLayoutAttribute__Group__17633 = new BitSet(new long[]{0x0000005000004000L});
+    public static final BitSet FOLLOW_34_in_rule__ActivityLayoutAttribute__Group__0__Impl7602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__1__Impl_in_rule__ActivityLayoutAttribute__Group__17633 = new BitSet(new long[]{0x0000002800002000L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__2_in_rule__ActivityLayoutAttribute__Group__17636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__ActivityLayoutAttribute__Group__1__Impl7664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__2__Impl_in_rule__ActivityLayoutAttribute__Group__27695 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_22_in_rule__ActivityLayoutAttribute__Group__1__Impl7664 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__2__Impl_in_rule__ActivityLayoutAttribute__Group__27695 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__3_in_rule__ActivityLayoutAttribute__Group__27698 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__LayoutElementsAssignment_2_in_rule__ActivityLayoutAttribute__Group__2__Impl7725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__3__Impl_in_rule__ActivityLayoutAttribute__Group__37755 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__3__Impl_in_rule__ActivityLayoutAttribute__Group__37755 = new BitSet(new long[]{0x0000000000804000L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__4_in_rule__ActivityLayoutAttribute__Group__37758 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group_3__0_in_rule__ActivityLayoutAttribute__Group__3__Impl7785 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group_3__0_in_rule__ActivityLayoutAttribute__Group__3__Impl7785 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group__4__Impl_in_rule__ActivityLayoutAttribute__Group__47816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__ActivityLayoutAttribute__Group__4__Impl7844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group_3__0__Impl_in_rule__ActivityLayoutAttribute__Group_3__07885 = new BitSet(new long[]{0x0000005000004000L});
+    public static final BitSet FOLLOW_23_in_rule__ActivityLayoutAttribute__Group__4__Impl7844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group_3__0__Impl_in_rule__ActivityLayoutAttribute__Group_3__07885 = new BitSet(new long[]{0x0000002800002000L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group_3__1_in_rule__ActivityLayoutAttribute__Group_3__07888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__ActivityLayoutAttribute__Group_3__0__Impl7916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__ActivityLayoutAttribute__Group_3__0__Impl7916 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__Group_3__1__Impl_in_rule__ActivityLayoutAttribute__Group_3__17947 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActivityLayoutAttribute__LayoutElementsAssignment_3_1_in_rule__ActivityLayoutAttribute__Group_3__1__Impl7974 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Button__Group__0__Impl_in_rule__Button__Group__08008 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__Button__Group__1_in_rule__Button__Group__08011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__Button__Group__0__Impl8039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Button__Group__1__Impl_in_rule__Button__Group__18070 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_35_in_rule__Button__Group__0__Impl8039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Button__Group__1__Impl_in_rule__Button__Group__18070 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_rule__Button__Group__2_in_rule__Button__Group__18073 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Button__ButtonNameAssignment_1_in_rule__Button__Group__1__Impl8100 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Button__Group__2__Impl_in_rule__Button__Group__28130 = new BitSet(new long[]{0x0000002100000000L});
+    public static final BitSet FOLLOW_rule__Button__NameAssignment_1_in_rule__Button__Group__1__Impl8100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Button__Group__2__Impl_in_rule__Button__Group__28130 = new BitSet(new long[]{0x0000001080000000L});
     public static final BitSet FOLLOW_rule__Button__Group__3_in_rule__Button__Group__28133 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Button__Group__2__Impl8161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Button__Group__3__Impl_in_rule__Button__Group__38192 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_16_in_rule__Button__Group__2__Impl8161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Button__Group__3__Impl_in_rule__Button__Group__38192 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Button__Group__4_in_rule__Button__Group__38195 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Button__AttributesAssignment_3_in_rule__Button__Group__3__Impl8222 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Button__Group__4__Impl_in_rule__Button__Group__48252 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_rule__Button__Group__4__Impl_in_rule__Button__Group__48252 = new BitSet(new long[]{0x0000000000024000L});
     public static final BitSet FOLLOW_rule__Button__Group__5_in_rule__Button__Group__48255 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Button__Group_4__0_in_rule__Button__Group__4__Impl8282 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__Button__Group_4__0_in_rule__Button__Group__4__Impl8282 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_rule__Button__Group__5__Impl_in_rule__Button__Group__58313 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Button__Group__5__Impl8341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Button__Group_4__0__Impl_in_rule__Button__Group_4__08384 = new BitSet(new long[]{0x0000002100000000L});
+    public static final BitSet FOLLOW_17_in_rule__Button__Group__5__Impl8341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Button__Group_4__0__Impl_in_rule__Button__Group_4__08384 = new BitSet(new long[]{0x0000001080000000L});
     public static final BitSet FOLLOW_rule__Button__Group_4__1_in_rule__Button__Group_4__08387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__Button__Group_4__0__Impl8415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__Button__Group_4__0__Impl8415 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Button__Group_4__1__Impl_in_rule__Button__Group_4__18446 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Button__AttributesAssignment_4_1_in_rule__Button__Group_4__1__Impl8473 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ButtonLabelAttribute__Group__0__Impl_in_rule__ButtonLabelAttribute__Group__08507 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_rule__ButtonLabelAttribute__Group__1_in_rule__ButtonLabelAttribute__Group__08510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__ButtonLabelAttribute__Group__0__Impl8538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__ButtonLabelAttribute__Group__0__Impl8538 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ButtonLabelAttribute__Group__1__Impl_in_rule__ButtonLabelAttribute__Group__18569 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ButtonLabelAttribute__TitleAssignment_1_in_rule__ButtonLabelAttribute__Group__1__Impl8596 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ButtonActionAttribute__Group__0__Impl_in_rule__ButtonActionAttribute__Group__08630 = new BitSet(new long[]{0x0000038000000000L});
+    public static final BitSet FOLLOW_rule__ButtonActionAttribute__Group__0__Impl_in_rule__ButtonActionAttribute__Group__08630 = new BitSet(new long[]{0x000001C000000000L});
     public static final BitSet FOLLOW_rule__ButtonActionAttribute__Group__1_in_rule__ButtonActionAttribute__Group__08633 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__ButtonActionAttribute__Group__0__Impl8661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__ButtonActionAttribute__Group__0__Impl8661 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ButtonActionAttribute__Group__1__Impl_in_rule__ButtonActionAttribute__Group__18692 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ButtonActionAttribute__ActionAssignment_1_in_rule__ButtonActionAttribute__Group__1__Impl8719 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Text__Group__0__Impl_in_rule__Text__Group__08753 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_rule__Text__Group__1_in_rule__Text__Group__08756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_rule__Text__Group__0__Impl8784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Text__Group__0__Impl8784 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Text__Group__1__Impl_in_rule__Text__Group__18815 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Text__TextAssignment_1_in_rule__Text__Group__1__Impl8842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BroadcastReceiverActionAttribute__Group__0__Impl_in_rule__BroadcastReceiverActionAttribute__Group__08876 = new BitSet(new long[]{0x0000038000000000L});
+    public static final BitSet FOLLOW_rule__BroadcastReceiverActionAttribute__Group__0__Impl_in_rule__BroadcastReceiverActionAttribute__Group__08876 = new BitSet(new long[]{0x000001C000000000L});
     public static final BitSet FOLLOW_rule__BroadcastReceiverActionAttribute__Group__1_in_rule__BroadcastReceiverActionAttribute__Group__08879 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__BroadcastReceiverActionAttribute__Group__0__Impl8907 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__BroadcastReceiverActionAttribute__Group__0__Impl8907 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiverActionAttribute__Group__1__Impl_in_rule__BroadcastReceiverActionAttribute__Group__18938 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__BroadcastReceiverActionAttribute__ActionAssignment_1_in_rule__BroadcastReceiverActionAttribute__Group__1__Impl8965 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionShowToast__Group__0__Impl_in_rule__ActionShowToast__Group__08999 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_rule__ActionShowToast__Group__1_in_rule__ActionShowToast__Group__09002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_39_in_rule__ActionShowToast__Group__0__Impl9030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_38_in_rule__ActionShowToast__Group__0__Impl9030 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionShowToast__Group__1__Impl_in_rule__ActionShowToast__Group__19061 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionShowToast__ToastTextAssignment_1_in_rule__ActionShowToast__Group__1__Impl9088 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionStartActivity__Group__0__Impl_in_rule__ActionStartActivity__Group__09122 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__ActionStartActivity__Group__1_in_rule__ActionStartActivity__Group__09125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_40_in_rule__ActionStartActivity__Group__0__Impl9153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_39_in_rule__ActionStartActivity__Group__0__Impl9153 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionStartActivity__Group__1__Impl_in_rule__ActionStartActivity__Group__19184 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionStartActivity__ActivityAssignment_1_in_rule__ActionStartActivity__Group__1__Impl9211 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionStartService__Group__0__Impl_in_rule__ActionStartService__Group__09245 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_rule__ActionStartService__Group__1_in_rule__ActionStartService__Group__09248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_41_in_rule__ActionStartService__Group__0__Impl9276 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_40_in_rule__ActionStartService__Group__0__Impl9276 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionStartService__Group__1__Impl_in_rule__ActionStartService__Group__19307 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ActionStartService__ServiceAssignment_1_in_rule__ActionStartService__Group__1__Impl9334 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleApplication_in_rule__AndroidAppProject__ApplicationsAssignment_09373 = new BitSet(new long[]{0x0000000000000002L});
@@ -14302,7 +14301,7 @@ public class InternalAppDslParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__ActivityParentAttribute__ParentAssignment_110222 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLayoutElement_in_rule__ActivityLayoutAttribute__LayoutElementsAssignment_210257 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleLayoutElement_in_rule__ActivityLayoutAttribute__LayoutElementsAssignment_3_110288 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Button__ButtonNameAssignment_110319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Button__NameAssignment_110319 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButtonAttribute_in_rule__Button__AttributesAssignment_310350 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleButtonAttribute_in_rule__Button__AttributesAssignment_4_110381 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__ButtonLabelAttribute__TitleAssignment_110412 = new BitSet(new long[]{0x0000000000000002L});

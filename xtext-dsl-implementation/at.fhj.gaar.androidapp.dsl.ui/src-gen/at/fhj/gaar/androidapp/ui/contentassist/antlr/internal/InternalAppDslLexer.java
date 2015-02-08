@@ -15,7 +15,6 @@ public class InternalAppDslLexer extends Lexer {
     public static final int RULE_BOOLEAN=7;
     public static final int T__40=40;
     public static final int RULE_ID=6;
-    public static final int T__41=41;
     public static final int T__29=29;
     public static final int T__28=28;
     public static final int T__27=27;
@@ -25,16 +24,15 @@ public class InternalAppDslLexer extends Lexer {
     public static final int RULE_PACKAGE_NAME=4;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=13;
+    public static final int RULE_ANY_OTHER=12;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=11;
+    public static final int RULE_SL_COMMENT=10;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=10;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__19=19;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int RULE_JAVA_IDENTIFIER=9;
     public static final int T__32=32;
     public static final int RULE_STRING=8;
     public static final int T__16=16;
@@ -49,8 +47,9 @@ public class InternalAppDslLexer extends Lexer {
     public static final int T__38=38;
     public static final int T__14=14;
     public static final int T__39=39;
+    public static final int T__13=13;
     public static final int RULE_INT=5;
-    public static final int RULE_WS=12;
+    public static final int RULE_WS=11;
 
     // delegates
     // delegators
@@ -65,16 +64,36 @@ public class InternalAppDslLexer extends Lexer {
     }
     public String getGrammarFileName() { return "../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g"; }
 
-    // $ANTLR start "T__14"
-    public final void mT__14() throws RecognitionException {
+    // $ANTLR start "T__13"
+    public final void mT__13() throws RecognitionException {
         try {
-            int _type = T__14;
+            int _type = T__13;
             int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:11:7: ( 'spacer' )
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:11:9: 'spacer'
             {
             match("spacer"); 
 
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__13"
+
+    // $ANTLR start "T__14"
+    public final void mT__14() throws RecognitionException {
+        try {
+            int _type = T__14;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:12:7: ( ',' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:12:9: ','
+            {
+            match(','); 
 
             }
 
@@ -91,10 +110,11 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:12:7: ( ',' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:12:9: ','
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:13:7: ( 'application' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:13:9: 'application'
             {
-            match(','); 
+            match("application"); 
+
 
             }
 
@@ -111,11 +131,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:13:7: ( 'application' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:13:9: 'application'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:14:7: ( '{' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:14:9: '{'
             {
-            match("application"); 
-
+            match('{'); 
 
             }
 
@@ -132,10 +151,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:14:7: ( '{' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:14:9: '{'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:15:7: ( '}' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:15:9: '}'
             {
-            match('{'); 
+            match('}'); 
 
             }
 
@@ -152,10 +171,11 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:15:7: ( '}' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:15:9: '}'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:16:7: ( 'min-sdk' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:16:9: 'min-sdk'
             {
-            match('}'); 
+            match("min-sdk"); 
+
 
             }
 
@@ -172,10 +192,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:16:7: ( 'min-sdk' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:16:9: 'min-sdk'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:17:7: ( 'target-sdk' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:17:9: 'target-sdk'
             {
-            match("min-sdk"); 
+            match("target-sdk"); 
 
 
             }
@@ -193,10 +213,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:17:7: ( 'target-sdk' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:17:9: 'target-sdk'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:18:7: ( 'compile-sdk' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:18:9: 'compile-sdk'
             {
-            match("target-sdk"); 
+            match("compile-sdk"); 
 
 
             }
@@ -214,10 +234,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:18:7: ( 'compile-sdk' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:18:9: 'compile-sdk'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:19:7: ( 'permissions' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:19:9: 'permissions'
             {
-            match("compile-sdk"); 
+            match("permissions"); 
 
 
             }
@@ -235,11 +255,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:19:7: ( 'permissions' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:19:9: 'permissions'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:20:7: ( '[' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:20:9: '['
             {
-            match("permissions"); 
-
+            match('['); 
 
             }
 
@@ -256,10 +275,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:20:7: ( '[' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:20:9: '['
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:21:7: ( ']' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:21:9: ']'
             {
-            match('['); 
+            match(']'); 
 
             }
 
@@ -276,10 +295,11 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:21:7: ( ']' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:21:9: ']'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:22:7: ( 'elements' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:22:9: 'elements'
             {
-            match(']'); 
+            match("elements"); 
+
 
             }
 
@@ -296,10 +316,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:22:7: ( 'elements' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:22:9: 'elements'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:23:7: ( 'main-activity' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:23:9: 'main-activity'
             {
-            match("elements"); 
+            match("main-activity"); 
 
 
             }
@@ -317,10 +337,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:23:7: ( 'main-activity' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:23:9: 'main-activity'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:24:7: ( 'activity' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:24:9: 'activity'
             {
-            match("main-activity"); 
+            match("activity"); 
 
 
             }
@@ -338,10 +358,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:24:7: ( 'activity' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:24:9: 'activity'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:25:7: ( 'receiver' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:25:9: 'receiver'
             {
-            match("activity"); 
+            match("receiver"); 
 
 
             }
@@ -359,10 +379,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:25:7: ( 'receiver' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:25:9: 'receiver'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:26:7: ( 'service' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:26:9: 'service'
             {
-            match("receiver"); 
+            match("service"); 
 
 
             }
@@ -380,10 +400,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:26:7: ( 'service' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:26:9: 'service'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:27:7: ( 'enabled' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:27:9: 'enabled'
             {
-            match("service"); 
+            match("enabled"); 
 
 
             }
@@ -401,10 +421,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:27:7: ( 'enabled' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:27:9: 'enabled'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:28:7: ( 'exported' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:28:9: 'exported'
             {
-            match("enabled"); 
+            match("exported"); 
 
 
             }
@@ -422,10 +442,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:28:7: ( 'exported' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:28:9: 'exported'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:29:7: ( 'title' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:29:9: 'title'
             {
-            match("exported"); 
+            match("title"); 
 
 
             }
@@ -443,10 +463,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:29:7: ( 'title' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:29:9: 'title'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:30:7: ( 'intents' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:30:9: 'intents'
             {
-            match("title"); 
+            match("intents"); 
 
 
             }
@@ -464,10 +484,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:30:7: ( 'intents' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:30:9: 'intents'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:31:7: ( 'parent' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:31:9: 'parent'
             {
-            match("intents"); 
+            match("parent"); 
 
 
             }
@@ -485,10 +505,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:31:7: ( 'parent' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:31:9: 'parent'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:32:7: ( 'layout-elements' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:32:9: 'layout-elements'
             {
-            match("parent"); 
+            match("layout-elements"); 
 
 
             }
@@ -506,10 +526,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:32:7: ( 'layout-elements' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:32:9: 'layout-elements'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:33:7: ( 'button' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:33:9: 'button'
             {
-            match("layout-elements"); 
+            match("button"); 
 
 
             }
@@ -527,10 +547,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:33:7: ( 'button' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:33:9: 'button'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:34:7: ( 'action' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:34:9: 'action'
             {
-            match("button"); 
+            match("action"); 
 
 
             }
@@ -548,10 +568,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:34:7: ( 'action' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:34:9: 'action'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:35:7: ( 'text' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:35:9: 'text'
             {
-            match("action"); 
+            match("text"); 
 
 
             }
@@ -569,10 +589,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:35:7: ( 'text' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:35:9: 'text'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:36:7: ( 'show-toast' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:36:9: 'show-toast'
             {
-            match("text"); 
+            match("show-toast"); 
 
 
             }
@@ -590,10 +610,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:36:7: ( 'show-toast' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:36:9: 'show-toast'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:37:7: ( 'start-activity' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:37:9: 'start-activity'
             {
-            match("show-toast"); 
+            match("start-activity"); 
 
 
             }
@@ -611,27 +631,6 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:37:7: ( 'start-activity' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:37:9: 'start-activity'
-            {
-            match("start-activity"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__40"
-
-    // $ANTLR start "T__41"
-    public final void mT__41() throws RecognitionException {
-        try {
-            int _type = T__41;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:38:7: ( 'start-service' )
             // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:38:9: 'start-service'
             {
@@ -646,7 +645,7 @@ public class InternalAppDslLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__41"
+    // $ANTLR end "T__40"
 
     // $ANTLR start "RULE_BOOLEAN"
     public final void mRULE_BOOLEAN() throws RecognitionException {
@@ -733,39 +732,17 @@ public class InternalAppDslLexer extends Lexer {
     }
     // $ANTLR end "RULE_BOOLEAN"
 
-    // $ANTLR start "RULE_JAVA_IDENTIFIER"
-    public final void mRULE_JAVA_IDENTIFIER() throws RecognitionException {
-        try {
-            int _type = RULE_JAVA_IDENTIFIER;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5257:22: ( '\"' RULE_ID '\"' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5257:24: '\"' RULE_ID '\"'
-            {
-            match('\"'); 
-            mRULE_ID(); 
-            match('\"'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_JAVA_IDENTIFIER"
-
     // $ANTLR start "RULE_PACKAGE_NAME"
     public final void mRULE_PACKAGE_NAME() throws RecognitionException {
         try {
             int _type = RULE_PACKAGE_NAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:19: ( '\"' RULE_ID ( '.' RULE_ID )* '\"' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:21: '\"' RULE_ID ( '.' RULE_ID )* '\"'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5257:19: ( '\"' RULE_ID ( '.' RULE_ID )* '\"' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5257:21: '\"' RULE_ID ( '.' RULE_ID )* '\"'
             {
             match('\"'); 
             mRULE_ID(); 
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:33: ( '.' RULE_ID )*
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5257:33: ( '.' RULE_ID )*
             loop2:
             do {
                 int alt2=2;
@@ -778,7 +755,7 @@ public class InternalAppDslLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:34: '.' RULE_ID
+            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5257:34: '.' RULE_ID
             	    {
             	    match('.'); 
             	    mRULE_ID(); 
@@ -808,10 +785,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:11: ( '^' )?
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -820,7 +797,7 @@ public class InternalAppDslLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:11: '^'
+                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:11: '^'
                     {
                     match('^'); 
 
@@ -838,7 +815,7 @@ public class InternalAppDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5259:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -887,10 +864,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:10: ( ( '0' .. '9' )+ )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:12: ( '0' .. '9' )+
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:10: ( ( '0' .. '9' )+ )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:12: ( '0' .. '9' )+
             {
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:12: ( '0' .. '9' )+
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -904,7 +881,7 @@ public class InternalAppDslLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:13: '0' .. '9'
+            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5261:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -936,10 +913,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -957,10 +934,10 @@ public class InternalAppDslLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -976,7 +953,7 @@ public class InternalAppDslLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:21: '\\\\' .
+                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -984,7 +961,7 @@ public class InternalAppDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1009,10 +986,10 @@ public class InternalAppDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1028,7 +1005,7 @@ public class InternalAppDslLexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:54: '\\\\' .
+                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1036,7 +1013,7 @@ public class InternalAppDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5263:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1079,12 +1056,12 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:24: ( options {greedy=false; } : . )*
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1109,7 +1086,7 @@ public class InternalAppDslLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:52: .
+            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5265:52: .
             	    {
             	    matchAny(); 
 
@@ -1139,12 +1116,12 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1157,7 +1134,7 @@ public class InternalAppDslLexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1177,7 +1154,7 @@ public class InternalAppDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:40: ( ( '\\r' )? '\\n' )?
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1186,9 +1163,9 @@ public class InternalAppDslLexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:41: ( '\\r' )? '\\n'
+                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:41: ( '\\r' )? '\\n'
                     {
-                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:41: ( '\\r' )?
+                    // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1197,7 +1174,7 @@ public class InternalAppDslLexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:41: '\\r'
+                            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5267:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1229,10 +1206,10 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5271:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5271:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5271:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5269:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1286,8 +1263,8 @@ public class InternalAppDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5273:16: ( . )
-            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5273:18: .
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5271:16: ( . )
+            // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:5271:18: .
             {
             matchAny(); 
 
@@ -1302,203 +1279,203 @@ public class InternalAppDslLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:8: ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | RULE_BOOLEAN | RULE_JAVA_IDENTIFIER | RULE_PACKAGE_NAME | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt14=38;
+        // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_BOOLEAN | RULE_PACKAGE_NAME | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt14=37;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:10: T__14
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:10: T__13
+                {
+                mT__13(); 
+
+                }
+                break;
+            case 2 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:16: T__14
                 {
                 mT__14(); 
 
                 }
                 break;
-            case 2 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:16: T__15
+            case 3 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:22: T__15
                 {
                 mT__15(); 
 
                 }
                 break;
-            case 3 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:22: T__16
+            case 4 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:28: T__16
                 {
                 mT__16(); 
 
                 }
                 break;
-            case 4 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:28: T__17
+            case 5 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:34: T__17
                 {
                 mT__17(); 
 
                 }
                 break;
-            case 5 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:34: T__18
+            case 6 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:40: T__18
                 {
                 mT__18(); 
 
                 }
                 break;
-            case 6 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:40: T__19
+            case 7 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:46: T__19
                 {
                 mT__19(); 
 
                 }
                 break;
-            case 7 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:46: T__20
+            case 8 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:52: T__20
                 {
                 mT__20(); 
 
                 }
                 break;
-            case 8 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:52: T__21
+            case 9 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:58: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
-            case 9 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:58: T__22
+            case 10 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:64: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
-            case 10 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:64: T__23
+            case 11 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:70: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
-            case 11 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:70: T__24
+            case 12 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:76: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
-            case 12 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:76: T__25
+            case 13 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:82: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
-            case 13 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:82: T__26
+            case 14 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:88: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
-            case 14 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:88: T__27
+            case 15 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:94: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
-            case 15 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:94: T__28
+            case 16 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:100: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
-            case 16 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:100: T__29
+            case 17 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:106: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
-            case 17 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:106: T__30
+            case 18 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:112: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
-            case 18 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:112: T__31
+            case 19 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:118: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
-            case 19 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:118: T__32
+            case 20 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:124: T__32
                 {
                 mT__32(); 
 
                 }
                 break;
-            case 20 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:124: T__33
+            case 21 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:130: T__33
                 {
                 mT__33(); 
 
                 }
                 break;
-            case 21 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:130: T__34
+            case 22 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:136: T__34
                 {
                 mT__34(); 
 
                 }
                 break;
-            case 22 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:136: T__35
+            case 23 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:142: T__35
                 {
                 mT__35(); 
 
                 }
                 break;
-            case 23 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:142: T__36
+            case 24 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:148: T__36
                 {
                 mT__36(); 
 
                 }
                 break;
-            case 24 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:148: T__37
+            case 25 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:154: T__37
                 {
                 mT__37(); 
 
                 }
                 break;
-            case 25 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:154: T__38
+            case 26 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:160: T__38
                 {
                 mT__38(); 
 
                 }
                 break;
-            case 26 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:160: T__39
+            case 27 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:166: T__39
                 {
                 mT__39(); 
 
                 }
                 break;
-            case 27 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:166: T__40
+            case 28 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:172: T__40
                 {
                 mT__40(); 
-
-                }
-                break;
-            case 28 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:172: T__41
-                {
-                mT__41(); 
 
                 }
                 break;
@@ -1510,63 +1487,56 @@ public class InternalAppDslLexer extends Lexer {
                 }
                 break;
             case 30 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:191: RULE_JAVA_IDENTIFIER
-                {
-                mRULE_JAVA_IDENTIFIER(); 
-
-                }
-                break;
-            case 31 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:212: RULE_PACKAGE_NAME
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:191: RULE_PACKAGE_NAME
                 {
                 mRULE_PACKAGE_NAME(); 
 
                 }
                 break;
-            case 32 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:230: RULE_ID
+            case 31 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:209: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 33 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:238: RULE_INT
+            case 32 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:217: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 34 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:247: RULE_STRING
+            case 33 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:226: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 35 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:259: RULE_ML_COMMENT
+            case 34 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:238: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 36 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:275: RULE_SL_COMMENT
+            case 35 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:254: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 37 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:291: RULE_WS
+            case 36 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:270: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 38 :
-                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:299: RULE_ANY_OTHER
+            case 37 :
+                // ../at.fhj.gaar.androidapp.dsl.ui/src-gen/at/fhj/gaar/androidapp/ui/contentassist/antlr/internal/InternalAppDsl.g:1:278: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1580,17 +1550,17 @@ public class InternalAppDslLexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\1\40\1\uffff\1\40\2\uffff\4\40\2\uffff\10\40\2\33\2\uffff\2\33\2\uffff\4\40\2\uffff\2\40\2\uffff\11\40\2\uffff\12\40\7\uffff\31\40\3\uffff\6\40\1\uffff\3\40\1\u0084\1\u0085\13\40\1\u0085\1\40\3\uffff\2\40\1\uffff\4\40\1\uffff\1\40\1\u009b\2\uffff\12\40\2\u0085\2\uffff\1\u00a7\1\40\1\uffff\2\40\1\u00ad\1\40\1\uffff\2\40\1\u00b1\6\40\1\u00b8\2\uffff\1\u00b9\2\uffff\2\40\2\uffff\2\40\1\uffff\1\40\1\u00bf\2\40\1\u00c2\3\uffff\1\40\1\u00c4\1\uffff\1\40\1\u00c6\1\uffff\1\u00c7\1\u00c8\1\uffff\1\40\1\uffff\1\40\3\uffff\2\40\1\u00cd\1\u00ce\2\uffff";
+        "\1\uffff\1\40\1\uffff\1\40\2\uffff\4\40\2\uffff\10\40\2\33\2\uffff\2\33\2\uffff\4\40\2\uffff\2\40\2\uffff\11\40\2\uffff\12\40\7\uffff\31\40\3\uffff\6\40\1\uffff\3\40\1\u0084\1\u0085\13\40\1\u0085\1\40\3\uffff\2\40\1\uffff\4\40\1\uffff\1\40\1\u009a\2\uffff\12\40\2\u0085\1\uffff\1\u00a5\1\40\1\uffff\2\40\1\u00ab\1\40\1\uffff\2\40\1\u00af\6\40\1\u00b6\1\uffff\1\u00b7\2\uffff\2\40\2\uffff\2\40\1\uffff\1\40\1\u00bd\2\40\1\u00c0\3\uffff\1\40\1\u00c2\1\uffff\1\40\1\u00c4\1\uffff\1\u00c5\1\u00c6\1\uffff\1\40\1\uffff\1\40\3\uffff\2\40\1\u00cb\1\u00cc\2\uffff";
     static final String DFA14_eofS =
-        "\u00cf\uffff";
+        "\u00cd\uffff";
     static final String DFA14_minS =
-        "\1\0\1\145\1\uffff\1\143\2\uffff\2\141\1\157\1\141\2\uffff\1\154\1\145\1\156\1\141\1\165\1\141\1\122\1\101\1\0\1\101\2\uffff\1\0\1\52\2\uffff\1\141\1\162\1\157\1\141\2\uffff\1\160\1\164\2\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\164\1\171\1\164\1\154\1\125\1\114\2\0\5\uffff\1\143\1\166\1\167\1\162\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\2\145\1\157\1\164\1\163\1\105\1\123\1\uffff\2\0\1\145\1\151\1\55\1\164\1\151\1\157\1\uffff\1\55\2\145\2\60\2\151\1\156\1\145\1\154\1\162\1\151\1\156\1\165\1\157\1\145\1\60\1\105\1\uffff\2\0\1\162\1\143\1\uffff\1\55\1\143\1\151\1\156\1\uffff\1\164\1\60\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\2\164\1\156\2\60\1\uffff\1\0\1\60\1\145\2\141\1\164\1\60\1\55\1\uffff\1\145\1\163\1\60\1\164\1\144\2\145\1\163\1\55\1\60\2\uffff\1\60\2\uffff\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\60\1\144\1\162\1\60\3\uffff\1\151\1\60\1\uffff\1\157\1\60\1\uffff\2\60\1\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\60\2\uffff";
+        "\1\0\1\145\1\uffff\1\143\2\uffff\2\141\1\157\1\141\2\uffff\1\154\1\145\1\156\1\141\1\165\1\141\1\122\1\101\1\0\1\101\2\uffff\1\0\1\52\2\uffff\1\141\1\162\1\157\1\141\2\uffff\1\160\1\164\2\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\164\1\171\1\164\1\154\1\125\1\114\1\uffff\2\0\4\uffff\1\143\1\166\1\167\1\162\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\2\145\1\157\1\164\1\163\1\105\1\123\1\uffff\2\0\1\145\1\151\1\55\1\164\1\151\1\157\1\uffff\1\55\2\145\2\60\2\151\1\156\1\145\1\154\1\162\1\151\1\156\1\165\1\157\1\145\1\60\1\105\1\uffff\2\0\1\162\1\143\1\uffff\1\55\1\143\1\151\1\156\1\uffff\1\164\1\60\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\2\164\1\156\2\60\1\0\1\60\1\145\2\141\1\164\1\60\1\55\1\uffff\1\145\1\163\1\60\1\164\1\144\2\145\1\163\1\55\1\60\1\uffff\1\60\2\uffff\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\60\1\144\1\162\1\60\3\uffff\1\151\1\60\1\uffff\1\157\1\60\1\uffff\2\60\1\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\60\2\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\1\164\1\uffff\1\160\2\uffff\1\151\1\162\1\157\1\145\2\uffff\1\170\1\145\1\156\1\141\1\165\1\141\1\122\1\101\1\uffff\1\172\2\uffff\1\uffff\1\57\2\uffff\1\141\1\162\1\157\1\141\2\uffff\1\160\1\164\2\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\164\1\171\1\164\1\154\1\125\1\114\2\uffff\5\uffff\1\143\1\166\1\167\1\162\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\2\145\1\157\1\164\1\163\1\105\1\123\1\uffff\2\uffff\1\145\1\151\1\55\1\164\1\151\1\166\1\uffff\1\55\2\145\2\172\2\151\1\156\1\145\1\154\1\162\1\151\1\156\1\165\1\157\1\145\1\172\1\105\1\uffff\2\uffff\1\162\1\143\1\uffff\1\55\1\143\1\151\1\156\1\uffff\1\164\1\172\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\2\164\1\156\2\172\1\uffff\1\uffff\1\172\1\145\1\163\1\141\1\164\1\172\1\55\1\uffff\1\145\1\163\1\172\1\164\1\144\2\145\1\163\1\55\1\172\2\uffff\1\172\2\uffff\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\172\1\144\1\162\1\172\3\uffff\1\151\1\172\1\uffff\1\157\1\172\1\uffff\2\172\1\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\172\2\uffff";
+        "\1\uffff\1\164\1\uffff\1\160\2\uffff\1\151\1\162\1\157\1\145\2\uffff\1\170\1\145\1\156\1\141\1\165\1\141\1\122\1\101\1\uffff\1\172\2\uffff\1\uffff\1\57\2\uffff\1\141\1\162\1\157\1\141\2\uffff\1\160\1\164\2\uffff\1\156\1\151\1\162\1\164\1\170\1\165\1\155\2\162\2\uffff\1\145\1\141\1\160\1\143\1\164\1\171\1\164\1\154\1\125\1\114\1\uffff\2\uffff\4\uffff\1\143\1\166\1\167\1\162\1\154\1\151\1\55\1\156\1\147\1\154\1\164\1\145\1\160\1\155\1\145\1\155\1\142\1\157\2\145\1\157\1\164\1\163\1\105\1\123\1\uffff\2\uffff\1\145\1\151\1\55\1\164\1\151\1\166\1\uffff\1\55\2\145\2\172\2\151\1\156\1\145\1\154\1\162\1\151\1\156\1\165\1\157\1\145\1\172\1\105\1\uffff\2\uffff\1\162\1\143\1\uffff\1\55\1\143\1\151\1\156\1\uffff\1\164\1\172\2\uffff\1\154\1\163\1\164\1\156\1\145\1\164\1\166\2\164\1\156\2\172\1\uffff\1\172\1\145\1\163\1\141\1\164\1\172\1\55\1\uffff\1\145\1\163\1\172\1\164\1\144\2\145\1\163\1\55\1\172\1\uffff\1\172\2\uffff\1\164\1\171\2\uffff\1\55\1\151\1\uffff\1\163\1\172\1\144\1\162\1\172\3\uffff\1\151\1\172\1\uffff\1\157\1\172\1\uffff\2\172\1\uffff\1\157\1\uffff\1\156\3\uffff\1\156\1\163\2\172\2\uffff";
     static final String DFA14_acceptS =
-        "\2\uffff\1\2\1\uffff\1\4\1\5\4\uffff\1\12\1\13\12\uffff\1\40\1\41\2\uffff\1\45\1\46\4\uffff\1\40\1\2\2\uffff\1\4\1\5\11\uffff\1\12\1\13\14\uffff\1\42\1\41\1\43\1\44\1\45\31\uffff\1\36\10\uffff\1\6\22\uffff\1\36\4\uffff\1\32\4\uffff\1\15\2\uffff\1\31\1\35\14\uffff\1\37\10\uffff\1\23\12\uffff\1\37\1\1\1\uffff\1\33\1\34\2\uffff\1\30\1\7\2\uffff\1\25\5\uffff\1\26\1\27\1\20\2\uffff\1\10\2\uffff\1\21\2\uffff\1\24\1\uffff\1\16\1\uffff\1\14\1\22\1\17\4\uffff\1\3\1\11";
+        "\2\uffff\1\2\1\uffff\1\4\1\5\4\uffff\1\12\1\13\12\uffff\1\37\1\40\2\uffff\1\44\1\45\4\uffff\1\37\1\2\2\uffff\1\4\1\5\11\uffff\1\12\1\13\12\uffff\1\41\2\uffff\1\40\1\42\1\43\1\44\31\uffff\1\36\10\uffff\1\6\22\uffff\1\36\4\uffff\1\32\4\uffff\1\15\2\uffff\1\31\1\35\24\uffff\1\23\12\uffff\1\1\1\uffff\1\33\1\34\2\uffff\1\30\1\7\2\uffff\1\25\5\uffff\1\26\1\27\1\20\2\uffff\1\10\2\uffff\1\21\2\uffff\1\24\1\uffff\1\16\1\uffff\1\14\1\22\1\17\4\uffff\1\3\1\11";
     static final String DFA14_specialS =
-        "\1\5\23\uffff\1\3\3\uffff\1\10\42\uffff\1\1\1\0\37\uffff\1\7\1\11\32\uffff\1\6\1\4\31\uffff\1\2\73\uffff}>";
+        "\1\2\23\uffff\1\1\3\uffff\1\5\43\uffff\1\10\1\0\36\uffff\1\7\1\6\32\uffff\1\11\1\4\30\uffff\1\3\72\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\24\4\33\1\30\4\33\1\2\2\33\1\31\12\27\7\33\5\26\1\23\15\26\1\22\6\26\1\12\1\33\1\13\1\25\1\26\1\33\1\3\1\20\1\10\1\26\1\14\1\21\2\26\1\16\2\26\1\17\1\6\2\26\1\11\1\26\1\15\1\1\1\7\6\26\1\4\1\33\1\5\uff82\33",
             "\1\35\2\uffff\1\36\7\uffff\1\34\3\uffff\1\37",
@@ -1612,11 +1582,11 @@ public class InternalAppDslLexer extends Lexer {
             "\1\70",
             "\1\71",
             "\1\72",
-            "\101\75\32\74\3\75\1\73\1\74\1\75\32\74\uff85\75",
+            "\101\73\32\75\3\73\1\74\1\75\1\73\32\75\uff85\73",
             "\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
             "",
-            "\0\75",
+            "\0\73",
             "\1\77\4\uffff\1\100",
             "",
             "",
@@ -1651,9 +1621,9 @@ public class InternalAppDslLexer extends Lexer {
             "\1\130",
             "\1\131",
             "\1\132",
-            "\101\75\32\74\4\75\1\74\1\75\32\74\uff85\75",
-            "\42\75\1\133\13\75\1\135\1\75\12\134\7\75\32\134\4\75\1\134\1\75\32\134\uff85\75",
             "",
+            "\101\73\32\75\4\73\1\75\1\73\32\75\uff85\73",
+            "\42\73\1\133\13\73\1\135\1\73\12\134\7\73\32\134\4\73\1\134\1\73\32\134\uff85\73",
             "",
             "",
             "",
@@ -1684,8 +1654,8 @@ public class InternalAppDslLexer extends Lexer {
             "\1\165",
             "\1\166",
             "",
-            "\42\75\1\133\13\75\1\135\1\75\12\134\7\75\32\134\4\75\1\134\1\75\32\134\uff85\75",
-            "\101\75\32\171\3\75\1\170\1\171\1\75\32\171\uff85\75",
+            "\42\73\1\133\13\73\1\135\1\73\12\134\7\73\32\134\4\73\1\134\1\73\32\134\uff85\73",
+            "\101\73\32\171\3\73\1\170\1\171\1\73\32\171\uff85\73",
             "\1\172",
             "\1\173",
             "\1\174",
@@ -1712,20 +1682,21 @@ public class InternalAppDslLexer extends Lexer {
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "\1\u0091",
             "",
-            "\101\75\32\171\4\75\1\171\1\75\32\171\uff85\75",
-            "\42\75\1\u0092\13\75\1\135\1\75\12\u0093\7\75\32\u0093\4\75\1\u0093\1\75\32\u0093\uff85\75",
+            "\101\73\32\171\4\73\1\171\1\73\32\171\uff85\73",
+            "\42\73\1\133\13\73\1\135\1\73\12\u0092\7\73\32\u0092\4\73\1\u0092\1\73\32\u0092\uff85\73",
+            "\1\u0093",
             "\1\u0094",
-            "\1\u0095",
             "",
+            "\1\u0095",
             "\1\u0096",
             "\1\u0097",
             "\1\u0098",
-            "\1\u0099",
             "",
-            "\1\u009a",
+            "\1\u0099",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
             "",
+            "\1\u009b",
             "\1\u009c",
             "\1\u009d",
             "\1\u009e",
@@ -1735,66 +1706,63 @@ public class InternalAppDslLexer extends Lexer {
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
-            "\1\u00a5",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "\42\75\1\u0092\13\75\1\135\1\75\12\u0093\7\75\32\u0093\4\75\1\u0093\1\75\32\u0093\uff85\75",
+            "\42\73\1\133\13\73\1\135\1\73\12\u0092\7\73\32\u0092\4\73\1\u0092\1\73\32\u0092\uff85\73",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u00a8",
-            "\1\u00a9\21\uffff\1\u00aa",
-            "\1\u00ab",
+            "\1\u00a6",
+            "\1\u00a7\21\uffff\1\u00a8",
+            "\1\u00a9",
+            "\1\u00aa",
+            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "\1\u00ac",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u00ae",
             "",
-            "\1\u00af",
-            "\1\u00b0",
+            "\1\u00ad",
+            "\1\u00ae",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\u00b0",
+            "\1\u00b1",
             "\1\u00b2",
             "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
-            "\1\u00b6",
-            "\1\u00b7",
+            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
             "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\u00b8",
+            "\1\u00b9",
             "",
             "",
             "\1\u00ba",
             "\1\u00bb",
             "",
-            "",
             "\1\u00bc",
-            "\1\u00bd",
-            "",
-            "\1\u00be",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\1\u00c0",
+            "\1\u00be",
+            "\1\u00bf",
+            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "",
+            "",
+            "",
             "\1\u00c1",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "",
-            "",
             "",
             "\1\u00c3",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
-            "\1\u00c5",
+            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
-            "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
+            "\1\u00c7",
+            "",
+            "\1\u00c8",
+            "",
+            "",
             "",
             "\1\u00c9",
-            "",
             "\1\u00ca",
-            "",
-            "",
-            "",
-            "\1\u00cb",
-            "\1\u00cc",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "\12\40\7\uffff\32\40\4\uffff\1\40\1\uffff\32\40",
             "",
@@ -1831,79 +1799,41 @@ public class InternalAppDslLexer extends Lexer {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | RULE_BOOLEAN | RULE_JAVA_IDENTIFIER | RULE_PACKAGE_NAME | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | RULE_BOOLEAN | RULE_PACKAGE_NAME | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_60 = input.LA(1);
+                        int LA14_61 = input.LA(1);
 
                         s = -1;
-                        if ( (LA14_60=='\"') ) {s = 91;}
+                        if ( (LA14_61=='\"') ) {s = 91;}
 
-                        else if ( ((LA14_60>='\u0000' && LA14_60<='!')||(LA14_60>='#' && LA14_60<='-')||LA14_60=='/'||(LA14_60>=':' && LA14_60<='@')||(LA14_60>='[' && LA14_60<='^')||LA14_60=='`'||(LA14_60>='{' && LA14_60<='\uFFFF')) ) {s = 61;}
+                        else if ( ((LA14_61>='\u0000' && LA14_61<='!')||(LA14_61>='#' && LA14_61<='-')||LA14_61=='/'||(LA14_61>=':' && LA14_61<='@')||(LA14_61>='[' && LA14_61<='^')||LA14_61=='`'||(LA14_61>='{' && LA14_61<='\uFFFF')) ) {s = 59;}
 
-                        else if ( ((LA14_60>='0' && LA14_60<='9')||(LA14_60>='A' && LA14_60<='Z')||LA14_60=='_'||(LA14_60>='a' && LA14_60<='z')) ) {s = 92;}
+                        else if ( ((LA14_61>='0' && LA14_61<='9')||(LA14_61>='A' && LA14_61<='Z')||LA14_61=='_'||(LA14_61>='a' && LA14_61<='z')) ) {s = 92;}
 
-                        else if ( (LA14_60=='.') ) {s = 93;}
+                        else if ( (LA14_61=='.') ) {s = 93;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA14_59 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_59>='A' && LA14_59<='Z')||LA14_59=='_'||(LA14_59>='a' && LA14_59<='z')) ) {s = 60;}
-
-                        else if ( ((LA14_59>='\u0000' && LA14_59<='@')||(LA14_59>='[' && LA14_59<='^')||LA14_59=='`'||(LA14_59>='{' && LA14_59<='\uFFFF')) ) {s = 61;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
-                        int LA14_147 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA14_147=='\"') ) {s = 146;}
-
-                        else if ( ((LA14_147>='\u0000' && LA14_147<='!')||(LA14_147>='#' && LA14_147<='-')||LA14_147=='/'||(LA14_147>=':' && LA14_147<='@')||(LA14_147>='[' && LA14_147<='^')||LA14_147=='`'||(LA14_147>='{' && LA14_147<='\uFFFF')) ) {s = 61;}
-
-                        else if ( (LA14_147=='.') ) {s = 93;}
-
-                        else if ( ((LA14_147>='0' && LA14_147<='9')||(LA14_147>='A' && LA14_147<='Z')||LA14_147=='_'||(LA14_147>='a' && LA14_147<='z')) ) {s = 147;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 3 : 
                         int LA14_20 = input.LA(1);
 
                         s = -1;
-                        if ( (LA14_20=='^') ) {s = 59;}
+                        if ( ((LA14_20>='\u0000' && LA14_20<='@')||(LA14_20>='[' && LA14_20<=']')||LA14_20=='`'||(LA14_20>='{' && LA14_20<='\uFFFF')) ) {s = 59;}
 
-                        else if ( ((LA14_20>='A' && LA14_20<='Z')||LA14_20=='_'||(LA14_20>='a' && LA14_20<='z')) ) {s = 60;}
+                        else if ( (LA14_20=='^') ) {s = 60;}
 
-                        else if ( ((LA14_20>='\u0000' && LA14_20<='@')||(LA14_20>='[' && LA14_20<=']')||LA14_20=='`'||(LA14_20>='{' && LA14_20<='\uFFFF')) ) {s = 61;}
+                        else if ( ((LA14_20>='A' && LA14_20<='Z')||LA14_20=='_'||(LA14_20>='a' && LA14_20<='z')) ) {s = 61;}
 
                         else s = 27;
 
                         if ( s>=0 ) return s;
                         break;
-                    case 4 : 
-                        int LA14_121 = input.LA(1);
-
-                        s = -1;
-                        if ( (LA14_121=='\"') ) {s = 146;}
-
-                        else if ( ((LA14_121>='\u0000' && LA14_121<='!')||(LA14_121>='#' && LA14_121<='-')||LA14_121=='/'||(LA14_121>=':' && LA14_121<='@')||(LA14_121>='[' && LA14_121<='^')||LA14_121=='`'||(LA14_121>='{' && LA14_121<='\uFFFF')) ) {s = 61;}
-
-                        else if ( ((LA14_121>='0' && LA14_121<='9')||(LA14_121>='A' && LA14_121<='Z')||LA14_121=='_'||(LA14_121>='a' && LA14_121<='z')) ) {s = 147;}
-
-                        else if ( (LA14_121=='.') ) {s = 93;}
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 5 : 
+                    case 2 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -1963,13 +1893,53 @@ public class InternalAppDslLexer extends Lexer {
 
                         if ( s>=0 ) return s;
                         break;
-                    case 6 : 
-                        int LA14_120 = input.LA(1);
+                    case 3 : 
+                        int LA14_146 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_120>='\u0000' && LA14_120<='@')||(LA14_120>='[' && LA14_120<='^')||LA14_120=='`'||(LA14_120>='{' && LA14_120<='\uFFFF')) ) {s = 61;}
+                        if ( (LA14_146=='\"') ) {s = 91;}
 
-                        else if ( ((LA14_120>='A' && LA14_120<='Z')||LA14_120=='_'||(LA14_120>='a' && LA14_120<='z')) ) {s = 121;}
+                        else if ( ((LA14_146>='\u0000' && LA14_146<='!')||(LA14_146>='#' && LA14_146<='-')||LA14_146=='/'||(LA14_146>=':' && LA14_146<='@')||(LA14_146>='[' && LA14_146<='^')||LA14_146=='`'||(LA14_146>='{' && LA14_146<='\uFFFF')) ) {s = 59;}
+
+                        else if ( (LA14_146=='.') ) {s = 93;}
+
+                        else if ( ((LA14_146>='0' && LA14_146<='9')||(LA14_146>='A' && LA14_146<='Z')||LA14_146=='_'||(LA14_146>='a' && LA14_146<='z')) ) {s = 146;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 4 : 
+                        int LA14_121 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_121>='0' && LA14_121<='9')||(LA14_121>='A' && LA14_121<='Z')||LA14_121=='_'||(LA14_121>='a' && LA14_121<='z')) ) {s = 146;}
+
+                        else if ( (LA14_121=='\"') ) {s = 91;}
+
+                        else if ( (LA14_121=='.') ) {s = 93;}
+
+                        else if ( ((LA14_121>='\u0000' && LA14_121<='!')||(LA14_121>='#' && LA14_121<='-')||LA14_121=='/'||(LA14_121>=':' && LA14_121<='@')||(LA14_121>='[' && LA14_121<='^')||LA14_121=='`'||(LA14_121>='{' && LA14_121<='\uFFFF')) ) {s = 59;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 5 : 
+                        int LA14_24 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 59;}
+
+                        else s = 27;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 6 : 
+                        int LA14_93 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_93>='\u0000' && LA14_93<='@')||(LA14_93>='[' && LA14_93<=']')||LA14_93=='`'||(LA14_93>='{' && LA14_93<='\uFFFF')) ) {s = 59;}
+
+                        else if ( (LA14_93=='^') ) {s = 120;}
+
+                        else if ( ((LA14_93>='A' && LA14_93<='Z')||LA14_93=='_'||(LA14_93>='a' && LA14_93<='z')) ) {s = 121;}
 
                         if ( s>=0 ) return s;
                         break;
@@ -1979,33 +1949,31 @@ public class InternalAppDslLexer extends Lexer {
                         s = -1;
                         if ( (LA14_92=='\"') ) {s = 91;}
 
-                        else if ( ((LA14_92>='0' && LA14_92<='9')||(LA14_92>='A' && LA14_92<='Z')||LA14_92=='_'||(LA14_92>='a' && LA14_92<='z')) ) {s = 92;}
-
-                        else if ( ((LA14_92>='\u0000' && LA14_92<='!')||(LA14_92>='#' && LA14_92<='-')||LA14_92=='/'||(LA14_92>=':' && LA14_92<='@')||(LA14_92>='[' && LA14_92<='^')||LA14_92=='`'||(LA14_92>='{' && LA14_92<='\uFFFF')) ) {s = 61;}
+                        else if ( ((LA14_92>='\u0000' && LA14_92<='!')||(LA14_92>='#' && LA14_92<='-')||LA14_92=='/'||(LA14_92>=':' && LA14_92<='@')||(LA14_92>='[' && LA14_92<='^')||LA14_92=='`'||(LA14_92>='{' && LA14_92<='\uFFFF')) ) {s = 59;}
 
                         else if ( (LA14_92=='.') ) {s = 93;}
+
+                        else if ( ((LA14_92>='0' && LA14_92<='9')||(LA14_92>='A' && LA14_92<='Z')||LA14_92=='_'||(LA14_92>='a' && LA14_92<='z')) ) {s = 92;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 8 : 
-                        int LA14_24 = input.LA(1);
+                        int LA14_60 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_24>='\u0000' && LA14_24<='\uFFFF')) ) {s = 61;}
+                        if ( ((LA14_60>='\u0000' && LA14_60<='@')||(LA14_60>='[' && LA14_60<='^')||LA14_60=='`'||(LA14_60>='{' && LA14_60<='\uFFFF')) ) {s = 59;}
 
-                        else s = 27;
+                        else if ( ((LA14_60>='A' && LA14_60<='Z')||LA14_60=='_'||(LA14_60>='a' && LA14_60<='z')) ) {s = 61;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 9 : 
-                        int LA14_93 = input.LA(1);
+                        int LA14_120 = input.LA(1);
 
                         s = -1;
-                        if ( (LA14_93=='^') ) {s = 120;}
+                        if ( ((LA14_120>='\u0000' && LA14_120<='@')||(LA14_120>='[' && LA14_120<='^')||LA14_120=='`'||(LA14_120>='{' && LA14_120<='\uFFFF')) ) {s = 59;}
 
-                        else if ( ((LA14_93>='A' && LA14_93<='Z')||LA14_93=='_'||(LA14_93>='a' && LA14_93<='z')) ) {s = 121;}
-
-                        else if ( ((LA14_93>='\u0000' && LA14_93<='@')||(LA14_93>='[' && LA14_93<=']')||LA14_93=='`'||(LA14_93>='{' && LA14_93<='\uFFFF')) ) {s = 61;}
+                        else if ( ((LA14_120>='A' && LA14_120<='Z')||LA14_120=='_'||(LA14_120>='a' && LA14_120<='z')) ) {s = 121;}
 
                         if ( s>=0 ) return s;
                         break;

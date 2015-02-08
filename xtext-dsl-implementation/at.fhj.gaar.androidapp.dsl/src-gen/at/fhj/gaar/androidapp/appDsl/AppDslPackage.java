@@ -702,13 +702,13 @@ public interface AppDslPackage extends EPackage
   int BUTTON = 23;
 
   /**
-   * The feature id for the '<em><b>Button Name</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BUTTON__BUTTON_NAME = LAYOUT_ELEMENT_FEATURE_COUNT + 0;
+  int BUTTON__NAME = LAYOUT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -1432,15 +1432,15 @@ public interface AppDslPackage extends EPackage
   EClass getButton();
 
   /**
-   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.Button#getButtonName <em>Button Name</em>}'.
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.Button#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Button Name</em>'.
-   * @see at.fhj.gaar.androidapp.appDsl.Button#getButtonName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Button#getName()
    * @see #getButton()
    * @generated
    */
-  EAttribute getButton_ButtonName();
+  EAttribute getButton_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.Button#getAttributes <em>Attributes</em>}'.
@@ -2046,12 +2046,12 @@ public interface AppDslPackage extends EPackage
     EClass BUTTON = eINSTANCE.getButton();
 
     /**
-     * The meta object literal for the '<em><b>Button Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BUTTON__BUTTON_NAME = eINSTANCE.getButton_ButtonName();
+    EAttribute BUTTON__NAME = eINSTANCE.getButton_Name();
 
     /**
      * The meta object literal for the '<em><b>Attributes</b></em>' containment reference list feature.

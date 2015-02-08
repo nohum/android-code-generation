@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.fhj.gaar.androidapp.appDsl.Button#getButtonName <em>Button Name</em>}</li>
+ *   <li>{@link at.fhj.gaar.androidapp.appDsl.Button#getName <em>Name</em>}</li>
  *   <li>{@link at.fhj.gaar.androidapp.appDsl.Button#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
@@ -24,30 +24,30 @@ import org.eclipse.emf.common.util.EList;
 public interface Button extends LayoutElement
 {
   /**
-   * Returns the value of the '<em><b>Button Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Button Name</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Button Name</em>' attribute.
-   * @see #setButtonName(String)
-   * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getButton_ButtonName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getButton_Name()
    * @model
    * @generated
    */
-  String getButtonName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.Button#getButtonName <em>Button Name</em>}' attribute.
+   * Sets the value of the '{@link at.fhj.gaar.androidapp.appDsl.Button#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Button Name</em>' attribute.
-   * @see #getButtonName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setButtonName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
