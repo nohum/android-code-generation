@@ -7,6 +7,15 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 public class GradleProjectGenerator implements ContentGenerator {
 	
 	override generate(List<Application> applications, IFileSystemAccess filesystem) {
+		filesystem.generateFile("build.gradle", retrieveRootBuildGradle(applications));
+		filesystem.generateFile("settings.gradle", retrieveSettingsGradle(applications));
+	}
+	
+	def private String retrieveRootBuildGradle(List<Application> applications) {
+		
+	}
+	
+	def private String retrieveSettingsGradle(List<Application> applications) {
 		
 	}
 	
