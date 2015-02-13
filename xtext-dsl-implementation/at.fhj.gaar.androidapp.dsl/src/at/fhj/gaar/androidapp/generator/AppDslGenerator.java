@@ -31,14 +31,14 @@ public class AppDslGenerator implements IGenerator {
 
 	@Override
 	public void doGenerate(Resource input, IFileSystemAccess filesystem) {
-		logger.fine("START generating source-code from DSL");
+		logger.info("START generating source-code from DSL");
 		List<Application> applications = retrieveApplications(input);
 		
 		for (ContentGenerator generator : generators) {
 			generator.generate(applications, filesystem);
 		}
 		
-		logger.fine("FINISHED generating source-code from DSL");
+		logger.info("FINISHED generating source-code from DSL");
 	}
 
 	private List<Application> retrieveApplications(Resource input) {
