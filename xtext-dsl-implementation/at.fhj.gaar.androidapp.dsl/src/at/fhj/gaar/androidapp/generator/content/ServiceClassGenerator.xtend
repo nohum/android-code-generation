@@ -21,7 +21,7 @@ class ServiceClassGenerator extends AbstractClassGenerator {
 		import android.os.IBinder;
 		
 		public class «service.name» extends Service {
-		    public MyService() {
+		    public «service.name»() {
 		    }
 		
 		    @Override

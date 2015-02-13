@@ -34,8 +34,11 @@ public class ServiceClassGenerator extends AbstractClassGenerator {
     _builder.append(" extends Service {");
     _builder.newLineIfNotEmpty();
     _builder.append("    ");
-    _builder.append("public MyService() {");
-    _builder.newLine();
+    _builder.append("public ");
+    String _name_2 = service.getName();
+    _builder.append(_name_2, "    ");
+    _builder.append("() {");
+    _builder.newLineIfNotEmpty();
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();

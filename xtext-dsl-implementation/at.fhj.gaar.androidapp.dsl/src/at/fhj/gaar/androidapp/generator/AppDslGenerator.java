@@ -31,6 +31,8 @@ public class AppDslGenerator implements IGenerator {
 		generators.add(new GradleProjectGenerator());
 		generators.add(new AndroidManifestGenerator());
 		generators.add(new ServiceClassGenerator());
+		
+		logger.info(String.format("added %d DSL sub-generators", generators.size()));
 	}
 
 	@Override
