@@ -53,7 +53,8 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     _builder.append("    ");
     _builder.append("package=\"");
     PackageName _name = application.getName();
-    _builder.append(_name, "    ");
+    String _name_1 = _name.getName();
+    _builder.append(_name_1, "    ");
     _builder.append("\" >");
     _builder.newLineIfNotEmpty();
     _builder.append("    ");
@@ -98,7 +99,8 @@ public class AndroidManifestGenerator extends AbstractGenerator {
       EList<PackageName> _permissions = permissions.getPermissions();
       for(final PackageName permission : _permissions) {
         _builder.append("<uses-permission android:name=\"");
-        _builder.append(permission, "");
+        String _name = permission.getName();
+        _builder.append(_name, "");
         _builder.append("\" />");
         _builder.newLineIfNotEmpty();
       }
@@ -378,7 +380,8 @@ public class AndroidManifestGenerator extends AbstractGenerator {
       EList<PackageName> _intents_1 = intents.getIntents();
       for(final PackageName intent : _intents_1) {
         _builder.append("<action android:name=\"");
-        _builder.append(intent, "");
+        String _name = intent.getName();
+        _builder.append(_name, "");
         _builder.append("\" />");
         _builder.newLineIfNotEmpty();
       }

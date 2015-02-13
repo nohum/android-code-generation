@@ -91,7 +91,8 @@ public class GradleProjectGenerator extends AbstractGenerator {
     _builder.append("        ");
     _builder.append("applicationId \"");
     PackageName _name = application.getName();
-    _builder.append(_name, "        ");
+    String _name_1 = _name.getName();
+    _builder.append(_name_1, "        ");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
     _builder.append("        ");

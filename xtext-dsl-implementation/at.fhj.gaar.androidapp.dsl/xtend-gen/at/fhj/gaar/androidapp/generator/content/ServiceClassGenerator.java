@@ -18,7 +18,8 @@ public class ServiceClassGenerator extends AbstractClassGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
     PackageName _name = application.getName();
-    _builder.append(_name, "");
+    String _name_1 = _name.getName();
+    _builder.append(_name_1, "");
     _builder.append(".service;");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
@@ -30,8 +31,8 @@ public class ServiceClassGenerator extends AbstractClassGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("public class ");
-    String _name_1 = service.getName();
-    _builder.append(_name_1, "");
+    String _name_2 = service.getName();
+    _builder.append(_name_2, "");
     _builder.append(" extends Service {");
     _builder.newLineIfNotEmpty();
     _builder.append("    ");

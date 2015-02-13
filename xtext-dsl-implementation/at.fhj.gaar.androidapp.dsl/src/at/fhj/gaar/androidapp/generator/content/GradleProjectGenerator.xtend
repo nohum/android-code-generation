@@ -52,7 +52,7 @@ public class GradleProjectGenerator extends AbstractGenerator {
 		    buildToolsVersion "«USED_BUILD_TOOLS_VERSION»"
 		
 		    defaultConfig {
-		        applicationId "«application.name»"
+		        applicationId "«application.name.name»"
 		        
 		        versionCode 1
 		        versionName "1.0"
