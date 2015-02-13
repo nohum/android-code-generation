@@ -4,14 +4,19 @@ package at.fhj.gaar.androidapp.appDsl.impl;
 
 import at.fhj.gaar.androidapp.appDsl.AppDslPackage;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
+import at.fhj.gaar.androidapp.appDsl.PackageName;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,14 +34,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ElementIntentListImpl extends ActivityAttributeImpl implements ElementIntentList
 {
   /**
-   * The cached value of the '{@link #getIntents() <em>Intents</em>}' attribute list.
+   * The cached value of the '{@link #getIntents() <em>Intents</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getIntents()
    * @generated
    * @ordered
    */
-  protected EList<String> intents;
+  protected EList<PackageName> intents;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,13 +69,29 @@ public class ElementIntentListImpl extends ActivityAttributeImpl implements Elem
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getIntents()
+  public EList<PackageName> getIntents()
   {
     if (intents == null)
     {
-      intents = new EDataTypeEList<String>(String.class, this, AppDslPackage.ELEMENT_INTENT_LIST__INTENTS);
+      intents = new EObjectContainmentEList<PackageName>(PackageName.class, this, AppDslPackage.ELEMENT_INTENT_LIST__INTENTS);
     }
     return intents;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case AppDslPackage.ELEMENT_INTENT_LIST__INTENTS:
+        return ((InternalEList<?>)getIntents()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -102,7 +123,7 @@ public class ElementIntentListImpl extends ActivityAttributeImpl implements Elem
     {
       case AppDslPackage.ELEMENT_INTENT_LIST__INTENTS:
         getIntents().clear();
-        getIntents().addAll((Collection<? extends String>)newValue);
+        getIntents().addAll((Collection<? extends PackageName>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,23 +160,6 @@ public class ElementIntentListImpl extends ActivityAttributeImpl implements Elem
         return intents != null && !intents.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (intents: ");
-    result.append(intents);
-    result.append(')');
-    return result.toString();
   }
 
 } //ElementIntentListImpl

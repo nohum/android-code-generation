@@ -41,6 +41,15 @@ public interface AppDslFactory extends EFactory
   Application createApplication();
 
   /**
+   * Returns a new object of class '<em>Package Name</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Package Name</em>'.
+   * @generated
+   */
+  PackageName createPackageName();
+
+  /**
    * Returns a new object of class '<em>Application Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

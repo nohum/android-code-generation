@@ -66,6 +66,7 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
     {
       case AppDslPackage.ANDROID_APP_PROJECT: return createAndroidAppProject();
       case AppDslPackage.APPLICATION: return createApplication();
+      case AppDslPackage.PACKAGE_NAME: return createPackageName();
       case AppDslPackage.APPLICATION_ATTRIBUTE: return createApplicationAttribute();
       case AppDslPackage.APPLICATION_MIN_SDK: return createApplicationMinSdk();
       case AppDslPackage.APPLICATION_TARGET_SDK: return createApplicationTargetSdk();
@@ -123,6 +124,17 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
   {
     ApplicationImpl application = new ApplicationImpl();
     return application;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PackageName createPackageName()
+  {
+    PackageNameImpl packageName = new PackageNameImpl();
+    return packageName;
   }
 
   /**

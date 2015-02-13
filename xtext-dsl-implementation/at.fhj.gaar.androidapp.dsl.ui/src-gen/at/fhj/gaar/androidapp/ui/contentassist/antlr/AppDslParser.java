@@ -50,6 +50,9 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAndroidAppProjectAccess().getGroup_1(), "rule__AndroidAppProject__Group_1__0");
 					put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
 					put(grammarAccess.getApplicationAccess().getGroup_4(), "rule__Application__Group_4__0");
+					put(grammarAccess.getPackageNameAccess().getGroup(), "rule__PackageName__Group__0");
+					put(grammarAccess.getPackageNameAccess().getGroup_1(), "rule__PackageName__Group_1__0");
+					put(grammarAccess.getPackageNameAccess().getGroup_1_1(), "rule__PackageName__Group_1_1__0");
 					put(grammarAccess.getApplicationMinSdkAccess().getGroup(), "rule__ApplicationMinSdk__Group__0");
 					put(grammarAccess.getApplicationTargetSdkAccess().getGroup(), "rule__ApplicationTargetSdk__Group__0");
 					put(grammarAccess.getApplicationCompileSdkAccess().getGroup(), "rule__ApplicationCompileSdk__Group__0");
@@ -86,6 +89,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationAccess().getNameAssignment_1(), "rule__Application__NameAssignment_1");
 					put(grammarAccess.getApplicationAccess().getAttributesAssignment_3(), "rule__Application__AttributesAssignment_3");
 					put(grammarAccess.getApplicationAccess().getAttributesAssignment_4_1(), "rule__Application__AttributesAssignment_4_1");
+					put(grammarAccess.getPackageNameAccess().getNameAssignment_1_0(), "rule__PackageName__NameAssignment_1_0");
 					put(grammarAccess.getApplicationMinSdkAccess().getMinSdkAssignment_1(), "rule__ApplicationMinSdk__MinSdkAssignment_1");
 					put(grammarAccess.getApplicationTargetSdkAccess().getTargetSdkAssignment_1(), "rule__ApplicationTargetSdk__TargetSdkAssignment_1");
 					put(grammarAccess.getApplicationCompileSdkAccess().getCompileSdkAssignment_1(), "rule__ApplicationCompileSdk__CompileSdkAssignment_1");

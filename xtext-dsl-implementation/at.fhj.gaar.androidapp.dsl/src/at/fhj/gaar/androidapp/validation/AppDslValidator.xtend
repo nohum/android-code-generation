@@ -28,6 +28,7 @@ import java.util.List
 import java.util.logging.Logger
 import org.eclipse.emf.common.util.EList
 import org.eclipse.xtext.validation.Check
+import at.fhj.gaar.androidapp.appDsl.PackageName
 
 /**
  * Custom validation rules. 
@@ -151,7 +152,7 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicatePermission(ApplicationPermissionList permissions) {
-    	findStringDuplicates(permissions.permissions, [ name, index |
+    	findPackageNameDuplicates(permissions.permissions, [ name, index |
     		error("Permissions have to be unique",
     			AppDslPackage.Literals::APPLICATION_PERMISSION_LIST__PERMISSIONS, index
     		);
@@ -160,7 +161,9 @@ class AppDslValidator extends AbstractAppDslValidator {
     
     @Check
     def void checkForDuplicateIntent(ElementIntentList intents) {
-    	findStringDuplicates(intents.intents, [ name, index |
+    	
+    	
+    	findPackageNameDuplicates(intents.intents, [ name, index |
     		error(String.format("Intent \"%s\" is not unique", name),
     			AppDslPackage.Literals::ELEMENT_INTENT_LIST__INTENTS, index
     		);
@@ -223,16 +226,16 @@ class AppDslValidator extends AbstractAppDslValidator {
      * General method to handle duplicate searches in string lists. Calls the supplied
      * callback for each found duplicate.
      */
-    private def findStringDuplicates(EList<String> list, DuplicateCallback callback) {
-    	var List<String> foundIntents = new ArrayList<String>();
+    private def findPackageNameDuplicates(EList<PackageName> list, DuplicateCallback callback) {
+    	var List<String> knownElements = new ArrayList<String>();
     	var int listIndex = 0;
     	
-    	for (String element : list) {
-    		if (foundIntents.contains(element)) {
-    			callback.onDuplicateFound(element, listIndex);
+    	for (element : list) {
+    		if (knownElements.contains(element)) {
+    			callback.onDuplicateFound(element.name, listIndex);
     		}
     		
-    		foundIntents.add(element);
+    		knownElements.add(element.name);
     		listIndex++;
     	}
     }

@@ -11,8 +11,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//AndroidAppProject/applications"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//Application">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//Application/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Application/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//Application/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="AppDsl.ecore#//PackageName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//PackageName/name"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationAttribute"/>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationMinSdk">
@@ -25,7 +28,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationCompileSdk/compileSdk"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationPermissionList">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ApplicationPermissionList/permissions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ApplicationPermissionList/permissions"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ApplicationElementList">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ApplicationElementList/elements"/>
@@ -58,7 +61,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementLabelAttribute/title"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ElementIntentList">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute AppDsl.ecore#//ElementIntentList/intents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ElementIntentList/intents"/>
     </genClasses>
     <genClasses ecoreClass="AppDsl.ecore#//ActivityParentAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference AppDsl.ecore#//ActivityParentAttribute/parent"/>

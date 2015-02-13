@@ -144,19 +144,19 @@ ruleApplication returns [EObject current=null]
     }
 (
 (
-		lv_name_1_0=RULE_PACKAGE_NAME
-		{
-			newLeafNode(lv_name_1_0, grammarAccess.getApplicationAccess().getNamePACKAGE_NAMETerminalRuleCall_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getApplicationAccess().getNamePackageNameParserRuleCall_1_0()); 
+	    }
+		lv_name_1_0=rulePackageName		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getApplicationRule());
+	            $current = createModelElementForParent(grammarAccess.getApplicationRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"PACKAGE_NAME");
+        		"PackageName");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -207,6 +207,61 @@ ruleApplication returns [EObject current=null]
 ))*	otherlv_6='}' 
     {
     	newLeafNode(otherlv_6, grammarAccess.getApplicationAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRulePackageName
+entryRulePackageName returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getPackageNameRule()); }
+	 iv_rulePackageName=rulePackageName 
+	 { $current=$iv_rulePackageName.current; } 
+	 EOF 
+;
+
+// Rule PackageName
+rulePackageName returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='"' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getPackageNameAccess().getQuotationMarkKeyword_0());
+    }
+((
+(
+		lv_name_1_0=RULE_ID
+		{
+			newLeafNode(lv_name_1_0, grammarAccess.getPackageNameAccess().getNameIDTerminalRuleCall_1_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPackageNameRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"ID");
+	    }
+
+)
+)(	otherlv_2='.' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getPackageNameAccess().getFullStopKeyword_1_1_0());
+    }
+this_ID_3=RULE_ID
+    { 
+    newLeafNode(this_ID_3, grammarAccess.getPackageNameAccess().getIDTerminalRuleCall_1_1_1()); 
+    }
+)*)	otherlv_4='"' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getPackageNameAccess().getQuotationMarkKeyword_2());
     }
 )
 ;
@@ -459,9 +514,9 @@ ruleApplicationPermissionList returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getApplicationPermissionListAccess().getPermissionsPermissionParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getApplicationPermissionListAccess().getPermissionsPackageNameParserRuleCall_2_0()); 
 	    }
-		lv_permissions_2_0=rulePermission		{
+		lv_permissions_2_0=rulePackageName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getApplicationPermissionListRule());
 	        }
@@ -469,7 +524,7 @@ ruleApplicationPermissionList returns [EObject current=null]
        			$current, 
        			"permissions",
         		lv_permissions_2_0, 
-        		"Permission");
+        		"PackageName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -481,9 +536,9 @@ ruleApplicationPermissionList returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getApplicationPermissionListAccess().getPermissionsPermissionParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getApplicationPermissionListAccess().getPermissionsPackageNameParserRuleCall_3_1_0()); 
 	    }
-		lv_permissions_4_0=rulePermission		{
+		lv_permissions_4_0=rulePackageName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getApplicationPermissionListRule());
 	        }
@@ -491,7 +546,7 @@ ruleApplicationPermissionList returns [EObject current=null]
        			$current, 
        			"permissions",
         		lv_permissions_4_0, 
-        		"Permission");
+        		"PackageName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -613,34 +668,6 @@ ruleApplicationMainActivity returns [EObject current=null]
 )
 ))
 ;
-
-
-
-
-
-// Entry rule entryRulePermission
-entryRulePermission returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getPermissionRule()); } 
-	 iv_rulePermission=rulePermission 
-	 { $current=$iv_rulePermission.current.getText(); }  
-	 EOF 
-;
-
-// Rule Permission
-rulePermission returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-    this_PACKAGE_NAME_0=RULE_PACKAGE_NAME    {
-		$current.merge(this_PACKAGE_NAME_0);
-    }
-
-    { 
-    newLeafNode(this_PACKAGE_NAME_0, grammarAccess.getPermissionAccess().getPACKAGE_NAMETerminalRuleCall()); 
-    }
-
-    ;
 
 
 
@@ -1333,9 +1360,9 @@ ruleElementIntentList returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementIntentListAccess().getIntentsIntentParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getElementIntentListAccess().getIntentsPackageNameParserRuleCall_2_0()); 
 	    }
-		lv_intents_2_0=ruleIntent		{
+		lv_intents_2_0=rulePackageName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getElementIntentListRule());
 	        }
@@ -1343,7 +1370,7 @@ ruleElementIntentList returns [EObject current=null]
        			$current, 
        			"intents",
         		lv_intents_2_0, 
-        		"Intent");
+        		"PackageName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1355,9 +1382,9 @@ ruleElementIntentList returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getElementIntentListAccess().getIntentsIntentParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getElementIntentListAccess().getIntentsPackageNameParserRuleCall_3_1_0()); 
 	    }
-		lv_intents_4_0=ruleIntent		{
+		lv_intents_4_0=rulePackageName		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getElementIntentListRule());
 	        }
@@ -1365,7 +1392,7 @@ ruleElementIntentList returns [EObject current=null]
        			$current, 
        			"intents",
         		lv_intents_4_0, 
-        		"Intent");
+        		"PackageName");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1376,34 +1403,6 @@ ruleElementIntentList returns [EObject current=null]
     }
 )
 ;
-
-
-
-
-
-// Entry rule entryRuleIntent
-entryRuleIntent returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getIntentRule()); } 
-	 iv_ruleIntent=ruleIntent 
-	 { $current=$iv_ruleIntent.current.getText(); }  
-	 EOF 
-;
-
-// Rule Intent
-ruleIntent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-    this_PACKAGE_NAME_0=RULE_PACKAGE_NAME    {
-		$current.merge(this_PACKAGE_NAME_0);
-    }
-
-    { 
-    newLeafNode(this_PACKAGE_NAME_0, grammarAccess.getIntentAccess().getPACKAGE_NAMETerminalRuleCall()); 
-    }
-
-    ;
 
 
 
@@ -2119,8 +2118,6 @@ ruleActionStartService returns [EObject current=null]
 
 
 RULE_BOOLEAN : ('true'|'false'|'TRUE'|'FALSE');
-
-RULE_PACKAGE_NAME : '"' RULE_ID ('.' RULE_ID)* '"';
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

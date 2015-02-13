@@ -2,6 +2,7 @@ package at.fhj.gaar.androidapp.generator.content;
 
 import at.fhj.gaar.androidapp.appDsl.Application;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
+import at.fhj.gaar.androidapp.appDsl.PackageName;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.generator.content.AbstractClassGenerator;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -16,7 +17,7 @@ public class ServiceClassGenerator extends AbstractClassGenerator {
     Service service = ((Service) element);
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
-    String _name = application.getName();
+    PackageName _name = application.getName();
     _builder.append(_name, "");
     _builder.append(".service;");
     _builder.newLineIfNotEmpty();

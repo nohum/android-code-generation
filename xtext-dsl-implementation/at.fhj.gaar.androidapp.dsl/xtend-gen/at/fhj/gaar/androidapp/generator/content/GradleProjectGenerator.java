@@ -5,6 +5,7 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute;
 import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
+import at.fhj.gaar.androidapp.appDsl.PackageName;
 import at.fhj.gaar.androidapp.generator.content.AbstractGenerator;
 import com.google.common.base.Objects;
 import java.util.List;
@@ -89,7 +90,7 @@ public class GradleProjectGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("        ");
     _builder.append("applicationId \"");
-    String _name = application.getName();
+    PackageName _name = application.getName();
     _builder.append(_name, "        ");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();

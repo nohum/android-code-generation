@@ -24,6 +24,7 @@ import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
+import at.fhj.gaar.androidapp.appDsl.PackageName;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.Text;
 import at.fhj.gaar.androidapp.services.AppDslGrammarAccess;
@@ -220,6 +221,12 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case AppDslPackage.PACKAGE_NAME:
+				if(context == grammarAccess.getPackageNameRule()) {
+					sequence_PackageName(context, (PackageName) semanticObject); 
+					return; 
+				}
+				else break;
 			case AppDslPackage.SERVICE:
 				if(context == grammarAccess.getApplicationElementRule() ||
 				   context == grammarAccess.getServiceRule()) {
@@ -388,7 +395,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (permissions+=Permission permissions+=Permission*)
+	 *     (permissions+=PackageName permissions+=PackageName*)
 	 */
 	protected void sequence_ApplicationPermissionList(EObject context, ApplicationPermissionList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -413,7 +420,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=PACKAGE_NAME attributes+=ApplicationAttribute attributes+=ApplicationAttribute*)
+	 *     (name=PackageName attributes+=ApplicationAttribute attributes+=ApplicationAttribute*)
 	 */
 	protected void sequence_Application(EObject context, Application semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -520,7 +527,7 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (intents+=Intent intents+=Intent*)
+	 *     (intents+=PackageName intents+=PackageName*)
 	 */
 	protected void sequence_ElementIntentList(EObject context, ElementIntentList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -539,6 +546,22 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getElementLabelAttributeAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=ID
+	 */
+	protected void sequence_PackageName(EObject context, PackageName semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.PACKAGE_NAME__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.PACKAGE_NAME__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPackageNameAccess().getNameIDTerminalRuleCall_1_0_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
