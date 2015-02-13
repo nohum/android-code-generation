@@ -1,10 +1,8 @@
 package at.fhj.gaar.androidapp.generator.content
 
-import at.fhj.gaar.androidapp.generator.content.ContentGenerator
 import java.util.List
 import at.fhj.gaar.androidapp.appDsl.Application
 import org.eclipse.xtext.generator.IFileSystemAccess
-import at.fhj.gaar.androidapp.generator.GeneratorHelperUtil
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList
 import at.fhj.gaar.androidapp.appDsl.Activity
@@ -17,11 +15,11 @@ import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList
 import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity
 
-public class AndroidManifestGenerator implements ContentGenerator {
+public class AndroidManifestGenerator extends AbstractGenerator {
 	
 	override generate(List<Application> applications, IFileSystemAccess filesystem) {
 		for (app: applications) {
-			var projectName = GeneratorHelperUtil.getProjectName(applications, app);
+			var projectName = getProjectName(applications, app);
 			
 			filesystem.generateFile(String.format("%s/src/main/AndroidManifest.xml", projectName),
 				retrieveAndroidManifest(app)
@@ -32,9 +30,9 @@ public class AndroidManifestGenerator implements ContentGenerator {
 	private def String retrieveAndroidManifest(Application application) {
 		// TODO maybe build xml directly
 		
-		var ApplicationPermissionList permissions = GeneratorHelperUtil.getFieldData(application.attributes, typeof(ApplicationPermissionList));
-		var ApplicationMainActivity mainActivity = GeneratorHelperUtil.getFieldData(application.attributes, typeof(ApplicationMainActivity));
-		var ApplicationElementList elements = GeneratorHelperUtil.getFieldData(application.attributes, typeof(ApplicationElementList));
+		var ApplicationPermissionList permissions = getFieldData(application.attributes, typeof(ApplicationPermissionList));
+		var ApplicationMainActivity mainActivity = getFieldData(application.attributes, typeof(ApplicationMainActivity));
+		var ApplicationElementList elements = getFieldData(application.attributes, typeof(ApplicationElementList));
 		
 		return '''
 		<?xml version="1.0" encoding="utf-8"?>
@@ -64,29 +62,32 @@ public class AndroidManifestGenerator implements ContentGenerator {
 	}
 	
 	private def String generateAppElements(ApplicationElementList elements, ApplicationMainActivity mainActivity) {
+		var result = "";
+		
 		for (element : elements.elements) {
 			if (element instanceof Activity) {
-				return generateActivity(element as Activity,
+				result += generateActivity(element as Activity,
 					mainActivity != null && element.equals(mainActivity.launcherActivity)
 				);
 			} else if (element instanceof Service) {
-				return generateService(element as Service);				
+				result += generateService(element as Service);				
 			} else if (element instanceof BroadcastReceiver) {
-				return generateBroadcastReceiver(element as BroadcastReceiver);
+				result += generateBroadcastReceiver(element as BroadcastReceiver);
 			}
 		}
+		
+		return result;
 	}
 
 	private def String generateActivity(Activity activity, boolean launchable) {
-		var ActivityParentAttribute parent = GeneratorHelperUtil.getFieldData(activity.attributes, typeof(ActivityParentAttribute));
-		var ElementEnabledAttribute enabled = GeneratorHelperUtil.getFieldData(activity.attributes, typeof(ElementEnabledAttribute));
-		var ElementExportedAttribute exported = GeneratorHelperUtil.getFieldData(activity.attributes, typeof(ElementExportedAttribute));
-		var ElementLabelAttribute label = GeneratorHelperUtil.getFieldData(activity.attributes, typeof(ElementLabelAttribute));
-		var ElementIntentList intents = GeneratorHelperUtil.getFieldData(activity.attributes, typeof(ElementIntentList));
+		var ActivityParentAttribute parent = getFieldData(activity.attributes, typeof(ActivityParentAttribute));
+		var ElementEnabledAttribute enabled = getFieldData(activity.attributes, typeof(ElementEnabledAttribute));
+		var ElementExportedAttribute exported = getFieldData(activity.attributes, typeof(ElementExportedAttribute));
+		var ElementLabelAttribute label = getFieldData(activity.attributes, typeof(ElementLabelAttribute));
+		var ElementIntentList intents = getFieldData(activity.attributes, typeof(ElementIntentList));
 		
 		return '''
-		<activity
-			android:name=".activity.«activity.name»"
+		<activity android:name=".activity.«activity.name»"
             «IF enabled != null»
             android:enabled="«enabled.enabled»"
 		    «ENDIF»
@@ -97,7 +98,7 @@ public class AndroidManifestGenerator implements ContentGenerator {
 			android:parentActivityName=".activity.«parent.parent.name»"
 		    «ENDIF»
 		    «IF label != null»
-			android:label="android:label="@string/«GeneratorHelperUtil.javaToAndroidIdentifier(activity.name)»_title"
+			android:label="@string/«javaToAndroidIdentifier(activity.name)»_title"
 		    «ENDIF» >
             «IF launchable»
             <intent-filter>
@@ -105,18 +106,56 @@ public class AndroidManifestGenerator implements ContentGenerator {
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             «ENDIF»
-            
             «generateIntentList(intents)»
         </activity>
+        
 		''';
 	}
 	
 	private def String generateService(Service service) {
-		return "";
+		var ElementEnabledAttribute enabled = getFieldData(service.attributes, typeof(ElementEnabledAttribute));
+		var ElementExportedAttribute exported = getFieldData(service.attributes, typeof(ElementExportedAttribute));
+		var ElementLabelAttribute label = getFieldData(service.attributes, typeof(ElementLabelAttribute));
+		var ElementIntentList intents = getFieldData(service.attributes, typeof(ElementIntentList));
+		
+		return '''
+		<service android:name=".service.«service.name»"
+            «IF enabled != null»
+            android:enabled="«enabled.enabled»"
+		    «ENDIF»
+            «IF exported != null»
+			android:exported="«exported.exported»"
+		    «ENDIF»
+		    «IF label != null»
+			android:label="@string/«javaToAndroidIdentifier(service.name)»_title"
+		    «ENDIF» >
+            «generateIntentList(intents)»
+        </service>
+        
+		''';
 	}
 	
 	private def String generateBroadcastReceiver(BroadcastReceiver receiver) {
-		return "";
+		var ElementEnabledAttribute enabled = getFieldData(receiver.attributes, typeof(ElementEnabledAttribute));
+		var ElementExportedAttribute exported = getFieldData(receiver.attributes, typeof(ElementExportedAttribute));
+		var ElementLabelAttribute label = getFieldData(receiver.attributes, typeof(ElementLabelAttribute));
+		var ElementIntentList intents = getFieldData(receiver.attributes, typeof(ElementIntentList));
+		
+		return '''
+		<receiver android:name=".receiver.«receiver.name»"
+            «IF enabled != null»
+			android:enabled="«enabled.enabled»"
+		    «ENDIF»
+            «IF exported != null»
+            android:exported="«exported.exported»"
+		    «ENDIF»
+		    «IF label != null»
+			android:label="@string/«javaToAndroidIdentifier(receiver.name)»_title"
+		    «ENDIF» >
+            «generateIntentList(intents)»
+        </receiver>
+        
+		''';
 	}
 	
 	private def String generateIntentList(ElementIntentList intents) {

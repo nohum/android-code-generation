@@ -5,8 +5,7 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute;
 import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk;
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk;
-import at.fhj.gaar.androidapp.generator.GeneratorHelperUtil;
-import at.fhj.gaar.androidapp.generator.content.ContentGenerator;
+import at.fhj.gaar.androidapp.generator.content.AbstractGenerator;
 import com.google.common.base.Objects;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +13,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 
 @SuppressWarnings("all")
-public class GradleProjectGenerator implements ContentGenerator {
+public class GradleProjectGenerator extends AbstractGenerator {
   private final static String USED_BUILD_TOOLS_VERSION = "21.1.1";
   
   public void generate(final List<Application> applications, final IFileSystemAccess filesystem) {
@@ -24,7 +23,7 @@ public class GradleProjectGenerator implements ContentGenerator {
     filesystem.generateFile("settings.gradle", _retrieveSettingsGradle);
     for (final Application app : applications) {
       {
-        String projectName = GeneratorHelperUtil.getProjectName(applications, app);
+        String projectName = this.getProjectName(applications, app);
         String _format = String.format("%s/build.gradle", projectName);
         String _retrieveProjectGradleFile = this.retrieveProjectGradleFile(app);
         filesystem.generateFile(_format, _retrieveProjectGradleFile);
@@ -38,11 +37,11 @@ public class GradleProjectGenerator implements ContentGenerator {
   
   private String retrieveProjectGradleFile(final Application application) {
     EList<ApplicationAttribute> _attributes = application.getAttributes();
-    ApplicationCompileSdk compileSdk = GeneratorHelperUtil.<ApplicationCompileSdk>getFieldData(_attributes, ApplicationCompileSdk.class);
+    ApplicationCompileSdk compileSdk = this.<ApplicationCompileSdk>getFieldData(_attributes, ApplicationCompileSdk.class);
     EList<ApplicationAttribute> _attributes_1 = application.getAttributes();
-    ApplicationMinSdk minSdk = GeneratorHelperUtil.<ApplicationMinSdk>getFieldData(_attributes_1, ApplicationMinSdk.class);
+    ApplicationMinSdk minSdk = this.<ApplicationMinSdk>getFieldData(_attributes_1, ApplicationMinSdk.class);
     EList<ApplicationAttribute> _attributes_2 = application.getAttributes();
-    ApplicationTargetSdk targetSdk = GeneratorHelperUtil.<ApplicationTargetSdk>getFieldData(_attributes_2, ApplicationTargetSdk.class);
+    ApplicationTargetSdk targetSdk = this.<ApplicationTargetSdk>getFieldData(_attributes_2, ApplicationTargetSdk.class);
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("apply plugin: \'com.android.application\'");
     _builder.newLine();
@@ -196,7 +195,7 @@ public class GradleProjectGenerator implements ContentGenerator {
     {
       for(final Application a : applications) {
         _builder.append("include \'");
-        String _projectName = GeneratorHelperUtil.getProjectName(applications, a);
+        String _projectName = this.getProjectName(applications, a);
         _builder.append(_projectName, "");
         _builder.append("\';");
         _builder.newLineIfNotEmpty();

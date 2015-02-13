@@ -1,4 +1,4 @@
-package at.fhj.gaar.androidapp.generator;
+package at.fhj.gaar.androidapp.generator.content;
 
 import java.util.Iterator;
 import java.util.List;
@@ -8,11 +8,11 @@ import org.eclipse.emf.common.util.EList;
 import at.fhj.gaar.androidapp.appDsl.Application;
 
 /**
- * Contains various helper methods
+ * Contains helper methods for the various generators.
  */
-public class GeneratorHelperUtil {
+public abstract class AbstractGenerator implements ContentGenerator {
 
-	public static String getProjectName(List<Application> applications, Application current) {
+	protected String getProjectName(List<Application> applications, Application current) {
 		if (applications.size() == 1 || current == null) {
 			return "app";
 		}
@@ -30,7 +30,7 @@ public class GeneratorHelperUtil {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static <T> T getFieldData(EList<?> list, Class<T> neededFieldClazz) {
+	protected <T> T getFieldData(EList<?> list, Class<T> neededFieldClazz) {
 		if (list == null) {
 			return null;
 		}
@@ -53,7 +53,7 @@ public class GeneratorHelperUtil {
 	 * 
 	 * @param identifier
 	 */
-	public static String javaToAndroidIdentifier(String identifier) {
+	protected String javaToAndroidIdentifier(String identifier) {
 		String result = identifier.replaceAll("\\B([A-Z])", "_$1");
 		
 		if (result.length() > 0 && result.charAt(0) == '_') {
@@ -62,5 +62,5 @@ public class GeneratorHelperUtil {
 		
 		return result.toLowerCase();
 	}
-	
+
 }

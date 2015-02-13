@@ -10,13 +10,14 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
 import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList;
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver;
+import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
 import at.fhj.gaar.androidapp.appDsl.Service;
-import at.fhj.gaar.androidapp.generator.GeneratorHelperUtil;
-import at.fhj.gaar.androidapp.generator.content.ContentGenerator;
+import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
+import at.fhj.gaar.androidapp.generator.content.AbstractGenerator;
 import com.google.common.base.Objects;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -24,11 +25,11 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 
 @SuppressWarnings("all")
-public class AndroidManifestGenerator implements ContentGenerator {
+public class AndroidManifestGenerator extends AbstractGenerator {
   public void generate(final List<Application> applications, final IFileSystemAccess filesystem) {
     for (final Application app : applications) {
       {
-        String projectName = GeneratorHelperUtil.getProjectName(applications, app);
+        String projectName = this.getProjectName(applications, app);
         String _format = String.format("%s/src/main/AndroidManifest.xml", projectName);
         String _retrieveAndroidManifest = this.retrieveAndroidManifest(app);
         filesystem.generateFile(_format, _retrieveAndroidManifest);
@@ -38,11 +39,11 @@ public class AndroidManifestGenerator implements ContentGenerator {
   
   private String retrieveAndroidManifest(final Application application) {
     EList<ApplicationAttribute> _attributes = application.getAttributes();
-    ApplicationPermissionList permissions = GeneratorHelperUtil.<ApplicationPermissionList>getFieldData(_attributes, ApplicationPermissionList.class);
+    ApplicationPermissionList permissions = this.<ApplicationPermissionList>getFieldData(_attributes, ApplicationPermissionList.class);
     EList<ApplicationAttribute> _attributes_1 = application.getAttributes();
-    ApplicationMainActivity mainActivity = GeneratorHelperUtil.<ApplicationMainActivity>getFieldData(_attributes_1, ApplicationMainActivity.class);
+    ApplicationMainActivity mainActivity = this.<ApplicationMainActivity>getFieldData(_attributes_1, ApplicationMainActivity.class);
     EList<ApplicationAttribute> _attributes_2 = application.getAttributes();
-    ApplicationElementList elements = GeneratorHelperUtil.<ApplicationElementList>getFieldData(_attributes_2, ApplicationElementList.class);
+    ApplicationElementList elements = this.<ApplicationElementList>getFieldData(_attributes_2, ApplicationElementList.class);
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
     _builder.newLine();
@@ -105,9 +106,11 @@ public class AndroidManifestGenerator implements ContentGenerator {
   }
   
   private String generateAppElements(final ApplicationElementList elements, final ApplicationMainActivity mainActivity) {
+    String result = "";
     EList<ApplicationElement> _elements = elements.getElements();
     for (final ApplicationElement element : _elements) {
       if ((element instanceof Activity)) {
+        String _result = result;
         boolean _and = false;
         boolean _notEquals = (!Objects.equal(mainActivity, null));
         if (!_notEquals) {
@@ -117,38 +120,40 @@ public class AndroidManifestGenerator implements ContentGenerator {
           boolean _equals = ((Activity)element).equals(_launcherActivity);
           _and = _equals;
         }
-        return this.generateActivity(((Activity) element), _and);
+        String _generateActivity = this.generateActivity(((Activity) element), _and);
+        result = (_result + _generateActivity);
       } else {
         if ((element instanceof Service)) {
-          return this.generateService(((Service) element));
+          String _result_1 = result;
+          String _generateService = this.generateService(((Service) element));
+          result = (_result_1 + _generateService);
         } else {
           if ((element instanceof BroadcastReceiver)) {
-            return this.generateBroadcastReceiver(((BroadcastReceiver) element));
+            String _result_2 = result;
+            String _generateBroadcastReceiver = this.generateBroadcastReceiver(((BroadcastReceiver) element));
+            result = (_result_2 + _generateBroadcastReceiver);
           }
         }
       }
     }
-    return null;
+    return result;
   }
   
   private String generateActivity(final Activity activity, final boolean launchable) {
     EList<ActivityAttribute> _attributes = activity.getAttributes();
-    ActivityParentAttribute parent = GeneratorHelperUtil.<ActivityParentAttribute>getFieldData(_attributes, ActivityParentAttribute.class);
+    ActivityParentAttribute parent = this.<ActivityParentAttribute>getFieldData(_attributes, ActivityParentAttribute.class);
     EList<ActivityAttribute> _attributes_1 = activity.getAttributes();
-    ElementEnabledAttribute enabled = GeneratorHelperUtil.<ElementEnabledAttribute>getFieldData(_attributes_1, ElementEnabledAttribute.class);
+    ElementEnabledAttribute enabled = this.<ElementEnabledAttribute>getFieldData(_attributes_1, ElementEnabledAttribute.class);
     EList<ActivityAttribute> _attributes_2 = activity.getAttributes();
-    ElementExportedAttribute exported = GeneratorHelperUtil.<ElementExportedAttribute>getFieldData(_attributes_2, ElementExportedAttribute.class);
+    ElementExportedAttribute exported = this.<ElementExportedAttribute>getFieldData(_attributes_2, ElementExportedAttribute.class);
     EList<ActivityAttribute> _attributes_3 = activity.getAttributes();
-    ElementLabelAttribute label = GeneratorHelperUtil.<ElementLabelAttribute>getFieldData(_attributes_3, ElementLabelAttribute.class);
+    ElementLabelAttribute label = this.<ElementLabelAttribute>getFieldData(_attributes_3, ElementLabelAttribute.class);
     EList<ActivityAttribute> _attributes_4 = activity.getAttributes();
-    ElementIntentList intents = GeneratorHelperUtil.<ElementIntentList>getFieldData(_attributes_4, ElementIntentList.class);
+    ElementIntentList intents = this.<ElementIntentList>getFieldData(_attributes_4, ElementIntentList.class);
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<activity");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("android:name=\".activity.");
+    _builder.append("<activity android:name=\".activity.");
     String _name = activity.getName();
-    _builder.append(_name, "\t");
+    _builder.append(_name, "");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
     {
@@ -186,9 +191,9 @@ public class AndroidManifestGenerator implements ContentGenerator {
     {
       boolean _notEquals_3 = (!Objects.equal(label, null));
       if (_notEquals_3) {
-        _builder.append("android:label=\"android:label=\"@string/");
+        _builder.append("android:label=\"@string/");
         String _name_2 = activity.getName();
-        String _javaToAndroidIdentifier = GeneratorHelperUtil.javaToAndroidIdentifier(_name_2);
+        String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name_2);
         _builder.append(_javaToAndroidIdentifier, "");
         _builder.append("_title\"");
         _builder.newLineIfNotEmpty();
@@ -216,23 +221,139 @@ public class AndroidManifestGenerator implements ContentGenerator {
       }
     }
     _builder.append("            ");
-    _builder.newLine();
-    _builder.append("            ");
     String _generateIntentList = this.generateIntentList(intents);
     _builder.append(_generateIntentList, "            ");
     _builder.newLineIfNotEmpty();
     _builder.append("        ");
     _builder.append("</activity>");
     _builder.newLine();
+    _builder.append("        ");
+    _builder.newLine();
     return _builder.toString();
   }
   
   private String generateService(final Service service) {
-    return "";
+    EList<ServiceAttribute> _attributes = service.getAttributes();
+    ElementEnabledAttribute enabled = this.<ElementEnabledAttribute>getFieldData(_attributes, ElementEnabledAttribute.class);
+    EList<ServiceAttribute> _attributes_1 = service.getAttributes();
+    ElementExportedAttribute exported = this.<ElementExportedAttribute>getFieldData(_attributes_1, ElementExportedAttribute.class);
+    EList<ServiceAttribute> _attributes_2 = service.getAttributes();
+    ElementLabelAttribute label = this.<ElementLabelAttribute>getFieldData(_attributes_2, ElementLabelAttribute.class);
+    EList<ServiceAttribute> _attributes_3 = service.getAttributes();
+    ElementIntentList intents = this.<ElementIntentList>getFieldData(_attributes_3, ElementIntentList.class);
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<service android:name=\".service.");
+    String _name = service.getName();
+    _builder.append(_name, "");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _notEquals = (!Objects.equal(enabled, null));
+      if (_notEquals) {
+        _builder.append("            ");
+        _builder.append("android:enabled=\"");
+        boolean _isEnabled = enabled.isEnabled();
+        _builder.append(_isEnabled, "            ");
+        _builder.append("\"");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      boolean _notEquals_1 = (!Objects.equal(exported, null));
+      if (_notEquals_1) {
+        _builder.append("android:exported=\"");
+        boolean _isExported = exported.isExported();
+        _builder.append(_isExported, "");
+        _builder.append("\"");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      boolean _notEquals_2 = (!Objects.equal(label, null));
+      if (_notEquals_2) {
+        _builder.append("android:label=\"@string/");
+        String _name_1 = service.getName();
+        String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name_1);
+        _builder.append(_javaToAndroidIdentifier, "");
+        _builder.append("_title\"");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t    ");
+      }
+    }
+    _builder.append(" >");
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
+    String _generateIntentList = this.generateIntentList(intents);
+    _builder.append(_generateIntentList, "            ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("</service>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.newLine();
+    return _builder.toString();
   }
   
   private String generateBroadcastReceiver(final BroadcastReceiver receiver) {
-    return "";
+    EList<BroadcastReceiverAttribute> _attributes = receiver.getAttributes();
+    ElementEnabledAttribute enabled = this.<ElementEnabledAttribute>getFieldData(_attributes, ElementEnabledAttribute.class);
+    EList<BroadcastReceiverAttribute> _attributes_1 = receiver.getAttributes();
+    ElementExportedAttribute exported = this.<ElementExportedAttribute>getFieldData(_attributes_1, ElementExportedAttribute.class);
+    EList<BroadcastReceiverAttribute> _attributes_2 = receiver.getAttributes();
+    ElementLabelAttribute label = this.<ElementLabelAttribute>getFieldData(_attributes_2, ElementLabelAttribute.class);
+    EList<BroadcastReceiverAttribute> _attributes_3 = receiver.getAttributes();
+    ElementIntentList intents = this.<ElementIntentList>getFieldData(_attributes_3, ElementIntentList.class);
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<receiver android:name=\".receiver.");
+    String _name = receiver.getName();
+    _builder.append(_name, "");
+    _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _notEquals = (!Objects.equal(enabled, null));
+      if (_notEquals) {
+        _builder.append("android:enabled=\"");
+        boolean _isEnabled = enabled.isEnabled();
+        _builder.append(_isEnabled, "");
+        _builder.append("\"");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      boolean _notEquals_1 = (!Objects.equal(exported, null));
+      if (_notEquals_1) {
+        _builder.append("            ");
+        _builder.append("android:exported=\"");
+        boolean _isExported = exported.isExported();
+        _builder.append(_isExported, "            ");
+        _builder.append("\"");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      boolean _notEquals_2 = (!Objects.equal(label, null));
+      if (_notEquals_2) {
+        _builder.append("android:label=\"@string/");
+        String _name_1 = receiver.getName();
+        String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name_1);
+        _builder.append(_javaToAndroidIdentifier, "");
+        _builder.append("_title\"");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t    ");
+      }
+    }
+    _builder.append(" >");
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
+    String _generateIntentList = this.generateIntentList(intents);
+    _builder.append(_generateIntentList, "            ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("</receiver>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.newLine();
+    return _builder.toString();
   }
   
   private String generateIntentList(final ElementIntentList intents) {

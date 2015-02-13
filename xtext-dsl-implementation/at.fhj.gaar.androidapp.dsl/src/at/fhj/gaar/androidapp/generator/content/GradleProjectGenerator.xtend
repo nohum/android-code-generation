@@ -3,12 +3,11 @@ package at.fhj.gaar.androidapp.generator.content
 import java.util.List
 import at.fhj.gaar.androidapp.appDsl.Application
 import org.eclipse.xtext.generator.IFileSystemAccess
-import at.fhj.gaar.androidapp.generator.GeneratorHelperUtil
 import at.fhj.gaar.androidapp.appDsl.ApplicationCompileSdk
 import at.fhj.gaar.androidapp.appDsl.ApplicationMinSdk
 import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk
 
-public class GradleProjectGenerator implements ContentGenerator {
+public class GradleProjectGenerator extends AbstractGenerator {
 	
 	private static final val String USED_BUILD_TOOLS_VERSION = "21.1.1";
 	
@@ -17,7 +16,7 @@ public class GradleProjectGenerator implements ContentGenerator {
 		filesystem.generateFile("settings.gradle", retrieveSettingsGradle(applications));
 		
 		for (app: applications) {
-			var projectName = GeneratorHelperUtil.getProjectName(applications, app);
+			var projectName = getProjectName(applications, app);
 			
 			filesystem.generateFile(String.format("%s/build.gradle", projectName),
 				retrieveProjectGradleFile(app)
@@ -31,9 +30,9 @@ public class GradleProjectGenerator implements ContentGenerator {
 	}
 	
 	def private String retrieveProjectGradleFile(Application application) {
-		var ApplicationCompileSdk compileSdk = GeneratorHelperUtil.getFieldData(application.attributes, typeof(ApplicationCompileSdk));
-		var ApplicationMinSdk minSdk = GeneratorHelperUtil.getFieldData(application.attributes, typeof(ApplicationMinSdk));
-		var ApplicationTargetSdk targetSdk = GeneratorHelperUtil.getFieldData(application.attributes, typeof(ApplicationTargetSdk));
+		var ApplicationCompileSdk compileSdk = getFieldData(application.attributes, typeof(ApplicationCompileSdk));
+		var ApplicationMinSdk minSdk = getFieldData(application.attributes, typeof(ApplicationMinSdk));
+		var ApplicationTargetSdk targetSdk = getFieldData(application.attributes, typeof(ApplicationTargetSdk));
 
 		// TODO check for default values of the above
 
@@ -102,7 +101,7 @@ public class GradleProjectGenerator implements ContentGenerator {
 	def private String retrieveSettingsGradle(List<Application> applications) {
 		return '''
 		«FOR a : applications»
-			include '«GeneratorHelperUtil.getProjectName(applications, a)»';
+			include '«getProjectName(applications, a)»';
 		«ENDFOR» 
 		''';
 	}
