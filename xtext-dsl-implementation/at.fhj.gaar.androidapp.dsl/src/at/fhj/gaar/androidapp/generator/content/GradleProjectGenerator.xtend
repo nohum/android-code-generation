@@ -101,7 +101,7 @@ public class GradleProjectGenerator implements ContentGenerator {
 	
 	def private String retrieveSettingsGradle(List<Application> applications) {
 		return '''
-		«FOR a:applications»
+		«FOR a : applications»
 			include '«GeneratorHelperUtil.getProjectName(applications, a)»';
 		«ENDFOR» 
 		''';

@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 
 import at.fhj.gaar.androidapp.appDsl.Application;
+import at.fhj.gaar.androidapp.generator.content.AndroidManifestGenerator;
 import at.fhj.gaar.androidapp.generator.content.ContentGenerator;
 import at.fhj.gaar.androidapp.generator.content.GradleProjectGenerator;
 
@@ -27,6 +28,7 @@ public class AppDslGenerator implements IGenerator {
 
 		generators = new ArrayList<>();
 		generators.add(new GradleProjectGenerator());
+		generators.add(new AndroidManifestGenerator());
 	}
 
 	@Override

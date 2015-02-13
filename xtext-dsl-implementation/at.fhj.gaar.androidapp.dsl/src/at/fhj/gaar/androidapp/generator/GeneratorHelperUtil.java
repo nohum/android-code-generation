@@ -47,5 +47,20 @@ public class GeneratorHelperUtil {
 		return null;
 		
 	}
+
+	/**
+	 * Takes e.g. "MainActivity" and turns it into "main_activity".
+	 * 
+	 * @param identifier
+	 */
+	public static String javaToAndroidIdentifier(String identifier) {
+		String result = identifier.replaceAll("\\B([A-Z])", "_$1");
+		
+		if (result.length() > 0 && result.charAt(0) == '_') {
+			result = result.substring(1, result.length());
+		}
+		
+		return result.toLowerCase();
+	}
 	
 }
