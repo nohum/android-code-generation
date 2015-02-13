@@ -37,7 +37,7 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 		return '''
 		<?xml version="1.0" encoding="utf-8"?>
 		<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		    package="«application.name.name»" >
+		    package="«application.name»" >
 		    
 		    «generatePermissions(permissions)» 
 		    
@@ -56,7 +56,7 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 	private def String generatePermissions(ApplicationPermissionList permissions) {
 		return  '''
 		«FOR permission : permissions.permissions»
-			<uses-permission android:name="«permission.name»" />
+			<uses-permission android:name="«permission»" />
 		«ENDFOR» 
 		''';
 	}
@@ -166,7 +166,7 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 		return  '''
 		<intent-filter>
 		«FOR intent : intents.intents»
-			<action android:name="«intent.name»" />
+			<action android:name="«intent»" />
 		«ENDFOR» 
 		</intent-filter>
 		''';

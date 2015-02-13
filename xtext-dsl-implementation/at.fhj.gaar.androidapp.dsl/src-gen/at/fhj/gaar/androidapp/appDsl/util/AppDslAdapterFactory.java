@@ -85,11 +85,6 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
         return createApplicationAdapter();
       }
       @Override
-      public Adapter casePackageName(PackageName object)
-      {
-        return createPackageNameAdapter();
-      }
-      @Override
       public Adapter caseApplicationAttribute(ApplicationAttribute object)
       {
         return createApplicationAttributeAdapter();
@@ -297,21 +292,6 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createApplicationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.PackageName <em>Package Name</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see at.fhj.gaar.androidapp.appDsl.PackageName
-   * @generated
-   */
-  public Adapter createPackageNameAdapter()
   {
     return null;
   }

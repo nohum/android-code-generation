@@ -28,29 +28,28 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cApplicationsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cApplicationsApplicationParserRuleCall_1_1_0 = (RuleCall)cApplicationsAssignment_1_1.eContents().get(0);
 		
-		//AndroidAppProject:
-		//	applications+=Application ("," applications+=Application)*;
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#XtextFragmentProvider_at.fhj.gaar.androidapp.AppDsl/AndroidAppProject'
 		public ParserRule getRule() { return rule; }
 
-		//applications+=Application ("," applications+=Application)*
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.0/@alternatives'
 		public Group getGroup() { return cGroup; }
 
-		//applications+=Application
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.0/@alternatives/@elements.0'
 		public Assignment getApplicationsAssignment_0() { return cApplicationsAssignment_0; }
 
-		//Application
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.0/@alternatives/@elements.0/@terminal'
 		public RuleCall getApplicationsApplicationParserRuleCall_0_0() { return cApplicationsApplicationParserRuleCall_0_0; }
 
-		//("," applications+=Application)*
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.0/@alternatives/@elements.1'
 		public Group getGroup_1() { return cGroup_1; }
 
-		//","
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.0/@alternatives/@elements.1/@elements.0'
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 
-		//applications+=Application
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.0/@alternatives/@elements.1/@elements.1'
 		public Assignment getApplicationsAssignment_1_1() { return cApplicationsAssignment_1_1; }
 
-		//Application
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.0/@alternatives/@elements.1/@elements.1/@terminal'
 		public RuleCall getApplicationsApplicationParserRuleCall_1_1_0() { return cApplicationsApplicationParserRuleCall_1_1_0; }
 	}
 
@@ -59,7 +58,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cApplicationKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNamePackageNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNamePACKAGE_NAMETerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cAttributesAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAttributesApplicationAttributeParserRuleCall_3_0 = (RuleCall)cAttributesAssignment_3.eContents().get(0);
@@ -69,92 +68,44 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAttributesApplicationAttributeParserRuleCall_4_1_0 = (RuleCall)cAttributesAssignment_4_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//Application:
-		//	"application" name=PackageName "{" // allow only one attribute or more than one (separated by ",")
-		//	attributes+=ApplicationAttribute ("," attributes+=ApplicationAttribute)* "}";
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#XtextFragmentProvider_at.fhj.gaar.androidapp.AppDsl/Application'
 		public ParserRule getRule() { return rule; }
 
-		//"application" name=PackageName "{" // allow only one attribute or more than one (separated by ",")
-		//attributes+=ApplicationAttribute ("," attributes+=ApplicationAttribute)* "}"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives'
 		public Group getGroup() { return cGroup; }
 
-		//"application"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.0'
 		public Keyword getApplicationKeyword_0() { return cApplicationKeyword_0; }
 
-		//name=PackageName
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.1'
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//PackageName
-		public RuleCall getNamePackageNameParserRuleCall_1_0() { return cNamePackageNameParserRuleCall_1_0; }
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.1/@terminal'
+		public RuleCall getNamePACKAGE_NAMETerminalRuleCall_1_0() { return cNamePACKAGE_NAMETerminalRuleCall_1_0; }
 
-		//"{"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.2'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//// allow only one attribute or more than one (separated by ",")
-		//attributes+=ApplicationAttribute
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.3'
 		public Assignment getAttributesAssignment_3() { return cAttributesAssignment_3; }
 
-		//ApplicationAttribute
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.3/@terminal'
 		public RuleCall getAttributesApplicationAttributeParserRuleCall_3_0() { return cAttributesApplicationAttributeParserRuleCall_3_0; }
 
-		//("," attributes+=ApplicationAttribute)*
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.4'
 		public Group getGroup_4() { return cGroup_4; }
 
-		//","
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.4/@elements.0'
 		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 
-		//attributes+=ApplicationAttribute
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.4/@elements.1'
 		public Assignment getAttributesAssignment_4_1() { return cAttributesAssignment_4_1; }
 
-		//ApplicationAttribute
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.4/@elements.1/@terminal'
 		public RuleCall getAttributesApplicationAttributeParserRuleCall_4_1_0() { return cAttributesApplicationAttributeParserRuleCall_4_1_0; }
 
-		//"}"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.3/@alternatives/@elements.5'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class PackageNameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "PackageName");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cQuotationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_1_0_0 = (RuleCall)cNameAssignment_1_0.eContents().get(0);
-		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
-		private final Keyword cFullStopKeyword_1_1_0 = (Keyword)cGroup_1_1.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1_1_1 = (RuleCall)cGroup_1_1.eContents().get(1);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		
-		//PackageName:
-		//	"\"" (name=ID ("." ID)*) "\"";
-		public ParserRule getRule() { return rule; }
-
-		//"\"" (name=ID ("." ID)*) "\""
-		public Group getGroup() { return cGroup; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_0() { return cQuotationMarkKeyword_0; }
-
-		//name=ID ("." ID)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//name=ID
-		public Assignment getNameAssignment_1_0() { return cNameAssignment_1_0; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0_0() { return cNameIDTerminalRuleCall_1_0_0; }
-
-		//("." ID)*
-		public Group getGroup_1_1() { return cGroup_1_1; }
-
-		//"."
-		public Keyword getFullStopKeyword_1_1_0() { return cFullStopKeyword_1_1_0; }
-
-		//ID
-		public RuleCall getIDTerminalRuleCall_1_1_1() { return cIDTerminalRuleCall_1_1_1; }
-
-		//"\""
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
 	}
 
 	public class ApplicationAttributeElements extends AbstractParserRuleElementFinder {
@@ -168,34 +119,31 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cApplicationElementListParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		private final RuleCall cApplicationMainActivityParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
-		//ApplicationAttribute:
-		//	ElementLabelAttribute | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
-		//	ApplicationElementList | ApplicationMainActivity;
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#XtextFragmentProvider_at.fhj.gaar.androidapp.AppDsl/ApplicationAttribute'
 		public ParserRule getRule() { return rule; }
 
-		//ElementLabelAttribute | ApplicationMinSdk | ApplicationTargetSdk | ApplicationCompileSdk | ApplicationPermissionList |
-		//ApplicationElementList | ApplicationMainActivity
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//ElementLabelAttribute
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives/@elements.0'
 		public RuleCall getElementLabelAttributeParserRuleCall_0() { return cElementLabelAttributeParserRuleCall_0; }
 
-		//ApplicationMinSdk
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives/@elements.1'
 		public RuleCall getApplicationMinSdkParserRuleCall_1() { return cApplicationMinSdkParserRuleCall_1; }
 
-		//ApplicationTargetSdk
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives/@elements.2'
 		public RuleCall getApplicationTargetSdkParserRuleCall_2() { return cApplicationTargetSdkParserRuleCall_2; }
 
-		//ApplicationCompileSdk
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives/@elements.3'
 		public RuleCall getApplicationCompileSdkParserRuleCall_3() { return cApplicationCompileSdkParserRuleCall_3; }
 
-		//ApplicationPermissionList
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives/@elements.4'
 		public RuleCall getApplicationPermissionListParserRuleCall_4() { return cApplicationPermissionListParserRuleCall_4; }
 
-		//ApplicationElementList
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives/@elements.5'
 		public RuleCall getApplicationElementListParserRuleCall_5() { return cApplicationElementListParserRuleCall_5; }
 
-		//ApplicationMainActivity
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.4/@alternatives/@elements.6'
 		public RuleCall getApplicationMainActivityParserRuleCall_6() { return cApplicationMainActivityParserRuleCall_6; }
 	}
 
@@ -206,20 +154,19 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMinSdkAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cMinSdkINTTerminalRuleCall_1_0 = (RuleCall)cMinSdkAssignment_1.eContents().get(0);
 		
-		//ApplicationMinSdk:
-		//	"min-sdk" minSdk=INT;
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#XtextFragmentProvider_at.fhj.gaar.androidapp.AppDsl/ApplicationMinSdk'
 		public ParserRule getRule() { return rule; }
 
-		//"min-sdk" minSdk=INT
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.5/@alternatives'
 		public Group getGroup() { return cGroup; }
 
-		//"min-sdk"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.5/@alternatives/@elements.0'
 		public Keyword getMinSdkKeyword_0() { return cMinSdkKeyword_0; }
 
-		//minSdk=INT
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.5/@alternatives/@elements.1'
 		public Assignment getMinSdkAssignment_1() { return cMinSdkAssignment_1; }
 
-		//INT
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.5/@alternatives/@elements.1/@terminal'
 		public RuleCall getMinSdkINTTerminalRuleCall_1_0() { return cMinSdkINTTerminalRuleCall_1_0; }
 	}
 
@@ -230,20 +177,19 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTargetSdkAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cTargetSdkINTTerminalRuleCall_1_0 = (RuleCall)cTargetSdkAssignment_1.eContents().get(0);
 		
-		//ApplicationTargetSdk:
-		//	"target-sdk" targetSdk=INT;
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#XtextFragmentProvider_at.fhj.gaar.androidapp.AppDsl/ApplicationTargetSdk'
 		public ParserRule getRule() { return rule; }
 
-		//"target-sdk" targetSdk=INT
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.6/@alternatives'
 		public Group getGroup() { return cGroup; }
 
-		//"target-sdk"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.6/@alternatives/@elements.0'
 		public Keyword getTargetSdkKeyword_0() { return cTargetSdkKeyword_0; }
 
-		//targetSdk=INT
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.6/@alternatives/@elements.1'
 		public Assignment getTargetSdkAssignment_1() { return cTargetSdkAssignment_1; }
 
-		//INT
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.6/@alternatives/@elements.1/@terminal'
 		public RuleCall getTargetSdkINTTerminalRuleCall_1_0() { return cTargetSdkINTTerminalRuleCall_1_0; }
 	}
 
@@ -277,20 +223,20 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPermissionsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cPermissionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPermissionsPackageNameParserRuleCall_2_0 = (RuleCall)cPermissionsAssignment_2.eContents().get(0);
+		private final RuleCall cPermissionsPermissionParserRuleCall_2_0 = (RuleCall)cPermissionsAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cPermissionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cPermissionsPackageNameParserRuleCall_3_1_0 = (RuleCall)cPermissionsAssignment_3_1.eContents().get(0);
+		private final RuleCall cPermissionsPermissionParserRuleCall_3_1_0 = (RuleCall)cPermissionsAssignment_3_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ApplicationPermissionList:
-		//	"permissions" "[" // android permissions are in packagename format (e.g. "android.permission.INTERNET")
-		//	permissions+=PackageName ("," permissions+=PackageName)* "]";
+		//	"permissions" "[" // TODO make empty list possible
+		//	permissions+=Permission ("," permissions+=Permission)* "]";
 		public ParserRule getRule() { return rule; }
 
-		//"permissions" "[" // android permissions are in packagename format (e.g. "android.permission.INTERNET")
-		//permissions+=PackageName ("," permissions+=PackageName)* "]"
+		//"permissions" "[" // TODO make empty list possible
+		//permissions+=Permission ("," permissions+=Permission)* "]"
 		public Group getGroup() { return cGroup; }
 
 		//"permissions"
@@ -299,24 +245,24 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
-		//// android permissions are in packagename format (e.g. "android.permission.INTERNET")
-		//permissions+=PackageName
+		//// TODO make empty list possible
+		//permissions+=Permission
 		public Assignment getPermissionsAssignment_2() { return cPermissionsAssignment_2; }
 
-		//PackageName
-		public RuleCall getPermissionsPackageNameParserRuleCall_2_0() { return cPermissionsPackageNameParserRuleCall_2_0; }
+		//Permission
+		public RuleCall getPermissionsPermissionParserRuleCall_2_0() { return cPermissionsPermissionParserRuleCall_2_0; }
 
-		//("," permissions+=PackageName)*
+		//("," permissions+=Permission)*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//","
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 
-		//permissions+=PackageName
+		//permissions+=Permission
 		public Assignment getPermissionsAssignment_3_1() { return cPermissionsAssignment_3_1; }
 
-		//PackageName
-		public RuleCall getPermissionsPackageNameParserRuleCall_3_1_0() { return cPermissionsPackageNameParserRuleCall_3_1_0; }
+		//Permission
+		public RuleCall getPermissionsPermissionParserRuleCall_3_1_0() { return cPermissionsPermissionParserRuleCall_3_1_0; }
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
@@ -403,6 +349,19 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getLauncherActivityActivityIDTerminalRuleCall_1_0_1() { return cLauncherActivityActivityIDTerminalRuleCall_1_0_1; }
+	}
+
+	public class PermissionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Permission");
+		private final RuleCall cPACKAGE_NAMETerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Permission: // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+		//	PACKAGE_NAME;
+		public ParserRule getRule() { return rule; }
+
+		//// android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+		//PACKAGE_NAME
+		public RuleCall getPACKAGE_NAMETerminalRuleCall() { return cPACKAGE_NAMETerminalRuleCall; }
 	}
 
 	public class ApplicationElementElements extends AbstractParserRuleElementFinder {
@@ -784,18 +743,20 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIntentsKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cIntentsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cIntentsPackageNameParserRuleCall_2_0 = (RuleCall)cIntentsAssignment_2.eContents().get(0);
+		private final RuleCall cIntentsIntentParserRuleCall_2_0 = (RuleCall)cIntentsAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cIntentsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cIntentsPackageNameParserRuleCall_3_1_0 = (RuleCall)cIntentsAssignment_3_1.eContents().get(0);
+		private final RuleCall cIntentsIntentParserRuleCall_3_1_0 = (RuleCall)cIntentsAssignment_3_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//ElementIntentList:
-		//	"intents" "[" intents+=PackageName ("," intents+=PackageName)* "]";
+		//	"intents" "[" // TODO make empty list possible
+		//	intents+=Intent ("," intents+=Intent)* "]";
 		public ParserRule getRule() { return rule; }
 
-		//"intents" "[" intents+=PackageName ("," intents+=PackageName)* "]"
+		//"intents" "[" // TODO make empty list possible
+		//intents+=Intent ("," intents+=Intent)* "]"
 		public Group getGroup() { return cGroup; }
 
 		//"intents"
@@ -804,26 +765,39 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"["
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
-		//intents+=PackageName
+		//// TODO make empty list possible
+		//intents+=Intent
 		public Assignment getIntentsAssignment_2() { return cIntentsAssignment_2; }
 
-		//PackageName
-		public RuleCall getIntentsPackageNameParserRuleCall_2_0() { return cIntentsPackageNameParserRuleCall_2_0; }
+		//Intent
+		public RuleCall getIntentsIntentParserRuleCall_2_0() { return cIntentsIntentParserRuleCall_2_0; }
 
-		//("," intents+=PackageName)*
+		//("," intents+=Intent)*
 		public Group getGroup_3() { return cGroup_3; }
 
 		//","
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 
-		//intents+=PackageName
+		//intents+=Intent
 		public Assignment getIntentsAssignment_3_1() { return cIntentsAssignment_3_1; }
 
-		//PackageName
-		public RuleCall getIntentsPackageNameParserRuleCall_3_1_0() { return cIntentsPackageNameParserRuleCall_3_1_0; }
+		//Intent
+		public RuleCall getIntentsIntentParserRuleCall_3_1_0() { return cIntentsIntentParserRuleCall_3_1_0; }
 
 		//"]"
 		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
+	}
+
+	public class IntentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Intent");
+		private final RuleCall cPACKAGE_NAMETerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//Intent:
+		//	PACKAGE_NAME;
+		public ParserRule getRule() { return rule; }
+
+		//PACKAGE_NAME
+		public RuleCall getPACKAGE_NAMETerminalRuleCall() { return cPACKAGE_NAMETerminalRuleCall; }
 	}
 
 	public class ActivityParentAttributeElements extends AbstractParserRuleElementFinder {
@@ -867,38 +841,37 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cLayoutElementsLayoutElementParserRuleCall_3_1_0 = (RuleCall)cLayoutElementsAssignment_3_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
-		//ActivityLayoutAttribute:
-		//	"layout-elements" "[" layoutElements+=LayoutElement ("," layoutElements+=LayoutElement)* "]";
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#XtextFragmentProvider_at.fhj.gaar.androidapp.AppDsl/ActivityLayoutAttribute'
 		public ParserRule getRule() { return rule; }
 
-		//"layout-elements" "[" layoutElements+=LayoutElement ("," layoutElements+=LayoutElement)* "]"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives'
 		public Group getGroup() { return cGroup; }
 
-		//"layout-elements"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.0'
 		public Keyword getLayoutElementsKeyword_0() { return cLayoutElementsKeyword_0; }
 
-		//"["
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.1'
 		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
 
-		//layoutElements+=LayoutElement
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.2'
 		public Assignment getLayoutElementsAssignment_2() { return cLayoutElementsAssignment_2; }
 
-		//LayoutElement
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.2/@terminal'
 		public RuleCall getLayoutElementsLayoutElementParserRuleCall_2_0() { return cLayoutElementsLayoutElementParserRuleCall_2_0; }
 
-		//("," layoutElements+=LayoutElement)*
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.3'
 		public Group getGroup_3() { return cGroup_3; }
 
-		//","
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.3/@elements.0'
 		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
 
-		//layoutElements+=LayoutElement
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.3/@elements.1'
 		public Assignment getLayoutElementsAssignment_3_1() { return cLayoutElementsAssignment_3_1; }
 
-		//LayoutElement
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.3/@elements.1/@terminal'
 		public RuleCall getLayoutElementsLayoutElementParserRuleCall_3_1_0() { return cLayoutElementsLayoutElementParserRuleCall_3_1_0; }
 
-		//"]"
+		//org.eclipse.xtext.resource.ClasspathUriResolutionException: org.eclipse.xtext.resource.FileNotFoundOnClasspathException: Couldn't find resource on classpath. URI was 'classpath:/at/fhj/gaar/androidapp/AppDsl.xtext#/0/@rules.25/@alternatives/@elements.4'
 		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
 	}
 
@@ -1248,8 +1221,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final AndroidAppProjectElements pAndroidAppProject;
 	private final TerminalRule tBOOLEAN;
+	private final TerminalRule tPACKAGE_NAME;
 	private final ApplicationElements pApplication;
-	private final PackageNameElements pPackageName;
 	private final ApplicationAttributeElements pApplicationAttribute;
 	private final ApplicationMinSdkElements pApplicationMinSdk;
 	private final ApplicationTargetSdkElements pApplicationTargetSdk;
@@ -1257,6 +1230,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ApplicationPermissionListElements pApplicationPermissionList;
 	private final ApplicationElementListElements pApplicationElementList;
 	private final ApplicationMainActivityElements pApplicationMainActivity;
+	private final PermissionElements pPermission;
 	private final ApplicationElementElements pApplicationElement;
 	private final ActivityElements pActivity;
 	private final BroadcastReceiverElements pBroadcastReceiver;
@@ -1268,6 +1242,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final ElementExportedAttributeElements pElementExportedAttribute;
 	private final ElementLabelAttributeElements pElementLabelAttribute;
 	private final ElementIntentListElements pElementIntentList;
+	private final IntentElements pIntent;
 	private final ActivityParentAttributeElements pActivityParentAttribute;
 	private final ActivityLayoutAttributeElements pActivityLayoutAttribute;
 	private final LayoutElementElements pLayoutElement;
@@ -1295,8 +1270,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pAndroidAppProject = new AndroidAppProjectElements();
 		this.tBOOLEAN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "BOOLEAN");
+		this.tPACKAGE_NAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PACKAGE_NAME");
 		this.pApplication = new ApplicationElements();
-		this.pPackageName = new PackageNameElements();
 		this.pApplicationAttribute = new ApplicationAttributeElements();
 		this.pApplicationMinSdk = new ApplicationMinSdkElements();
 		this.pApplicationTargetSdk = new ApplicationTargetSdkElements();
@@ -1304,6 +1279,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pApplicationPermissionList = new ApplicationPermissionListElements();
 		this.pApplicationElementList = new ApplicationElementListElements();
 		this.pApplicationMainActivity = new ApplicationMainActivityElements();
+		this.pPermission = new PermissionElements();
 		this.pApplicationElement = new ApplicationElementElements();
 		this.pActivity = new ActivityElements();
 		this.pBroadcastReceiver = new BroadcastReceiverElements();
@@ -1315,6 +1291,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pElementExportedAttribute = new ElementExportedAttributeElements();
 		this.pElementLabelAttribute = new ElementLabelAttributeElements();
 		this.pElementIntentList = new ElementIntentListElements();
+		this.pIntent = new IntentElements();
 		this.pActivityParentAttribute = new ActivityParentAttributeElements();
 		this.pActivityLayoutAttribute = new ActivityLayoutAttributeElements();
 		this.pLayoutElement = new LayoutElementElements();
@@ -1375,8 +1352,14 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		return tBOOLEAN;
 	} 
 
+	//terminal PACKAGE_NAME:
+	//	"\"" (ID ("." ID)*) "\"";
+	public TerminalRule getPACKAGE_NAMERule() {
+		return tPACKAGE_NAME;
+	} 
+
 	//Application:
-	//	"application" name=PackageName "{" // allow only one attribute or more than one (separated by ",")
+	//	"application" name=PACKAGE_NAME "{" // allow only one attribute or more than one (separated by ",")
 	//	attributes+=ApplicationAttribute ("," attributes+=ApplicationAttribute)* "}";
 	public ApplicationElements getApplicationAccess() {
 		return pApplication;
@@ -1384,16 +1367,6 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getApplicationRule() {
 		return getApplicationAccess().getRule();
-	}
-
-	//PackageName:
-	//	"\"" (name=ID ("." ID)*) "\"";
-	public PackageNameElements getPackageNameAccess() {
-		return pPackageName;
-	}
-	
-	public ParserRule getPackageNameRule() {
-		return getPackageNameAccess().getRule();
 	}
 
 	//ApplicationAttribute:
@@ -1438,8 +1411,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ApplicationPermissionList:
-	//	"permissions" "[" // android permissions are in packagename format (e.g. "android.permission.INTERNET")
-	//	permissions+=PackageName ("," permissions+=PackageName)* "]";
+	//	"permissions" "[" // TODO make empty list possible
+	//	permissions+=Permission ("," permissions+=Permission)* "]";
 	public ApplicationPermissionListElements getApplicationPermissionListAccess() {
 		return pApplicationPermissionList;
 	}
@@ -1468,6 +1441,16 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getApplicationMainActivityRule() {
 		return getApplicationMainActivityAccess().getRule();
+	}
+
+	//Permission: // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+	//	PACKAGE_NAME;
+	public PermissionElements getPermissionAccess() {
+		return pPermission;
+	}
+	
+	public ParserRule getPermissionRule() {
+		return getPermissionAccess().getRule();
 	}
 
 	//ApplicationElement:
@@ -1576,13 +1559,24 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ElementIntentList:
-	//	"intents" "[" intents+=PackageName ("," intents+=PackageName)* "]";
+	//	"intents" "[" // TODO make empty list possible
+	//	intents+=Intent ("," intents+=Intent)* "]";
 	public ElementIntentListElements getElementIntentListAccess() {
 		return pElementIntentList;
 	}
 	
 	public ParserRule getElementIntentListRule() {
 		return getElementIntentListAccess().getRule();
+	}
+
+	//Intent:
+	//	PACKAGE_NAME;
+	public IntentElements getIntentAccess() {
+		return pIntent;
+	}
+	
+	public ParserRule getIntentRule() {
+		return getIntentAccess().getRule();
 	}
 
 	//ActivityParentAttribute:
@@ -1596,7 +1590,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ActivityLayoutAttribute:
-	//	"layout-elements" "[" layoutElements+=LayoutElement ("," layoutElements+=LayoutElement)* "]";
+	//	"layout-elements" "[" // TODO make empty list possible
+	//	layoutElements+=LayoutElement ("," layoutElements+=LayoutElement)* "]";
 	public ActivityLayoutAttributeElements getActivityLayoutAttributeAccess() {
 		return pActivityLayoutAttribute;
 	}

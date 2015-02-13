@@ -14,7 +14,7 @@ class ServiceClassGenerator extends AbstractClassGenerator {
 		var service = element as Service;
 		
 		return '''
-		package «application.name.name».service;
+		package «application.name».service;
 
 		import android.app.Service;
 		import android.content.Intent;

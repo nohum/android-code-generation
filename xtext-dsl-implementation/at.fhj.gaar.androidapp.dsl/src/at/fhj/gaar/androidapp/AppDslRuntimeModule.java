@@ -3,9 +3,15 @@
  */
 package at.fhj.gaar.androidapp;
 
+import org.eclipse.xtext.conversion.IValueConverterService;
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 public class AppDslRuntimeModule extends at.fhj.gaar.androidapp.AbstractAppDslRuntimeModule {
 
+	public Class<? extends IValueConverterService> bindIValueConverterService() {
+		return TerminalConverters.class;
+	}
+	
 }

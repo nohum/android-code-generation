@@ -86,13 +86,6 @@ public class AppDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case AppDslPackage.PACKAGE_NAME:
-      {
-        PackageName packageName = (PackageName)theEObject;
-        T result = casePackageName(packageName);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case AppDslPackage.APPLICATION_ATTRIBUTE:
       {
         ApplicationAttribute applicationAttribute = (ApplicationAttribute)theEObject;
@@ -384,22 +377,6 @@ public class AppDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseApplication(Application object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Package Name</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Package Name</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePackageName(PackageName object)
   {
     return null;
   }

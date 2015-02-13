@@ -6,13 +6,9 @@
         eType="#//Application" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Application">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//PackageName"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//ApplicationAttribute" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PackageName">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationMinSdk" eSuperTypes="#//ApplicationAttribute">
@@ -25,8 +21,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="compileSdk" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationPermissionList" eSuperTypes="#//ApplicationAttribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="permissions" upperBound="-1"
-        eType="#//PackageName" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permissions" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ApplicationElementList" eSuperTypes="#//ApplicationAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
@@ -63,8 +59,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementIntentList" eSuperTypes="#//ActivityAttribute #//BroadcastReceiverAttribute #//ServiceAttribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="intents" upperBound="-1"
-        eType="#//PackageName" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intents" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActivityParentAttribute" eSuperTypes="#//ActivityAttribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Activity"/>

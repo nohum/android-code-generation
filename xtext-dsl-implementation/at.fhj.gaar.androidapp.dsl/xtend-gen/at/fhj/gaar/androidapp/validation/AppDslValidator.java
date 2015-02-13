@@ -20,7 +20,6 @@ import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
-import at.fhj.gaar.androidapp.appDsl.PackageName;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
@@ -172,19 +171,19 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicatePermission(final ApplicationPermissionList permissions) {
-    EList<PackageName> _permissions = permissions.getPermissions();
+    EList<String> _permissions = permissions.getPermissions();
     final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
       public void onDuplicateFound(final String name, final int index) {
         AppDslValidator.this.error("Permissions have to be unique", 
           AppDslPackage.Literals.APPLICATION_PERMISSION_LIST__PERMISSIONS, index);
       }
     };
-    this.findPackageNameDuplicates(_permissions, _function);
+    this.findStringDuplicates(_permissions, _function);
   }
   
   @Check
   public void checkForDuplicateIntent(final ElementIntentList intents) {
-    EList<PackageName> _intents = intents.getIntents();
+    EList<String> _intents = intents.getIntents();
     final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
       public void onDuplicateFound(final String name, final int index) {
         String _format = String.format("Intent \"%s\" is not unique", name);
@@ -192,7 +191,7 @@ public class AppDslValidator extends AbstractAppDslValidator {
           AppDslPackage.Literals.ELEMENT_INTENT_LIST__INTENTS, index);
       }
     };
-    this.findPackageNameDuplicates(_intents, _function);
+    this.findStringDuplicates(_intents, _function);
   }
   
   @Check
@@ -256,18 +255,16 @@ public class AppDslValidator extends AbstractAppDslValidator {
    * General method to handle duplicate searches in string lists. Calls the supplied
    * callback for each found duplicate.
    */
-  private void findPackageNameDuplicates(final EList<PackageName> list, final AppDslValidator.DuplicateCallback callback) {
-    List<String> knownElements = new ArrayList<String>();
+  private void findStringDuplicates(final EList<String> list, final AppDslValidator.DuplicateCallback callback) {
+    List<String> foundIntents = new ArrayList<String>();
     int listIndex = 0;
-    for (final PackageName element : list) {
+    for (final String element : list) {
       {
-        boolean _contains = knownElements.contains(element);
+        boolean _contains = foundIntents.contains(element);
         if (_contains) {
-          String _name = element.getName();
-          callback.onDuplicateFound(_name, listIndex);
+          callback.onDuplicateFound(element, listIndex);
         }
-        String _name_1 = element.getName();
-        knownElements.add(_name_1);
+        foundIntents.add(element);
         listIndex++;
       }
     }

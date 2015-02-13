@@ -29,7 +29,7 @@ public abstract class AbstractClassGenerator extends AbstractGenerator {
 			
 		for (ApplicationElement element : elements.getElements()) {
 			if (isAllowedElement(element)) {
-				String classPath = application.getName().getName().replace(".", "/");
+				String classPath = application.getName().replace(".", "/");
 			
 				filesystem.generateFile(String.format("%s/src/main/java/%s/service/%s.java", projectName,
 						classPath, element.getName()), retrieveElementTemplate(application, element));

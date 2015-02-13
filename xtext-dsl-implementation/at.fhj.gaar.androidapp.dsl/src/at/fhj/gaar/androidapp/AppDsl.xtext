@@ -15,16 +15,16 @@ terminal BOOLEAN returns ecore::EBoolean:
     'FALSE'
 ;
 
+terminal PACKAGE_NAME:
+	'"' ( ID ('.' ID)* ) '"'
+;
+
 Application:
-	'application' name = PackageName
+	'application' name = PACKAGE_NAME
 	'{'
 		// allow only one attribute or more than one (separated by ",")
 		attributes += ApplicationAttribute (',' attributes += ApplicationAttribute)*
 	'}'
-;
-
-PackageName:
-	'"' ( name = ID ('.' ID)* ) '"'
 ;
 
 ApplicationAttribute:
@@ -52,8 +52,8 @@ ApplicationCompileSdk:
 ApplicationPermissionList:
 	'permissions'
 	'['
-		// android permissions are in packagename format (e.g. "android.permission.INTERNET")
-		permissions += PackageName (',' permissions += PackageName)*
+		// TODO make empty list possible
+		permissions += Permission (',' permissions += Permission)*
 	']'
 ;
 
@@ -67,6 +67,10 @@ ApplicationElementList:
 
 ApplicationMainActivity:
 	'main-activity' launcherActivity = [Activity] // referenced by the magical "name" of an Activity
+;
+
+Permission:
+	PACKAGE_NAME // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 ;
 
 ApplicationElement: 
@@ -136,8 +140,13 @@ ElementLabelAttribute:
 ElementIntentList:
 	'intents'
 	'['
-		intents += PackageName (',' intents += PackageName)*
+		// TODO make empty list possible
+		intents += Intent (',' intents += Intent)*
 	']'
+;
+
+Intent:
+	PACKAGE_NAME
 ;
 
 ActivityParentAttribute:
@@ -147,6 +156,7 @@ ActivityParentAttribute:
 ActivityLayoutAttribute:
 	'layout-elements'
 	'['
+		// TODO make empty list possible
 		layoutElements += LayoutElement (',' layoutElements += LayoutElement)*
 	']'
 ;

@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface ApplicationPermissionList extends ApplicationAttribute
 {
   /**
-   * Returns the value of the '<em><b>Permissions</b></em>' containment reference list.
-   * The list contents are of type {@link at.fhj.gaar.androidapp.appDsl.PackageName}.
+   * Returns the value of the '<em><b>Permissions</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Permissions</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Permissions</em>' attribute list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Permissions</em>' containment reference list.
+   * @return the value of the '<em>Permissions</em>' attribute list.
    * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getApplicationPermissionList_Permissions()
-   * @model containment="true"
+   * @model unique="false"
    * @generated
    */
-  EList<PackageName> getPermissions();
+  EList<String> getPermissions();
 
 } // ApplicationPermissionList
