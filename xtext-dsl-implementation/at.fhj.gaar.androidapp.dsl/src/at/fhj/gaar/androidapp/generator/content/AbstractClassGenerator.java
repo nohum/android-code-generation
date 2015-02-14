@@ -31,11 +31,14 @@ public abstract class AbstractClassGenerator extends AbstractGenerator {
 			if (isAllowedElement(element)) {
 				String classPath = application.getName().replace(".", "/");
 			
-				filesystem.generateFile(String.format("%s/src/main/java/%s/service/%s.java", projectName,
-						classPath, element.getName()), retrieveElementTemplate(application, element));
+				filesystem.generateFile(String.format("%s/src/main/java/%s/%s/%s.java", projectName,
+						classPath, getSubClassPath(), element.getName()),
+						retrieveElementTemplate(application, element));
 			}
-		}	
+		}
 	}
+	
+	protected abstract String getSubClassPath();
 	
 	protected abstract boolean isAllowedElement(ApplicationElement element);
 	

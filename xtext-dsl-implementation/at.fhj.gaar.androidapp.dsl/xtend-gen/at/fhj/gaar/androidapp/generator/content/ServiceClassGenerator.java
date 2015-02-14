@@ -8,6 +8,10 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class ServiceClassGenerator extends AbstractClassGenerator {
+  protected String getSubClassPath() {
+    return "service";
+  }
+  
   protected boolean isAllowedElement(final ApplicationElement element) {
     return (element instanceof Service);
   }
@@ -23,6 +27,8 @@ public class ServiceClassGenerator extends AbstractClassGenerator {
     _builder.newLine();
     _builder.append("import android.app.Service;");
     _builder.newLine();
+    _builder.append("import android.content.Context;");
+    _builder.newLine();
     _builder.append("import android.content.Intent;");
     _builder.newLine();
     _builder.append("import android.os.IBinder;");
@@ -33,6 +39,8 @@ public class ServiceClassGenerator extends AbstractClassGenerator {
     _builder.append(_name_1, "");
     _builder.append(" extends Service {");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
     _builder.append("    ");
     _builder.append("public ");
     String _name_2 = service.getName();
@@ -51,6 +59,40 @@ public class ServiceClassGenerator extends AbstractClassGenerator {
     _builder.newLine();
     _builder.append("        ");
     _builder.append("return null;");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public static void startService(Context context) {");
+    _builder.newLine();
+    _builder.append("    \t");
+    _builder.append("Intent intent = new Intent(context, ");
+    String _name_3 = service.getName();
+    _builder.append(_name_3, "    \t");
+    _builder.append(".class);");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("context.startService(intent);");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public static void stopService(Context context) {");
+    _builder.newLine();
+    _builder.append("    \t");
+    _builder.append("Intent intent = new Intent(context, ");
+    String _name_4 = service.getName();
+    _builder.append(_name_4, "    \t");
+    _builder.append(".class);");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("context.stopService(intent);");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
