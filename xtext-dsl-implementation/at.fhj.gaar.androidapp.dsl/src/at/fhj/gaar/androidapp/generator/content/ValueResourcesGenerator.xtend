@@ -15,6 +15,7 @@ import at.fhj.gaar.androidapp.appDsl.Service
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute
 import at.fhj.gaar.androidapp.appDsl.ActionShowToast
+import at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute
 
 public class ValueResourcesGenerator extends AbstractGenerator {
 	
@@ -92,7 +93,7 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 		// android:label="@string/«javaToAndroidIdentifier(activity.name)»_title"
 		
 		// activity layoutElement buttons: action toasts
-		// R.string.«javaToAndroidIdentifier(activity.name)»_toast
+		// R.string.«javaToAndroidIdentifier(activity.name)»_«javaToAndroidIdentifier(buttonName)»_toast
 		
 		// receiver action: for toasts
 		// R.string.«javaToAndroidIdentifier(receiver.name)»_toast
@@ -101,7 +102,7 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 		// «javaToAndroidIdentifier(activity.name)»_«javaToAndroidIdentifier(buttonName)»_title
 		
 		// LAYOUTS: activity layoutElement texts
-		// «javaToAndroidIdentifier(activity.name)»_«javaToAndroidIdentifier(textIndex)»_text
+		// «javaToAndroidIdentifier(activity.name)»_text«textIndex»
 		
 		// Activities
 		list.elements.filter[element | element instanceof Activity].forEach[activity |
@@ -118,14 +119,30 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 			var layouts = getFieldData((activity as Activity).attributes, typeof(ActivityLayoutAttribute));
 			if (layouts != null) {
 				layouts.layoutElements.filter[layoutElement | layoutElement instanceof Button].forEach[button |
-					// TODO first the button itself
+					// first the button itself
+					var buttonTitleField = getFieldData((button as Button).attributes, typeof(ElementLabelAttribute));
+					var buttonTitle = "Button";
+					if (buttonTitleField != null) {
+						buttonTitle = buttonTitleField.title;
+					}
 					
-					// TODO if the action of the button is a toast, add that as well
+					strings.put(javaToAndroidIdentifier(activity.name) + "_"
+						+ javaToAndroidIdentifier((button as Button).name) + "_title", buttonTitle
+					);
+					
+					// if the action of the button is a toast, add that as well
+					var buttonAction = getFieldData((button as Button).attributes, typeof(ButtonActionAttribute));
+					if (buttonAction != null && buttonAction.action instanceof ActionShowToast) {
+						var toastAction = buttonAction.action as ActionShowToast;
+				
+						strings.put(javaToAndroidIdentifier(activity.name) + "_"
+						+ javaToAndroidIdentifier((button as Button).name) + "_toast", toastAction.toastText);
+					}
 				];
 				
 				// Text elements
 				layouts.layoutElements.filter[layoutElement | layoutElement instanceof Text].forEach[text, index |
-					
+					strings.put(javaToAndroidIdentifier(activity.name) + "_text" + index, (text as Text).text);
 				];
 			}
 		];

@@ -13,8 +13,11 @@ import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAction;
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute;
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
 import at.fhj.gaar.androidapp.appDsl.Button;
+import at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute;
+import at.fhj.gaar.androidapp.appDsl.ButtonAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
+import at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 import at.fhj.gaar.androidapp.appDsl.Text;
@@ -172,6 +175,45 @@ public class ValueResourcesGenerator extends AbstractGenerator {
           Iterable<LayoutElement> _filter = IterableExtensions.<LayoutElement>filter(_layoutElements, _function);
           final Procedure1<LayoutElement> _function_1 = new Procedure1<LayoutElement>() {
             public void apply(final LayoutElement button) {
+              EList<ButtonAttribute> _attributes = ((Button) button).getAttributes();
+              ElementLabelAttribute buttonTitleField = ValueResourcesGenerator.this.<ElementLabelAttribute>getFieldData(_attributes, ElementLabelAttribute.class);
+              String buttonTitle = "Button";
+              boolean _notEquals = (!Objects.equal(buttonTitleField, null));
+              if (_notEquals) {
+                String _title = buttonTitleField.getTitle();
+                buttonTitle = _title;
+              }
+              String _name = activity.getName();
+              String _javaToAndroidIdentifier = ValueResourcesGenerator.this.javaToAndroidIdentifier(_name);
+              String _plus = (_javaToAndroidIdentifier + "_");
+              String _name_1 = ((Button) button).getName();
+              String _javaToAndroidIdentifier_1 = ValueResourcesGenerator.this.javaToAndroidIdentifier(_name_1);
+              String _plus_1 = (_plus + _javaToAndroidIdentifier_1);
+              String _plus_2 = (_plus_1 + "_title");
+              strings.put(_plus_2, buttonTitle);
+              EList<ButtonAttribute> _attributes_1 = ((Button) button).getAttributes();
+              ButtonActionAttribute buttonAction = ValueResourcesGenerator.this.<ButtonActionAttribute>getFieldData(_attributes_1, ButtonActionAttribute.class);
+              boolean _and = false;
+              boolean _notEquals_1 = (!Objects.equal(buttonAction, null));
+              if (!_notEquals_1) {
+                _and = false;
+              } else {
+                LayoutElementClickAction _action = buttonAction.getAction();
+                _and = (_action instanceof ActionShowToast);
+              }
+              if (_and) {
+                LayoutElementClickAction _action_1 = buttonAction.getAction();
+                ActionShowToast toastAction = ((ActionShowToast) _action_1);
+                String _name_2 = activity.getName();
+                String _javaToAndroidIdentifier_2 = ValueResourcesGenerator.this.javaToAndroidIdentifier(_name_2);
+                String _plus_3 = (_javaToAndroidIdentifier_2 + "_");
+                String _name_3 = ((Button) button).getName();
+                String _javaToAndroidIdentifier_3 = ValueResourcesGenerator.this.javaToAndroidIdentifier(_name_3);
+                String _plus_4 = (_plus_3 + _javaToAndroidIdentifier_3);
+                String _plus_5 = (_plus_4 + "_toast");
+                String _toastText = toastAction.getToastText();
+                strings.put(_plus_5, _toastText);
+              }
             }
           };
           IterableExtensions.<LayoutElement>forEach(_filter, _function_1);
@@ -184,6 +226,12 @@ public class ValueResourcesGenerator extends AbstractGenerator {
           Iterable<LayoutElement> _filter_1 = IterableExtensions.<LayoutElement>filter(_layoutElements_1, _function_2);
           final Procedure2<LayoutElement, Integer> _function_3 = new Procedure2<LayoutElement, Integer>() {
             public void apply(final LayoutElement text, final Integer index) {
+              String _name = activity.getName();
+              String _javaToAndroidIdentifier = ValueResourcesGenerator.this.javaToAndroidIdentifier(_name);
+              String _plus = (_javaToAndroidIdentifier + "_text");
+              String _plus_1 = (_plus + index);
+              String _text = ((Text) text).getText();
+              strings.put(_plus_1, _text);
             }
           };
           IterableExtensions.<LayoutElement>forEach(_filter_1, _function_3);
