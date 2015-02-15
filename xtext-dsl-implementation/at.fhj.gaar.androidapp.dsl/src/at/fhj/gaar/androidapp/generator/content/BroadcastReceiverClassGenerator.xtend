@@ -7,7 +7,6 @@ import at.fhj.gaar.androidapp.appDsl.Application
 import at.fhj.gaar.androidapp.appDsl.ApplicationElement
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute
-import java.util.logging.Logger
 
 public class BroadcastReceiverClassGenerator extends AbstractClassGenerator {
 	
@@ -22,9 +21,7 @@ public class BroadcastReceiverClassGenerator extends AbstractClassGenerator {
 	override protected retrieveElementTemplate(Application application, ApplicationElement element) {
 		var receiver = element as BroadcastReceiver;
 		var BroadcastReceiverActionAttribute action = getFieldData(receiver.attributes, typeof(BroadcastReceiverActionAttribute));
-		
-		Logger.getLogger("AppGenerator").info("receiver action =" + receiver.attributes);
-		
+
 		return '''
 		package «application.name».receiver;
 		

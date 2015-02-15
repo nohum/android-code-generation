@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
 
 import at.fhj.gaar.androidapp.appDsl.Application;
+import at.fhj.gaar.androidapp.generator.content.ActivityClassGenerator;
 import at.fhj.gaar.androidapp.generator.content.AndroidManifestGenerator;
 import at.fhj.gaar.androidapp.generator.content.BroadcastReceiverClassGenerator;
 import at.fhj.gaar.androidapp.generator.content.ContentGenerator;
@@ -33,6 +34,7 @@ public class AppDslGenerator implements IGenerator {
 		generators.add(new AndroidManifestGenerator());
 		generators.add(new ServiceClassGenerator());
 		generators.add(new BroadcastReceiverClassGenerator());
+		generators.add(new ActivityClassGenerator());
 		
 		logger.info(String.format("added %d DSL sub-generators", generators.size()));
 	}

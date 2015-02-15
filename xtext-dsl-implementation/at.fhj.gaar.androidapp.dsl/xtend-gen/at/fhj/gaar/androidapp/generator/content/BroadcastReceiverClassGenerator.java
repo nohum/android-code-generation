@@ -13,7 +13,6 @@ import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.generator.content.AbstractClassGenerator;
 import com.google.common.base.Objects;
-import java.util.logging.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
@@ -31,10 +30,6 @@ public class BroadcastReceiverClassGenerator extends AbstractClassGenerator {
     BroadcastReceiver receiver = ((BroadcastReceiver) element);
     EList<BroadcastReceiverAttribute> _attributes = receiver.getAttributes();
     BroadcastReceiverActionAttribute action = this.<BroadcastReceiverActionAttribute>getFieldData(_attributes, BroadcastReceiverActionAttribute.class);
-    Logger _logger = Logger.getLogger("AppGenerator");
-    EList<BroadcastReceiverAttribute> _attributes_1 = receiver.getAttributes();
-    String _plus = ("receiver action =" + _attributes_1);
-    _logger.info(_plus);
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
     String _name = application.getName();
