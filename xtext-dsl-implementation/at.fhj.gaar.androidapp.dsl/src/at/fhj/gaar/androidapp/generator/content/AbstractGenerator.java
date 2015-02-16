@@ -36,7 +36,6 @@ public abstract class AbstractGenerator implements ContentGenerator {
 		}
 		
 		Iterator<?> iterator = list.iterator();
-    	
     	while (iterator.hasNext()) {
     		Object data = iterator.next();
     		if (neededFieldClazz.isAssignableFrom(data.getClass())) {
@@ -45,7 +44,6 @@ public abstract class AbstractGenerator implements ContentGenerator {
     	}
 		
 		return null;
-		
 	}
 
 	/**
