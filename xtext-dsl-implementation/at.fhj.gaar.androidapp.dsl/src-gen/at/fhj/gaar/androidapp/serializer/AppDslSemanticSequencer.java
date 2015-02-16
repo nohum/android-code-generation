@@ -25,6 +25,7 @@ import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
 import at.fhj.gaar.androidapp.appDsl.Service;
+import at.fhj.gaar.androidapp.appDsl.Spacer;
 import at.fhj.gaar.androidapp.appDsl.Text;
 import at.fhj.gaar.androidapp.services.AppDslGrammarAccess;
 import com.google.inject.Inject;
@@ -224,6 +225,13 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				if(context == grammarAccess.getApplicationElementRule() ||
 				   context == grammarAccess.getServiceRule()) {
 					sequence_Service(context, (Service) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.SPACER:
+				if(context == grammarAccess.getLayoutElementRule() ||
+				   context == grammarAccess.getSpacerRule()) {
+					sequence_Spacer(context, (Spacer) semanticObject); 
 					return; 
 				}
 				else break;
@@ -548,6 +556,15 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (name=ID attributes+=ServiceAttribute attributes+=ServiceAttribute*)
 	 */
 	protected void sequence_Service(EObject context, Service semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     {Spacer}
+	 */
+	protected void sequence_Spacer(EObject context, Spacer semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -1548,8 +1548,9 @@ ruleLayoutElement returns [EObject current=null]
     { 
         newCompositeNode(grammarAccess.getLayoutElementAccess().getSpacerParserRuleCall_1()); 
     }
-ruleSpacer
+    this_Spacer_1=ruleSpacer
     { 
+        $current = $this_Spacer_1.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -1787,27 +1788,31 @@ ruleButtonActionAttribute returns [EObject current=null]
 
 
 // Entry rule entryRuleSpacer
-entryRuleSpacer returns [String current=null] 
+entryRuleSpacer returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getSpacerRule()); } 
+	{ newCompositeNode(grammarAccess.getSpacerRule()); }
 	 iv_ruleSpacer=ruleSpacer 
-	 { $current=$iv_ruleSpacer.current.getText(); }  
+	 { $current=$iv_ruleSpacer.current; } 
 	 EOF 
 ;
 
 // Rule Spacer
-ruleSpacer returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleSpacer returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-
-	kw='spacer' 
+((
     {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getSpacerAccess().getSpacerKeyword()); 
+        $current = forceCreateModelElement(
+            grammarAccess.getSpacerAccess().getSpacerAction_0(),
+            $current);
     }
-
-    ;
+)	otherlv_1='spacer' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getSpacerAccess().getSpacerKeyword_1());
+    }
+)
+;
 
 
 

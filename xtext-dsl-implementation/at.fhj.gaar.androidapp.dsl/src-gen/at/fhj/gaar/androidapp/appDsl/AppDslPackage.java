@@ -804,6 +804,25 @@ public interface AppDslPackage extends EPackage
   int BUTTON_ACTION_ATTRIBUTE_FEATURE_COUNT = BUTTON_ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl <em>Spacer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getSpacer()
+   * @generated
+   */
+  int SPACER = 27;
+
+  /**
+   * The number of structural features of the '<em>Spacer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SPACER_FEATURE_COUNT = LAYOUT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.TextImpl <em>Text</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -811,7 +830,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getText()
    * @generated
    */
-  int TEXT = 27;
+  int TEXT = 28;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -839,7 +858,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getLayoutElementClickAction()
    * @generated
    */
-  int LAYOUT_ELEMENT_CLICK_ACTION = 28;
+  int LAYOUT_ELEMENT_CLICK_ACTION = 29;
 
   /**
    * The number of structural features of the '<em>Layout Element Click Action</em>' class.
@@ -858,7 +877,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverActionAttribute()
    * @generated
    */
-  int BROADCAST_RECEIVER_ACTION_ATTRIBUTE = 29;
+  int BROADCAST_RECEIVER_ACTION_ATTRIBUTE = 30;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -886,7 +905,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverAction()
    * @generated
    */
-  int BROADCAST_RECEIVER_ACTION = 30;
+  int BROADCAST_RECEIVER_ACTION = 31;
 
   /**
    * The number of structural features of the '<em>Broadcast Receiver Action</em>' class.
@@ -905,7 +924,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionShowToast()
    * @generated
    */
-  int ACTION_SHOW_TOAST = 31;
+  int ACTION_SHOW_TOAST = 32;
 
   /**
    * The feature id for the '<em><b>Toast Text</b></em>' attribute.
@@ -933,7 +952,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionStartActivity()
    * @generated
    */
-  int ACTION_START_ACTIVITY = 32;
+  int ACTION_START_ACTIVITY = 33;
 
   /**
    * The feature id for the '<em><b>Activity</b></em>' reference.
@@ -961,7 +980,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionStartService()
    * @generated
    */
-  int ACTION_START_SERVICE = 33;
+  int ACTION_START_SERVICE = 34;
 
   /**
    * The feature id for the '<em><b>Service</b></em>' reference.
@@ -1504,6 +1523,16 @@ public interface AppDslPackage extends EPackage
    * @generated
    */
   EReference getButtonActionAttribute_Action();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Spacer <em>Spacer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Spacer</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Spacer
+   * @generated
+   */
+  EClass getSpacer();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Text <em>Text</em>}'.
@@ -2106,6 +2135,16 @@ public interface AppDslPackage extends EPackage
      * @generated
      */
     EReference BUTTON_ACTION_ATTRIBUTE__ACTION = eINSTANCE.getButtonActionAttribute_Action();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl <em>Spacer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.SpacerImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getSpacer()
+     * @generated
+     */
+    EClass SPACER = eINSTANCE.getSpacer();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.TextImpl <em>Text</em>}' class.

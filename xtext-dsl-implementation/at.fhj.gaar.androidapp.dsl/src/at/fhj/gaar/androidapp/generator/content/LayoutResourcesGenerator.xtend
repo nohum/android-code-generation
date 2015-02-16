@@ -9,6 +9,7 @@ import at.fhj.gaar.androidapp.appDsl.Text
 import java.util.List
 import java.util.concurrent.atomic.AtomicInteger
 import org.eclipse.xtext.generator.IFileSystemAccess
+import at.fhj.gaar.androidapp.appDsl.Spacer
 
 public class LayoutResourcesGenerator extends AbstractGenerator {
 	
@@ -43,7 +44,8 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 			    android:paddingLeft="@dimen/activity_horizontal_margin"
 			    android:paddingRight="@dimen/activity_horizontal_margin"
 			    android:paddingTop="@dimen/activity_vertical_margin"
-			    android:paddingBottom="@dimen/activity_vertical_margin">
+			    android:paddingBottom="@dimen/activity_vertical_margin"
+			    android:orientation="vertical">
 				
 			</LinearLayout>
 			''';
@@ -59,7 +61,8 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 		    android:paddingLeft="@dimen/activity_horizontal_margin"
 		    android:paddingRight="@dimen/activity_horizontal_margin"
 		    android:paddingTop="@dimen/activity_vertical_margin"
-		    android:paddingBottom="@dimen/activity_vertical_margin">
+		    android:paddingBottom="@dimen/activity_vertical_margin"
+		    android:orientation="vertical">
 		
 		''');
 		
@@ -87,10 +90,13 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 				        android:layout_height="wrap_content" />
 				    
 				''');
+			} else if (element instanceof Spacer) {
+				string.append('''
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/spacer_height" />
+				''');
 			}
-//			else if (element instanceof LayoutElement) {
-//				
-//			}
 		]
 
 		string.append('''

@@ -266,6 +266,15 @@ public interface AppDslFactory extends EFactory
   ButtonActionAttribute createButtonActionAttribute();
 
   /**
+   * Returns a new object of class '<em>Spacer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Spacer</em>'.
+   * @generated
+   */
+  Spacer createSpacer();
+
+  /**
    * Returns a new object of class '<em>Text</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

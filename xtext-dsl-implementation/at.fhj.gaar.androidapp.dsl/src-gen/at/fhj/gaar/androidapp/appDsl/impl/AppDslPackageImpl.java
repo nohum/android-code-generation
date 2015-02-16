@@ -37,6 +37,7 @@ import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
+import at.fhj.gaar.androidapp.appDsl.Spacer;
 import at.fhj.gaar.androidapp.appDsl.Text;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -242,6 +243,13 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * @generated
    */
   private EClass buttonActionAttributeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass spacerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -860,6 +868,16 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSpacer()
+  {
+    return spacerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getText()
   {
     return textEClass;
@@ -1082,6 +1100,8 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     buttonActionAttributeEClass = createEClass(BUTTON_ACTION_ATTRIBUTE);
     createEReference(buttonActionAttributeEClass, BUTTON_ACTION_ATTRIBUTE__ACTION);
 
+    spacerEClass = createEClass(SPACER);
+
     textEClass = createEClass(TEXT);
     createEAttribute(textEClass, TEXT__TEXT);
 
@@ -1158,6 +1178,7 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     buttonEClass.getESuperTypes().add(this.getLayoutElement());
     buttonLabelAttributeEClass.getESuperTypes().add(this.getButtonAttribute());
     buttonActionAttributeEClass.getESuperTypes().add(this.getButtonAttribute());
+    spacerEClass.getESuperTypes().add(this.getLayoutElement());
     textEClass.getESuperTypes().add(this.getLayoutElement());
     broadcastReceiverActionAttributeEClass.getESuperTypes().add(this.getBroadcastReceiverAttribute());
     actionShowToastEClass.getESuperTypes().add(this.getLayoutElementClickAction());
@@ -1244,6 +1265,8 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
 
     initEClass(buttonActionAttributeEClass, ButtonActionAttribute.class, "ButtonActionAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getButtonActionAttribute_Action(), this.getLayoutElementClickAction(), null, "action", null, 0, 1, ButtonActionAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(spacerEClass, Spacer.class, "Spacer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getText_Text(), ecorePackage.getEString(), "text", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

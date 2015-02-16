@@ -66,6 +66,9 @@ public class ValueResourcesGenerator extends AbstractGenerator {
     _builder.append("    ");
     _builder.append("<dimen name=\"activity_vertical_margin\">16dp</dimen>");
     _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<dimen name=\"spacer_height\">14dp</dimen>");
+    _builder.newLine();
     _builder.append("</resources>");
     _builder.newLine();
     return _builder.toString();

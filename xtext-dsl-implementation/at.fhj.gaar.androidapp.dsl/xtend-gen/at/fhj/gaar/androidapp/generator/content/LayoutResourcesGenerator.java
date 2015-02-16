@@ -9,6 +9,7 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElementList;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
+import at.fhj.gaar.androidapp.appDsl.Spacer;
 import at.fhj.gaar.androidapp.appDsl.Text;
 import at.fhj.gaar.androidapp.generator.content.AbstractGenerator;
 import com.google.common.base.Objects;
@@ -92,7 +93,10 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
       _builder.append("android:paddingTop=\"@dimen/activity_vertical_margin\"");
       _builder.newLine();
       _builder.append("    ");
-      _builder.append("android:paddingBottom=\"@dimen/activity_vertical_margin\">");
+      _builder.append("android:paddingBottom=\"@dimen/activity_vertical_margin\"");
+      _builder.newLine();
+      _builder.append("    ");
+      _builder.append("android:orientation=\"vertical\">");
       _builder.newLine();
       _builder.append("\t");
       _builder.newLine();
@@ -125,7 +129,10 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
     _builder_1.append("android:paddingTop=\"@dimen/activity_vertical_margin\"");
     _builder_1.newLine();
     _builder_1.append("    ");
-    _builder_1.append("android:paddingBottom=\"@dimen/activity_vertical_margin\">");
+    _builder_1.append("android:paddingBottom=\"@dimen/activity_vertical_margin\"");
+    _builder_1.newLine();
+    _builder_1.append("    ");
+    _builder_1.append("android:orientation=\"vertical\">");
     _builder_1.newLine();
     _builder_1.newLine();
     string.append(_builder_1);
@@ -184,6 +191,19 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
             _builder_1.newLine();
             _builder_1.newLine();
             string.append(_builder_1);
+          } else {
+            if ((element instanceof Spacer)) {
+              StringConcatenation _builder_2 = new StringConcatenation();
+              _builder_2.append("<View");
+              _builder_2.newLine();
+              _builder_2.append("\t");
+              _builder_2.append("android:layout_width=\"match_parent\"");
+              _builder_2.newLine();
+              _builder_2.append("\t");
+              _builder_2.append("android:layout_height=\"@dimen/spacer_height\" />");
+              _builder_2.newLine();
+              string.append(_builder_2);
+            }
           }
         }
       }

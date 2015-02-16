@@ -76,6 +76,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getButtonAccess().getGroup_4(), "rule__Button__Group_4__0");
 					put(grammarAccess.getButtonLabelAttributeAccess().getGroup(), "rule__ButtonLabelAttribute__Group__0");
 					put(grammarAccess.getButtonActionAttributeAccess().getGroup(), "rule__ButtonActionAttribute__Group__0");
+					put(grammarAccess.getSpacerAccess().getGroup(), "rule__Spacer__Group__0");
 					put(grammarAccess.getTextAccess().getGroup(), "rule__Text__Group__0");
 					put(grammarAccess.getBroadcastReceiverActionAttributeAccess().getGroup(), "rule__BroadcastReceiverActionAttribute__Group__0");
 					put(grammarAccess.getActionShowToastAccess().getGroup(), "rule__ActionShowToast__Group__0");
