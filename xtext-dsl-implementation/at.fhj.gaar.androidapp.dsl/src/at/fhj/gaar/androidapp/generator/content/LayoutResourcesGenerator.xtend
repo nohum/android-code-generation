@@ -77,7 +77,7 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 						android:id="@+id/«javaToAndroidIdentifier(element.name)»"
 						android:text="@string/«buttonTitleRes»"
 						android:layout_height="wrap_content"
-						android:layout_weight="match_parent" />
+						android:layout_width="match_parent" />
 
 				''');
 			} else if (element instanceof Text) {

@@ -167,7 +167,7 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
           _builder.append("android:layout_height=\"wrap_content\"");
           _builder.newLine();
           _builder.append("\t");
-          _builder.append("android:layout_weight=\"match_parent\" />");
+          _builder.append("android:layout_width=\"match_parent\" />");
           _builder.newLine();
           _builder.newLine();
           string.append(_builder);
