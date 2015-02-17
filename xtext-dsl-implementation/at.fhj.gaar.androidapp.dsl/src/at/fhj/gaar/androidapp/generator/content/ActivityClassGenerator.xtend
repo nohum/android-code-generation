@@ -27,10 +27,14 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		return '''
 		package «application.name».activity;
 
+		import android.content.Intent;
 		import android.support.v7.app.ActionBarActivity;
 		import android.os.Bundle;
 		import android.support.v7.widget.Toolbar;
 		import android.view.View;
+		
+		import «application.name».R;
+		
 		«insertPackageImports(application, layout)»
 		
 		
@@ -43,10 +47,16 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		        super.onCreate(savedInstanceState);
 		        setContentView(R.layout.«javaToAndroidIdentifier(activity.name)»);
 		
-		        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-		        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		//        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+		//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		        
 		        «insertLayoutFieldInit(layout)»
+		    }
+		    
+		    public static void openActivity(Context context) {
+		    	Intent intent = new Intent(context, «activity.name».class);
+		    	intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				context.startActivity(intent);
 		    }
 		
 		    @Override
@@ -173,7 +183,7 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		var concreteAction = action.action;
 		if (concreteAction instanceof ActionShowToast) {
 			return '''
-			Toast.makeText(context, context.getString(R.string.«javaToAndroidIdentifier(activity.name)»_toast), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, getString(R.string.«javaToAndroidIdentifier(activity.name)»_toast), Toast.LENGTH_LONG).show();
 			''';
 		} else if (concreteAction instanceof ActionStartService) {
 			return '''

@@ -30,6 +30,8 @@ public class BroadcastReceiverClassGenerator extends AbstractClassGenerator {
 		import android.content.Intent;
 		import android.util.Log;
 		
+		import «application.name».R;
+		
 		«insertPackageImportsForAction(application, action)»
 		
 		public class «receiver.name» extends BroadcastReceiver {
