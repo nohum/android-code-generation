@@ -18,6 +18,8 @@ public class GradleProjectGenerator extends AbstractGenerator {
   
   private final static int DEFAULT_COMPILE_SDK_VERSION = 21;
   
+  private final static int DEFAULT_MIN_SDK_VERSION = 14;
+  
   public void generate(final List<Application> applications, final IFileSystemAccess filesystem) {
     String _retrieveRootBuildGradle = this.retrieveRootBuildGradle();
     filesystem.generateFile("build.gradle", _retrieveRootBuildGradle);
@@ -62,6 +64,12 @@ public class GradleProjectGenerator extends AbstractGenerator {
         }
       }
     }
+    int usedMinSdk = GradleProjectGenerator.DEFAULT_MIN_SDK_VERSION;
+    boolean _notEquals_3 = (!Objects.equal(minSdk, null));
+    if (_notEquals_3) {
+      int _minSdk_1 = minSdk.getMinSdk();
+      usedMinSdk = _minSdk_1;
+    }
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("apply plugin: \'com.android.application\'");
     _builder.newLine();
@@ -87,16 +95,10 @@ public class GradleProjectGenerator extends AbstractGenerator {
     _builder.append(_name, "        ");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
-    {
-      boolean _notEquals_3 = (!Objects.equal(minSdk, null));
-      if (_notEquals_3) {
-        _builder.append("\t\t");
-        _builder.append("minSdkVersion ");
-        int _minSdk_1 = minSdk.getMinSdk();
-        _builder.append(_minSdk_1, "\t\t");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("\t\t");
+    _builder.append("minSdkVersion ");
+    _builder.append(usedMinSdk, "\t\t");
+    _builder.newLineIfNotEmpty();
     {
       boolean _notEquals_4 = (!Objects.equal(targetSdk, null));
       if (_notEquals_4) {

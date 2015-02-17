@@ -13,6 +13,8 @@ public class GradleProjectGenerator extends AbstractGenerator {
 	
 	private static val int DEFAULT_COMPILE_SDK_VERSION = 21;
 	
+	private static val int DEFAULT_MIN_SDK_VERSION = 14;
+	
 	override generate(List<Application> applications, IFileSystemAccess filesystem) {
 		filesystem.generateFile("build.gradle", retrieveRootBuildGradle());
 		filesystem.generateFile("settings.gradle", retrieveSettingsGradle(applications));
@@ -45,6 +47,12 @@ public class GradleProjectGenerator extends AbstractGenerator {
 		} else if (minSdk != null) {
 			usedCompileSdk = minSdk.minSdk;
 		}
+		
+		// we always need an min sdk
+		var usedMinSdk = DEFAULT_MIN_SDK_VERSION;
+		if (minSdk != null) {
+			usedMinSdk = minSdk.minSdk;
+		}
 
 		return '''
 		apply plugin: 'com.android.application'
@@ -55,9 +63,7 @@ public class GradleProjectGenerator extends AbstractGenerator {
 		
 		    defaultConfig {
 		        applicationId "«application.name»"
-				«IF minSdk != null»
-				minSdkVersion «minSdk.minSdk»
-				«ENDIF»
+				minSdkVersion «usedMinSdk»
 				«IF targetSdk != null»
 				targetSdkVersion «targetSdk.targetSdk»
 				«ENDIF»
