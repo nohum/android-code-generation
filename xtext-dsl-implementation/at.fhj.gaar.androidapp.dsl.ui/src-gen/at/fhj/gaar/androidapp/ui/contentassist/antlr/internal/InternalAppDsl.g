@@ -324,9 +324,9 @@ rulePermission
     }
 	:
 (
-{ before(grammarAccess.getPermissionAccess().getPACKAGE_NAMETerminalRuleCall()); }
-	RULE_PACKAGE_NAME
-{ after(grammarAccess.getPermissionAccess().getPACKAGE_NAMETerminalRuleCall()); }
+{ before(grammarAccess.getPermissionAccess().getNameAssignment()); }
+(rule__Permission__NameAssignment)
+{ after(grammarAccess.getPermissionAccess().getNameAssignment()); }
 )
 
 ;
@@ -660,9 +660,9 @@ ruleIntent
     }
 	:
 (
-{ before(grammarAccess.getIntentAccess().getPACKAGE_NAMETerminalRuleCall()); }
-	RULE_PACKAGE_NAME
-{ after(grammarAccess.getIntentAccess().getPACKAGE_NAMETerminalRuleCall()); }
+{ before(grammarAccess.getIntentAccess().getNameAssignment()); }
+(rule__Intent__NameAssignment)
+{ after(grammarAccess.getIntentAccess().getNameAssignment()); }
 )
 
 ;
@@ -4897,6 +4897,21 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Permission__NameAssignment
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPermissionAccess().getNamePACKAGE_NAMETerminalRuleCall_0()); }
+	RULE_PACKAGE_NAME{ after(grammarAccess.getPermissionAccess().getNamePACKAGE_NAMETerminalRuleCall_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Activity__NameAssignment_1
     @init {
 		int stackSize = keepStackSize();
@@ -5100,6 +5115,21 @@ rule__ElementIntentList__IntentsAssignment_3_1
 (
 { before(grammarAccess.getElementIntentListAccess().getIntentsIntentParserRuleCall_3_1_0()); }
 	ruleIntent{ after(grammarAccess.getElementIntentListAccess().getIntentsIntentParserRuleCall_3_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Intent__NameAssignment
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getIntentAccess().getNamePACKAGE_NAMETerminalRuleCall_0()); }
+	RULE_PACKAGE_NAME{ after(grammarAccess.getIntentAccess().getNamePACKAGE_NAMETerminalRuleCall_0()); }
 )
 
 ;

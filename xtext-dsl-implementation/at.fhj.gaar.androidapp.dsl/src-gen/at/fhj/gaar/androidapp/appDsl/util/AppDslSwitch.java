@@ -141,6 +141,13 @@ public class AppDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AppDslPackage.PERMISSION:
+      {
+        Permission permission = (Permission)theEObject;
+        T result = casePermission(permission);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AppDslPackage.APPLICATION_ELEMENT:
       {
         ApplicationElement applicationElement = (ApplicationElement)theEObject;
@@ -231,6 +238,13 @@ public class AppDslSwitch<T> extends Switch<T>
         if (result == null) result = caseActivityAttribute(elementIntentList);
         if (result == null) result = caseBroadcastReceiverAttribute(elementIntentList);
         if (result == null) result = caseServiceAttribute(elementIntentList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AppDslPackage.INTENT:
+      {
+        Intent intent = (Intent)theEObject;
+        T result = caseIntent(intent);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -502,6 +516,22 @@ public class AppDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Permission</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Permission</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePermission(Permission object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Application Element</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -673,6 +703,22 @@ public class AppDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseElementIntentList(ElementIntentList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Intent</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Intent</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntent(Intent object)
   {
     return null;
   }

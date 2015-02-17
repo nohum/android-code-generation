@@ -70,7 +70,7 @@ ApplicationMainActivity:
 ;
 
 Permission:
-	PACKAGE_NAME // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+	name = PACKAGE_NAME // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 ;
 
 ApplicationElement: 
@@ -146,7 +146,7 @@ ElementIntentList:
 ;
 
 Intent:
-	PACKAGE_NAME
+	name = PACKAGE_NAME
 ;
 
 ActivityParentAttribute:

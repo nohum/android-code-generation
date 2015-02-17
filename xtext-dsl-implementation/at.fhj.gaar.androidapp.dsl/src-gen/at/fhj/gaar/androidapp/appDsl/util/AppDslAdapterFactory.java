@@ -120,6 +120,11 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
         return createApplicationMainActivityAdapter();
       }
       @Override
+      public Adapter casePermission(Permission object)
+      {
+        return createPermissionAdapter();
+      }
+      @Override
       public Adapter caseApplicationElement(ApplicationElement object)
       {
         return createApplicationElementAdapter();
@@ -173,6 +178,11 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseElementIntentList(ElementIntentList object)
       {
         return createElementIntentListAdapter();
+      }
+      @Override
+      public Adapter caseIntent(Intent object)
+      {
+        return createIntentAdapter();
       }
       @Override
       public Adapter caseActivityParentAttribute(ActivityParentAttribute object)
@@ -407,6 +417,21 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.Permission <em>Permission</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.Permission
+   * @generated
+   */
+  public Adapter createPermissionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement <em>Application Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -567,6 +592,21 @@ public class AppDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createElementIntentListAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link at.fhj.gaar.androidapp.appDsl.Intent <em>Intent</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see at.fhj.gaar.androidapp.appDsl.Intent
+   * @generated
+   */
+  public Adapter createIntentAdapter()
   {
     return null;
   }

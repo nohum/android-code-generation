@@ -23,19 +23,19 @@ import org.eclipse.emf.common.util.EList;
 public interface ElementIntentList extends ActivityAttribute, BroadcastReceiverAttribute, ServiceAttribute
 {
   /**
-   * Returns the value of the '<em><b>Intents</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Intents</b></em>' containment reference list.
+   * The list contents are of type {@link at.fhj.gaar.androidapp.appDsl.Intent}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Intents</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Intents</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Intents</em>' attribute list.
+   * @return the value of the '<em>Intents</em>' containment reference list.
    * @see at.fhj.gaar.androidapp.appDsl.AppDslPackage#getElementIntentList_Intents()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getIntents();
+  EList<Intent> getIntents();
 
 } // ElementIntentList

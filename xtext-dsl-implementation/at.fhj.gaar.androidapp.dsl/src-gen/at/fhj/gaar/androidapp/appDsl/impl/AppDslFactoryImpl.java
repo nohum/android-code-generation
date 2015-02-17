@@ -73,6 +73,7 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
       case AppDslPackage.APPLICATION_PERMISSION_LIST: return createApplicationPermissionList();
       case AppDslPackage.APPLICATION_ELEMENT_LIST: return createApplicationElementList();
       case AppDslPackage.APPLICATION_MAIN_ACTIVITY: return createApplicationMainActivity();
+      case AppDslPackage.PERMISSION: return createPermission();
       case AppDslPackage.APPLICATION_ELEMENT: return createApplicationElement();
       case AppDslPackage.ACTIVITY: return createActivity();
       case AppDslPackage.BROADCAST_RECEIVER: return createBroadcastReceiver();
@@ -84,6 +85,7 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
       case AppDslPackage.ELEMENT_EXPORTED_ATTRIBUTE: return createElementExportedAttribute();
       case AppDslPackage.ELEMENT_LABEL_ATTRIBUTE: return createElementLabelAttribute();
       case AppDslPackage.ELEMENT_INTENT_LIST: return createElementIntentList();
+      case AppDslPackage.INTENT: return createIntent();
       case AppDslPackage.ACTIVITY_PARENT_ATTRIBUTE: return createActivityParentAttribute();
       case AppDslPackage.ACTIVITY_LAYOUT_ATTRIBUTE: return createActivityLayoutAttribute();
       case AppDslPackage.LAYOUT_ELEMENT: return createLayoutElement();
@@ -208,6 +210,17 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Permission createPermission()
+  {
+    PermissionImpl permission = new PermissionImpl();
+    return permission;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ApplicationElement createApplicationElement()
   {
     ApplicationElementImpl applicationElement = new ApplicationElementImpl();
@@ -322,6 +335,17 @@ public class AppDslFactoryImpl extends EFactoryImpl implements AppDslFactory
   {
     ElementIntentListImpl elementIntentList = new ElementIntentListImpl();
     return elementIntentList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Intent createIntent()
+  {
+    IntentImpl intent = new IntentImpl();
+    return intent;
   }
 
   /**

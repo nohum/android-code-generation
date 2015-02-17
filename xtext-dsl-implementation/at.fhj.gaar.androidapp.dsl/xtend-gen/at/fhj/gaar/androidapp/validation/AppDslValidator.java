@@ -19,7 +19,9 @@ import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver;
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverAttribute;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
+import at.fhj.gaar.androidapp.appDsl.Intent;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
+import at.fhj.gaar.androidapp.appDsl.Permission;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 import at.fhj.gaar.androidapp.validation.AbstractAppDslValidator;
@@ -30,6 +32,8 @@ import java.util.List;
 import java.util.logging.Logger;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure2;
 
 /**
  * Custom validation rules.
@@ -171,27 +175,42 @@ public class AppDslValidator extends AbstractAppDslValidator {
   
   @Check
   public void checkForDuplicatePermission(final ApplicationPermissionList permissions) {
-    EList<String> _permissions = permissions.getPermissions();
-    final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
-      public void onDuplicateFound(final String name, final int index) {
-        AppDslValidator.this.error("Permissions have to be unique", 
-          AppDslPackage.Literals.APPLICATION_PERMISSION_LIST__PERMISSIONS, index);
+    final List<String> foundPermissions = new ArrayList<String>();
+    EList<Permission> _permissions = permissions.getPermissions();
+    final Procedure2<Permission, Integer> _function = new Procedure2<Permission, Integer>() {
+      public void apply(final Permission permission, final Integer index) {
+        String _name = permission.getName();
+        boolean _contains = foundPermissions.contains(_name);
+        if (_contains) {
+          AppDslValidator.this.error("Permissions have to be unique", 
+            AppDslPackage.Literals.APPLICATION_PERMISSION_LIST__PERMISSIONS, (index).intValue());
+        }
+        String _name_1 = permission.getName();
+        foundPermissions.add(_name_1);
       }
     };
-    this.findStringDuplicates(_permissions, _function);
+    IterableExtensions.<Permission>forEach(_permissions, _function);
   }
   
   @Check
   public void checkForDuplicateIntent(final ElementIntentList intents) {
-    EList<String> _intents = intents.getIntents();
-    final AppDslValidator.DuplicateCallback _function = new AppDslValidator.DuplicateCallback() {
-      public void onDuplicateFound(final String name, final int index) {
-        String _format = String.format("Intent \"%s\" is not unique", name);
-        AppDslValidator.this.error(_format, 
-          AppDslPackage.Literals.ELEMENT_INTENT_LIST__INTENTS, index);
+    final List<String> foundIntents = new ArrayList<String>();
+    EList<Intent> _intents = intents.getIntents();
+    final Procedure2<Intent, Integer> _function = new Procedure2<Intent, Integer>() {
+      public void apply(final Intent intent, final Integer index) {
+        String _name = intent.getName();
+        boolean _contains = foundIntents.contains(_name);
+        if (_contains) {
+          String _name_1 = intent.getName();
+          String _format = String.format("Intent \"%s\" is not unique", _name_1);
+          AppDslValidator.this.error(_format, 
+            AppDslPackage.Literals.ELEMENT_INTENT_LIST__INTENTS, (index).intValue());
+        }
+        String _name_2 = intent.getName();
+        foundIntents.add(_name_2);
       }
     };
-    this.findStringDuplicates(_intents, _function);
+    IterableExtensions.<Intent>forEach(_intents, _function);
   }
   
   @Check
@@ -249,24 +268,5 @@ public class AppDslValidator extends AbstractAppDslValidator {
       }
     }
     return null;
-  }
-  
-  /**
-   * General method to handle duplicate searches in string lists. Calls the supplied
-   * callback for each found duplicate.
-   */
-  private void findStringDuplicates(final EList<String> list, final AppDslValidator.DuplicateCallback callback) {
-    List<String> foundIntents = new ArrayList<String>();
-    int listIndex = 0;
-    for (final String element : list) {
-      {
-        boolean _contains = foundIntents.contains(element);
-        if (_contains) {
-          callback.onDuplicateFound(element, listIndex);
-        }
-        foundIntents.add(element);
-        listIndex++;
-      }
-    }
   }
 }

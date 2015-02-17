@@ -235,7 +235,7 @@ public interface AppDslPackage extends EPackage
   int APPLICATION_PERMISSION_LIST = 6;
 
   /**
-   * The feature id for the '<em><b>Permissions</b></em>' attribute list.
+   * The feature id for the '<em><b>Permissions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -309,6 +309,34 @@ public interface AppDslPackage extends EPackage
   int APPLICATION_MAIN_ACTIVITY_FEATURE_COUNT = APPLICATION_ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.PermissionImpl <em>Permission</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.PermissionImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getPermission()
+   * @generated
+   */
+  int PERMISSION = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PERMISSION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Permission</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PERMISSION_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl <em>Application Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -316,7 +344,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getApplicationElement()
    * @generated
    */
-  int APPLICATION_ELEMENT = 9;
+  int APPLICATION_ELEMENT = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -344,7 +372,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivity()
    * @generated
    */
-  int ACTIVITY = 10;
+  int ACTIVITY = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -381,7 +409,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiver()
    * @generated
    */
-  int BROADCAST_RECEIVER = 11;
+  int BROADCAST_RECEIVER = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -418,7 +446,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getService()
    * @generated
    */
-  int SERVICE = 12;
+  int SERVICE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -455,7 +483,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivityAttribute()
    * @generated
    */
-  int ACTIVITY_ATTRIBUTE = 13;
+  int ACTIVITY_ATTRIBUTE = 14;
 
   /**
    * The number of structural features of the '<em>Activity Attribute</em>' class.
@@ -474,7 +502,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverAttribute()
    * @generated
    */
-  int BROADCAST_RECEIVER_ATTRIBUTE = 14;
+  int BROADCAST_RECEIVER_ATTRIBUTE = 15;
 
   /**
    * The number of structural features of the '<em>Broadcast Receiver Attribute</em>' class.
@@ -493,7 +521,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getServiceAttribute()
    * @generated
    */
-  int SERVICE_ATTRIBUTE = 15;
+  int SERVICE_ATTRIBUTE = 16;
 
   /**
    * The number of structural features of the '<em>Service Attribute</em>' class.
@@ -512,7 +540,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementEnabledAttribute()
    * @generated
    */
-  int ELEMENT_ENABLED_ATTRIBUTE = 16;
+  int ELEMENT_ENABLED_ATTRIBUTE = 17;
 
   /**
    * The feature id for the '<em><b>Enabled</b></em>' attribute.
@@ -540,7 +568,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementExportedAttribute()
    * @generated
    */
-  int ELEMENT_EXPORTED_ATTRIBUTE = 17;
+  int ELEMENT_EXPORTED_ATTRIBUTE = 18;
 
   /**
    * The feature id for the '<em><b>Exported</b></em>' attribute.
@@ -568,7 +596,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementLabelAttribute()
    * @generated
    */
-  int ELEMENT_LABEL_ATTRIBUTE = 18;
+  int ELEMENT_LABEL_ATTRIBUTE = 19;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -596,10 +624,10 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getElementIntentList()
    * @generated
    */
-  int ELEMENT_INTENT_LIST = 19;
+  int ELEMENT_INTENT_LIST = 20;
 
   /**
-   * The feature id for the '<em><b>Intents</b></em>' attribute list.
+   * The feature id for the '<em><b>Intents</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -617,6 +645,34 @@ public interface AppDslPackage extends EPackage
   int ELEMENT_INTENT_LIST_FEATURE_COUNT = ACTIVITY_ATTRIBUTE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.IntentImpl <em>Intent</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see at.fhj.gaar.androidapp.appDsl.impl.IntentImpl
+   * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getIntent()
+   * @generated
+   */
+  int INTENT = 21;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTENT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Intent</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTENT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityParentAttributeImpl <em>Activity Parent Attribute</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -624,7 +680,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivityParentAttribute()
    * @generated
    */
-  int ACTIVITY_PARENT_ATTRIBUTE = 20;
+  int ACTIVITY_PARENT_ATTRIBUTE = 22;
 
   /**
    * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -652,7 +708,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActivityLayoutAttribute()
    * @generated
    */
-  int ACTIVITY_LAYOUT_ATTRIBUTE = 21;
+  int ACTIVITY_LAYOUT_ATTRIBUTE = 23;
 
   /**
    * The feature id for the '<em><b>Layout Elements</b></em>' containment reference list.
@@ -680,7 +736,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getLayoutElement()
    * @generated
    */
-  int LAYOUT_ELEMENT = 22;
+  int LAYOUT_ELEMENT = 24;
 
   /**
    * The number of structural features of the '<em>Layout Element</em>' class.
@@ -699,7 +755,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getButton()
    * @generated
    */
-  int BUTTON = 23;
+  int BUTTON = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -736,7 +792,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getButtonAttribute()
    * @generated
    */
-  int BUTTON_ATTRIBUTE = 24;
+  int BUTTON_ATTRIBUTE = 26;
 
   /**
    * The number of structural features of the '<em>Button Attribute</em>' class.
@@ -755,7 +811,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getButtonLabelAttribute()
    * @generated
    */
-  int BUTTON_LABEL_ATTRIBUTE = 25;
+  int BUTTON_LABEL_ATTRIBUTE = 27;
 
   /**
    * The feature id for the '<em><b>Title</b></em>' attribute.
@@ -783,7 +839,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getButtonActionAttribute()
    * @generated
    */
-  int BUTTON_ACTION_ATTRIBUTE = 26;
+  int BUTTON_ACTION_ATTRIBUTE = 28;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -811,7 +867,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getSpacer()
    * @generated
    */
-  int SPACER = 27;
+  int SPACER = 29;
 
   /**
    * The number of structural features of the '<em>Spacer</em>' class.
@@ -830,7 +886,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getText()
    * @generated
    */
-  int TEXT = 28;
+  int TEXT = 30;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -858,7 +914,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getLayoutElementClickAction()
    * @generated
    */
-  int LAYOUT_ELEMENT_CLICK_ACTION = 29;
+  int LAYOUT_ELEMENT_CLICK_ACTION = 31;
 
   /**
    * The number of structural features of the '<em>Layout Element Click Action</em>' class.
@@ -877,7 +933,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverActionAttribute()
    * @generated
    */
-  int BROADCAST_RECEIVER_ACTION_ATTRIBUTE = 30;
+  int BROADCAST_RECEIVER_ACTION_ATTRIBUTE = 32;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -905,7 +961,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getBroadcastReceiverAction()
    * @generated
    */
-  int BROADCAST_RECEIVER_ACTION = 31;
+  int BROADCAST_RECEIVER_ACTION = 33;
 
   /**
    * The number of structural features of the '<em>Broadcast Receiver Action</em>' class.
@@ -924,7 +980,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionShowToast()
    * @generated
    */
-  int ACTION_SHOW_TOAST = 32;
+  int ACTION_SHOW_TOAST = 34;
 
   /**
    * The feature id for the '<em><b>Toast Text</b></em>' attribute.
@@ -952,7 +1008,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionStartActivity()
    * @generated
    */
-  int ACTION_START_ACTIVITY = 33;
+  int ACTION_START_ACTIVITY = 35;
 
   /**
    * The feature id for the '<em><b>Activity</b></em>' reference.
@@ -980,7 +1036,7 @@ public interface AppDslPackage extends EPackage
    * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getActionStartService()
    * @generated
    */
-  int ACTION_START_SERVICE = 34;
+  int ACTION_START_SERVICE = 36;
 
   /**
    * The feature id for the '<em><b>Service</b></em>' reference.
@@ -1138,15 +1194,15 @@ public interface AppDslPackage extends EPackage
   EClass getApplicationPermissionList();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList#getPermissions <em>Permissions</em>}'.
+   * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList#getPermissions <em>Permissions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Permissions</em>'.
+   * @return the meta object for the containment reference list '<em>Permissions</em>'.
    * @see at.fhj.gaar.androidapp.appDsl.ApplicationPermissionList#getPermissions()
    * @see #getApplicationPermissionList()
    * @generated
    */
-  EAttribute getApplicationPermissionList_Permissions();
+  EReference getApplicationPermissionList_Permissions();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElementList <em>Application Element List</em>}'.
@@ -1189,6 +1245,27 @@ public interface AppDslPackage extends EPackage
    * @generated
    */
   EReference getApplicationMainActivity_LauncherActivity();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Permission <em>Permission</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Permission</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Permission
+   * @generated
+   */
+  EClass getPermission();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.Permission#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Permission#getName()
+   * @see #getPermission()
+   * @generated
+   */
+  EAttribute getPermission_Name();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ApplicationElement <em>Application Element</em>}'.
@@ -1378,15 +1455,36 @@ public interface AppDslPackage extends EPackage
   EClass getElementIntentList();
 
   /**
-   * Returns the meta object for the attribute list '{@link at.fhj.gaar.androidapp.appDsl.ElementIntentList#getIntents <em>Intents</em>}'.
+   * Returns the meta object for the containment reference list '{@link at.fhj.gaar.androidapp.appDsl.ElementIntentList#getIntents <em>Intents</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Intents</em>'.
+   * @return the meta object for the containment reference list '<em>Intents</em>'.
    * @see at.fhj.gaar.androidapp.appDsl.ElementIntentList#getIntents()
    * @see #getElementIntentList()
    * @generated
    */
-  EAttribute getElementIntentList_Intents();
+  EReference getElementIntentList_Intents();
+
+  /**
+   * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.Intent <em>Intent</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Intent</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Intent
+   * @generated
+   */
+  EClass getIntent();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.fhj.gaar.androidapp.appDsl.Intent#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.fhj.gaar.androidapp.appDsl.Intent#getName()
+   * @see #getIntent()
+   * @generated
+   */
+  EAttribute getIntent_Name();
 
   /**
    * Returns the meta object for class '{@link at.fhj.gaar.androidapp.appDsl.ActivityParentAttribute <em>Activity Parent Attribute</em>}'.
@@ -1801,12 +1899,12 @@ public interface AppDslPackage extends EPackage
     EClass APPLICATION_PERMISSION_LIST = eINSTANCE.getApplicationPermissionList();
 
     /**
-     * The meta object literal for the '<em><b>Permissions</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Permissions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute APPLICATION_PERMISSION_LIST__PERMISSIONS = eINSTANCE.getApplicationPermissionList_Permissions();
+    EReference APPLICATION_PERMISSION_LIST__PERMISSIONS = eINSTANCE.getApplicationPermissionList_Permissions();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementListImpl <em>Application Element List</em>}' class.
@@ -1843,6 +1941,24 @@ public interface AppDslPackage extends EPackage
      * @generated
      */
     EReference APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY = eINSTANCE.getApplicationMainActivity_LauncherActivity();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.PermissionImpl <em>Permission</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.PermissionImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getPermission()
+     * @generated
+     */
+    EClass PERMISSION = eINSTANCE.getPermission();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PERMISSION__NAME = eINSTANCE.getPermission_Name();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ApplicationElementImpl <em>Application Element</em>}' class.
@@ -2011,12 +2127,30 @@ public interface AppDslPackage extends EPackage
     EClass ELEMENT_INTENT_LIST = eINSTANCE.getElementIntentList();
 
     /**
-     * The meta object literal for the '<em><b>Intents</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Intents</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ELEMENT_INTENT_LIST__INTENTS = eINSTANCE.getElementIntentList_Intents();
+    EReference ELEMENT_INTENT_LIST__INTENTS = eINSTANCE.getElementIntentList_Intents();
+
+    /**
+     * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.IntentImpl <em>Intent</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see at.fhj.gaar.androidapp.appDsl.impl.IntentImpl
+     * @see at.fhj.gaar.androidapp.appDsl.impl.AppDslPackageImpl#getIntent()
+     * @generated
+     */
+    EClass INTENT = eINSTANCE.getIntent();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INTENT__NAME = eINSTANCE.getIntent_Name();
 
     /**
      * The meta object literal for the '{@link at.fhj.gaar.androidapp.appDsl.impl.ActivityParentAttributeImpl <em>Activity Parent Attribute</em>}' class.

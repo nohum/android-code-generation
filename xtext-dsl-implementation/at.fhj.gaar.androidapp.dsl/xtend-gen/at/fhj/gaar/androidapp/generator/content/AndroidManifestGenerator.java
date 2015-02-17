@@ -15,6 +15,8 @@ import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
+import at.fhj.gaar.androidapp.appDsl.Intent;
+import at.fhj.gaar.androidapp.appDsl.Permission;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 import at.fhj.gaar.androidapp.generator.content.AbstractGenerator;
@@ -94,10 +96,11 @@ public class AndroidManifestGenerator extends AbstractGenerator {
   private String generatePermissions(final ApplicationPermissionList permissions) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<String> _permissions = permissions.getPermissions();
-      for(final String permission : _permissions) {
+      EList<Permission> _permissions = permissions.getPermissions();
+      for(final Permission permission : _permissions) {
         _builder.append("<uses-permission android:name=\"");
-        _builder.append(permission, "");
+        String _name = permission.getName();
+        _builder.append(_name, "");
         _builder.append("\" />");
         _builder.newLineIfNotEmpty();
       }
@@ -362,7 +365,7 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     if (_equals) {
       _or = true;
     } else {
-      EList<String> _intents = intents.getIntents();
+      EList<Intent> _intents = intents.getIntents();
       int _size = _intents.size();
       boolean _equals_1 = (_size == 0);
       _or = _equals_1;
@@ -374,10 +377,11 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     _builder.append("<intent-filter>");
     _builder.newLine();
     {
-      EList<String> _intents_1 = intents.getIntents();
-      for(final String intent : _intents_1) {
+      EList<Intent> _intents_1 = intents.getIntents();
+      for(final Intent intent : _intents_1) {
         _builder.append("<action android:name=\"");
-        _builder.append(intent, "");
+        String _name = intent.getName();
+        _builder.append(_name, "");
         _builder.append("\" />");
         _builder.newLineIfNotEmpty();
       }

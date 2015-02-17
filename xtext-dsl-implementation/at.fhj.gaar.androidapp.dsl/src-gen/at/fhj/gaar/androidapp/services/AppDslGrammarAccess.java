@@ -363,15 +363,21 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class PermissionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Permission");
-		private final RuleCall cPACKAGE_NAMETerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNamePACKAGE_NAMETerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
-		//Permission: // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+		//Permission:
+		//	name= // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 		//	PACKAGE_NAME;
 		public ParserRule getRule() { return rule; }
 
+		//name= // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+		//PACKAGE_NAME
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
 		//// android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 		//PACKAGE_NAME
-		public RuleCall getPACKAGE_NAMETerminalRuleCall() { return cPACKAGE_NAMETerminalRuleCall; }
+		public RuleCall getNamePACKAGE_NAMETerminalRuleCall_0() { return cNamePACKAGE_NAMETerminalRuleCall_0; }
 	}
 
 	public class ApplicationElementElements extends AbstractParserRuleElementFinder {
@@ -800,14 +806,18 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class IntentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Intent");
-		private final RuleCall cPACKAGE_NAMETerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNamePACKAGE_NAMETerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
 		
 		//Intent:
-		//	PACKAGE_NAME;
+		//	name=PACKAGE_NAME;
 		public ParserRule getRule() { return rule; }
 
+		//name=PACKAGE_NAME
+		public Assignment getNameAssignment() { return cNameAssignment; }
+
 		//PACKAGE_NAME
-		public RuleCall getPACKAGE_NAMETerminalRuleCall() { return cPACKAGE_NAMETerminalRuleCall; }
+		public RuleCall getNamePACKAGE_NAMETerminalRuleCall_0() { return cNamePACKAGE_NAMETerminalRuleCall_0; }
 	}
 
 	public class ActivityParentAttributeElements extends AbstractParserRuleElementFinder {
@@ -1047,15 +1057,18 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSpacerKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
 		//Spacer:
-		//	{Spacer} "spacer";
+		//	{Spacer} // needs an action ("{Spacer}") to force object creation
+		//	"spacer";
 		public ParserRule getRule() { return rule; }
 
-		//{Spacer} "spacer"
+		//{Spacer} // needs an action ("{Spacer}") to force object creation
+		//"spacer"
 		public Group getGroup() { return cGroup; }
 
 		//{Spacer}
 		public Action getSpacerAction_0() { return cSpacerAction_0; }
 
+		//// needs an action ("{Spacer}") to force object creation
 		//"spacer"
 		public Keyword getSpacerKeyword_1() { return cSpacerKeyword_1; }
 	}
@@ -1465,7 +1478,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getApplicationMainActivityAccess().getRule();
 	}
 
-	//Permission: // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
+	//Permission:
+	//	name= // android permissions are in packagename fortmat (e.g. "android.permission.INTERNET")
 	//	PACKAGE_NAME;
 	public PermissionElements getPermissionAccess() {
 		return pPermission;
@@ -1592,7 +1606,7 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Intent:
-	//	PACKAGE_NAME;
+	//	name=PACKAGE_NAME;
 	public IntentElements getIntentAccess() {
 		return pIntent;
 	}
@@ -1674,7 +1688,8 @@ public class AppDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Spacer:
-	//	{Spacer} "spacer";
+	//	{Spacer} // needs an action ("{Spacer}") to force object creation
+	//	"spacer";
 	public SpacerElements getSpacerAccess() {
 		return pSpacer;
 	}

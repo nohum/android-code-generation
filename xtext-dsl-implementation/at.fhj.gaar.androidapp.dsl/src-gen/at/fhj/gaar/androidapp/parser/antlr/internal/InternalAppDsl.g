@@ -619,28 +619,39 @@ ruleApplicationMainActivity returns [EObject current=null]
 
 
 // Entry rule entryRulePermission
-entryRulePermission returns [String current=null] 
+entryRulePermission returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getPermissionRule()); } 
+	{ newCompositeNode(grammarAccess.getPermissionRule()); }
 	 iv_rulePermission=rulePermission 
-	 { $current=$iv_rulePermission.current.getText(); }  
+	 { $current=$iv_rulePermission.current; } 
 	 EOF 
 ;
 
 // Rule Permission
-rulePermission returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+rulePermission returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-    this_PACKAGE_NAME_0=RULE_PACKAGE_NAME    {
-		$current.merge(this_PACKAGE_NAME_0);
-    }
+(
+(
+		lv_name_0_0=RULE_PACKAGE_NAME
+		{
+			newLeafNode(lv_name_0_0, grammarAccess.getPermissionAccess().getNamePACKAGE_NAMETerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPermissionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"PACKAGE_NAME");
+	    }
 
-    { 
-    newLeafNode(this_PACKAGE_NAME_0, grammarAccess.getPermissionAccess().getPACKAGE_NAMETerminalRuleCall()); 
-    }
-
-    ;
+)
+)
+;
 
 
 
@@ -1382,28 +1393,39 @@ ruleElementIntentList returns [EObject current=null]
 
 
 // Entry rule entryRuleIntent
-entryRuleIntent returns [String current=null] 
+entryRuleIntent returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getIntentRule()); } 
+	{ newCompositeNode(grammarAccess.getIntentRule()); }
 	 iv_ruleIntent=ruleIntent 
-	 { $current=$iv_ruleIntent.current.getText(); }  
+	 { $current=$iv_ruleIntent.current; } 
 	 EOF 
 ;
 
 // Rule Intent
-ruleIntent returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+ruleIntent returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-    this_PACKAGE_NAME_0=RULE_PACKAGE_NAME    {
-		$current.merge(this_PACKAGE_NAME_0);
-    }
+(
+(
+		lv_name_0_0=RULE_PACKAGE_NAME
+		{
+			newLeafNode(lv_name_0_0, grammarAccess.getIntentAccess().getNamePACKAGE_NAMETerminalRuleCall_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getIntentRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_0_0, 
+        		"PACKAGE_NAME");
+	    }
 
-    { 
-    newLeafNode(this_PACKAGE_NAME_0, grammarAccess.getIntentAccess().getPACKAGE_NAMETerminalRuleCall()); 
-    }
-
-    ;
+)
+)
+;
 
 
 

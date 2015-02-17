@@ -24,6 +24,8 @@ import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
+import at.fhj.gaar.androidapp.appDsl.Intent;
+import at.fhj.gaar.androidapp.appDsl.Permission;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.Spacer;
 import at.fhj.gaar.androidapp.appDsl.Text;
@@ -218,6 +220,18 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				   context == grammarAccess.getElementLabelAttributeRule() ||
 				   context == grammarAccess.getServiceAttributeRule()) {
 					sequence_ElementLabelAttribute(context, (ElementLabelAttribute) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.INTENT:
+				if(context == grammarAccess.getIntentRule()) {
+					sequence_Intent(context, (Intent) semanticObject); 
+					return; 
+				}
+				else break;
+			case AppDslPackage.PERMISSION:
+				if(context == grammarAccess.getPermissionRule()) {
+					sequence_Permission(context, (Permission) semanticObject); 
 					return; 
 				}
 				else break;
@@ -547,6 +561,38 @@ public class AppDslSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getElementLabelAttributeAccess().getTitleSTRINGTerminalRuleCall_1_0(), semanticObject.getTitle());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=PACKAGE_NAME
+	 */
+	protected void sequence_Intent(EObject context, Intent semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.INTENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.INTENT__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getIntentAccess().getNamePACKAGE_NAMETerminalRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=PACKAGE_NAME
+	 */
+	protected void sequence_Permission(EObject context, Permission semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, AppDslPackage.Literals.PERMISSION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AppDslPackage.Literals.PERMISSION__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getPermissionAccess().getNamePACKAGE_NAMETerminalRuleCall_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

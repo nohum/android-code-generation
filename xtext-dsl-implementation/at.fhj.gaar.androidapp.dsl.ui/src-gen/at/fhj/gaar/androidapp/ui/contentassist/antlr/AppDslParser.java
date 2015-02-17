@@ -95,6 +95,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getApplicationElementListAccess().getElementsAssignment_2(), "rule__ApplicationElementList__ElementsAssignment_2");
 					put(grammarAccess.getApplicationElementListAccess().getElementsAssignment_3_1(), "rule__ApplicationElementList__ElementsAssignment_3_1");
 					put(grammarAccess.getApplicationMainActivityAccess().getLauncherActivityAssignment_1(), "rule__ApplicationMainActivity__LauncherActivityAssignment_1");
+					put(grammarAccess.getPermissionAccess().getNameAssignment(), "rule__Permission__NameAssignment");
 					put(grammarAccess.getActivityAccess().getNameAssignment_1(), "rule__Activity__NameAssignment_1");
 					put(grammarAccess.getActivityAccess().getAttributesAssignment_3(), "rule__Activity__AttributesAssignment_3");
 					put(grammarAccess.getActivityAccess().getAttributesAssignment_4_1(), "rule__Activity__AttributesAssignment_4_1");
@@ -109,6 +110,7 @@ public class AppDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementLabelAttributeAccess().getTitleAssignment_1(), "rule__ElementLabelAttribute__TitleAssignment_1");
 					put(grammarAccess.getElementIntentListAccess().getIntentsAssignment_2(), "rule__ElementIntentList__IntentsAssignment_2");
 					put(grammarAccess.getElementIntentListAccess().getIntentsAssignment_3_1(), "rule__ElementIntentList__IntentsAssignment_3_1");
+					put(grammarAccess.getIntentAccess().getNameAssignment(), "rule__Intent__NameAssignment");
 					put(grammarAccess.getActivityParentAttributeAccess().getParentAssignment_1(), "rule__ActivityParentAttribute__ParentAssignment_1");
 					put(grammarAccess.getActivityLayoutAttributeAccess().getLayoutElementsAssignment_2(), "rule__ActivityLayoutAttribute__LayoutElementsAssignment_2");
 					put(grammarAccess.getActivityLayoutAttributeAccess().getLayoutElementsAssignment_3_1(), "rule__ActivityLayoutAttribute__LayoutElementsAssignment_3_1");

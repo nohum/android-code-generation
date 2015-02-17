@@ -104,6 +104,15 @@ public interface AppDslFactory extends EFactory
   ApplicationMainActivity createApplicationMainActivity();
 
   /**
+   * Returns a new object of class '<em>Permission</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Permission</em>'.
+   * @generated
+   */
+  Permission createPermission();
+
+  /**
    * Returns a new object of class '<em>Application Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -201,6 +210,15 @@ public interface AppDslFactory extends EFactory
    * @generated
    */
   ElementIntentList createElementIntentList();
+
+  /**
+   * Returns a new object of class '<em>Intent</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Intent</em>'.
+   * @generated
+   */
+  Intent createIntent();
 
   /**
    * Returns a new object of class '<em>Activity Parent Attribute</em>'.

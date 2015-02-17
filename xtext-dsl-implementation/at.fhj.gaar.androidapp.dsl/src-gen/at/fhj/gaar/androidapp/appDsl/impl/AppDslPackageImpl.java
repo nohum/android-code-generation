@@ -33,8 +33,10 @@ import at.fhj.gaar.androidapp.appDsl.ElementEnabledAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementExportedAttribute;
 import at.fhj.gaar.androidapp.appDsl.ElementIntentList;
 import at.fhj.gaar.androidapp.appDsl.ElementLabelAttribute;
+import at.fhj.gaar.androidapp.appDsl.Intent;
 import at.fhj.gaar.androidapp.appDsl.LayoutElement;
 import at.fhj.gaar.androidapp.appDsl.LayoutElementClickAction;
+import at.fhj.gaar.androidapp.appDsl.Permission;
 import at.fhj.gaar.androidapp.appDsl.Service;
 import at.fhj.gaar.androidapp.appDsl.ServiceAttribute;
 import at.fhj.gaar.androidapp.appDsl.Spacer;
@@ -123,6 +125,13 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass permissionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass applicationElementEClass = null;
 
   /**
@@ -194,6 +203,13 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * @generated
    */
   private EClass elementIntentListEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass intentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -498,9 +514,9 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getApplicationPermissionList_Permissions()
+  public EReference getApplicationPermissionList_Permissions()
   {
-    return (EAttribute)applicationPermissionListEClass.getEStructuralFeatures().get(0);
+    return (EReference)applicationPermissionListEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -541,6 +557,26 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
   public EReference getApplicationMainActivity_LauncherActivity()
   {
     return (EReference)applicationMainActivityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPermission()
+  {
+    return permissionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getPermission_Name()
+  {
+    return (EAttribute)permissionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -728,9 +764,29 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getElementIntentList_Intents()
+  public EReference getElementIntentList_Intents()
   {
-    return (EAttribute)elementIntentListEClass.getEStructuralFeatures().get(0);
+    return (EReference)elementIntentListEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getIntent()
+  {
+    return intentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getIntent_Name()
+  {
+    return (EAttribute)intentEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1042,13 +1098,16 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEAttribute(applicationCompileSdkEClass, APPLICATION_COMPILE_SDK__COMPILE_SDK);
 
     applicationPermissionListEClass = createEClass(APPLICATION_PERMISSION_LIST);
-    createEAttribute(applicationPermissionListEClass, APPLICATION_PERMISSION_LIST__PERMISSIONS);
+    createEReference(applicationPermissionListEClass, APPLICATION_PERMISSION_LIST__PERMISSIONS);
 
     applicationElementListEClass = createEClass(APPLICATION_ELEMENT_LIST);
     createEReference(applicationElementListEClass, APPLICATION_ELEMENT_LIST__ELEMENTS);
 
     applicationMainActivityEClass = createEClass(APPLICATION_MAIN_ACTIVITY);
     createEReference(applicationMainActivityEClass, APPLICATION_MAIN_ACTIVITY__LAUNCHER_ACTIVITY);
+
+    permissionEClass = createEClass(PERMISSION);
+    createEAttribute(permissionEClass, PERMISSION__NAME);
 
     applicationElementEClass = createEClass(APPLICATION_ELEMENT);
     createEAttribute(applicationElementEClass, APPLICATION_ELEMENT__NAME);
@@ -1078,7 +1137,10 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     createEAttribute(elementLabelAttributeEClass, ELEMENT_LABEL_ATTRIBUTE__TITLE);
 
     elementIntentListEClass = createEClass(ELEMENT_INTENT_LIST);
-    createEAttribute(elementIntentListEClass, ELEMENT_INTENT_LIST__INTENTS);
+    createEReference(elementIntentListEClass, ELEMENT_INTENT_LIST__INTENTS);
+
+    intentEClass = createEClass(INTENT);
+    createEAttribute(intentEClass, INTENT__NAME);
 
     activityParentAttributeEClass = createEClass(ACTIVITY_PARENT_ATTRIBUTE);
     createEReference(activityParentAttributeEClass, ACTIVITY_PARENT_ATTRIBUTE__PARENT);
@@ -1208,13 +1270,16 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEAttribute(getApplicationCompileSdk_CompileSdk(), ecorePackage.getEInt(), "compileSdk", null, 0, 1, ApplicationCompileSdk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationPermissionListEClass, ApplicationPermissionList.class, "ApplicationPermissionList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getApplicationPermissionList_Permissions(), ecorePackage.getEString(), "permissions", null, 0, -1, ApplicationPermissionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getApplicationPermissionList_Permissions(), this.getPermission(), null, "permissions", null, 0, -1, ApplicationPermissionList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationElementListEClass, ApplicationElementList.class, "ApplicationElementList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getApplicationElementList_Elements(), this.getApplicationElement(), null, "elements", null, 0, -1, ApplicationElementList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationMainActivityEClass, ApplicationMainActivity.class, "ApplicationMainActivity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getApplicationMainActivity_LauncherActivity(), this.getActivity(), null, "launcherActivity", null, 0, 1, ApplicationMainActivity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(permissionEClass, Permission.class, "Permission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getPermission_Name(), ecorePackage.getEString(), "name", null, 0, 1, Permission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(applicationElementEClass, ApplicationElement.class, "ApplicationElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getApplicationElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ApplicationElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1244,7 +1309,10 @@ public class AppDslPackageImpl extends EPackageImpl implements AppDslPackage
     initEAttribute(getElementLabelAttribute_Title(), ecorePackage.getEString(), "title", null, 0, 1, ElementLabelAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementIntentListEClass, ElementIntentList.class, "ElementIntentList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementIntentList_Intents(), ecorePackage.getEString(), "intents", null, 0, -1, ElementIntentList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElementIntentList_Intents(), this.getIntent(), null, "intents", null, 0, -1, ElementIntentList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(intentEClass, Intent.class, "Intent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIntent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Intent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(activityParentAttributeEClass, ActivityParentAttribute.class, "ActivityParentAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActivityParentAttribute_Parent(), this.getActivity(), null, "parent", null, 0, 1, ActivityParentAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
