@@ -9,7 +9,9 @@ import at.fhj.gaar.androidapp.appDsl.ApplicationTargetSdk
 
 public class GradleProjectGenerator extends AbstractGenerator {
 	
-	private static final val String USED_BUILD_TOOLS_VERSION = "21.1.1";
+	private static val String USED_BUILD_TOOLS_VERSION = "21.1.2";
+	
+	private static val int DEFAULT_COMPILE_SDK_VERSION = 21;
 	
 	override generate(List<Application> applications, IFileSystemAccess filesystem) {
 		filesystem.generateFile("build.gradle", retrieveRootBuildGradle());
@@ -34,25 +36,31 @@ public class GradleProjectGenerator extends AbstractGenerator {
 		var ApplicationMinSdk minSdk = getFieldData(application.attributes, typeof(ApplicationMinSdk));
 		var ApplicationTargetSdk targetSdk = getFieldData(application.attributes, typeof(ApplicationTargetSdk));
 
-		// TODO check for default values of the above
+		// we always need an compile sdk
+		var usedCompileSdk = DEFAULT_COMPILE_SDK_VERSION;
+		if (compileSdk != null) {
+			usedCompileSdk = compileSdk.compileSdk;
+		} else if (targetSdk != null) {
+			usedCompileSdk = targetSdk.targetSdk;
+		} else if (minSdk != null) {
+			usedCompileSdk = minSdk.minSdk;
+		}
 
 		return '''
 		apply plugin: 'com.android.application'
 
 		android {
-			«IF compileSdk != null»
-			compileSdkVersion «compileSdk.compileSdk»
-		    «ENDIF»
-		    «IF minSdk != null»
-		    minSdkVersion «minSdk.minSdk»
-		    «ENDIF»
-		    «IF targetSdk != null»
-		    targetSdkVersion «targetSdk.targetSdk»
-		    «ENDIF»
 		    buildToolsVersion "«USED_BUILD_TOOLS_VERSION»"
+		    compileSdkVersion «usedCompileSdk»
 		
 		    defaultConfig {
 		        applicationId "«application.name»"
+				«IF minSdk != null»
+				minSdkVersion «minSdk.minSdk»
+				«ENDIF»
+				«IF targetSdk != null»
+				targetSdkVersion «targetSdk.targetSdk»
+				«ENDIF»
 		        
 		        versionCode 1
 		        versionName "1.0"

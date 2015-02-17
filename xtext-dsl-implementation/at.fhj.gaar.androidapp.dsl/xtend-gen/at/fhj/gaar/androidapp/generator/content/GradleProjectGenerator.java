@@ -14,7 +14,9 @@ import org.eclipse.xtext.generator.IFileSystemAccess;
 
 @SuppressWarnings("all")
 public class GradleProjectGenerator extends AbstractGenerator {
-  private final static String USED_BUILD_TOOLS_VERSION = "21.1.1";
+  private final static String USED_BUILD_TOOLS_VERSION = "21.1.2";
+  
+  private final static int DEFAULT_COMPILE_SDK_VERSION = 21;
   
   public void generate(final List<Application> applications, final IFileSystemAccess filesystem) {
     String _retrieveRootBuildGradle = this.retrieveRootBuildGradle();
@@ -42,46 +44,38 @@ public class GradleProjectGenerator extends AbstractGenerator {
     ApplicationMinSdk minSdk = this.<ApplicationMinSdk>getFieldData(_attributes_1, ApplicationMinSdk.class);
     EList<ApplicationAttribute> _attributes_2 = application.getAttributes();
     ApplicationTargetSdk targetSdk = this.<ApplicationTargetSdk>getFieldData(_attributes_2, ApplicationTargetSdk.class);
+    int usedCompileSdk = GradleProjectGenerator.DEFAULT_COMPILE_SDK_VERSION;
+    boolean _notEquals = (!Objects.equal(compileSdk, null));
+    if (_notEquals) {
+      int _compileSdk = compileSdk.getCompileSdk();
+      usedCompileSdk = _compileSdk;
+    } else {
+      boolean _notEquals_1 = (!Objects.equal(targetSdk, null));
+      if (_notEquals_1) {
+        int _targetSdk = targetSdk.getTargetSdk();
+        usedCompileSdk = _targetSdk;
+      } else {
+        boolean _notEquals_2 = (!Objects.equal(minSdk, null));
+        if (_notEquals_2) {
+          int _minSdk = minSdk.getMinSdk();
+          usedCompileSdk = _minSdk;
+        }
+      }
+    }
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("apply plugin: \'com.android.application\'");
     _builder.newLine();
     _builder.newLine();
     _builder.append("android {");
     _builder.newLine();
-    {
-      boolean _notEquals = (!Objects.equal(compileSdk, null));
-      if (_notEquals) {
-        _builder.append("\t");
-        _builder.append("compileSdkVersion ");
-        int _compileSdk = compileSdk.getCompileSdk();
-        _builder.append(_compileSdk, "\t");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      boolean _notEquals_1 = (!Objects.equal(minSdk, null));
-      if (_notEquals_1) {
-        _builder.append("    ");
-        _builder.append("minSdkVersion ");
-        int _minSdk = minSdk.getMinSdk();
-        _builder.append(_minSdk, "    ");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    {
-      boolean _notEquals_2 = (!Objects.equal(targetSdk, null));
-      if (_notEquals_2) {
-        _builder.append("    ");
-        _builder.append("targetSdkVersion ");
-        int _targetSdk = targetSdk.getTargetSdk();
-        _builder.append(_targetSdk, "    ");
-        _builder.newLineIfNotEmpty();
-      }
-    }
     _builder.append("    ");
     _builder.append("buildToolsVersion \"");
     _builder.append(GradleProjectGenerator.USED_BUILD_TOOLS_VERSION, "    ");
     _builder.append("\"");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.append("compileSdkVersion ");
+    _builder.append(usedCompileSdk, "    ");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
     _builder.append("    ");
@@ -93,6 +87,26 @@ public class GradleProjectGenerator extends AbstractGenerator {
     _builder.append(_name, "        ");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
+    {
+      boolean _notEquals_3 = (!Objects.equal(minSdk, null));
+      if (_notEquals_3) {
+        _builder.append("\t\t");
+        _builder.append("minSdkVersion ");
+        int _minSdk_1 = minSdk.getMinSdk();
+        _builder.append(_minSdk_1, "\t\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      boolean _notEquals_4 = (!Objects.equal(targetSdk, null));
+      if (_notEquals_4) {
+        _builder.append("\t\t");
+        _builder.append("targetSdkVersion ");
+        int _targetSdk_1 = targetSdk.getTargetSdk();
+        _builder.append(_targetSdk_1, "\t\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     _builder.append("        ");
     _builder.newLine();
     _builder.append("        ");
