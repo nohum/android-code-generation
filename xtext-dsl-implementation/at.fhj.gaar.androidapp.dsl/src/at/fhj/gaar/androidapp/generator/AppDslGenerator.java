@@ -14,6 +14,7 @@ import at.fhj.gaar.androidapp.generator.content.ActivityClassGenerator;
 import at.fhj.gaar.androidapp.generator.content.AndroidManifestGenerator;
 import at.fhj.gaar.androidapp.generator.content.BroadcastReceiverClassGenerator;
 import at.fhj.gaar.androidapp.generator.content.ContentGenerator;
+import at.fhj.gaar.androidapp.generator.content.DrawableResourcesGenerator;
 import at.fhj.gaar.androidapp.generator.content.GradleProjectGenerator;
 import at.fhj.gaar.androidapp.generator.content.LayoutResourcesGenerator;
 import at.fhj.gaar.androidapp.generator.content.ServiceClassGenerator;
@@ -39,6 +40,7 @@ public class AppDslGenerator implements IGenerator {
 		generators.add(new ActivityClassGenerator());
 		generators.add(new ValueResourcesGenerator());
 		generators.add(new LayoutResourcesGenerator());
+		generators.add(new DrawableResourcesGenerator());
 		
 		logger.info(String.format("added %d DSL sub-generators", generators.size()));
 	}

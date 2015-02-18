@@ -76,7 +76,10 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     _builder.append("android:label=\"@string/app_title\"");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("android:theme=\"@style/AppTheme\" >");
+    _builder.append("android:theme=\"@style/AppTheme\"");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("android:icon=\"@drawable/ic_launcher\" >");
     _builder.newLine();
     _builder.append("        ");
     _builder.newLine();

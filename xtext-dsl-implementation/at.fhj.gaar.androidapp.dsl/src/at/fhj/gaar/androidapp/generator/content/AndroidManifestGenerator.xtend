@@ -44,7 +44,8 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 		    <application
 		        android:allowBackup="true"
 		        android:label="@string/app_title"
-		        android:theme="@style/AppTheme" >
+		        android:theme="@style/AppTheme"
+		        android:icon="@drawable/ic_launcher" >
 		        
 		        «generateAppElements(elements, mainActivity)»
 		    </application>
