@@ -46,6 +46,7 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 			<dimen name="activity_horizontal_margin">16dp</dimen>
 		    <dimen name="activity_vertical_margin">16dp</dimen>
 		    <dimen name="spacer_height">14dp</dimen>
+		    <dimen name="toolbar_height">54dp</dimen>
 		</resources>
 		''';
 	}

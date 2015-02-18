@@ -88,27 +88,17 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 		
 		return '''
 		<activity android:name=".activity.«activity.name»"
-            «IF enabled != null»
-            android:enabled="«enabled.enabled»"
-		    «ENDIF»
-            «IF exported != null»
-			android:exported="«exported.exported»"
-		    «ENDIF»
-            «IF parent != null»
-			android:parentActivityName=".activity.«parent.parent.name»"
-		    «ENDIF»
-		    «IF label != null»
-			android:label="@string/«javaToAndroidIdentifier(activity.name)»_title"
-		    «ENDIF» >
-            «IF launchable»
-            <intent-filter>
+            «IF enabled != null»android:enabled="«enabled.enabled»"«ENDIF»
+            «IF exported != null»android:exported="«exported.exported»"«ENDIF»
+            «IF parent != null»android:parentActivityName=".activity.«parent.parent.name»"«ENDIF»
+            «IF label != null»android:label="@string/«javaToAndroidIdentifier(activity.name)»_title"«ENDIF» >
+            «IF launchable»<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            «ENDIF»
+            </intent-filter>«ENDIF»
             «generateIntentList(intents)»
-        </activity>
-        
+		</activity>
+
 		''';
 	}
 	
@@ -120,18 +110,12 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 		
 		return '''
 		<service android:name=".service.«service.name»"
-            «IF enabled != null»
-            android:enabled="«enabled.enabled»"
-		    «ENDIF»
-            «IF exported != null»
-			android:exported="«exported.exported»"
-		    «ENDIF»
-		    «IF label != null»
-			android:label="@string/«javaToAndroidIdentifier(service.name)»_title"
-		    «ENDIF» >
+            «IF enabled != null»android:enabled="«enabled.enabled»"«ENDIF»
+            «IF exported != null»android:exported="«exported.exported»"«ENDIF»
+            «IF label != null»android:label="@string/«javaToAndroidIdentifier(service.name)»_title"«ENDIF» >
             «generateIntentList(intents)»
-        </service>
-        
+		</service>
+
 		''';
 	}
 	
@@ -143,18 +127,12 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 		
 		return '''
 		<receiver android:name=".receiver.«receiver.name»"
-            «IF enabled != null»
-			android:enabled="«enabled.enabled»"
-		    «ENDIF»
-            «IF exported != null»
-            android:exported="«exported.exported»"
-		    «ENDIF»
-		    «IF label != null»
-			android:label="@string/«javaToAndroidIdentifier(receiver.name)»_title"
-		    «ENDIF» >
+            «IF enabled != null»android:enabled="«enabled.enabled»"«ENDIF»
+            «IF exported != null»android:exported="«exported.exported»"«ENDIF»
+            «IF label != null»android:label="@string/«javaToAndroidIdentifier(receiver.name)»_title"«ENDIF» >
             «generateIntentList(intents)»
-        </receiver>
-        
+		</receiver>
+
 		''';
 	}
 	
@@ -164,11 +142,11 @@ public class AndroidManifestGenerator extends AbstractGenerator {
 		}
 		
 		return  '''
-		<intent-filter>
-		«FOR intent : intents.intents»
-			<action android:name="«intent.name»" />
-		«ENDFOR» 
-		</intent-filter>
+			<intent-filter>
+			«FOR intent : intents.intents»
+				<action android:name="«intent.name»" />
+			«ENDFOR» 
+			</intent-filter>
 		''';
 	}
 	

@@ -42,6 +42,8 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
     _builder.append(".activity;");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
+    _builder.append("import android.content.Context;");
+    _builder.newLine();
     _builder.append("import android.content.Intent;");
     _builder.newLine();
     _builder.append("import android.support.v7.app.ActionBarActivity;");
@@ -93,9 +95,11 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
     _builder.append(");");
     _builder.newLineIfNotEmpty();
     _builder.newLine();
-    _builder.append("//        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));");
+    _builder.append("        ");
+    _builder.append("setSupportActionBar((Toolbar) findViewById(R.id.toolbar));");
     _builder.newLine();
-    _builder.append("//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);");
+    _builder.append("        ");
+    _builder.append("getSupportActionBar().setDisplayHomeAsUpEnabled(true);");
     _builder.newLine();
     _builder.append("        ");
     _builder.newLine();
@@ -289,7 +293,8 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
         _builder_1.append(")) {");
         _builder_1.newLineIfNotEmpty();
         _builder_1.append("\t");
-        String _insertActionCode = this.insertActionCode(activity, action);
+        String _name_1 = ((Button)element).getName();
+        String _insertActionCode = this.insertActionCode(_name_1, activity, action);
         _builder_1.append(_insertActionCode, "\t");
         _builder_1.newLineIfNotEmpty();
         _builder_1.append("\t");
@@ -305,7 +310,7 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
     return data;
   }
   
-  private String insertActionCode(final Activity activity, final ButtonActionAttribute action) {
+  private String insertActionCode(final String buttonName, final Activity activity, final ButtonActionAttribute action) {
     boolean _equals = Objects.equal(action, null);
     if (_equals) {
       StringConcatenation _builder = new StringConcatenation();
@@ -320,6 +325,9 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
       String _name = activity.getName();
       String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name);
       _builder_1.append(_javaToAndroidIdentifier, "");
+      _builder_1.append("_");
+      String _javaToAndroidIdentifier_1 = this.javaToAndroidIdentifier(buttonName);
+      _builder_1.append(_javaToAndroidIdentifier_1, "");
       _builder_1.append("_toast), Toast.LENGTH_LONG).show();");
       _builder_1.newLineIfNotEmpty();
       return _builder_1.toString();
@@ -329,17 +337,20 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
         Service _service = ((ActionStartService)concreteAction).getService();
         String _name_1 = _service.getName();
         _builder_2.append(_name_1, "");
-        _builder_2.append(".startService(context);");
+        _builder_2.append(".startService(this);");
         _builder_2.newLineIfNotEmpty();
         return _builder_2.toString();
       } else {
         if ((concreteAction instanceof ActionStartActivity)) {
           StringConcatenation _builder_3 = new StringConcatenation();
+          _builder_3.append("Intent intent = new Intent(this, ");
           Activity _activity = ((ActionStartActivity)concreteAction).getActivity();
           String _name_2 = _activity.getName();
           _builder_3.append(_name_2, "");
-          _builder_3.append(".startActivity(context);");
+          _builder_3.append(".class);");
           _builder_3.newLineIfNotEmpty();
+          _builder_3.append("startActivity(intent);");
+          _builder_3.newLine();
           return _builder_3.toString();
         }
       }

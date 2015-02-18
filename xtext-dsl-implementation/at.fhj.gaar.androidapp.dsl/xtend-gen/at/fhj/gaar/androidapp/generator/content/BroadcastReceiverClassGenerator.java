@@ -173,7 +173,7 @@ public class BroadcastReceiverClassGenerator extends AbstractClassGenerator {
           Activity _activity = ((ActionStartActivity)concreteAction).getActivity();
           String _name_2 = _activity.getName();
           _builder_2.append(_name_2, "");
-          _builder_2.append(".startActivity(context);");
+          _builder_2.append(".openActivity(context);");
           _builder_2.newLineIfNotEmpty();
           return _builder_2.toString();
         }

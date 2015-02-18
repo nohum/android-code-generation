@@ -159,57 +159,58 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     _builder.append(_name, "");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals = (!Objects.equal(enabled, null));
       if (_notEquals) {
-        _builder.append("            ");
         _builder.append("android:enabled=\"");
         boolean _isEnabled = enabled.isEnabled();
         _builder.append(_isEnabled, "            ");
         _builder.append("\"");
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals_1 = (!Objects.equal(exported, null));
       if (_notEquals_1) {
         _builder.append("android:exported=\"");
         boolean _isExported = exported.isExported();
-        _builder.append(_isExported, "");
+        _builder.append(_isExported, "            ");
         _builder.append("\"");
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals_2 = (!Objects.equal(parent, null));
       if (_notEquals_2) {
         _builder.append("android:parentActivityName=\".activity.");
         Activity _parent = parent.getParent();
         String _name_1 = _parent.getName();
-        _builder.append(_name_1, "");
+        _builder.append(_name_1, "            ");
         _builder.append("\"");
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals_3 = (!Objects.equal(label, null));
       if (_notEquals_3) {
         _builder.append("android:label=\"@string/");
         String _name_2 = activity.getName();
         String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name_2);
-        _builder.append(_javaToAndroidIdentifier, "");
+        _builder.append(_javaToAndroidIdentifier, "            ");
         _builder.append("_title\"");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t    ");
       }
     }
     _builder.append(" >");
     _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       if (launchable) {
-        _builder.append("            ");
         _builder.append("<intent-filter>");
-        _builder.newLine();
+        _builder.newLineIfNotEmpty();
         _builder.append("            ");
         _builder.append("    ");
         _builder.append("<action android:name=\"android.intent.action.MAIN\" />");
@@ -220,17 +221,15 @@ public class AndroidManifestGenerator extends AbstractGenerator {
         _builder.newLine();
         _builder.append("            ");
         _builder.append("</intent-filter>");
-        _builder.newLine();
       }
     }
+    _builder.newLineIfNotEmpty();
     _builder.append("            ");
     String _generateIntentList = this.generateIntentList(intents);
     _builder.append(_generateIntentList, "            ");
     _builder.newLineIfNotEmpty();
-    _builder.append("        ");
     _builder.append("</activity>");
     _builder.newLine();
-    _builder.append("        ");
     _builder.newLine();
     return _builder.toString();
   }
@@ -250,37 +249,37 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     _builder.append(_name, "");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals = (!Objects.equal(enabled, null));
       if (_notEquals) {
-        _builder.append("            ");
         _builder.append("android:enabled=\"");
         boolean _isEnabled = enabled.isEnabled();
         _builder.append(_isEnabled, "            ");
         _builder.append("\"");
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals_1 = (!Objects.equal(exported, null));
       if (_notEquals_1) {
         _builder.append("android:exported=\"");
         boolean _isExported = exported.isExported();
-        _builder.append(_isExported, "");
+        _builder.append(_isExported, "            ");
         _builder.append("\"");
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals_2 = (!Objects.equal(label, null));
       if (_notEquals_2) {
         _builder.append("android:label=\"@string/");
         String _name_1 = service.getName();
         String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name_1);
-        _builder.append(_javaToAndroidIdentifier, "");
+        _builder.append(_javaToAndroidIdentifier, "            ");
         _builder.append("_title\"");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t    ");
       }
     }
     _builder.append(" >");
@@ -289,10 +288,8 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     String _generateIntentList = this.generateIntentList(intents);
     _builder.append(_generateIntentList, "            ");
     _builder.newLineIfNotEmpty();
-    _builder.append("        ");
     _builder.append("</service>");
     _builder.newLine();
-    _builder.append("        ");
     _builder.newLine();
     return _builder.toString();
   }
@@ -312,37 +309,37 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     _builder.append(_name, "");
     _builder.append("\"");
     _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals = (!Objects.equal(enabled, null));
       if (_notEquals) {
         _builder.append("android:enabled=\"");
         boolean _isEnabled = enabled.isEnabled();
-        _builder.append(_isEnabled, "");
+        _builder.append(_isEnabled, "            ");
         _builder.append("\"");
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals_1 = (!Objects.equal(exported, null));
       if (_notEquals_1) {
-        _builder.append("            ");
         _builder.append("android:exported=\"");
         boolean _isExported = exported.isExported();
         _builder.append(_isExported, "            ");
         _builder.append("\"");
-        _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLineIfNotEmpty();
+    _builder.append("            ");
     {
       boolean _notEquals_2 = (!Objects.equal(label, null));
       if (_notEquals_2) {
         _builder.append("android:label=\"@string/");
         String _name_1 = receiver.getName();
         String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name_1);
-        _builder.append(_javaToAndroidIdentifier, "");
+        _builder.append(_javaToAndroidIdentifier, "            ");
         _builder.append("_title\"");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t    ");
       }
     }
     _builder.append(" >");
@@ -351,10 +348,8 @@ public class AndroidManifestGenerator extends AbstractGenerator {
     String _generateIntentList = this.generateIntentList(intents);
     _builder.append(_generateIntentList, "            ");
     _builder.newLineIfNotEmpty();
-    _builder.append("        ");
     _builder.append("</receiver>");
     _builder.newLine();
-    _builder.append("        ");
     _builder.newLine();
     return _builder.toString();
   }

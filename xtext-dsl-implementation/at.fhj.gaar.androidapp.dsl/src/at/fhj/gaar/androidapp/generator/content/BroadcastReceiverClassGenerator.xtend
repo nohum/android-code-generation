@@ -87,7 +87,7 @@ public class BroadcastReceiverClassGenerator extends AbstractClassGenerator {
 			''';
 		} else if (concreteAction instanceof ActionStartActivity) {
 			return '''
-			«concreteAction.activity.name».startActivity(context);
+			«concreteAction.activity.name».openActivity(context);
 			''';
 		}
 	}

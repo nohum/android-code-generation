@@ -27,6 +27,7 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		return '''
 		package «application.name».activity;
 
+		import android.content.Context;
 		import android.content.Intent;
 		import android.support.v7.app.ActionBarActivity;
 		import android.os.Bundle;
@@ -47,8 +48,8 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		        super.onCreate(savedInstanceState);
 		        setContentView(R.layout.«javaToAndroidIdentifier(activity.name)»);
 		
-		//        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-		//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+		        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		        
 		        «insertLayoutFieldInit(layout)»
 		    }
@@ -162,7 +163,7 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 				
 				data += '''
 				if (v.equals(«element.name»)) {
-					«insertActionCode(activity, action)»
+					«insertActionCode(element.name, activity, action)»
 					
 					return;
 				}
@@ -173,7 +174,7 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		return data;
 	}
 	
-	private def String insertActionCode(Activity activity, ButtonActionAttribute action) {
+	private def String insertActionCode(String buttonName, Activity activity, ButtonActionAttribute action) {
 		if (action == null) {
 			return '''
 			// insert your code here
@@ -183,15 +184,16 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		var concreteAction = action.action;
 		if (concreteAction instanceof ActionShowToast) {
 			return '''
-			Toast.makeText(this, getString(R.string.«javaToAndroidIdentifier(activity.name)»_toast), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, getString(R.string.«javaToAndroidIdentifier(activity.name)»_«javaToAndroidIdentifier(buttonName)»_toast), Toast.LENGTH_LONG).show();
 			''';
 		} else if (concreteAction instanceof ActionStartService) {
 			return '''
-			«concreteAction.service.name».startService(context);
+			«concreteAction.service.name».startService(this);
 			''';
 		} else if (concreteAction instanceof ActionStartActivity) {
 			return '''
-			«concreteAction.activity.name».startActivity(context);
+			Intent intent = new Intent(this, «concreteAction.activity.name».class);
+			startActivity(intent);
 			''';
 		}		
 
