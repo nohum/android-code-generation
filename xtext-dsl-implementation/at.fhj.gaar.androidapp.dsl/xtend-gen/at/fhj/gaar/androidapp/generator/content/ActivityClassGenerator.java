@@ -7,7 +7,9 @@ import at.fhj.gaar.androidapp.appDsl.Activity;
 import at.fhj.gaar.androidapp.appDsl.ActivityAttribute;
 import at.fhj.gaar.androidapp.appDsl.ActivityLayoutAttribute;
 import at.fhj.gaar.androidapp.appDsl.Application;
+import at.fhj.gaar.androidapp.appDsl.ApplicationAttribute;
 import at.fhj.gaar.androidapp.appDsl.ApplicationElement;
+import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity;
 import at.fhj.gaar.androidapp.appDsl.Button;
 import at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute;
 import at.fhj.gaar.androidapp.appDsl.ButtonAttribute;
@@ -35,6 +37,18 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
     Activity activity = ((Activity) element);
     EList<ActivityAttribute> _attributes = activity.getAttributes();
     ActivityLayoutAttribute layout = this.<ActivityLayoutAttribute>getFieldData(_attributes, ActivityLayoutAttribute.class);
+    EList<ApplicationAttribute> _attributes_1 = application.getAttributes();
+    ApplicationMainActivity mainActivity = this.<ApplicationMainActivity>getFieldData(_attributes_1, ApplicationMainActivity.class);
+    boolean _and = false;
+    boolean _notEquals = (!Objects.equal(mainActivity, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      Activity _launcherActivity = mainActivity.getLauncherActivity();
+      boolean _equals = _launcherActivity.equals(activity);
+      _and = _equals;
+    }
+    boolean isMainActivity = _and;
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package ");
     String _name = application.getName();
@@ -99,8 +113,12 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
     _builder.append("setSupportActionBar((Toolbar) findViewById(R.id.toolbar));");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("getSupportActionBar().setDisplayHomeAsUpEnabled(true);");
-    _builder.newLine();
+    {
+      if ((!isMainActivity)) {
+        _builder.append("getSupportActionBar().setDisplayHomeAsUpEnabled(true);");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     _builder.append("        ");
     _builder.newLine();
     _builder.append("        ");
@@ -266,6 +284,10 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
         String _javaToAndroidIdentifier = this.javaToAndroidIdentifier(_name_1);
         _builder_1.append(_javaToAndroidIdentifier, "");
         _builder_1.append(");");
+        _builder_1.newLineIfNotEmpty();
+        String _name_2 = ((Button)element).getName();
+        _builder_1.append(_name_2, "");
+        _builder_1.append(".setOnClickListener(this);");
         _builder_1.newLineIfNotEmpty();
         data = (_data + _builder_1);
       }

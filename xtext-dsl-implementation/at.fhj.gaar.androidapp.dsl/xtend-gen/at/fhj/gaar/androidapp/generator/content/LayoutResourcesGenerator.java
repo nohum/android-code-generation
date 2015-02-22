@@ -32,6 +32,9 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
         ApplicationElementList appElements = this.<ApplicationElementList>getFieldData(_attributes, ApplicationElementList.class);
         boolean _notEquals = (!Objects.equal(appElements, null));
         if (_notEquals) {
+          String _format = String.format("%s/src/main/res/layout/toolbar.xml", projectName);
+          String _generateToolbarLayout = this.generateToolbarLayout();
+          filesystem.generateFile(_format, _generateToolbarLayout);
           EList<ApplicationElement> _elements = appElements.getElements();
           final Function1<ApplicationElement, Boolean> _function = new Function1<ApplicationElement, Boolean>() {
             public Boolean apply(final ApplicationElement element) {
@@ -53,6 +56,40 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
         }
       }
     }
+  }
+  
+  private String generateToolbarLayout() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\t");
+    _builder.newLine();
+    _builder.append("<android.support.v7.widget.Toolbar");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("xmlns:android=\"http://schemas.android.com/apk/res/android\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("xmlns:app=\"http://schemas.android.com/apk/res-auto\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("android:id=\"@+id/toolbar\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("android:layout_width=\"match_parent\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("android:layout_height=\"@dimen/toolbar_height\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("android:background=\"?attr/colorPrimary\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("app:theme=\"@style/ThemeOverlay.AppCompat.Dark.ActionBar\"");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("app:popupTheme=\"@style/ThemeOverlay.AppCompat.Light\" />");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder.toString();
   }
   
   private String generateActivityLayout(final Activity activity) {
@@ -78,17 +115,8 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("    ");
     _builder.newLine();
-    _builder.append("    ");
-    _builder.append("<android.support.v7.widget.Toolbar");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("android:id=\"@+id/toolbar\"");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("android:layout_width=\"match_parent\"");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("android:layout_height=\"@dimen/toolbar_height\" />");
+    _builder.append("\t");
+    _builder.append("<include layout=\"@layout/toolbar\" />");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
@@ -183,6 +211,7 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
             } else {
               if ((element instanceof Spacer)) {
                 StringConcatenation _builder_2 = new StringConcatenation();
+                _builder_2.append("\t\t\t\t\t");
                 _builder_2.newLine();
                 _builder_2.append("<View");
                 _builder_2.newLine();
@@ -191,6 +220,7 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
                 _builder_2.newLine();
                 _builder_2.append("\t");
                 _builder_2.append("android:layout_height=\"@dimen/spacer_height\" />");
+                _builder_2.newLine();
                 _builder_2.newLine();
                 string.append(_builder_2);
               }

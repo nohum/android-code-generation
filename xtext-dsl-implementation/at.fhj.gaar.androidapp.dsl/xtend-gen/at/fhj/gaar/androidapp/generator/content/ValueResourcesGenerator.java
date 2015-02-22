@@ -50,6 +50,9 @@ public class ValueResourcesGenerator extends AbstractGenerator {
         String _format_2 = String.format("%s/src/main/res/values/strings.xml", projectName);
         String _generateStringsXml = this.generateStringsXml(app, projectName);
         filesystem.generateFile(_format_2, _generateStringsXml);
+        String _format_3 = String.format("%s/src/main/res/values/colors.xml", projectName);
+        String _generateColorsXml = this.generateColorsXml(app);
+        filesystem.generateFile(_format_3, _generateColorsXml);
       }
     }
   }
@@ -67,7 +70,11 @@ public class ValueResourcesGenerator extends AbstractGenerator {
     _builder.append("<dimen name=\"activity_vertical_margin\">16dp</dimen>");
     _builder.newLine();
     _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    ");
     _builder.append("<dimen name=\"spacer_height\">14dp</dimen>");
+    _builder.newLine();
+    _builder.append("    ");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("<dimen name=\"toolbar_height\">54dp</dimen>");
@@ -87,10 +94,56 @@ public class ValueResourcesGenerator extends AbstractGenerator {
     _builder.append("    ");
     _builder.append("<style name=\"AppTheme\" parent=\"Theme.AppCompat.Light.NoActionBar\">");
     _builder.newLine();
-    _builder.append("        ");
+    _builder.append("\t\t");
+    _builder.append("<!-- colorPrimary is used for the default action bar background -->");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<item name=\"colorPrimary\">@color/primary</item>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<!-- colorPrimaryDark is used for the status bar -->");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<item name=\"colorPrimaryDark\">@color/primary_dark</item>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<!-- colorAccent is used as the default value for colorControlActivated,");
+    _builder.newLine();
+    _builder.append("\t\t     ");
+    _builder.append("which is used to tint widgets -->");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<item name=\"colorAccent\">@color/accent</item>");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("</style>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("</resources>");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  private String generateColorsXml(final Application application) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+    _builder.newLine();
+    _builder.append("<resources>");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<!-- for an material color palette see: http://www.google.com/design/spec/style/color.html#color-color-palette -->");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("<color name=\"primary\">#4caf50</color>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<color name=\"primary_dark\">#1b5e20</color>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<color name=\"accent\">#00bcd4</color>");
     _builder.newLine();
     _builder.newLine();
     _builder.append("</resources>");

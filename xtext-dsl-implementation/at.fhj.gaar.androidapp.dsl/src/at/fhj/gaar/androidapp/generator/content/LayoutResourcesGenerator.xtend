@@ -19,6 +19,10 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 			var appElements = getFieldData(app.attributes, typeof(ApplicationElementList));
 			
 			if (appElements != null) {
+				filesystem.generateFile(String.format("%s/src/main/res/layout/toolbar.xml", projectName),
+					generateToolbarLayout()
+				);
+				
 				appElements.elements.filter[element | element instanceof Activity].forEach[curr |
 					var activity = curr as Activity;
 					
@@ -30,6 +34,22 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 				];
 			}
 		}
+	}
+	
+	private def String generateToolbarLayout() {
+		return '''
+			<?xml version="1.0" encoding="utf-8"?>	
+			<android.support.v7.widget.Toolbar
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:app="http://schemas.android.com/apk/res-auto"
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/toolbar_height"
+				android:background="?attr/colorPrimary"
+				app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+				app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+		''';
 	}
 	
 	private def String generateActivityLayout(Activity activity) {
@@ -44,10 +64,7 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 		    android:layout_height="match_parent"
 		    android:orientation="vertical">
 		    
-		    <android.support.v7.widget.Toolbar
-		        android:id="@+id/toolbar"
-		        android:layout_width="match_parent"
-		        android:layout_height="@dimen/toolbar_height" />
+			<include layout="@layout/toolbar" />
 		
 			<LinearLayout
 			    xmlns:android="http://schemas.android.com/apk/res/android"
@@ -89,10 +106,11 @@ public class LayoutResourcesGenerator extends AbstractGenerator {
 					''');
 				} else if (element instanceof Spacer) {
 					string.append('''
-
+					
 							<View
 								android:layout_width="match_parent"
 								android:layout_height="@dimen/spacer_height" />
+							
 					''');
 				}
 			];

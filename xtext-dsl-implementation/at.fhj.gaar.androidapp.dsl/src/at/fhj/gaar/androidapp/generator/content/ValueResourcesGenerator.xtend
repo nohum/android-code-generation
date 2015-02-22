@@ -34,6 +34,10 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 			filesystem.generateFile(String.format("%s/src/main/res/values/strings.xml", projectName),
 				generateStringsXml(app, projectName)
 			);
+			
+			filesystem.generateFile(String.format("%s/src/main/res/values/colors.xml", projectName),
+				generateColorsXml(app)
+			);
 		}
 	}
 	
@@ -45,7 +49,9 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 		<resources>
 			<dimen name="activity_horizontal_margin">16dp</dimen>
 		    <dimen name="activity_vertical_margin">16dp</dimen>
+		    
 		    <dimen name="spacer_height">14dp</dimen>
+		    
 		    <dimen name="toolbar_height">54dp</dimen>
 		</resources>
 		''';
@@ -59,8 +65,32 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 		<resources>
 
 		    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-		        
+				<!-- colorPrimary is used for the default action bar background -->
+				<item name="colorPrimary">@color/primary</item>
+
+				<!-- colorPrimaryDark is used for the status bar -->
+				<item name="colorPrimaryDark">@color/primary_dark</item>
+
+				<!-- colorAccent is used as the default value for colorControlActivated,
+				     which is used to tint widgets -->
+				<item name="colorAccent">@color/accent</item>
 		    </style>
+		
+		</resources>
+		''';
+	}
+	
+	private def String generateColorsXml(Application application) {
+		// default file
+		
+		return '''
+		<?xml version="1.0" encoding="utf-8"?>
+		<resources>
+
+			<!-- for an material color palette see: http://www.google.com/design/spec/style/color.html#color-color-palette -->
+		    <color name="primary">#4caf50</color>
+			<color name="primary_dark">#1b5e20</color>
+			<color name="accent">#00bcd4</color>
 		
 		</resources>
 		''';

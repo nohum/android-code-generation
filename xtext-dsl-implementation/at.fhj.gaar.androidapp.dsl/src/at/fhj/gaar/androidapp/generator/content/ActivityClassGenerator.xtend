@@ -9,6 +9,7 @@ import at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute
 import at.fhj.gaar.androidapp.appDsl.ActionShowToast
 import at.fhj.gaar.androidapp.appDsl.ActionStartService
 import at.fhj.gaar.androidapp.appDsl.ActionStartActivity
+import at.fhj.gaar.androidapp.appDsl.ApplicationMainActivity
 
 public class ActivityClassGenerator extends AbstractClassGenerator {
 	
@@ -23,6 +24,9 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 	override protected retrieveElementTemplate(Application application, ApplicationElement element) {
 		var activity = element as Activity;
 		var ActivityLayoutAttribute layout = getFieldData(activity.attributes, typeof(ActivityLayoutAttribute));
+		var ApplicationMainActivity mainActivity = getFieldData(application.attributes, typeof(ApplicationMainActivity));
+		
+		var isMainActivity = mainActivity != null && mainActivity.launcherActivity.equals(activity);
 		
 		return '''
 		package «application.name».activity;
@@ -49,7 +53,7 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 		        setContentView(R.layout.«javaToAndroidIdentifier(activity.name)»);
 		
 		        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
-		        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		        «IF !isMainActivity»getSupportActionBar().setDisplayHomeAsUpEnabled(true);«ENDIF»
 		        
 		        «insertLayoutFieldInit(layout)»
 		    }
@@ -142,6 +146,7 @@ public class ActivityClassGenerator extends AbstractClassGenerator {
 			if (element instanceof Button) {
 				data += '''
 					«element.name» = (Button) findViewById(R.id.«javaToAndroidIdentifier(element.name)»);
+					«element.name».setOnClickListener(this);
 				''';
 			}
 		}
