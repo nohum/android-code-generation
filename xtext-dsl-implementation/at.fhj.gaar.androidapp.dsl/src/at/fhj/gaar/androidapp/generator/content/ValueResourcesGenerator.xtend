@@ -16,6 +16,7 @@ import at.fhj.gaar.androidapp.appDsl.BroadcastReceiver
 import at.fhj.gaar.androidapp.appDsl.BroadcastReceiverActionAttribute
 import at.fhj.gaar.androidapp.appDsl.ActionShowToast
 import at.fhj.gaar.androidapp.appDsl.ButtonActionAttribute
+import at.fhj.gaar.androidapp.appDsl.ButtonLabelAttribute
 
 public class ValueResourcesGenerator extends AbstractGenerator {
 	
@@ -152,7 +153,7 @@ public class ValueResourcesGenerator extends AbstractGenerator {
 			if (layouts != null) {
 				layouts.layoutElements.filter[layoutElement | layoutElement instanceof Button].forEach[button |
 					// first the button itself
-					var buttonTitleField = getFieldData((button as Button).attributes, typeof(ElementLabelAttribute));
+					var buttonTitleField = getFieldData((button as Button).attributes, typeof(ButtonLabelAttribute));
 					var buttonTitle = "Button";
 					if (buttonTitleField != null) {
 						buttonTitle = buttonTitleField.title;
