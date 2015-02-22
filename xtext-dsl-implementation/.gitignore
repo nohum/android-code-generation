@@ -14,6 +14,7 @@ local.properties
 .settings/
 .loadpath
 xtend-gen/
+plugin.xml_gen
 
 # Eclipse Core
 .project
