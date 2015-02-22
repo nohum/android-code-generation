@@ -18,7 +18,12 @@ application "at.fhj.demoapp" {
 				text "This app gets started on every boot.",
 				spacer,
 				button firstButton {
-					title "My first button within an App"
+					title "My first button within an App",
+					action show-toast "Hello world!"
+				},
+				button openSecondActivityButton {
+					title "Open another Activity",
+					action start-activity SecondDemoActivity
 				}
 			]
 		},
@@ -27,6 +32,18 @@ application "at.fhj.demoapp" {
 			action start-activity FirstDemoActivity,
 			intents [
 				"android.intent.action.BOOT_COMPLETED"
+			]
+		},
+		service EmptyService {
+			title "Empty service"
+		},
+		activity SecondDemoActivity {
+			title "Second activity",
+			parent FirstDemoActivity,
+			layout-elements [
+				text "This is another activity.",
+				spacer,
+				text "Use the back button on upper left to return back to the original activity."
 			]
 		}
 	]
