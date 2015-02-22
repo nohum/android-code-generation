@@ -4,6 +4,10 @@
 package at.fhj.gaar.androidapp;
 
 import org.eclipse.xtext.conversion.IValueConverterService;
+import org.eclipse.xtext.generator.IOutputConfigurationProvider;
+
+import com.google.inject.Binder;
+import com.google.inject.Singleton;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -12,6 +16,13 @@ public class AppDslRuntimeModule extends at.fhj.gaar.androidapp.AbstractAppDslRu
 
 	public Class<? extends IValueConverterService> bindIValueConverterService() {
 		return TerminalConverters.class;
+	}
+	
+	@Override
+	public void configure(Binder binder) {
+	    super.configure(binder);
+
+	    binder.bind(IOutputConfigurationProvider.class).to(CustomOutputConfigProvider.class).in(Singleton.class);
 	}
 	
 }

@@ -40,7 +40,7 @@ application "at.fhj.demoapp" {
 
 You will find the "Launch Runtime Eclipse" option in the "Run" menu. Using this newly launched IDE, you can create your Android applications with the DSL shown above. For that, create a new project and add a new file which ends with the file extension ".androidapp". The opened editor then provides code completion and validation for the DSL. 
 
-The resulting Android application is automatically generated and stored in a subfolder called "src-gen" of your project. The contents of this folder can directly be imported as a new Android Studio project.  
+The resulting Android application is automatically generated and stored in a subfolder called "application-gen" of your project. The contents of this folder can directly be imported as a new Android Studio project.  
 
 ## Code validation
 
