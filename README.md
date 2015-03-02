@@ -50,6 +50,8 @@ application "at.fhj.demoapp" {
 }
 ```
 
+The resulting demo project of the above code can be found in the file [demo-gen.zip](demo-gen.zip).
+
 ## How to use
 
 * Import the projects located in the "xtext-dsl-implementation" subfolder into an Eclipse IDE with Xtext support
